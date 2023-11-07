@@ -1,11 +1,13 @@
 import React from 'react';
+import NavBar from './components/NavBar';
+import ContactForm from './components/ContactForm';
 
 function Home() {
     return (
         <div className='flex items-center bg-purple-950 justify-center'>
             <div className='flex-1 flex flex-col items-center py-6 max-w-6xl justify-center self-center overflow-hidden'>
-                <h1 className='text-white'><span className=' font-bold'>Al</span>Firma</h1>
-
+                <h1 className='text-white' id="SECTION_ACCUEIL"><span className=' font-bold'>Al</span>Firma</h1>
+                <NavBar />
                 <div className='flex justify-center items-center my-28 flex-col-reverse md:flex-row'>
                     <div className='px-12 md:mx-12 md:px-0 '>
                         <h1 className='text-4xl md:text-7xl text-white text-center md:text-left self-center'>Un lieu unique pour votre entreprise</h1>
@@ -13,7 +15,7 @@ function Home() {
                     <img src='/assets/illustrations/fusee.png' alt='illustration' className='h-48 md:w-[470px] md:h-[470px]' />
                 </div>
                 <div className='py-24'>
-                    <h2 className='text-white font-semibold text-2xl text-center'>ILS NOUS ONT FAIT CONFIANCE</h2>
+                    <h2 className='text-white font-extrabold text-2xl text-center tracking-widest px-8'>ILS NOUS ONT FAIT CONFIANCE</h2>
                     <div className='flex overflow-x-auto'>
                         <img className=' w-28 h-24 object-contain mx-12' src="/assets/c3si.png" alt="c3si" />
                         <img className=' w-28 h-24 object-contain mx-12' src="/assets/toutakote.png" alt="toutakote"/>
@@ -22,7 +24,7 @@ function Home() {
                         <img className=' w-28 h-24 object-contain mx-12' src="/assets/meor.png" alt="meor"/>
                     </div>
                 </div>
-                <div className='flex flex-1 justify-between md:px-24 w-full flex-col md:flex-row py-12 px-4'>
+                <div className='flex flex-1 justify-between md:px-24 w-full flex-col md:flex-row py-12 px-4' id="SECTION_A_PROPOS">
                     <img src="/assets/illustrations/partenaire.png" alt="partenaire" className='object-contain self-center w-1/2 max-w-md' />
                     <div className='flex-1 flex flex-col self-center max-w-md'>
                         <h3 className=' text-sm font-normal text-gray-400'>NOS SERVICES</h3>
@@ -53,21 +55,58 @@ function Home() {
                         </p>
                     </div>
                 </div>
+                <div id="SECTION_PROJETS" className='flex flex-col items-center'>
+                    <h2 className='text-white font-extrabold tracking-widest text-2xl px-8'>NOS PROJETS</h2>
+                    <p className='text-gray-300 my-4 text-center'>Explorez une sélection de nos projets qui illustrent notre passion pour l’innovation</p>
+                    <div className='flex flex-1 justify-around flex-col md:flex-row mx-4'>
+                        <div className=' bg-blue-950 flex flex-col md:max-w-[30%] rounded-lg overflow-hidden my-4'>
+                            <img src="/assets/duodoku.png" alt="sayar" className='object-cover self-center' />
+                            <h1 className='text-white font-bold tracking-widest text-xl px-4 pt-4'>Sayar</h1>
+                            <p className='px-4 text-xs text-gray-400'>UX/UI Design & Développement</p>
+                            <p className=' text-justify p-4 text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <button className=' self-end p-4 flex justify-center items-center'>
+                                <span className='text-white text-sm'>Découvrir</span>
+                                <img src="/assets/arrowRight.svg" alt="arrow" className='w-4 h-4 ml-2' />
+                            </button>
+                        </div>
+                        <div className=' bg-blue-950 md:max-w-[30%] flex flex-col rounded-lg overflow-hidden my-4'>
+                            <img src="/assets/duodoku.png" alt="sayar" className='object-cover self-center' />
+                            <h1 className='text-white font-bold tracking-widest text-xl px-4 pt-4'>Duodoku</h1>
+                            <p className='px-4 text-xs text-gray-400'>UX/UI Design & Développement</p>
+                            <p className=' text-justify p-4 text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <button className=' self-end p-4 flex justify-center items-center'>
+                                <span className='text-white text-sm'>Découvrir</span>
+                                <img src="/assets/arrowRight.svg" alt="arrow" className='w-4 h-4 ml-2' />
+                            </button>
+                        </div>
+                        <div className=' bg-blue-950 md:max-w-[30%] flex flex-col rounded-lg overflow-hidden my-4'>
+                            <img src="/assets/duodoku.png" alt="sayar" className='object-cover self-center' />
+                            <h1 className='text-white font-bold tracking-widest text-xl px-4 pt-4'>Sayar</h1>
+                            <p className='px-4 text-xs text-gray-400'>UX/UI Design & Développement</p>
+                            <p className=' text-justify p-4 text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore  elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <button className=' self-end p-4 flex justify-center items-center'>
+                                <span className='text-white text-sm'>Découvrir</span>
+                                <img src="/assets/arrowRight.svg" alt="arrow" className='w-4 h-4 ml-2' />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className='my-12'>
+                    <h2 className='text-white font-extrabold text-2xl text-center tracking-widest px-8'>NOTRE KIT TECHNOLOGIQUE</h2>
+                    <p className='text-gray-300 my-4 text-center'>Explorez une sélection de nos projets qui illustrent notre passion pour l’innovation</p>
+                    <div className='flex flex-1 justify-between w-full flex-col-reverse md:flex-row'>
+                        <div className='flex-1 flex flex-col self-center max-w-md'>
+                            <p className='text-white my-4 text-xl text-justify px-4'>
+                            Dans notre boîte à outils vous trouverez Figma pour la conception, vue.js et React.js pour le développement front-end, Django Rest Framework pour les applications web et React Native pour les applications mobiles. Ces outils de pointe sont le carburant de notre créativité, nous permettant de façonner vos projets. 
+                            </p>
+                        </div>
+                        <img src="/assets/illustrations/conception.png" alt="partenaire" className='object-contain self-center w-1/2 max-w-md' />
+                        
+                    </div>
+                </div>
+                <ContactForm />
             </div>
-            <div className=' w-96 h-96 fixed top-0 right-0'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="472" height="510" viewBox="0 0 472 510" fill="none">
-                    <g filter="url(#filter0_f_1_45)">
-                    <path d="M582 96.5C582 189.56 506.56 265 413.5 265C320.44 265 245 189.56 245 96.5C245 3.44002 320.44 -72 413.5 -72C506.56 -72 582 3.44002 582 96.5Z" fill="white" fill-opacity="0.38"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_f_1_45" x="0.797104" y="-316.203" width="825.406" height="825.406" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur stdDeviation="122.101" result="effect1_foregroundBlur_1_45"/>
-                    </filter>
-                    </defs>
-                </svg>
-            </div>
+            <div className='fixed top-14 right-0 bg-white rounded-full' style={{boxShadow: '0 0 200px 100px white', opacity: 0.4}}></div>
         </div>
     );
 }
