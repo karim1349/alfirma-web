@@ -6,9 +6,8 @@ function Home() {
     return (
         <div className='flex items-center bg-purple-950 justify-center'>
             <div className='flex-1 flex flex-col items-center py-6 max-w-6xl justify-center self-center overflow-hidden'>
-                <h1 className='text-white' id="SECTION_ACCUEIL"><span className=' font-bold'>Al</span>Firma</h1>
                 <NavBar />
-                <div className='flex justify-center items-center my-28 flex-col-reverse md:flex-row'>
+                <div className='flex justify-center items-center my-28 flex-col-reverse md:flex-row' id="SECTION_ACCUEIL">
                     <div className='px-12 md:mx-12 md:px-0 '>
                         <h1 className='text-4xl md:text-7xl text-white text-center md:text-left self-center'>Un lieu unique pour votre entreprise</h1>
                     </div>
@@ -106,7 +105,6 @@ function Home() {
                 </div>
                 <ContactForm />
             </div>
-            <div className='fixed top-14 right-0 bg-white rounded-full' style={{boxShadow: '0 0 200px 100px white', opacity: 0.4}}></div>
         </div>
     );
 }
