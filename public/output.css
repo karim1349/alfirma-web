@@ -588,10 +588,6 @@ video {
   position: fixed;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .top-14 {
   top: 3.5rem;
 }
@@ -628,6 +624,10 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .flex {
@@ -682,12 +682,8 @@ video {
   max-width: 24rem;
 }
 
-.max-w-\[550px\] {
-  max-width: 550px;
-}
-
-.max-w-\[50\%\] {
-  max-width: 50%;
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .flex-1 {
@@ -761,6 +757,11 @@ video {
   background-color: rgb(106 56 175 / var(--tw-bg-opacity));
 }
 
+.bg-purple-850 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 31 122 / var(--tw-bg-opacity));
+}
+
 .bg-purple-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(36 9 74 / var(--tw-bg-opacity));
@@ -769,11 +770,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-purple-850 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 31 122 / var(--tw-bg-opacity));
 }
 
 .object-contain {
@@ -801,9 +797,19 @@ video {
   padding-right: 3rem;
 }
 
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .py-12 {
@@ -821,29 +827,14 @@ video {
   padding-bottom: 6rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.px-48 {
-  padding-left: 12rem;
-  padding-right: 12rem;
-}
-
-.px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pt-4 {
@@ -861,6 +852,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-4xl {
@@ -881,6 +877,21 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
