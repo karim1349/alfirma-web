@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 import PrivacyDuodoku from './pages/Duodoku/Privacy';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000' //'https://alfirma-api-3efa34f27f01.herokuapp.com'
+axios.defaults.baseURL = 'https://alfirma-api-3efa34f27f01.herokuapp.com'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
