@@ -64,7 +64,7 @@ const NavBar = () => {
     
     return (
         <>
-        <div className={`flex bg-purple-750 p-2.5 rounded-full w-4/5 max-w-sm fixed top-14 transition-opacity duration-500 ease-in-out ${isBlurred ? 'opacity-25' : ''}`}>
+        <div className={`flex z-50 bg-purple-750 p-2.5 rounded-full w-4/5 max-w-sm fixed top-14 transition-opacity duration-500 ease-in-out ${isBlurred ? 'opacity-25' : ''}`}>
             <button className={`flex-1 rounded-full py-2 flex justify-center ${currentSection === 'SECTION_ACCUEIL'  ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md text-gray-300 font-medium ${currentSection === 'SECTION_ACCUEIL'  ? ' text-purple-950 ' : ' '}`} onClick={() => scrollTo("SECTION_ACCUEIL")}>Accueil </p></button>
             <button className={`flex-1 rounded-full py-2 flex justify-center ${currentSection === 'SECTION_A_PROPOS'  ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md text-gray-300 font-medium ${currentSection === 'SECTION_A_PROPOS'  ? ' text-purple-950 ' : ' '}`} onClick={() => scrollTo("SECTION_A_PROPOS")}>À propos</p></button>
             <button className={`flex-1 rounded-full py-2 flex justify-center ${currentSection === 'SECTION_PROJETS' ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md text-gray-300 font-medium ${currentSection === 'SECTION_PROJETS' ? ' text-purple-950 ' : ' '}`} onClick={() => scrollTo("SECTION_PROJETS")}>Projets </p></button>

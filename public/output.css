@@ -592,6 +592,10 @@ video {
   top: 3.5rem;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .mx-12 {
   margin-left: 3rem;
   margin-right: 3rem;
@@ -634,6 +638,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-24 {
   height: 6rem;
 }
@@ -670,6 +678,10 @@ video {
   width: 100%;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -682,10 +694,6 @@ video {
   max-width: 24rem;
 }
 
-.max-w-4xl {
-  max-width: 56rem;
-}
-
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -696,6 +704,10 @@ video {
 
 .flex-col-reverse {
   flex-direction: column-reverse;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -712,6 +724,10 @@ video {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .self-end {
@@ -854,14 +870,14 @@ video {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-sm {
@@ -877,21 +893,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -976,17 +977,41 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:right-0 {
+    right: 0px;
+  }
+
+  .md\:top-0 {
+    top: 0px;
+  }
+
   .md\:mx-12 {
     margin-left: 3rem;
     margin-right: 3rem;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:h-\[470px\] {
     height: 470px;
   }
 
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:w-\[470px\] {
     width: 470px;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:max-w-\[30\%\] {
@@ -997,8 +1022,16 @@ video {
     max-width: 50%;
   }
 
+  .md\:max-w-md {
+    max-width: 28rem;
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:object-cover {
+    object-fit: cover;
   }
 
   .md\:px-0 {
