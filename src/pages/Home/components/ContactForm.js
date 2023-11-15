@@ -22,7 +22,7 @@ const ContactForm = () => {
             <img src='/assets/illustrations/contact.png' className='object-contain self-start w-full md:w-1/2 md:max-w-md' />
             <div className='my-12 flex flex-col flex-1 w-full px-4 md:max-w-[50%]'>
                 <h2 id="SECTION_CONTACT" className='text-white font-extrabold text-2xl text-center tracking-widest px-8'>NOUS CONTACTER</h2>
-                <p className='text-gray-300 my-4 text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <p className='text-gray-300 my-4 text-center'>Nous sommes joignables à tout moment. </p>
                 <form className='flex flex-col' onSubmit={sendEmail}>
                     <div className='py-2'>
                         <label className='text-white font-bold text-sm tracking-widest'>Nom</label>
