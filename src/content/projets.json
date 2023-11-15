@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Sayar",
+        "description": "Sayar est une application mobile d'autopartage de véhicules visant le marché marocain. Elle permet aux utilisateurs de rentabiliser leurs véhicules en toute simplicité.",
+        "image": "/assets/sayar.png",
+        "tasks": {
+            "conception": true,
+            "developement": true,
+            "design": true,
+            "deployment": false
+        }
+    },
+    {
+        "name": "Duodoku",
+        "description": "Duodoku est le premier jeu de Sudoku multi-joueurs disponible sur mobile. Il permet aux joueurs de s'affronter en temps réel et de faire la course à la résolution des grilles.",
+        "image": "/assets/duodoku.png",
+        "tasks": {
+            "conception": true,
+            "developement": true,
+            "design": true,
+            "deployment": true
+        },
+        "link": "https://apps.apple.com/fr/app/duodoku/id6448099658"
+    },
+    {
+        "name": "FF Nation",
+        "description": "FF Nation est un Saas proposé aux barbers et salons de coiffure leur permettant d'offrir à leurs clients une expérience de réservation en ligne simple et intuitive, et de gérer leurs rendez-vous et plannings sur une plateforme moderne et efficace. ",
+        "image": "/assets/ffnation.png",
+        "tasks": {
+            "conception": true,
+            "developement": false,
+            "design": false,
+            "deployment": false
+        }
+    }
+]
