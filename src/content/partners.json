@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Leexit",
+        "description": "Leexit nous a confié le développement intégral et le déploiement de son application mobile de rencontre d'amis, sur la base d'un design existant. Une API REST Django nécessaire pour les besoins du projet a été réalisée en back-end. ",
+        "image": "/assets/leexit.png",
+        "review": "Nous avons fait appel à Al Firma pour effectuer le développement complet d'une app mobile. Très compétents et disponibles, ils ont été à l'écoute de nos demandes en nous apportant son expertise et ses conseils à chaque étape du projet. Nous recommandons vivement leur service et espérons avoir l’occasion de travailler avec eux de nouveau. "
+    },
+    {
+        "name": "C3SI",
+        "description": "La confédération des centres de Santé des Pays de la Loire a choisi Al Firma pour le design, développement et déploiement de son application de prévention Co'Santé.",
+        "image": "/assets/c3si.png",
+        "review": false
+    },
+    {
+        "name": "Toutakoté",
+        "description": "Nous avons réalisé pour Toutakoté la refonte intégrale d'une application mobile, ainsi que la réalisation et le déploiement d'une application web.",
+        "image": "/assets/toutakote.png",
+        "review": "Al Firma s'est montré à l'écoute, très rapide dans la réalisation de la mission et le tout pour un tarif extrêmement correct. Je ne saurais que recommander ses services !"
+    },
+    {
+        "name": "meor",
+        "description": "Nous sommes intervenus dans la réalisation de l'extension web de Meor sur la partie design et conception. ",
+        "image": "/assets/meor.png",
+        "review": false
+    },
+    {
+        "name": "Meta Connect",
+        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Meta Connect. ",
+        "image": "/assets/meta.png",
+        "review": false
+    }
+]
