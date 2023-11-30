@@ -6,9 +6,9 @@
         "review": "Nous avons fait appel à Al Firma pour effectuer le développement complet d'une app mobile. Très compétents et disponibles, ils ont été à l'écoute de nos demandes en nous apportant son expertise et ses conseils à chaque étape du projet. Nous recommandons vivement leur service et espérons avoir l’occasion de travailler avec eux de nouveau. "
     },
     {
-        "name": "C3SI",
+        "name": "Co'Santé",
         "description": "La confédération des centres de Santé des Pays de la Loire a choisi Al Firma pour le design, développement et déploiement de son application de prévention Co'Santé.",
-        "image": "/assets/c3si.png",
+        "image": "/assets/cosante.png",
         "review": false
     },
     {
@@ -24,9 +24,9 @@
         "review": false
     },
     {
-        "name": "Meta Connect",
-        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Meta Connect. ",
-        "image": "/assets/meta.png",
+        "name": "Nexy",
+        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Nexy. ",
+        "image": "/assets/nexy.png",
         "review": false
     }
 ]
