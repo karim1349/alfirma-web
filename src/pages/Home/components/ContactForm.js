@@ -5,17 +5,18 @@ const ContactForm = () => {
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
     const [isSent, setIsSent] = useState(false)
-    const sendEmail = () => {
-        axios.post('/api/message/', {
-            name:name,
-            email:email,
-            message:message
-        })
-        setIsSent(true)
-        setName('')
-        setEmail('')
-        setMessage('')
-    }
+    const sendEmail = (event) => {
+        event.preventDefault()
+            axios.post('/api/message/', {
+                name:name,
+                email:email,
+                message:message
+            })
+            setIsSent(true)
+            setName('')
+            setEmail('')
+            setMessage('')
+        }
 
     return (
         <div className="flex flex-col md:flex-row justify-center">
