@@ -10,7 +10,7 @@ const Footer = () => {
 
             <div className="flex flex-row my-4">
                 <a target="_blank" href="https://facebook.com/alfirmaagency"><img src="/assets/facebook.svg"  className="w-6 h-6 mx-2" /></a>
-                <a target="_blank" href="https://instagram.com/alfirmaagency"><img src="/assets/instagram.svg" className="w-6 h-6 mx-2" /></a>
+                <a target="_blank" href="https://instagram.com/alfirma.agency"><img src="/assets/instagram.svg" className="w-6 h-6 mx-2" /></a>
                 <a target="_blank" href="https://linkedin.com/company/al-firma"><img src="/assets/linkedin.svg"  className="w-6 h-6 mx-2" /></a>
             </div>
 
