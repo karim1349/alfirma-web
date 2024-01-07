@@ -1,7 +1,7 @@
 [
     {
         "name": "Leexit",
-        "description": "Leexit nous a confié le développement intégral et le déploiement de son application mobile de rencontre d'amis, sur la base d'un design existant. Une API REST Django nécessaire pour les besoins du projet a été réalisée en back-end. ",
+        "description": "Leexit nous a confié le développement intégral et le déploiement de son application mobile de rencontre d'amis, sur la base d'un design existant. Une API REST Django nécessaire pour les besoins du projet a été réalisée par nos soins. ",
         "image": "/assets/leexit.png",
         "review": "Nous avons fait appel à Al Firma pour effectuer le développement complet d'une app mobile. Très compétents et disponibles, ils ont été à l'écoute de nos demandes en nous apportant son expertise et ses conseils à chaque étape du projet. Nous recommandons vivement leur service et espérons avoir l’occasion de travailler avec eux de nouveau. "
     },

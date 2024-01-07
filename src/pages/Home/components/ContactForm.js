@@ -59,7 +59,7 @@ const ContactForm = () => {
                             <p className="text-purple-750 text-center p-2">Message bien reçu ! Nous reviendrons vers vous dans les plus brefs délais. </p>
                         </div>
                     }
-                    <button type="submit" className='bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-0' disabled={name === '' || email === '' || message === ''}>
+                    <button type="submit" className='bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0' disabled={name === '' || email === '' || message === ''}>
                         <span className='text-purple-750 font-semibold text-md group-hover:text-white'>Envoyer</span>
                     </button>
                 </form>

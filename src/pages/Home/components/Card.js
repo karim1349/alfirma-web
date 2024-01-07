@@ -5,7 +5,7 @@ const Card = ({image, title, text, review}) => {
     return (
         <div className=" bg-white flex flex-1 self-center flex-col rounded-2xl shadow-md m-8 h-96 p-4">
             <div className='flex flex-1 flex-col overflow-hidden '>
-                <img src={image} alt="logo" className="h-16 object-contain z-10 filter invert" />
+                <img src={image} alt="logo" className="h-16 object-contain z-10" />
                 <h1 className='text-center mb-3 text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>{title}</h1>
                 <p className="text-xs font-light text-center">{text}</p>
                 {review && 

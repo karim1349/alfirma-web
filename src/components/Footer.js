@@ -1,5 +1,3 @@
-import ParallaxCard from "../pages/Home/components/Card3D"
-
 const Footer = () => {
     return (
         <>
