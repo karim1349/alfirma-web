@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import Lottie from "lottie-react";
 const images = [
   '/assets/illustrations/mockup_insta.png',
   '/assets/illustrations/mockup_facebook.png',
@@ -53,14 +54,12 @@ const ContactForm = () => {
                         <label className='text-purple-750 font-bold text-sm tracking-widest'>Message</label>
                         <textarea type="text" className=' bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border border-purple-350' onChange={(e) => setMessage(e.target.value)}  />
                     </div>
-                    {
-                        isSent &&
-                        <div className="border-purple-750 border rounded-lg my-4">
-                            <p className="text-purple-750 text-center p-2">Message bien reçu ! Nous reviendrons vers vous dans les plus brefs délais. </p>
-                        </div>
-                    }
-                    <button type="submit" className='bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0' disabled={name === '' || email === '' || message === ''}>
-                        <span className='text-purple-750 font-semibold text-md group-hover:text-white'>Envoyer</span>
+                    <button type="submit" className={`bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0 ${isSent ? 'bg-gradient-to-r from-purple-400 to-blue-500 border-opacity-0' : ''}`} disabled={name === '' || email === '' || message === ''}>
+                        {
+                            isSent ? 
+                            <Lottie animationData={require('../../../content/space_mail.json')} className='h-10' onAnimationEnd={() => setIsSent(false)} loop={false} /> :
+                            <span className='text-purple-750 font-semibold text-md group-hover:text-white'>Envoyer</span>
+                        }
                     </button>
                 </form>
             </div>
