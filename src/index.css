@@ -13,3 +13,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cursor-effect {
+  pointer-events: none; /* Ensures the cursor doesn't interfere with other elements */
+  position: fixed;
+  width: 185px;
+  height: 185px;
+  border-radius: 100%;
+  background-color: white;
+  box-shadow: 0 0 15px 5px white;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  @apply w-[188px] h-[184px] shrink-0 blur-[75px] transition-all;
+}
