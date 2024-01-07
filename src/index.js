@@ -7,19 +7,14 @@ import Home from './pages/Home/Home';
 import PrivacyDuodoku from './pages/Duodoku/Privacy';
 import axios from 'axios';
 import Footer from './components/Footer';
+import App from './App';
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000' //'https://alfirma-api-3efa34f27f01.herokuapp.com'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
   <React.StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/duodoku/privacy" element={<PrivacyDuodoku />} />
-      </Routes>
-    </HashRouter>
+    <App/>
   </React.StrictMode>
   <Footer/>
   </>

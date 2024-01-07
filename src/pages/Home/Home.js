@@ -7,107 +7,120 @@ import Projet from './components/Projet';
 import projets from '../../content/projets.json'
 import partners from '../../content/partners.json'
 import Partner from './components/Partner';
-
+import Loading from './components/Loading';
+import Lottie from 'lottie-react';
+import earth from '../../content/earth.json'
 
 function Home() {
+    const [loading, setLoading] = React.useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }
+    , [])
     return (
-        <div className='flex items-center bg-purple-950 justify-center'>
-            <div className='flex-1 flex flex-col items-center py-6 max-w-6xl justify-center self-center overflow-hidden'>
+    //loading ? <Loading /> : 
+        <div className='flex items-center bg-white justify-center'>
+            <div className='flex-1 flex flex-col items-center justify-center self-center overflow-hidden'>
                 <NavBar />
-                <div className='flex justify-center items-center mb-28 md:my-28 flex-col-reverse md:flex-row'>
-                    <div className='px-4 md:mx-12 md:px-0 '>
-                        <h1 className='text-4xl md:text-6xl text-white text-justify self-center'>De l'idée jusqu'au Store : Al Firma vous accompagne</h1>
-                            <p className='text-gray-400 my-4 text-xl text-justify'>
-                                Al Firma prend en charge la conception, le design, le développement, le déploiement et la maintenance de vos applications web & mobile, iOS et Android sur mesure. Rien que ça !
-                            </p>
-                    </div>
-                    <Fade className='flex w-full' triggerOnce direction='up'>
-                        <img src='/assets/illustrations/fusee.png' alt='illustration' className='w-full object-contain md:w-[470px] md:h-[470px]' />
-                    </Fade>
-                </div>
-                    <h2 className='text-white font-extrabold text-2xl text-center tracking-widest px-8'>ILS NOUS ONT FAIT CONFIANCE</h2>
-                    <div className=" w-full h-full">
-                    <Carousel pauseOnHover indicators={false} slideInterval={10000}>
-                        {
-                            partners.map((partner, index) => {
-                                return (
-                                    <Partner partner={partner} />
-                                )
-                            })
-                        }
-                    </Carousel>
-                    </div>
-                    <div className='flex flex-1 justify-between md:px-24 w-full flex-col md:flex-row py-12 px-4'>
-                        <img src="/assets/illustrations/partenaire.png" alt="partenaire" className='object-contain self-center w-1/2 max-w-md' />
-                        <div className='flex-1 flex flex-col self-center max-w-md'>
-                            <h3 className=' text-sm font-normal text-gray-400' id="SECTION_A_PROPOS">NOS SERVICES</h3>
-                            <h1 className='text-white text-2xl'>Votre partenaire de confiance</h1>
-                            <p className='text-gray-400 my-4 text-xl text-justify'>
-                                En tant que partenaire de confiance, nous sommes là à chaque étapes de votre projet. Que vous soyez au point de départ ou en pleine évolution, notre équipe dévouée vous guide pour concrétiser vos idées.
-                            </p>
-                        </div>
-                    </div>
-                    <div className='flex flex-1 justify-between md:px-24 w-full flex-col-reverse md:flex-row py-12 px-4'>
-                        <div className='flex-1 flex flex-col self-center max-w-md'>
-                            <h3 className=' text-sm font-normal text-gray-400'>NOS SERVICES</h3>
-                            <h1 className='text-white text-2xl'>De la conception à la réalisation</h1>
-                            <p className='text-gray-400 my-4 text-xl text-justify'>
-                            Nous couvrons l’ensemble du processus, de la conception au déploiement. Notre équipe de designer et de développeur travaille de concert pour donner vie à votre vision. De l’idée initiale au lancement, nous sommes là à chaque étape.
-                            </p>
-                        </div>
-                        <img src="/assets/illustrations/conception.png" alt="partenaire" className='object-contain self-center w-1/2 max-w-md' />
+                <div className='flex justify-center items-center flex-col-reverse md:flex-row w-full' id="SECTION_ACCUEIL" style={{backgroundImage: "url('/assets/illustrations/background.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh'}}>
+                    <div className='px-4 md:mx-12 md:px-0 flex flex-col items-center '>
+                        <img src="/assets/logoWithoutBackground.png" alt="logo" className="w-1/2 md:w-1/5 hover:transform hover:rotate-[57deg] transition-all duration-200 my-20 " />
+                        <h1 className='text-4xl md:text-8xl text-white text-justify self-center'>AL FIRMA</h1>
+                        <p className='text-white my-4 text-6xl text-justify'>
+                            L'innovation façonne vos applications
+                        </p>
+                        <button className='group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition'>
+                            <span className='block group-hover:hidden'>On discute ?</span>
+                            <span className='hidden group-hover:block text-blue-500'>Réserver un appel</span>
+                        </button>
                         
                     </div>
-                    <div className='flex flex-1 justify-between md:px-24 w-full flex-col md:flex-row py-12 px-4'>
-                        <img src="/assets/illustrations/solution.png" alt="conception" className='object-contain self-center w-1/2 max-w-md' />
-                        <div className='flex-1 flex flex-col self-center max-w-md'>
-                            <h3 className=' text-sm font-normal text-gray-400'>NOS SERVICES</h3>
-                            <h1 className='text-white text-2xl'>Solutions sur-mesure</h1>
-                            <p className='text-gray-400 my-4 text-xl text-justify'>
-                            Que vous dirigiez une petite start-up ou une grande entreprise, nos solutions sont adaptées à vos objectifs. Notre approche personnalisée implique une collaboration étroite pour saisir vos besoins uniques. Nous adaptions nos services pour vous aider à exceller dans un environnement en constante évolution.
-                            </p>
+                </div>
+                <div className='max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
+                    <div className='flex items-center justify-center self-center overflow-hidden'>
+                        <div className='flex pr-20 py-12 border-r '>
+                            <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
+                            <div className='flex-1 flex flex-col'>
+                                <h1 className='text-2xl font-medium'>Discussion du projet</h1>
+                                <p className='font-thin mt-4'>Partagez vos idées et objectifs. Nous créons une feuille de route pour le développement de votre application.</p>
+
+                                <h1 className='text-7xl self-end text-gray-200 font-semibold -mr-16'>01.</h1>
+                            </div>
+                        </div>
+                        <div className='flex px-20 py-12 border-r '>
+                            <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
+                            <div className='flex-1 flex flex-col'>
+                                <h1 className='text-2xl font-medium'>Création sur Mesure</h1>
+                                <p className='font-thin mt-4'>On transforme vos idées en réalité avec un design intuitif et des fonctionnalités innovantes, en vous impliquant à chaque étape.</p>
+
+                                <h1 className='text-7xl self-end text-gray-200 font-semibold -mr-16'>02.</h1>
+                            </div>
+                        </div>
+                        <div className='flex pl-20 py-12 '>
+                            <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
+                            <div className='flex-1 flex flex-col'>
+                                <h1 className='text-2xl font-medium'>Déploiement</h1>
+                                <p className='font-thin mt-4'>Après approbation, votre application prend son envol en ligne. Nous restons à vos côtés pour assurer son succès continu.</p>
+
+                                <h1 className='text-7xl self-end text-gray-200 font-semibold'>03.</h1>
+                            </div>
                         </div>
                     </div>
-                <div className='flex flex-col items-center'>
-                    <h2 id="SECTION_PROJETS" className='text-white font-extrabold tracking-widest text-2xl px-8'>NOTRE FERME À PROJETS</h2>
-                    <p className='text-gray-300 my-4 text-center'>En plus de nos prestations de services, nous développons également des projets internes innovants. </p>
-                    <div className='flex flex-1 justify-around flex-col md:flex-row mx-4'>
-                        {
-                            projets.map((projet, index) => {
-                                return (
-                                        <Projet projet={projet} />
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-                <div className='flex flex-col my-12 px-4'>
-                    <h2 className='text-white font-extrabold text-2xl text-center tracking-widest'>LA RECETTE</h2>
-                    <p className='text-gray-300 my-4 text-center'>Découvrez le kit technologique que nous utiliserons pour vous aider. </p>
-                    <div className='flex items-center justify-center my-16 ml-[20px] md:ml-[50px] w-full '>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/figma.png"        alt="figma"        className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/react.png"        alt="react"        className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/vuejs.png"        alt="vuejs"        className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/tailwind.png"     alt="tailwind"     className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/react-native.png" alt="react-native" className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/heroku.png"       alt="heroku"       className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/python.png"       alt="python"       className='object-contain self-center w-24' /></div>
-                        <div className=' bg-purple-350 flex justify-center items-center rounded-full ml-[-20px] md:ml-[-50px] border-purple-900 border-4 overflow-hidden w-14 h-14 md:w-32 md:h-32'><img src="/assets/django.png"       alt="django"       className='object-contain self-center w-24' /></div>
-                    </div>
-                    <div className='flex flex-1 justify-between w-full flex-col-reverse md:flex-row'>
-                        <div className='flex-1 flex flex-col self-center'>
-                            <p className='text-white my-4 text-md text-justify'>
-                            Dans notre boîte à outils se trouve toutes les technologies de pointe nécessaires à la réalisation des meilleures applications possibles. 
-                            De Figma pour la conception et le design, à React.js, Vue.js et TailwindCSS pour le développement web, 
-                            en passant par React Native pour le développement mobile, 
-                            et enfin Python, Django et Heroku pour le développement back-end, nous avons tout ce qu’il faut pour vous aider à concrétiser vos idées.
-                            </p>
+                    <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>L'ART DE LA SPÉCIALITÉ</h1>
+                    <p>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
+                    <div className='flex w-full my-28'>
+                        <div className='shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                            <img src="/assets/illustrations/appmobile.png" alt="logo" className=" h-36" />
+                            <h1 className='font-semibold'>Apps Mobile</h1>
+                            <p className='text-xs text-center mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum mauris non pellentesque accumsan. Nec pellentesque eget.</p>
+                        </div>
+                        <div className='shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                            <img src="/assets/illustrations/appweb.png" alt="logo" className=" h-36" />
+                            <h1 className='font-semibold'>Apps Web</h1>
+                            <p className='text-xs text-center mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum mauris non pellentesque accumsan. Nec pellentesque eget.</p>
+                        </div>
+                        <div className='shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                            <img src="/assets/illustrations/uiuxdesign.png" alt="logo" className=" h-36" />
+                            <h1 className='font-semibold'>UX/UI Design</h1>
+                            <p className='text-xs text-center mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum mauris non pellentesque accumsan. Nec pellentesque eget.</p>
+                        </div>
+                        <div className='shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                            <img src="/assets/illustrations/maintenance.png" alt="logo" className=" h-36" />
+                            <h1 className='font-semibold'>Maintenance</h1>
+                            <p className='text-xs text-center mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum mauris non pellentesque accumsan. Nec pellentesque eget.</p>
                         </div>
                     </div>
                 </div>
-                <Fade triggerOnce direction='up' delay={50} className='flex justify-center w-full'>
-                    <ContactForm />
-                </Fade>
+                <div className=' bg-gradient-to-tr from-rose-200 to-blue-300 py-36 flex justify-center items-center w-screen px-8'>
+                    <div className='max-w-7xl flex items-center justify-center self-center overflow-hidden'>
+                        <div className='relative w-96 h-96 flex items-center justify-center'>
+                            <img src="/assets/logoWithoutBackground.png" alt="logo" className="w-full h-full absolute object-contain filter invert opacity-30" />
+                            <Lottie animationData={earth} className='w-5/6' loop />
+                        </div>
+                        <div className='flex-1 ml-16'>
+                            <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>MONDIALEMENT VÔTRE !</h1>
+                            <p>Découvrez nos services où que vous soyez dans le monde. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
+                    <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>ILS NOUS ONT FAIT CONFIANCE</h1>
+                    <p>Découvrez nos services où que vous soyez dans le monde. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.</p>
+
+                    <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>BESOIN D'UN RENSEIGNEMENT ?</h1>
+                    <p>Découvrez nos services où que vous soyez dans le monde. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.</p>
+                </div>                    
+                <div className='relative w-full'>
+                    <div className='absolute left-[-1500px] rotate-[6.856deg] shrink-0 rounded-full p-[400px] bg-gradient-to-r from-rose-200 to-blue-300'>
+                        <div className='p-[1000px] rounded-full bg-white'/>
+                    </div>
+
+                    <div className='max-w-7xl flex items-center justify-center self-center overflow-hidden z-10'>
+                        <ContactForm />
+                    </div>
+                </div>
             </div>
         </div>
     );
