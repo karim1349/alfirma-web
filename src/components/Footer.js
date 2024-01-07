@@ -3,10 +3,7 @@ import ParallaxCard from "../pages/Home/components/Card3D"
 const Footer = () => {
     return (
         <>
-        <div className="bg-purple-850 flex items-center justify-center flex-col pb-12">
-            <ParallaxCard>
-                <img src="/assets/banner.jpg" alt="banner" className="object-cover" />
-            </ParallaxCard>
+        <div className="bg-white flex items-center justify-center flex-col pb-12">
 
             <div className="flex flex-row my-4">
                 <a target="_blank" href="https://facebook.com/alfirmaagency"><img src="/assets/facebook.svg"  className="w-6 h-6 mx-2" /></a>
