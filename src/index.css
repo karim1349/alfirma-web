@@ -1,8 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/public/fonts/ClashDisplay.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/public/fonts/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/public/fonts/ClashDisplay-Light.otf') format('opentype');
+  font-weight: 200;
+}
+
 body {
   margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Clash Display', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12,4 +30,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+.cursor-effect {
+  pointer-events: none; /* Ensures the cursor doesn't interfere with other elements */
+  position: fixed;
+  width: 185px;
+  height: 185px;
+  border-radius: 100%;
+  background-color: white;
+  box-shadow: 0 0 15px 5px white;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  @apply w-[188px] h-[184px] shrink-0 blur-[75px];
+}
+
+@keyframes loadingBarFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-loading-bar {
+  animation: loadingBarFill 1s linear forwards; /* Adjust the time as needed */
 }
