@@ -29,7 +29,8 @@ function Home() {
                         <h2 className='text-white my-4 text-[4vw] text-justify'>
                             L'innovation façonne vos applications
                         </h2>
-                        <button className='group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition' onClick={() => {window.location.href = 'https://calendly.com/alfirma'}}>
+                        <button className='group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition' 
+                            onClick={() => window.open('https://calendly.com/alfirma/30min', '_blank')}>
                             <span className='block group-hover:hidden'>On discute ?</span>
                             <span className='hidden group-hover:block text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>Réserver un appel</span>
                         </button>
@@ -38,7 +39,7 @@ function Home() {
                 </div>
                 <div className='px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
                     <div className='grid grid-cols-1 md:grid-cols-3 md:h-80'>
-                        <div className='flex flex-1 px-2 py-12 border-r group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
+                        <div className='flex flex-1 px-2 py-12 md:border-r group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
                                 <h1 className='text-2xl font-medium'>Discussion du projet</h1>
@@ -47,7 +48,7 @@ function Home() {
                                 <h1 className='text-7xl self-end text-gray-200 font-semibold'>01.</h1>
                             </div>
                         </div>
-                        <div className='flex px-2 py-12 border-r group hover:bg-[url(/assets/illustrations/backgroundCreation.png)] bg-cover bg-center hover:text-white'>
+                        <div className='flex px-2 py-12 md:border-r group hover:bg-[url(/assets/illustrations/backgroundCreation.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
                                 <h1 className='text-2xl font-medium'>Création sur Mesure</h1>
