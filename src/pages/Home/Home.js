@@ -37,7 +37,7 @@ function Home() {
                         
                     </div>
                 </div>
-                <div className='md:px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
+                <div className='max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
                     <div className='grid grid-cols-1 md:grid-cols-3 md:h-80'>
                         <div className='flex flex-1 px-2 py-12 md:border-r group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
@@ -67,28 +67,30 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>L'ART DE LA SPÉCIALITÉ</h1>
-                    <p>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
-                    <div className='flex w-full flex-col md:flex-row my-28'>
-                        <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                            <img src="/assets/illustrations/appmobile.png" alt="logo" className=" h-36 group-hover:h-48 object-contain transform transition-all" />
-                            <h1 className='font-semibold'>Apps Mobile</h1>
-                            <p className='text-xs text-center mt-4'>Nous développons et déployons des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
-                        </div>
-                        <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                            <img src="/assets/illustrations/appweb.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
-                            <h1 className='font-semibold'>Apps Web</h1>
-                            <p className='text-xs text-center mt-4'>Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack.</p>
-                        </div>
-                        <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                            <img src="/assets/illustrations/uiuxdesign.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
-                            <h1 className='font-semibold'>UX/UI Design</h1>
-                            <p className='text-xs text-center mt-4'>Nos équipes de designers n'attendent que vous pour concevoir les maquettes de l'application de vos rêves, basée sur les meilleures normes d'ergonomie et d'optimisation.</p>
-                        </div>
-                        <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                            <img src="/assets/illustrations/maintenance.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
-                            <h1 className='font-semibold'>Maintenance</h1>
-                            <p className='text-xs text-center mt-4'>Besoin d'apporter des modifications sur votre application ? Nous pouvons prendre en charge la maintenance des produits que nous développons. </p>
+                    <div className='px-2'>
+                        <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>L'ART DE LA SPÉCIALITÉ</h1>
+                        <p>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
+                        <div className='flex w-full flex-col md:flex-row my-28'>
+                            <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                                <img src="/assets/illustrations/appmobile.png" alt="logo" className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <h1 className='font-semibold'>Apps Mobile</h1>
+                                <p className='text-xs text-center mt-4'>Nous développons et déployons des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
+                            </div>
+                            <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                                <img src="/assets/illustrations/appweb.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <h1 className='font-semibold'>Apps Web</h1>
+                                <p className='text-xs text-center mt-4'>Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack.</p>
+                            </div>
+                            <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                                <img src="/assets/illustrations/uiuxdesign.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <h1 className='font-semibold'>UX/UI Design</h1>
+                                <p className='text-xs text-center mt-4'>Nos équipes de designers n'attendent que vous pour concevoir les maquettes de l'application de vos rêves, basée sur les meilleures normes d'ergonomie et d'optimisation.</p>
+                            </div>
+                            <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
+                                <img src="/assets/illustrations/maintenance.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <h1 className='font-semibold'>Maintenance</h1>
+                                <p className='text-xs text-center mt-4'>Besoin d'apporter des modifications sur votre application ? Nous pouvons prendre en charge la maintenance des produits que nous développons. </p>
+                            </div>
                         </div>
                     </div>
                 </div>
