@@ -37,7 +37,7 @@ function Home() {
                         
                     </div>
                 </div>
-                <div className='px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
+                <div className='md:px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
                     <div className='grid grid-cols-1 md:grid-cols-3 md:h-80'>
                         <div className='flex flex-1 px-2 py-12 md:border-r group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
