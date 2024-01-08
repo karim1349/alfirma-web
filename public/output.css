@@ -736,10 +736,6 @@ video {
   display: none;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -961,10 +957,6 @@ video {
 
 .border-2 {
   border-width: 2px;
-}
-
-.border-r {
-  border-right-width: 1px;
 }
 
 .border-purple-350 {
@@ -1498,6 +1490,10 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:border-r {
+    border-right-width: 1px;
   }
 
   .md\:p-16 {
