@@ -69,7 +69,7 @@ function Home() {
                     </div>
                     <div className='px-2'>
                         <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>L'ART DE LA SPÉCIALITÉ</h1>
-                        <p>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
+                        <p className='text-center'>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
                         <div className='flex w-full flex-col md:flex-row my-28'>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
                                 <img src="/assets/illustrations/appmobile.png" alt="logo" className=" h-36 group-hover:h-48 object-contain transform transition-all" />
