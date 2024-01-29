@@ -131,13 +131,13 @@ function Home() {
                     <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>BESOIN D'UN RENSEIGNEMENT ?</h1>
                     <p>Des questions ? On a toutes les réponses ! Remplissez le formulaire ci-dessous et suivez-nous sur nos réseaux sociaux pour rester connectés ! Notre équipe est là pour vous répondre avec enthousiasme et nos réseaux regorgent de contenus passionnants.</p>
                 </div>                    
-                <div id="SECTION_CONTACT" className='relative w-full overflow-hidden'>
+                <div id="SECTION_CONTACT" className='relative w-full justify-center flex overflow-hidden'>
                     <div className=' max-h-72 overflow-hidden'>
                         <div className='absolute left-[-1500px] rotate-[6.856deg] shrink-0 rounded-full p-[400px] bg-gradient-to-r from-rose-200 to-blue-300'>
                             <div className='p-[1000px] rounded-full bg-white'/>
                         </div>
                     </div>
-                    <div className='px-8 max-w-7xl flex items-center justify-center self-center overflow-hidden z-10'>
+                    <div className='px-8 max-w-7xl flex w-full items-center justify-center self-center overflow-hidden z-10'>
                         <ContactForm />
                     </div>
                 </div>
