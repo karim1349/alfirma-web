@@ -36,7 +36,7 @@ const ContactForm = () => {
         <div className="flex md:flex-row flex-col-reverse justify-center items-end flex-1">
             <div className="relative w-full md:w-1/3 h-96">
                 {images.map((image, index) => (
-                <img key={image} src={image} alt="logo" className={`absolute w-full object-cover z-10 transition-opacity duration-700 ${currentImage === index ? 'opacity-100' : 'opacity-0'}`} />
+                <img key={image} src={image} alt="réseau social" className={`absolute w-full object-cover z-10 transition-opacity duration-700 ${currentImage === index ? 'opacity-100' : 'opacity-0'}`} />
                 ))} 
             </div>
             <div className='flex flex-col flex-1 w-full p-4 md:p-16 md:max-w-[50%] backdrop-blur-xl bg-opacity-30 bg-white my-8 rounded-3xl overflow-hidden border-2 border-purple-350'>

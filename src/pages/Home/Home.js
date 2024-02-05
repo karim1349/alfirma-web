@@ -24,7 +24,7 @@ function Home() {
                 <NavBar />
                 <div className='flex justify-center items-center flex-col-reverse md:flex-row w-full' id="SECTION_ACCUEIL" style={{backgroundImage: "url('/assets/illustrations/background.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh'}}>
                     <div className='px-4 md:mx-12 md:px-0 flex flex-col items-center '>
-                        <img src="/assets/logoWithoutBackground.png" alt="logo" className="w-1/2 md:w-1/5 hover:transform hover:rotate-[57deg] transition-all duration-200 my-20 " />
+                        <img src="/assets/logoWithoutBackground.png" alt="Al Firma logo" className="w-1/2 md:w-1/5 hover:transform hover:rotate-[57deg] transition-all duration-200 my-20 " />
                         <h1 className='text-4xl md:text-8xl text-white text-justify self-center font-bold'>AL FIRMA</h1>
                         <h2 className='text-white my-4 text-[4vw] text-justify'>
                             L'innovation façonne vos applications
@@ -72,22 +72,22 @@ function Home() {
                         <p className='text-center'>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
                         <div className='flex w-full flex-col md:flex-row my-28'>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                                <img src="/assets/illustrations/appmobile.png" alt="logo" className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <img src="/assets/illustrations/appmobile.png" alt="applications mobile " className=" h-36 group-hover:h-48 object-contain transform transition-all" />
                                 <h1 className='font-semibold'>Apps Mobile</h1>
                                 <p className='text-xs text-center mt-4'>Nous développons et déployons des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
                             </div>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                                <img src="/assets/illustrations/appweb.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <img src="/assets/illustrations/appweb.png" alt="applications web"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
                                 <h1 className='font-semibold'>Apps Web</h1>
                                 <p className='text-xs text-center mt-4'>Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack.</p>
                             </div>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                                <img src="/assets/illustrations/uiuxdesign.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <img src="/assets/illustrations/uiuxdesign.png" alt="ux/ui design"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
                                 <h1 className='font-semibold'>UX/UI Design</h1>
                                 <p className='text-xs text-center mt-4'>Nos équipes de designers n'attendent que vous pour concevoir les maquettes de l'application de vos rêves, basée sur les meilleures normes d'ergonomie et d'optimisation.</p>
                             </div>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
-                                <img src="/assets/illustrations/maintenance.png" alt="logo"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
+                                <img src="/assets/illustrations/maintenance.png" alt="maintenance"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
                                 <h1 className='font-semibold'>Maintenance</h1>
                                 <p className='text-xs text-center mt-4'>Besoin d'apporter des modifications sur votre application ? Nous pouvons prendre en charge la maintenance des produits que nous développons. </p>
                             </div>
