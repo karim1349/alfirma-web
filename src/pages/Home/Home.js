@@ -74,7 +74,7 @@ function Home() {
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
                                 <img src="/assets/illustrations/appmobile.png" alt="applications mobile " className=" h-36 group-hover:h-48 object-contain transform transition-all" />
                                 <h1 className='font-semibold'>Apps Mobile</h1>
-                                <p className='text-xs text-center mt-4'>Nous développons et déployons des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
+                                <p className='text-xs text-center mt-4'>Notre agence développe et déploie des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
                             </div>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9'>
                                 <img src="/assets/illustrations/appweb.png" alt="applications web"  className=" h-36 group-hover:h-48 object-contain transform transition-all" />
