@@ -12,6 +12,12 @@
         "review": false
     },
     {
+        "name": "Neuroptimisme",
+        "description": "Nous avons réalisé pour le cabinet de neuropsychologie Neuroptimisme le développement intégral et le déploiement de son application web.",
+        "image": "/assets/neuroptimisme.png",
+        "review": "J’ai confié la réalisation de mon application web aux équipes d’Al Firma, et je ne peux que recommander leurs services ! Ils ont su m’accompagner, répondre à mes questions et me fournir un rendu dans les temps, le tout pour un tarif que je n’ai trouvé nulle part ailleurs. Merci !!"
+    },
+    {
         "name": "Toutakoté",
         "description": "Nous avons réalisé pour Toutakoté la refonte intégrale d'une application mobile, ainsi que la réalisation et le déploiement d'une application web.",
         "image": "/assets/toutakote.png",
