@@ -30,7 +30,7 @@ function Home() {
                             L'innovation façonne vos applications
                         </h2>
                         <button className='group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition' 
-                            onClick={() => window.open('https://calendly.com/alfirma/30min', '_blank')}>
+                            onClick={() => window.open('https://calendly.com/karimbenchekroun/30min', '_blank')}>
                             <span className='block group-hover:hidden'>On discute ?</span>
                             <span className='hidden group-hover:block text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>Réserver un appel</span>
                         </button>
