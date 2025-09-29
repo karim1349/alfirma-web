@@ -4,6 +4,12 @@ import { useEffect } from "react";
 
 export default function CursorEffect() {
   useEffect(() => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      return;
+    }
+
     const cursorEffect = document.createElement("div");
     cursorEffect.classList.add("cursor-effect");
     document.body.appendChild(cursorEffect);
@@ -18,7 +24,9 @@ export default function CursorEffect() {
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
-      document.body.removeChild(cursorEffect);
+      if (document.body.contains(cursorEffect)) {
+        document.body.removeChild(cursorEffect);
+      }
     };
   }, []);
 
