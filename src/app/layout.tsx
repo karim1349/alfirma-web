@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CursorEffect from "@/app/components/CursorEffect";
 import Footer from "./components/Footer";
+import "@/lib/axios"; // Initialize axios configuration
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

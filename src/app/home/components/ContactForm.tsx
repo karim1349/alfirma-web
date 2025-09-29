@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-//import axios from 'axios'
+import axios from 'axios'
 import Lottie from "lottie-react";
 const images = [
   '/assets/illustrations/mockup_insta.png',
@@ -16,15 +16,15 @@ const ContactForm = () => {
     const [isSent, setIsSent] = useState(false)
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-            //axios.post('/api/message/', {
-            //    name:name,
-            //    email:email,
-            //    message:message
-            //})
-            //setIsSent(true)
-            //setName('')
-            //setEmail('')
-            //setMessage('')
+            axios.post('/api/message/', {
+                name:name,
+                email:email,
+                message:message
+            })
+            setIsSent(true)
+            setName('')
+            setEmail('')
+            setMessage('')
         }
 
     useEffect(() => {
