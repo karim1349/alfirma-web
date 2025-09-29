@@ -1,6 +1,8 @@
 "use client"
 
 import React from 'react';
+
+export const dynamic = 'force-static'
 import Image from 'next/image';
 import Link from 'next/link';
 import NavBar from './components/NavBar';
@@ -43,7 +45,7 @@ function Home({ location }: HomeProps = {}) {
                         />
                         <h1 className='text-4xl md:text-8xl text-white text-center self-center font-bold mb-4'>AL FIRMA</h1>
                         <h2 className='text-white my-4 text-[4vw] text-center'>
-                            L'innovation façonne vos applications
+                            Agence de Développement d'Applications Mobiles et Web
                         </h2>
                         {location && (
                             <div className="flex items-center justify-center text-white text-lg md:text-xl mb-4">
@@ -71,35 +73,35 @@ function Home({ location }: HomeProps = {}) {
                         <div className='flex flex-1 px-2 py-12 md:border-r border-gray-200 group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
-                                <h1 className='text-2xl font-medium'>Discussion du projet</h1>
+                                <h2 className='text-2xl font-medium'>Discussion du projet</h2>
                                 <p className='font-thin mt-4 mr-8'>Partagez vos idées et objectifs. Nous créons une feuille de route pour le développement de votre application{location ? ` à ${location.name}` : ''}.</p>
 
-                                <h1 className='text-7xl self-end text-gray-200 font-semibold'>01.</h1>
+                                <h2 className='text-7xl self-end text-gray-200 font-semibold'>01.</h2>
                             </div>
                         </div>
                         <div className='flex px-2 py-12 md:border-r border-gray-200 group hover:bg-[url(/assets/illustrations/backgroundCreation.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
-                                <h1 className='text-2xl font-medium'>Création sur Mesure</h1>
+                                <h2 className='text-2xl font-medium'>Création sur Mesure</h2>
                                 <p className='font-thin mt-4 mr-8'>On transforme vos idées en réalité avec un design intuitif et des fonctionnalités innovantes, en vous impliquant à chaque étape.</p>
 
-                                <h1 className='text-7xl self-end text-gray-200 font-semibold '>02.</h1>
+                                <h2 className='text-7xl self-end text-gray-200 font-semibold '>02.</h2>
                             </div>
                         </div>
                         <div className='flex px-2 py-12 group hover:bg-[url(/assets/illustrations/backgroundDeploy.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
-                                <h1 className='text-2xl font-medium'>Déploiement</h1>
+                                <h2 className='text-2xl font-medium'>Déploiement</h2>
                                 <p className='font-thin mt-4 mr-8'>Après approbation, votre application prend son envol en ligne. Nous restons à vos côtés pour assurer son succès continu.</p>
 
-                                <h1 className=' text-7xl self-end text-gray-200 font-semibold'>03.</h1>
+                                <h2 className=' text-7xl self-end text-gray-200 font-semibold'>03.</h2>
                             </div>
                         </div>
                     </div>
                     <div className='px-2'>
-                        <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>
-                            NOS SERVICES{location ? ` À ${location.name.toUpperCase()}` : ''}
-                        </h1>
+                        <h2 id="SECTION_A_PROPOS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>
+                            DÉVELOPPEMENT D'APPLICATIONS MOBILES ET WEB{location ? ` À ${location.name.toUpperCase()}` : ''}
+                        </h2>
                         <p className='text-center px-4 md:px-0'>
                             Nous allions créativité et expertise technique pour concrétiser vos idées{location ? `, où que vous soyez à ${location.name}` : ''}.
                         </p>
@@ -113,9 +115,9 @@ function Home({ location }: HomeProps = {}) {
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
-                                <h1 className='font-semibold'>Applications Mobiles</h1>
+                                <h2 className='font-semibold'>Développement d'Applications Mobiles iOS et Android</h2>
                                 <p className='text-xs text-center mt-4'>
-                                    On développe et déploie des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe{location ? ` pour les entreprises de ${location.name}` : ''}. 
+                                    Notre agence développe et déploie des applications mobiles cross-platform (iOS et Android) d'un haut niveau de qualité avec React Native{location ? ` pour les entreprises de ${location.name}` : ''}. 
                                 </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
@@ -153,7 +155,7 @@ function Home({ location }: HomeProps = {}) {
                                 </div>
 
                                 <div className="flex flex-col items-end space-y-2">
-                                    <h1 className='text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>À partir de 8900€</h1>
+                                    <h2 className='text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>À partir de 8900€</h2>
                                     <Link href="/duodoku" className="text-xs text-blue-600 hover:text-blue-800 underline">
                                         Voir notre projet Duodoku →
                                     </Link>
@@ -168,9 +170,9 @@ function Home({ location }: HomeProps = {}) {
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
-                                <h1 className='font-semibold'>Applications Web</h1>
+                                <h2 className='font-semibold'>Développement d'Applications Web avec React.js et Django</h2>
                                 <p className='text-xs text-center mt-4'>
-                                    Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack{location ? ` pour ${location.name}` : ''}.
+                                    Notre agence spécialisée en développement d'applications web avec React.js et Django. Création d'applications web full-stack sur mesure{location ? ` pour ${location.name}` : ''}.
                                 </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
@@ -206,7 +208,7 @@ function Home({ location }: HomeProps = {}) {
                                         <p className='text-xs flex-1'>Livraison à partir de 15 jours seulement !</p>
                                     </div>
                                 </div>
-                                <h1 className='self-end text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>À partir de 6900€</h1>
+                                <h2 className='self-end text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>À partir de 6900€</h2>
                             </div>
                         </div>
                         <div className='flex w-full flex-col md:flex-row md:my-12'>
@@ -219,8 +221,8 @@ function Home({ location }: HomeProps = {}) {
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
-                                <h1 className='font-semibold'>Branding et UX/UI Design</h1>
-                                <p className='text-xs text-center mt-4'>Nos équipes de designers n'attendent que vous pour concevoir les maquettes de l'application de vos rêves, basée sur les meilleures normes d'ergonomie et d'optimisation.</p>
+                                <h2 className='font-semibold'>UX/UI Design et Branding pour Applications</h2>
+                                <p className='text-xs text-center mt-4'>Notre agence de design UX/UI n'attend que vous pour concevoir les maquettes de votre application mobile et web, basée sur les meilleures normes d'ergonomie et d'optimisation.</p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -240,7 +242,7 @@ function Home({ location }: HomeProps = {}) {
                                     </div>
                                 </div>
                                 <button className="self-end" onClick={() => window.open('https://calendly.com/karimbenchekroun/30min', '_blank')}>
-                                    <h1 className='text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>Nous contacter</h1>
+                                    <h2 className='text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>Nous contacter</h2>
                                 </button>
                             </div>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
@@ -252,8 +254,8 @@ function Home({ location }: HomeProps = {}) {
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
-                                <h1 className='font-semibold'>APIs</h1>
-                                <p className='text-xs text-center mt-4'>Nous développons des APIs RESTful pour vos applications web et mobiles, garantissant une communication fluide entre les différentes parties de votre application.</p>
+                                <h2 className='font-semibold'>Développement d'APIs RESTful avec Django</h2>
+                                <p className='text-xs text-center mt-4'>Notre agence développe des APIs RESTful avec Django pour vos applications web et mobiles, garantissant une communication fluide entre les différentes parties de votre application.</p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -288,7 +290,7 @@ function Home({ location }: HomeProps = {}) {
                                         <p className='text-xs flex-1'>Livraison à partir de 10 jours seulement !</p>
                                     </div>
                                 </div>
-                                <h1 className='self-end text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>À partir de 4900€</h1>
+                                <h2 className='self-end text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>À partir de 4900€</h2>
                             </div>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
                                 <Image 
@@ -299,8 +301,8 @@ function Home({ location }: HomeProps = {}) {
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
-                                <h1 className='font-semibold'>Maintenance</h1>
-                                <p className='text-xs text-center mt-4'>Besoin d'apporter des modifications sur votre application ? Nous pouvons prendre en charge la maintenance des produits que nous développons. </p>
+                                <h2 className='font-semibold'>Maintenance d'Applications Mobiles et Web</h2>
+                                <p className='text-xs text-center mt-4'>Besoin d'apporter des modifications sur votre application mobile ou web ? Notre agence peut prendre en charge la maintenance des applications que nous développons. </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -312,7 +314,7 @@ function Home({ location }: HomeProps = {}) {
                                     </div>
                                 </div>
                                 <button className="self-end" onClick={() => window.open('https://calendly.com/karimbenchekroun/30min', '_blank')}>
-                                    <h1 className='text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>Nous contacter</h1>
+                                    <h2 className='text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition'>Nous contacter</h2>
                                 </button>
                             </div>
                         </div>
@@ -331,7 +333,7 @@ function Home({ location }: HomeProps = {}) {
                             <Lottie animationData={earth} className='w-5/6' loop />
                         </div>
                         <div className='flex-1 md:ml-16'>
-                            <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>MONDIALEMENT VÔTRE !</h1>
+                            <h2 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>MONDIALEMENT VÔTRE !</h2>
                             <p>
                                 Découvrez nos services où que vous soyez dans le monde{location ? `, y compris à ${location.name}` : ''}. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.
                             </p>
@@ -339,7 +341,7 @@ function Home({ location }: HomeProps = {}) {
                     </div>
                 </div>
                 <div className='px-4 md:px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden mt-28'>
-                    <h1 id="SECTION_PROJETS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>NOTRE STUDIO D'APPLICATIONS</h1>
+                        <h2 id="SECTION_PROJETS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>NOS PROJETS D'APPLICATIONS MOBILES ET WEB</h2>
                     <p className='text-center px-4 md:px-0'>Découvrez nos projets les plus récents et les plus innovants. Chaque application est unique et conçue sur mesure pour répondre aux besoins spécifiques de nos clients. Nous sommes fiers de notre travail et de la confiance que nos clients nous accordent pour donner vie à leurs idées. Explorez nos projets et laissez-vous inspirer pour votre prochaine application !</p>
                     <div className='flex w-full flex-col my-6 items-center'>
                         <div 
@@ -355,7 +357,7 @@ function Home({ location }: HomeProps = {}) {
                             </div>
                             <div className='flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full'>
                                 <div className='flex-1 p-4'>
-                                    <h1 className='text-white text-5xl'>DUODOKU</h1>
+                                    <h2 className='text-white text-5xl'>DUODOKU</h2>
                                     <p className='text-white text-sm my-8'>Duodoku est une application de jeu de Sudoku innovante qui offre une expérience de jeu unique pour les joueurs solitaires ainsi que pour les joueurs en compétition. Avec Duodoku, les joueurs peuvent profiter d'un jeu de Sudoku classique en solo ou en mode multijoueur, et tenter d'atteindre les plus hautes places du classement. Développée en React Native, et s'appuyant sur une API REST Django, elle est disponible sous iOS et Android. </p>
                                     <div className='flex items-center my-2'>
                                         <a href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
@@ -402,7 +404,7 @@ function Home({ location }: HomeProps = {}) {
                                 </div>
                             <div className='flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full'>
                                 <div className='flex-1 p-4'>
-                                    <h1 className='text-orange-600 text-5xl'>SAYAR</h1>
+                                    <h2 className='text-orange-600 text-5xl'>SAYAR</h2>
                                     <p className='text-orange-600 text-sm my-8'>Sayar est une market-place digitale d'auto-partage de véhicules entre particuliers au Maroc. Nous avons développé une application permettant aux propriétaires et aux locataires de véhicules d'entrer en contact, et simplifiant toutes les formalités liées à la location grâce à des process modernes intégrés à l'application.</p>
                                     <div className='flex items-start'>
                                         <div className='bg-orange-100 p-2 rounded-md'>
@@ -425,7 +427,7 @@ function Home({ location }: HomeProps = {}) {
                     </div>
                 </div>
                 <div className='px-4 md:px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden mt-28'>
-                    <h1 id="SECTION_AVIS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>ILS NOUS ONT FAIT CONFIANCE</h1>
+                        <h2 id="SECTION_AVIS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>NOS CLIENTS EN DÉVELOPPEMENT D'APPLICATIONS</h2>
                     <p className='text-center px-4 md:px-0'>Un coup de projecteur sur nos partenaires formidables ! Leur confiance en notre expertise renforce notre détermination à offrir des solutions innovantes et personnalisées pour répondre à leurs besoins uniques.</p>
                     <div className="relative w-full max-w-7xl mx-auto my-12">
                         <div className="absolute inset-0 bg-gradient-to-r from-rose-50 via-blue-50 to-rose-50 rounded-3xl opacity-30"></div>
@@ -561,7 +563,7 @@ function Home({ location }: HomeProps = {}) {
                             </div>
                         </div>
                     </div>
-                    <h1 className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>BESOIN D'UN RENSEIGNEMENT ?</h1>
+                    <h2 className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>BESOIN D'UN RENSEIGNEMENT ?</h2>
                     <p className="px-4 md:px-0">Des questions ? On a toutes les réponses ! Remplissez le formulaire ci-dessous et suivez-nous sur nos réseaux sociaux pour rester connectés ! Notre équipe est là pour vous répondre avec enthousiasme et nos réseaux regorgent de contenus passionnants.</p>
                 </div>                    
                 <div id="SECTION_CONTACT" className='relative w-full justify-center flex overflow-hidden'>

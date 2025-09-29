@@ -29,24 +29,24 @@ const clashDisplay = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.alfirma.com'),
-  title: "Al Firma - Développement d'application mobile et web",
+  title: "Al Firma - Agence Développement Applications Mobiles & Web",
   description:
-    "Al Firma, votre agence experte en développement d'application mobile et web, vous accompagne de l'idée à la mise en marché de votre projet. Solutions personnalisées, support technique et conseil stratégique.",
-  keywords: "développement mobile, application web, React Native, Django, UX/UI design, agence digitale, développement sur mesure, applications iOS, applications Android, API REST, maintenance applicative",
+    "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
+  keywords: "développement mobile, application web, agence développement mobile, React Native, Django, UX/UI design, agence digitale, développement sur mesure, applications iOS, applications Android, API REST, maintenance applicative, création application mobile, développement web, agence web mobile",
   openGraph: {
     type: "website",
     url: "https://www.alfirma.com/",
-    title: "Al Firma - Développement d'application mobile et web",
+    title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
-      "Al Firma vous accompagne tout au long du processus de développement de votre application mobile & web.",
+      "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
     images: ["/assets/logo.png"],
   },
   twitter: {
     card: "summary_large_image",
     site: "https://www.alfirma.com/",
-    title: "Al Firma - Développement d'application mobile et web",
+    title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
-      "Al Firma vous accompagne tout au long du processus de développement de votre application mobile & web.",
+      "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
     images: ["/assets/logo.png"],
   },
   icons: {

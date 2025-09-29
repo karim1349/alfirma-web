@@ -73,6 +73,8 @@ const locations = {
   }
 };
 
+export const dynamic = 'force-static'
+
 // Generate static params for all cities
 export async function generateStaticParams() {
   return Object.keys(locations).map((city) => ({
@@ -94,12 +96,12 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   }
 
   return {
-    title: `Al Firma - Développement d'applications mobiles et web à ${location.name}`,
-    description: `Al Firma, votre agence experte en développement d'applications mobiles et web à ${location.name}. Solutions personnalisées, support technique et conseil stratégique. React Native, Django, UX/UI Design.`,
+    title: `Al Firma - Applications Mobiles & Web à ${location.name}`,
+    description: `Al Firma, agence experte en développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.`,
     keywords: location.keywords,
     openGraph: {
-      title: `Al Firma - Développement d'applications mobiles et web à ${location.name}`,
-      description: `Votre partenaire de confiance pour le développement d'applications mobiles et web sur mesure à ${location.name}. De l'idée à la mise en marché.`,
+      title: `Al Firma - Applications Mobiles & Web à ${location.name}`,
+      description: `Al Firma, agence experte en développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.`,
       images: [
         {
           url: '/assets/logo.png',
@@ -113,8 +115,8 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Al Firma - Développement d'applications mobiles et web à ${location.name}`,
-      description: `Votre partenaire de confiance pour le développement d'applications mobiles et web sur mesure à ${location.name}.`,
+      title: `Al Firma - Applications Mobiles & Web à ${location.name}`,
+      description: `Al Firma, agence experte en développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.`,
       images: ['/assets/logo.png'],
     },
     alternates: {
