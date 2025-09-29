@@ -1,16 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Regular Next.js build (supports query parameters)
-  // output: 'export', // Not needed with query params
-  // trailingSlash: true,
-  // distDir: 'out',
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'out',
   
   // Performance optimizations
   compress: true,
   
-  // Image optimization
+  // Image optimization for static export
   images: {
+    unoptimized: true, // Required for static export
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

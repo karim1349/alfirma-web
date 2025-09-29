@@ -73,6 +73,8 @@ const locations = {
   }
 };
 
+export const dynamic = 'force-static'
+
 // Generate static params for all cities
 export async function generateStaticParams() {
   return Object.keys(locations).map((city) => ({
