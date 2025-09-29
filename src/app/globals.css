@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @config "../../tailwind.config.ts";
 @import "tailwindcss";
 
@@ -22,7 +21,7 @@
 
 body {
   margin: 0;
-  font-family: 'Clash Display', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: var(--font-clash-display), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,10 +31,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-p {
-  font-family: "Poppins", sans-serif;
 }
 .cursor-effect {
   pointer-events: none; /* Ensures the cursor doesn't interfere with other elements */

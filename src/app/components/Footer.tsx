@@ -82,9 +82,9 @@ const Footer = () => {
                     {/* Locations */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Nos Zones d'Intervention</h3>
-                        <div className="space-y-3">
+                        <div className="flex flex-col md:flex-row md:space-x-48 space-y-3 md:space-y-0">
                             <div>
-                                <h4 className="text-sm font-medium text-gray-400 mb-2">🇫🇷 France</h4>
+                                <h4 className="text-sm font-medium text-gray-400 mb-2">France</h4>
                                 <ul className="space-y-1 text-sm">
                                     <li><Link href="/paris" className="text-gray-300 hover:text-white transition-colors">Paris</Link></li>
                                     <li><Link href="/nantes" className="text-gray-300 hover:text-white transition-colors">Nantes</Link></li>
@@ -93,7 +93,7 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="text-sm font-medium text-gray-400 mb-2">🇲🇦 Maroc</h4>
+                                <h4 className="text-sm font-medium text-gray-400 mb-2">Maroc</h4>
                                 <ul className="space-y-1 text-sm">
                                     <li><Link href="/casablanca" className="text-gray-300 hover:text-white transition-colors">Casablanca</Link></li>
                                     <li><Link href="/rabat" className="text-gray-300 hover:text-white transition-colors">Rabat</Link></li>
