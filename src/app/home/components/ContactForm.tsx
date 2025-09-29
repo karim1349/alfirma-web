@@ -42,7 +42,7 @@ const ContactForm = () => {
                 ))} 
             </div>
             <div className='flex flex-col flex-1 w-full p-4 md:p-16 md:max-w-[50%] backdrop-blur-xl bg-opacity-30 my-8 rounded-3xl overflow-hidden border-2 border-purple-350'>
-                <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>CONTACT</h1>
+                <h2 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>CONTACT</h2>
                 <form className='flex flex-col' onSubmit={sendEmail}>
                     <div className='py-2'>
                         <label className='text-purple-750 font-bold text-sm tracking-widest'>E-mail</label>

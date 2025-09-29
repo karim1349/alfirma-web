@@ -81,7 +81,6 @@ const Footer = () => {
 
                     {/* Locations */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Nos Zones d'Intervention</h3>
                         <div className="flex flex-col md:flex-row md:space-x-48 space-y-3 md:space-y-0">
                             <div>
                                 <h4 className="text-sm font-medium text-gray-400 mb-2">France</h4>
