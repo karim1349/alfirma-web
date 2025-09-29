@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://www.alfirma.com/duodoku'
     },
+    other: {
+        'apple-itunes-app': 'app-id=6448099658'
+    },
 };
 
 function DuodokuPage() {
@@ -78,7 +81,7 @@ function DuodokuPage() {
                                 alt="Télécharger Duodoku sur l'App Store" 
                                 width={128}
                                 height={64}
-                                className="h-16 w-auto"
+                                className="h-12 sm:h-16 w-auto"
                                 style={{ width: 'auto', height: 'auto' }}
                             />
                         </a>
@@ -93,7 +96,7 @@ function DuodokuPage() {
                                 alt="Télécharger Duodoku sur Google Play" 
                                 width={128}
                                 height={64}
-                                className="h-16 w-auto"
+                                className="h-12 sm:h-16 w-auto"
                                 style={{ width: 'auto', height: 'auto' }}
                             />
                         </a>

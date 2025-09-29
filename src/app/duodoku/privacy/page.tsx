@@ -1,6 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Breadcrumbs, { BreadcrumbSchema } from '../../components/Breadcrumbs';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Politique de confidentialité - Duodoku',
+    description: 'Découvrez comment Duodoku protège vos données personnelles et respecte votre vie privée dans notre politique de confidentialité détaillée.',
+    other: {
+        'apple-itunes-app': 'app-id=6448099658'
+    },
+};
 
 const PrivacyDuodoku = () => {
     const breadcrumbItems = [
