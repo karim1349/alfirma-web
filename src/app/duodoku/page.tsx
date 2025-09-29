@@ -45,6 +45,37 @@ function DuodokuPage() {
                     <p className="text-lg text-gray-300">Affrontez-vous en temps réel sur des grilles de Sudoku</p>
                 </div>
 
+                <div className="mb-8">
+                    <h2 className="text-2xl font-bold text-white mb-6">Téléchargez l'application</h2>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a
+                            href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:scale-105 transition-transform duration-300"
+                        >
+                            <img 
+                                src="/assets/button_appstore.png" 
+                                alt="Télécharger sur l'App Store" 
+                                className="h-16 w-auto"
+                            />
+                        </a>
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:scale-105 transition-transform duration-300"
+                        >
+                            <img 
+                                src="/assets/button_playstore.png" 
+                                alt="Disponible sur Google Play" 
+                                className="h-16 w-auto"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/10">
                     <h2 className="text-3xl font-bold text-white mb-6">À propos de Duodoku</h2>
                     <p className="text-lg text-gray-300 leading-relaxed mb-6">
@@ -79,34 +110,36 @@ function DuodokuPage() {
                         </div>
                     </div>
                 </div>
-
-                <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-white mb-6">Téléchargez l'application</h2>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a
-                            href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:scale-105 transition-transform duration-300"
-                        >
-                            <img 
-                                src="/assets/button_appstore.png" 
-                                alt="Télécharger sur l'App Store" 
-                                className="h-16 w-auto"
-                            />
-                        </a>
-                        <a
-                            href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:scale-105 transition-transform duration-300"
-                        >
-                            <img 
-                                src="/assets/button_playstore.png" 
-                                alt="Disponible sur Google Play" 
-                                className="h-16 w-auto"
-                            />
-                        </a>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/10">
+                    <h2 className="text-3xl font-bold text-white mb-6">Technologies Utilisées</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-left">
+                        <div className="bg-white/5 rounded-xl p-4">
+                            <h3 className="text-lg font-semibold text-white mb-2">Frontend</h3>
+                            <ul className="text-gray-300 text-sm space-y-1">
+                                <li>• React Native</li>
+                                <li>• Redux</li>
+                                <li>• React Hook Form</li>
+                                <li>• RN Reanimated</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white/5 rounded-xl p-4">
+                            <h3 className="text-lg font-semibold text-white mb-2">Backend</h3>
+                            <ul className="text-gray-300 text-sm space-y-1">
+                                <li>• Django REST API</li>
+                                <li>• Render</li>
+                                <li>• PostgreSQL</li>
+                                <li>• WebSockets</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white/5 rounded-xl p-4">
+                            <h3 className="text-lg font-semibold text-white mb-2">Services</h3>
+                            <ul className="text-gray-300 text-sm space-y-1">
+                                <li>• Lottie Animations</li>
+                                <li>• i18n (Multilingue)</li>
+                                <li>• Google Mobile Ads</li>
+                                <li>• Push Notifications</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
