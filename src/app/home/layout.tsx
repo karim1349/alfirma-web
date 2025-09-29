@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Al Firma - Agence de développement d\'applications mobiles et web',
-  description: 'Al Firma vous accompagne dans le développement de vos applications mobiles et web. Solutions personnalisées, design UX/UI, et déploiement.',
+  title: 'Al Firma - Agence développement d\'applications mobiles / web',
+  description: 'Al Firma vous accompagne dans le développement de vos applications mobiles et web. Solutions personnalisées, design UX/UI, et déploiement. Applications mobiles iOS / Android sur mesure.',
   keywords: 'développement mobile, application web, React Native, Django, UX/UI design, agence développement, développement sur mesure, applications iOS, applications Android',
   openGraph: {
     title: 'Al Firma - Développement d\'applications mobiles et web',
