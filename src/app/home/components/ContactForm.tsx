@@ -57,7 +57,11 @@ const ContactForm = () => {
                         <textarea className=' bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border border-purple-350' onChange={(e) => setMessage(e.target.value)}  />
                     </div>
                     <button type="submit" className={`bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0 ${isSent ? 'bg-gradient-to-r from-purple-400 to-blue-500 border-opacity-0' : ''}`} disabled={name === '' || email === '' || message === ''}>
-
+                        {
+                            isSent ? 
+                            <Lottie animationData={require('../../../content/space_mail.json')} className='h-8' onAnimationEnd={() => setIsSent(false)} loop={false} /> :
+                            <span className='text-purple-750 font-semibold text-md group-hover:text-white'>Envoyer</span>
+                        }
                     </button>
                 </form>
             </div>
