@@ -1,12 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import ProjectNav from '../../components/ProjectNav';
+import Breadcrumbs, { BreadcrumbSchema } from '../../components/Breadcrumbs';
 
 const PrivacyDuodoku = () => {
+    const breadcrumbItems = [
+        { label: 'Accueil', href: '/home' },
+        { label: 'Projets', href: '/home#SECTION_PROJETS' },
+        { label: 'Duodoku', href: '/duodoku' },
+        { label: 'Politique de confidentialité' }
+    ];
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 pt-20">
-            <ProjectNav />
+            <BreadcrumbSchema items={breadcrumbItems} />
             <div className="max-w-4xl mx-auto text-center">
+                <div className="mb-6">
+                    <Breadcrumbs items={breadcrumbItems} />
+                </div>
                 <div className="mb-8">
                     <img 
                         src="/assets/duodoku.png" 
