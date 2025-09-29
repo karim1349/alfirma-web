@@ -1,6 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
 import ProjectNav from '../components/ProjectNav';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Duodoku - Le premier Sudoku multi-joueurs',
+    description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+    openGraph: {
+        title: 'Duodoku - Le premier Sudoku multi-joueurs',
+        description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+        images: [
+            {
+                url: '/assets/duodoku.png',
+                width: 1200,
+                height: 630,
+                alt: 'Duodoku - Le premier Sudoku multi-joueurs',
+            }
+        ],
+        type: 'website',
+        url: 'https://www.alfirma.com/duodoku',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Duodoku - Le premier Sudoku multi-joueurs',
+        description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+        images: ['/assets/duodoku.png'],
+    },
+};
 
 function DuodokuPage() {
 
