@@ -17,7 +17,7 @@ function Home() {
     return (
         <>
         <div className={`transition ease-linear duration-700 z-50`}>
-        <div className='flex items-center bg-white justify-center mb-20'>
+        <div className='flex items-center bg-white justify-center'>
             <div className='flex-1 flex flex-col items-center justify-center self-center overflow-hidden'>
                 <NavBar />
                 <div className='flex justify-center items-center flex-col-reverse md:flex-row w-full' id="SECTION_ACCUEIL" style={{backgroundImage: "url('/assets/illustrations/background.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh'}}>
