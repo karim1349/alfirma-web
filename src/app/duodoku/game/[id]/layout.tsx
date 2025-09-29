@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         other: {
             'og:image:width': '1200',
             'og:image:height': '630',
+        },
+        alternates: {
+            canonical: `https://www.alfirma.com/duodoku/game/${gameId}`
         }
     };
 }

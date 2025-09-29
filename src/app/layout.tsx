@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CursorEffect from "@/app/components/CursorEffect";
 import Footer from "./components/Footer";
+import { OrganizationSchema, WebSiteSchema } from "./components/StructuredData";
 import "@/lib/axios"; // Initialize axios configuration
 
 const geistSans = Geist({
@@ -41,6 +42,9 @@ export const metadata: Metadata = {
     apple: "/assets/logo.png",
   },
   manifest: "/manifest.json",
+  alternates: {
+    canonical: "https://www.alfirma.com"
+  },
 };
 
 export const viewport: Viewport = {
@@ -51,12 +55,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <meta
           name="google-site-verification"
           content="IOj81QGQJuPWZ9jeC_pOHCHOhWy3Jjb8qTdLqHOPV14"
         />
+        <OrganizationSchema />
+        <WebSiteSchema />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

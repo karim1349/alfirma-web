@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import ProjectNav from '../components/ProjectNav';
+import { SoftwareApplicationSchema } from '../components/StructuredData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -26,12 +27,16 @@ export const metadata: Metadata = {
         description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
         images: ['/assets/duodoku.png'],
     },
+    alternates: {
+        canonical: 'https://www.alfirma.com/duodoku'
+    },
 };
 
 function DuodokuPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 pt-20">
+            <SoftwareApplicationSchema />
             <ProjectNav />
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-8">
