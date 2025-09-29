@@ -1,4 +1,4 @@
-const Partner = ({ partner }) => {
+const Partner = ({ partner } : { partner: { image: string, name: string, description: string, review: string | null, links: { type: string, url: string }[] } }) => {
     return (
         <div className="flex flex-1 flex-col md:flex-row justify-center items-center h-full px-14 md:px-24">
             <img src={partner.image} alt={partner.name} className="w-32 md:w-64 self-center" />

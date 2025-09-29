@@ -16,15 +16,15 @@ const ContactForm = () => {
     const [isSent, setIsSent] = useState(false)
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-            //axios.post('/api/message/', {
-            //    name:name,
-            //    email:email,
-            //    message:message
-            //})
-            //setIsSent(true)
-            //setName('')
-            //setEmail('')
-            //setMessage('')
+            axios.post('/api/message/', {
+                name:name,
+                email:email,
+                message:message
+            })
+            setIsSent(true)
+            setName('')
+            setEmail('')
+            setMessage('')
         }
 
     useEffect(() => {

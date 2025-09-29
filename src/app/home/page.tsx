@@ -17,7 +17,7 @@ function Home() {
     return (
         <>
         <div className={`transition ease-linear duration-700 z-50`}>
-        <div className='flex items-center bg-white justify-center mb-20'>
+        <div className='flex items-center bg-white justify-center'>
             <div className='flex-1 flex flex-col items-center justify-center self-center overflow-hidden'>
                 <NavBar />
                 <div className='flex justify-center items-center flex-col-reverse md:flex-row w-full' id="SECTION_ACCUEIL" style={{backgroundImage: "url('/assets/illustrations/background.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh'}}>
@@ -255,26 +255,26 @@ function Home() {
                     <h1 id="SECTION_PROJETS" className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>NOTRE STUDIO D'APPLICATIONS</h1>
                     <p className='text-center'>Découvrez nos projets les plus récents et les plus innovants. Chaque application est unique et conçue sur mesure pour répondre aux besoins spécifiques de nos clients. Nous sommes fiers de notre travail et de la confiance que nos clients nous accordent pour donner vie à leurs idées. Explorez nos projets et laissez-vous inspirer pour votre prochaine application !</p>
                     <div className='flex w-full flex-col my-6 items-center'>
-                        <div id="PROJECT_DUODOKU" className='bg-gray-800 rounded-3xl p-8 justify-between md:w-2/3 my-6'>
-                        <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
-                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">Mobile App</div>
-                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">In-App Ads</div>
-                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">UX/UI Design</div>
-                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">API</div>
-                        </div>
-                        <div className='flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full'>
-                            <div className='flex-1 p-4'>
-                                <h1 className='text-white text-5xl'>DUODOKU</h1>
-                                <p className='text-white text-sm my-8'>Duodoku est une application de jeu de Sudoku innovante qui offre une expérience de jeu unique pour les joueurs solitaires ainsi que pour les joueurs en compétition. Avec Duodoku, les joueurs peuvent profiter d'un jeu de Sudoku classique en solo ou en mode multijoueur, et tenter d'atteindre les plus hautes places du classement. Développée en React Native, et s'appuyant sur une API REST Django, elle est disponible sous iOS et Android. </p>
-                                <div className='flex items-center my-2'>
-                                    <a href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658"><img src="/assets/button_appstore.png" alt="appstore" className="w-32 mr-2 hover:scale-110 transform transition" /></a>
-                                    <a href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH"><img src="/assets/button_playstore.png" alt="playstore" className="w-32 mr-2 hover:scale-110 transform transition" /></a>
+                        <div id="PROJECT_DUODOKU" className='bg-gray-800 rounded-3xl p-8 justify-between md:w-2/3 my-6 hover:bg-gray-700 transition-colors duration-300 cursor-pointer' onClick={() => window.location.href = '/duodoku'}>
+                            <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
+                                <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">Mobile App</div>
+                                <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">In-App Ads</div>
+                                <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">UX/UI Design</div>
+                                <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">API</div>
+                            </div>
+                            <div className='flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full'>
+                                <div className='flex-1 p-4'>
+                                    <h1 className='text-white text-5xl'>DUODOKU</h1>
+                                    <p className='text-white text-sm my-8'>Duodoku est une application de jeu de Sudoku innovante qui offre une expérience de jeu unique pour les joueurs solitaires ainsi que pour les joueurs en compétition. Avec Duodoku, les joueurs peuvent profiter d'un jeu de Sudoku classique en solo ou en mode multijoueur, et tenter d'atteindre les plus hautes places du classement. Développée en React Native, et s'appuyant sur une API REST Django, elle est disponible sous iOS et Android. </p>
+                                    <div className='flex items-center my-2'>
+                                        <a href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}><img src="/assets/button_appstore.png" alt="appstore" className="w-32 mr-2 hover:scale-110 transform transition" /></a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}><img src="/assets/button_playstore.png" alt="playstore" className="w-32 mr-2 hover:scale-110 transform transition" /></a>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col justify-between self-center md:self-end'>
+                                    <img src="/assets/duodoku.png" alt="duodoku" className="w-48 h-48 object-contain rounded-3xl self-end" />
                                 </div>
                             </div>
-                            <div className='flex flex-col justify-between self-center md:self-end'>
-                                <img src="/assets/duodoku.png" alt="duodoku" className="w-48 h-48 object-contain rounded-3xl self-end" />
-                            </div>
-                        </div>
                         </div>
                         <div id="PROJECT_SAYAR" className='bg-orange-200 rounded-3xl p-8 justify-between md:w-2/3 my-6'>
                         <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
@@ -309,16 +309,29 @@ function Home() {
                         modules={[EffectCards]}
                         loop={true}
                         navigation
+                        slidesPerView={1}
+                        spaceBetween={30}
                         cardsEffect={{
                             perSlideOffset: 10,
                             slideShadows: false,
                             perSlideRotate: 10,
                         }}
                         effect='cards'
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 1,
+                            },
+                            1024: {
+                                slidesPerView: 1,
+                            },
+                        }}
                         >
                             {
                                 partners.map((partner, index) => (
-                                    <SwiperSlide><Card title={partner.name} image={partner.image} text={partner.description} review={partner.review} links={partner.links}/></SwiperSlide>
+                                    <SwiperSlide key={index}><Card title={partner.name} image={partner.image} text={partner.description} review={partner.review} links={partner.links}/></SwiperSlide>
                                 ))
                             }
                         </Swiper>

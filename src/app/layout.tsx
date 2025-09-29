@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CursorEffect from "@/app/components/CursorEffect";
 import Footer from "./components/Footer";
+import "@/lib/axios"; // Initialize axios configuration
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,17 +16,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.alfirma.com'),
   title: "Al Firma - Développement d'application mobile et web",
   description:
     "Al Firma, votre agence experte en développement d'application mobile et web, vous accompagne de l'idée à la mise en marché de votre projet. Solutions personnalisées, support technique et conseil stratégique.",
-  themeColor: "#000000",
   openGraph: {
     type: "website",
     url: "https://www.alfirma.com/",
     title: "Al Firma - Développement d'application mobile et web",
     description:
       "Al Firma vous accompagne tout au long du processus de développement de votre application mobile & web.",
-    images: ["/logo.png"],
+    images: ["/assets/logo.png"],
   },
   twitter: {
     card: "summary_large_image",
@@ -33,13 +34,17 @@ export const metadata: Metadata = {
     title: "Al Firma - Développement d'application mobile et web",
     description:
       "Al Firma vous accompagne tout au long du processus de développement de votre application mobile & web.",
-    images: ["/logo.png"],
+    images: ["/assets/logo.png"],
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/logo.png",
+    apple: "/assets/logo.png",
   },
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 export default function RootLayout({

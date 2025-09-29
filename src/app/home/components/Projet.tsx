@@ -1,4 +1,4 @@
-const Projet = ({ projet }) => {
+const Projet = ({ projet } : { projet: { name: string, description: string, image: string, tasks: { conception: boolean, developement: boolean, design: boolean, deployment: boolean }, link: string | undefined } }) => {
     return (
         <>
             <div className=' bg-blue-950 flex flex-col md:max-w-[30%] rounded-lg overflow-hidden my-4'>
@@ -29,7 +29,7 @@ const Projet = ({ projet }) => {
                 </p>
                     {
                         projet.link ? 
-                            <button className=' self-end p-4 flex justify-center items-center' onClick={() => window.location.href = projet.link}>
+                            <button className=' self-end p-4 flex justify-center items-center' onClick={() => window.open(projet.link, '_blank')}>
                                 <span className='text-white text-sm'>Découvrir</span>
                                 <img src="/assets/arrowRight.svg" alt="arrow" className='w-4 h-4 ml-2' />
                             </button>

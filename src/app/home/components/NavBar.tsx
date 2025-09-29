@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 
 
 const NavBar = () => {
-    const [currentSection, setCurrentSection] = useState(null)
-    const sectionIds = ["SECTION_ACCUEIL", "SECTION_A_PROPOS", "SECTION_PROJETS", "SECTION_AVIS", "SECTION_CONTACT"];
+    const [currentSection, setCurrentSection] = useState<string | null>(null)
     const [isBlurred, setIsBlurred] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+    const sectionIds = ["SECTION_ACCUEIL", "SECTION_A_PROPOS", "SECTION_PROJETS", "SECTION_AVIS", "SECTION_CONTACT"];
     const router = useRouter();
     const scrollTo = (id: string) => {
         document.getElementById(id)?.scrollIntoView({behavior: "smooth"})
@@ -15,48 +16,54 @@ const NavBar = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            const hash = window.location.hash
-            const queryString = hash.split('?')[1]
-            
-            if (queryString) {
-                const urlParams = new URLSearchParams(queryString)
-                const sectionParam = urlParams.get('section')
-                const projectParam = urlParams.get('project')
+        setIsMounted(true);
+        
+        if (typeof window !== 'undefined') {
+            setTimeout(() => {
+                const hash = window.location.hash
+                const queryString = hash.split('?')[1]
                 
-                if (sectionParam) {
-                    const sectionId = sectionParam
-                        .split('_')
-                        .map(word => word.toUpperCase())
-                        .join('_')
+                if (queryString) {
+                    const urlParams = new URLSearchParams(queryString)
+                    const sectionParam = urlParams.get('section')
+                    const projectParam = urlParams.get('project')
                     
-                    if (sectionIds.includes(sectionId)) {
-                        const element = document.getElementById(sectionId)
+                    if (sectionParam) {
+                        const sectionId = sectionParam
+                            .split('_')
+                            .map(word => word.toUpperCase())
+                            .join('_')
+                        
+                        if (sectionIds.includes(sectionId)) {
+                            const element = document.getElementById(sectionId)
+                            if (element) {
+                                element.scrollIntoView({ behavior: "smooth" })
+                                setCurrentSection(sectionId)
+                            }
+                        }
+                    }
+                    
+                    if (projectParam) {
+                        const projectId = projectParam.toUpperCase()
+                        const element = document.getElementById(`PROJECT_${projectId}`)
                         if (element) {
                             element.scrollIntoView({ behavior: "smooth" })
-                            setCurrentSection(sectionId as any)
+                            setCurrentSection('SECTION_PROJETS')
                         }
                     }
                 }
-                
-                if (projectParam) {
-                    const projectId = projectParam.toUpperCase()
-                    const element = document.getElementById(`PROJECT_${projectId}`)
-                    if (element) {
-                        element.scrollIntoView({ behavior: "smooth" })
-                        setCurrentSection('SECTION_PROJETS' as any)
-                    }
-                }
-            }
-        }, 500)
+            }, 500)
+        }
     }, [])
 
     useEffect(() => {
+        if (!isMounted || typeof window === 'undefined') return;
+        
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setCurrentSection(entry.target.id as any)
+                        setCurrentSection(entry.target.id)
                     }
                 })
         }, { threshold: 0.7 });
@@ -75,36 +82,41 @@ const NavBar = () => {
                 }
             });
         };
-    }, [sectionIds])
+    }, [sectionIds, isMounted])
     
     useEffect(() => {
+        if (!isMounted || typeof window === 'undefined') return;
+        
         let timeoutId: NodeJS.Timeout | null = null;
     
         const handleScroll = () => {
-            // Clear any timeouts already set
             clearTimeout(timeoutId as any);
-            
-            // Immediately set blurred to false on scroll
             setIsBlurred(false);
-    
-            // Wait for 2 seconds of inactivity before setting blurred to true
             timeoutId = setTimeout(() => {
                 setIsBlurred(true);
             }, 2000);
         };
     
-        // Attach the event listener
         window.addEventListener('scroll', handleScroll);
     
-        // Cleanup function to remove the event listener
         return () => {
             window.removeEventListener('scroll', handleScroll);
-    
-            // Clear the timeout when the component unmounts
             clearTimeout(timeoutId as any);
         };
-    }, []);
+    }, [isMounted]);
     
+    if (!isMounted) {
+        return (
+            <div className="flex z-50 bg-gray-50 p-2.5 rounded-full w-4/5 max-w-sm fixed top-14 transition-all duration-500 ease-in-out">
+                <button className="group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center"><p className="text-xs md:text-md font-medium text-gray-300 group-hover:text-black">Accueil </p></button>
+                <button className="group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center"><p className="text-xs md:text-md font-medium text-gray-300 group-hover:text-black">Services</p></button>
+                <button className="group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center"><p className="text-xs md:text-md font-medium text-gray-300 group-hover:text-black">Projets</p></button>
+                <button className="group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center"><p className="text-xs md:text-md font-medium text-gray-300 group-hover:text-black">Avis</p></button>
+                <button className="group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center"><p className="text-xs md:text-md font-medium text-gray-300 group-hover:text-black">Contact </p></button>
+            </div>
+        );
+    }
+
     return (
         <>
         <div className={`flex z-50 bg-gray-50 p-2.5 rounded-full w-4/5 max-w-sm fixed top-14 transition-all duration-500 ease-in-out ${isBlurred ? 'bg-opacity-50' : ''}`}>
