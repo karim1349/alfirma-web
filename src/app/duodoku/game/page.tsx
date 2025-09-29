@@ -22,32 +22,13 @@ function GameInvitationContent() {
 
         const attemptDeepLink = () => {
             const deepLink = `duodoku:///game/${gameId}`;
+            window.location.href = deepLink;
             
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = deepLink;
-            document.body.appendChild(iframe);
-            
-            const timeout = setTimeout(() => {
-                setAppInstalled(false);
-                setIsRedirecting(false);
-                document.body.removeChild(iframe);
-            }, 2000);
-            
-            const handleVisibilityChange = () => {
-                if (document.hidden) {
-                    clearTimeout(timeout);
-                    setAppInstalled(true);
-                    setIsRedirecting(false);
-                    document.body.removeChild(iframe);
-                }
-            };
-            
-            document.addEventListener('visibilitychange', handleVisibilityChange);
             
             setTimeout(() => {
-                document.removeEventListener('visibilitychange', handleVisibilityChange);
-            }, 3000);
+                setAppInstalled(false);
+                setIsRedirecting(false);
+            }, 2000);
         };
 
         attemptDeepLink();

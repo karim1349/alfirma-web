@@ -366,8 +366,7 @@ function Home({ location }: HomeProps = {}) {
                                                 alt="Télécharger Duodoku sur l'App Store" 
                                                 width={128}
                                                 height={64}
-                                                className="w-32 mr-2 hover:scale-110 transform transition"
-                                                style={{ width: 'auto', height: 'auto' }}
+                                                className="w-20 sm:w-32 mr-2 hover:scale-110 transform transition"
                                             />
                                         </a>
                                         <a href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
@@ -376,8 +375,7 @@ function Home({ location }: HomeProps = {}) {
                                                 alt="Télécharger Duodoku sur Google Play" 
                                                 width={128}
                                                 height={64}
-                                                className="w-32 mr-2 hover:scale-110 transform transition"
-                                                style={{ width: 'auto', height: 'auto' }}
+                                                className="w-20 sm:w-32 mr-2 hover:scale-110 transform transition"
                                             />
                                         </a>
                                     </div>

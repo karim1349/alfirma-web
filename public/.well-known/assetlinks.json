@@ -1,0 +1,13 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.duodoku.app",
+        "sha256_cert_fingerprints": [
+            "3C:93:8F:76:D6:D2:10:D9:36:4A:00:64:53:52:14:2A:E8:29:5E:0A:33:60:6F:B7:BD:8F:3D:47:DD:36:A8:04"
+        ]
+      }
+    }
+  ]
+  
