@@ -8,15 +8,21 @@ import ContactForm from './components/ContactForm';
 import partners from '../../content/partners.json'
 import Lottie from 'lottie-react';
 import earth from '../../content/earth.json'
-import { EffectCards } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/scrollbar';
-import 'swiper/css/effect-cards';
-import Card from './components/Card';
 import { FAQSchema, ServiceSchema } from '../components/StructuredData';
 
-function Home() {
+interface LocationData {
+  name: string;
+  country: string;
+  region: string;
+  flagEmoji: string;
+  coordinates: { lat: number; lng: number };
+}
+
+interface HomeProps {
+  location?: LocationData;
+}
+
+function Home({ location }: HomeProps = {}) {
     return (
         <>
         <FAQSchema />
@@ -29,16 +35,24 @@ function Home() {
                     <div className='px-4 md:mx-12 md:px-0 flex flex-col items-center '>
                         <Image 
                             src="/assets/logoWithoutBackground.png" 
-                            alt="Al Firma - Agence de développement d'applications mobiles et web" 
+                            alt={`Al Firma - Agence de développement d'applications mobiles et web${location ? ` à ${location.name}` : ''}`}
                             width={200}
                             height={200}
                             className="w-1/2 md:w-1/5 hover:transform hover:rotate-[57deg] transition-all duration-200 my-20"
                             priority
                         />
-                        <h1 className='text-4xl md:text-8xl text-white text-justify self-center font-bold'>AL FIRMA</h1>
-                        <h2 className='text-white my-4 text-[4vw] text-justify'>
+                        <h1 className='text-4xl md:text-8xl text-white text-center self-center font-bold mb-4'>AL FIRMA</h1>
+                        <h2 className='text-white my-4 text-[4vw] text-center'>
                             L'innovation façonne vos applications
                         </h2>
+                        {location && (
+                            <div className="flex items-center justify-center text-white text-lg md:text-xl mb-4">
+                                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                </svg>
+                                <span>Agence de développement web & mobile{location ? ` à ${location.name}` : ''}</span>
+                            </div>
+                        )}
                         <div className="flex flex-col items-center space-y-4">
                             <button className='group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition' 
                                 onClick={() => window.open('https://calendly.com/karimbenchekroun/30min', '_blank')}>
@@ -58,7 +72,7 @@ function Home() {
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
                                 <h1 className='text-2xl font-medium'>Discussion du projet</h1>
-                                <p className='font-thin mt-4 mr-8'>Partagez vos idées et objectifs. Nous créons une feuille de route pour le développement de votre application.</p>
+                                <p className='font-thin mt-4 mr-8'>Partagez vos idées et objectifs. Nous créons une feuille de route pour le développement de votre application{location ? ` à ${location.name}` : ''}.</p>
 
                                 <h1 className='text-7xl self-end text-gray-200 font-semibold'>01.</h1>
                             </div>
@@ -83,20 +97,26 @@ function Home() {
                         </div>
                     </div>
                     <div className='px-2'>
-                        <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>NOS SERVICES</h1>
-                        <p className='text-center px-4 md:px-0'>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
+                        <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>
+                            NOS SERVICES{location ? ` À ${location.name.toUpperCase()}` : ''}
+                        </h1>
+                        <p className='text-center px-4 md:px-0'>
+                            Nous allions créativité et expertise technique pour concrétiser vos idées{location ? `, où que vous soyez à ${location.name}` : ''}.
+                        </p>
                         <div className='flex w-full flex-col md:flex-row md:my-12'>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
                                 <Image 
                                     src="/assets/illustrations/appmobile.png" 
-                                    alt="Développement d'applications mobiles iOS et Android" 
+                                    alt={`Développement d'applications mobiles iOS et Android${location ? ` à ${location.name}` : ''}`}
                                     width={144}
                                     height={144}
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
                                 <h1 className='font-semibold'>Applications Mobiles</h1>
-                                <p className='text-xs text-center mt-4'>On développe et déploie des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
+                                <p className='text-xs text-center mt-4'>
+                                    On développe et déploie des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe{location ? ` pour les entreprises de ${location.name}` : ''}. 
+                                </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -142,14 +162,16 @@ function Home() {
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
                                 <Image 
                                     src="/assets/illustrations/appweb.png" 
-                                    alt="Développement d'applications web avec React.js et Django" 
+                                    alt={`Développement d'applications web avec React.js et Django${location ? ` à ${location.name}` : ''}`}
                                     width={144}
                                     height={144}
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
                                 <h1 className='font-semibold'>Applications Web</h1>
-                                <p className='text-xs text-center mt-4'>Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack.</p>
+                                <p className='text-xs text-center mt-4'>
+                                    Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack{location ? ` pour ${location.name}` : ''}.
+                                </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -310,7 +332,9 @@ function Home() {
                         </div>
                         <div className='flex-1 md:ml-16'>
                             <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>MONDIALEMENT VÔTRE !</h1>
-                            <p>Découvrez nos services où que vous soyez dans le monde. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.</p>
+                            <p>
+                                Découvrez nos services où que vous soyez dans le monde{location ? `, y compris à ${location.name}` : ''}. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -403,38 +427,140 @@ function Home() {
                 <div className='px-4 md:px-8 max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden mt-28'>
                     <h1 id="SECTION_AVIS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>ILS NOUS ONT FAIT CONFIANCE</h1>
                     <p className='text-center px-4 md:px-0'>Un coup de projecteur sur nos partenaires formidables ! Leur confiance en notre expertise renforce notre détermination à offrir des solutions innovantes et personnalisées pour répondre à leurs besoins uniques.</p>
-                        <div className='w-[80vw] md:max-w-2xl transform -rotate-6 my-24'>
-                        <Swiper
-                        modules={[EffectCards]}
-                        loop={true}
-                        navigation
-                        slidesPerView={1}
-                        spaceBetween={30}
-                        cardsEffect={{
-                            perSlideOffset: 10,
-                            slideShadows: false,
-                            perSlideRotate: 10,
-                        }}
-                        effect='cards'
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                            },
-                            768: {
-                                slidesPerView: 1,
-                            },
-                            1024: {
-                                slidesPerView: 1,
-                            },
-                        }}
-                        >
-                            {
-                                partners.map((partner, index) => (
-                                    <SwiperSlide key={index}><Card title={partner.name} image={partner.image} text={partner.description} review={partner.review} links={partner.links}/></SwiperSlide>
-                                ))
-                            }
-                        </Swiper>
+                    <div className="relative w-full max-w-7xl mx-auto my-12">
+                        <div className="absolute inset-0 bg-gradient-to-r from-rose-50 via-blue-50 to-rose-50 rounded-3xl opacity-30"></div>
+                        <div className="absolute inset-0 rounded-3xl"></div>
+                        
+                        <div className="relative z-10 p-8 md:p-12">
+                            <div className="mb-12">
+                                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
+                                    <div className="flex flex-col lg:flex-row items-center gap-8">
+                                        {/* Client Logo */}
+                                        <div className="flex-shrink-0">
+                                            <div className="w-24 h-24 bg-gradient-to-br from-rose-100 to-blue-100 rounded-2xl flex items-center justify-center p-4">
+                                                <Image 
+                                                    src={partners[0].image} 
+                                                    alt={partners[0].name}
+                                                    width={80}
+                                                    height={80}
+                                                    className="w-full h-full object-contain"
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Content */}
+                                        <div className="flex-1 text-center lg:text-left">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mb-4">
+                                                {partners[0].name}
+                                            </h3>
+                                            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                                                {partners[0].description}
+                                            </p>
+                                            
+                                            {/* Links */}
+                                            {partners[0].links?.length > 0 && (
+                                                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-6">
+                                                    {partners[0].links.map((link, index) => (
+                                                        <a 
+                                                            href={link.url} 
+                                                            target="_blank" 
+                                                            rel="noopener noreferrer" 
+                                                            key={index}
+                                                            className="hover:scale-105 transform transition duration-200"
+                                                        >
+                                                            <Image 
+                                                                src={`/assets/button_${link.type}.png`} 
+                                                                alt={`${link.type} link`}
+                                                                width={140}
+                                                                height={70}
+                                                                className="h-12 w-auto"
+                                                            />
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            )}
+                                            
+                                            {/* Review */}
+                                            {partners[0].review && (
+                                                <div className="bg-gradient-to-r from-rose-50 to-blue-50 rounded-2xl p-6 border-l-4 border-rose-400">
+                                                    <div className="flex items-start gap-3">
+                                                        <div className="text-3xl text-rose-400">"</div>
+                                                        <p className="text-gray-700 italic text-lg leading-relaxed flex-1">
+                                                            {partners[0].review}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Other Clients Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {partners.slice(1).map((partner, index) => (
+                                    <div key={index + 1} className="group">
+                                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/30 h-full">
+                                            <div className="text-center">
+                                                {/* Logo */}
+                                                <div className="w-16 h-16 bg-gradient-to-br from-rose-100 to-blue-100 rounded-xl flex items-center justify-center p-3 mx-auto mb-4">
+                                                    <Image 
+                                                        src={partner.image} 
+                                                        alt={partner.name}
+                                                        width={48}
+                                                        height={48}
+                                                        className="w-full h-full object-contain"
+                                                    />
+                                                </div>
+                                                
+                                                {/* Name */}
+                                                <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mb-3">
+                                                    {partner.name}
+                                                </h4>
+                                                
+                                                {/* Description */}
+                                                <p className="text-sm text-gray-600 mb-4">
+                                                    {partner.description}
+                                                </p>
+                                                
+                                                {/* Links */}
+                                                {partner.links?.length > 0 && (
+                                                    <div className="flex justify-center gap-2 mb-4">
+                                                        {partner.links.slice(0, 2).map((link, linkIndex) => (
+                                                            <a 
+                                                                href={link.url} 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer" 
+                                                                key={linkIndex}
+                                                                className="hover:scale-110 transform transition duration-200"
+                                                            >
+                                                                <Image 
+                                                                    src={`/assets/button_${link.type}.png`} 
+                                                                    alt={`${link.type} link`}
+                                                                    width={100}
+                                                                    height={50}
+                                                                    className="h-8 w-auto"
+                                                                />
+                                                            </a>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                                
+                                                {/* Review */}
+                                                {partner.review && (
+                                                    <div className="bg-white/50 rounded-lg p-3">
+                                                        <p className="text-xs text-gray-600 italic">
+                                                            "{partner.review}"
+                                                        </p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
+                    </div>
                     <h1 className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>BESOIN D'UN RENSEIGNEMENT ?</h1>
                     <p className="px-4 md:px-0">Des questions ? On a toutes les réponses ! Remplissez le formulaire ci-dessous et suivez-nous sur nos réseaux sociaux pour rester connectés ! Notre équipe est là pour vous répondre avec enthousiasme et nos réseaux regorgent de contenus passionnants.</p>
                 </div>                    

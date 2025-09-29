@@ -1,19 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import CursorEffect from "@/app/components/CursorEffect";
 import Footer from "./components/Footer";
 import { OrganizationSchema, WebSiteSchema } from "./components/StructuredData";
 import "@/lib/axios"; // Initialize axios configuration
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const clashDisplay = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ClashDisplay-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay-Semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash-display",
 });
 
 export const metadata: Metadata = {
@@ -70,7 +81,7 @@ export default function RootLayout({
         <WebSiteSchema />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${clashDisplay.variable} antialiased`}
       >
         {children}
         {/* Cursor effect now lives in a client component */}

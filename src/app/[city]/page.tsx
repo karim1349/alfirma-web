@@ -1,5 +1,5 @@
 import React from 'react';
-import LocationHomePage from '../components/LocationHomePage';
+import Home from '../home/page';
 import { LocalBusinessSchema } from '../components/StructuredData';
 import type { Metadata } from 'next';
 
@@ -152,7 +152,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         region={location.region}
         coordinates={location.coordinates}
       />
-      <LocationHomePage location={location} />
+      <Home location={location} />
     </>
   );
 }

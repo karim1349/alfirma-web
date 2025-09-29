@@ -1,17 +1,17 @@
 "use client"
 
-import React, { useEffect, useState, use } from 'react';
-import { useRouter } from 'next/navigation';
-import ProjectNav from '../../../components/ProjectNav';
+import React, { useEffect, useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import ProjectNav from '@/app/components/ProjectNav';
 
-function GameInvitationPage({ params }: { params: Promise<{ id: string }> }) {
+function GameInvitationContent() {
     const [isRedirecting, setIsRedirecting] = useState(true);
     const [appInstalled, setAppInstalled] = useState(false);
     const router = useRouter();
-    const resolvedParams = use(params);
+    const searchParams = useSearchParams();
 
     useEffect(() => {
-        const gameId = resolvedParams.id;
+        const gameId = searchParams.get('id') || '1';
         
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
@@ -51,7 +51,7 @@ function GameInvitationPage({ params }: { params: Promise<{ id: string }> }) {
         };
 
         attemptDeepLink();
-    }, [resolvedParams.id, router]);
+    }, [searchParams, router]);
 
 
     if (isRedirecting) {
@@ -92,7 +92,7 @@ function GameInvitationPage({ params }: { params: Promise<{ id: string }> }) {
                     Vous avez été invité à rejoindre une partie !
                 </p>
                 <p className="text-gray-300 mb-8">
-                    Téléchargez l'application pour rejoindre la partie #{resolvedParams.id}
+                    Téléchargez l'application pour rejoindre la partie #{searchParams.get('id') || '1'}
                 </p>
                 
                 <div className="space-y-4">
@@ -124,6 +124,22 @@ function GameInvitationPage({ params }: { params: Promise<{ id: string }> }) {
                 </div>
             </div>
         </div>
+    );
+}
+
+function GameInvitationPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center pt-20">
+                <ProjectNav />
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
+                    <p className="text-white text-lg">Chargement...</p>
+                </div>
+            </div>
+        }>
+            <GameInvitationContent />
+        </Suspense>
     );
 }
 
