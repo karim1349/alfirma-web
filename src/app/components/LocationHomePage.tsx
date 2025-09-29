@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import NavBar from './components/NavBar';
-import ContactForm from './components/ContactForm';
+import NavBar from '../home/components/NavBar';
+import ContactForm from '../home/components/ContactForm';
 import partners from '../../content/partners.json'
 import Lottie from 'lottie-react';
 import earth from '../../content/earth.json'
@@ -13,10 +13,22 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/effect-cards';
-import Card from './components/Card';
-import { FAQSchema, ServiceSchema } from '../components/StructuredData';
+import Card from '../home/components/Card';
+import { FAQSchema, ServiceSchema } from './StructuredData';
 
-function Home() {
+interface LocationData {
+  name: string;
+  country: string;
+  region: string;
+  flagEmoji: string;
+  coordinates: { lat: number; lng: number };
+}
+
+interface LocationHomePageProps {
+  location: LocationData;
+}
+
+export default function LocationHomePage({ location }: LocationHomePageProps) {
     return (
         <>
         <FAQSchema />
@@ -29,16 +41,22 @@ function Home() {
                     <div className='px-4 md:mx-12 md:px-0 flex flex-col items-center '>
                         <Image 
                             src="/assets/logoWithoutBackground.png" 
-                            alt="Al Firma - Agence de développement d'applications mobiles et web" 
+                            alt={`Al Firma - Agence de développement d'applications mobiles et web à ${location.name}`}
                             width={200}
                             height={200}
                             className="w-1/2 md:w-1/5 hover:transform hover:rotate-[57deg] transition-all duration-200 my-20"
                             priority
                         />
-                        <h1 className='text-4xl md:text-8xl text-white text-justify self-center font-bold'>AL FIRMA</h1>
-                        <h2 className='text-white my-4 text-[4vw] text-justify'>
+                        <h1 className='text-4xl md:text-8xl text-white text-center self-center font-bold mb-4'>AL FIRMA</h1>
+                        <h2 className='text-white my-4 text-[4vw] text-center'>
                             L'innovation façonne vos applications
                         </h2>
+                        <div className="flex items-center justify-center text-white text-lg md:text-xl mb-4">
+                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                            </svg>
+                            <span>Agence de développement web & mobile à {location.name}</span>
+                        </div>
                         <div className="flex flex-col items-center space-y-4">
                             <button className='group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition' 
                                 onClick={() => window.open('https://calendly.com/karimbenchekroun/30min', '_blank')}>
@@ -57,8 +75,8 @@ function Home() {
                         <div className='flex flex-1 px-2 py-12 md:border-r border-gray-200 group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
-                                <h1 className='text-2xl font-medium'>Discussion du projet</h1>
-                                <p className='font-thin mt-4 mr-8'>Partagez vos idées et objectifs. Nous créons une feuille de route pour le développement de votre application.</p>
+                            <h1 className='text-2xl font-medium'>Discussion du projet</h1>
+                            <p className='font-thin mt-4 mr-8'>Partagez vos idées et objectifs. Nous créons une feuille de route pour le développement de votre application à {location.name}.</p>
 
                                 <h1 className='text-7xl self-end text-gray-200 font-semibold'>01.</h1>
                             </div>
@@ -83,20 +101,20 @@ function Home() {
                         </div>
                     </div>
                     <div className='px-2'>
-                        <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>NOS SERVICES</h1>
-                        <p className='text-center px-4 md:px-0'>Nous allions créativité et expertise technique pour concrétiser vos idées.</p>
+                  <h1 id="SECTION_A_PROPOS" className='text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mt-24'>NOS SERVICES À {location.name.toUpperCase()}</h1>
+                  <p className='text-center px-4 md:px-0'>Nous allions créativité et expertise technique pour concrétiser vos idées, où que vous soyez à {location.name}.</p>
                         <div className='flex w-full flex-col md:flex-row md:my-12'>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
                                 <Image 
                                     src="/assets/illustrations/appmobile.png" 
-                                    alt="Développement d'applications mobiles iOS et Android" 
+                                    alt={`Développement d'applications mobiles iOS et Android à ${location.name}`}
                                     width={144}
                                     height={144}
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
                                 <h1 className='font-semibold'>Applications Mobiles</h1>
-                                <p className='text-xs text-center mt-4'>On développe et déploie des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe. </p>
+                                <p className='text-xs text-center mt-4'>On développe et déploie des applications mobile cross-platform (iOS et Android) d'un haut niveau de qualité à l'aide de technologies de pointe pour les entreprises de {location.name}. </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -142,14 +160,14 @@ function Home() {
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
                                 <Image 
                                     src="/assets/illustrations/appweb.png" 
-                                    alt="Développement d'applications web avec React.js et Django" 
+                                    alt={`Développement d'applications web avec React.js et Django à ${location.name}`}
                                     width={144}
                                     height={144}
                                     className="h-36 group-hover:h-48 object-contain transform transition-all"
                                     loading="lazy"
                                 />
                                 <h1 className='font-semibold'>Applications Web</h1>
-                                <p className='text-xs text-center mt-4'>Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack.</p>
+                                <p className='text-xs text-center mt-4'>Un besoin concernant une application web ? Spécialisés en React.js et Django, nous disposons de toutes les compétences nécessaires à la création de votre application full-stack pour {location.name}.</p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -309,8 +327,8 @@ function Home() {
                             <Lottie animationData={earth} className='w-5/6' loop />
                         </div>
                         <div className='flex-1 md:ml-16'>
-                            <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>MONDIALEMENT VÔTRE !</h1>
-                            <p>Découvrez nos services où que vous soyez dans le monde. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.</p>
+                        <h1 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>MONDIALEMENT VÔTRE !</h1>
+                        <p>Découvrez nos services où que vous soyez dans le monde, y compris à {location.name}. Notre équipe travaille sans frontières pour apporter des solutions innovantes à votre porte, où que cette porte puisse se trouver. Que vous soyez une petite start-up à la recherche de l'élément différenciateur ou une grande entreprise prête à révolutionner son secteur, nous sommes là pour collaborer avec vous. Votre vision devient notre mission, peu importe le lieu. Chez Al Firma, nous croyons que chaque projet, grand ou petit, mérite une approche personnalisée et un engagement total. Faites équipe avec nous et donnez vie à vos idées, où que vous soyez dans le monde.</p>
                         </div>
                     </div>
                 </div>
@@ -455,4 +473,3 @@ function Home() {
     );
 }
 
-export default Home;

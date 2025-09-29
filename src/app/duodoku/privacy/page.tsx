@@ -1,12 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import ProjectNav from '../../components/ProjectNav';
+import Breadcrumbs, { BreadcrumbSchema } from '../../components/Breadcrumbs';
 
 const PrivacyDuodoku = () => {
+    const breadcrumbItems = [
+        { label: 'Accueil', href: '/home' },
+        { label: 'Projets', href: '/home#SECTION_PROJETS' },
+        { label: 'Duodoku', href: '/duodoku' },
+        { label: 'Politique de confidentialité' }
+    ];
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 pt-20">
-            <ProjectNav />
+            <BreadcrumbSchema items={breadcrumbItems} />
             <div className="max-w-4xl mx-auto text-center">
+                <div className="mb-6">
+                    <Breadcrumbs items={breadcrumbItems} />
+                </div>
                 <div className="mb-8">
                     <img 
                         src="/assets/duodoku.png" 
@@ -54,7 +64,7 @@ const PrivacyDuodoku = () => {
 
                     <h2 className="text-3xl font-bold text-white mb-6">6. Contactez-nous</h2>
                     <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                        Si vous avez des questions ou des préoccupations concernant notre politique de confidentialité, veuillez nous contacter à l'adresse e-mail suivante : alfirma.contact@gmail.com
+                        Si vous avez des questions ou des préoccupations concernant notre politique de confidentialité, veuillez nous contacter à l'adresse e-mail suivante : contact@alfirma.com
                     </p>
                 </div>
 
@@ -67,7 +77,7 @@ const PrivacyDuodoku = () => {
                     </Link>
                     <span className="text-gray-400 mx-4">•</span>
                     <a 
-                        href="mailto:alfirma.contact@gmail.com"
+                        href="mailto:contact@alfirma.com"
                         className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
                     >
                         Nous contacter

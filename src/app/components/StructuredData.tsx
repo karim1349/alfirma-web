@@ -1,0 +1,353 @@
+export function OrganizationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Al Firma",
+    "description": "Agence experte en développement d'application mobile et web, vous accompagne de l'idée à la mise en marché de votre projet. Solutions personnalisées, support technique et conseil stratégique.",
+    "url": "https://www.alfirma.com",
+    "logo": "https://www.alfirma.com/assets/logo.png",
+    "image": "https://www.alfirma.com/assets/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@alfirma.com",
+      "contactType": "customer service",
+      "availableLanguage": "French"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR"
+    },
+    "foundingDate": "2023",
+    "knowsAbout": [
+      "Développement d'applications mobiles",
+      "Développement d'applications web",
+      "React Native",
+      "Django",
+      "UX/UI Design",
+      "Déploiement d'applications"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Développement d'applications mobiles",
+        "description": "Développement et déploiement d'applications mobile cross-platform (iOS et Android) avec technologies de pointe",
+        "price": "8900",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer", 
+        "name": "Développement d'applications web",
+        "description": "Création d'applications web full-stack avec React.js et Django",
+        "price": "6900",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "APIs RESTful",
+        "description": "Développement d'APIs RESTful pour applications web et mobiles",
+        "price": "4900", 
+        "priceCurrency": "EUR"
+      }
+    ],
+    "sameAs": [
+      "https://facebook.com/alfirmaagency",
+      "https://instagram.com/alfirmaagency", 
+      "https://linkedin.com/company/al-firma",
+      "https://x.com/alfirmaagency"
+    ]
+  }
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function WebSiteSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Al Firma",
+    "url": "https://www.alfirma.com",
+    "description": "Agence de développement d'applications mobiles et web",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Al Firma",
+      "url": "https://www.alfirma.com"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.alfirma.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function SoftwareApplicationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Duodoku",
+    "description": "Le premier jeu de Sudoku multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.",
+    "url": "https://www.alfirma.com/duodoku",
+    "image": "https://www.alfirma.com/assets/duodoku.png",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": ["iOS", "Android"],
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "100"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Al Firma",
+      "url": "https://www.alfirma.com"
+    }
+  }
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function FAQSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels sont vos délais de livraison ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos délais de livraison varient selon le type de projet : Applications mobiles à partir de 20 jours, Applications web à partir de 15 jours, et APIs à partir de 10 jours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Proposez-vous la maintenance après livraison ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous proposons des services de maintenance pour tous les produits que nous développons, avec 30 jours de garantie pour signaler un problème ou une modification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Travaillez-vous avec des clients internationaux ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolument ! Nous travaillons avec des clients du monde entier. Notre équipe est spécialisée dans le développement d'applications multilingues et nous adaptons nos solutions à vos besoins locaux."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelles technologies utilisez-vous ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nous utilisons React Native pour les applications mobiles, React.js et Django pour les applications web, et Python/Django pour les APIs. Nous maîtrisons également les technologies de design UX/UI avec Figma."
+        }
+      }
+    ]
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function ServiceSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Développement d'applications mobiles et web",
+    "description": "Al Firma propose des services complets de développement d'applications mobiles et web, du design UX/UI au déploiement et à la maintenance.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Al Firma",
+      "url": "https://www.alfirma.com"
+    },
+    "serviceType": "Développement logiciel",
+    "areaServed": "Monde entier",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de développement",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Applications Mobiles",
+            "description": "Développement d'applications iOS et Android avec React Native"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Applications Web",
+            "description": "Développement d'applications web avec React.js et Django"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "UX/UI Design",
+            "description": "Design d'interface utilisateur et expérience utilisateur"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "APIs et Backend",
+            "description": "Développement d'APIs RESTful et micro-services"
+          }
+        }
+      ]
+    }
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function LocalBusinessSchema({ 
+  name, 
+  city, 
+  country, 
+  region, 
+  coordinates 
+}: { 
+  name: string; 
+  city: string; 
+  country: string; 
+  region: string; 
+  coordinates: { lat: number; lng: number }; 
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": name,
+    "description": `Al Firma - Agence de développement d'applications mobiles et web à ${city}, ${country}. Services de développement React Native, Django, UX/UI Design.`,
+    "url": `https://www.alfirma.com/location/${city.toLowerCase()}`,
+    "telephone": "+33-7-86-24-39-48", // Placeholder
+    "email": "contact@alfirma.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": city,
+      "addressRegion": region,
+      "addressCountry": country === 'Maroc' ? 'MA' : 'FR'
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": coordinates.lat,
+      "longitude": coordinates.lng
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": city,
+      "containedInPlace": {
+        "@type": "Country",
+        "name": country
+      }
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": coordinates.lat,
+        "longitude": coordinates.lng
+      },
+      "geoRadius": "50000" // 50km radius
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de développement",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Développement d'applications mobiles",
+            "description": `Développement d'applications iOS et Android avec React Native à ${city}`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Développement d'applications web",
+            "description": `Développement d'applications web avec React.js et Django à ${city}`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "UX/UI Design",
+            "description": `Design d'interface utilisateur et expérience utilisateur à ${city}`
+          }
+        }
+      ]
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "€€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "foundingDate": "2023",
+    "founder": {
+      "@type": "Person",
+      "name": "Karim Benchekroun"
+    },
+    "knowsAbout": [
+      "Développement d'applications mobiles",
+      "Développement d'applications web", 
+      "React Native",
+      "Django",
+      "UX/UI Design",
+      "Déploiement d'applications"
+    ],
+    "sameAs": [
+      "https://www.alfirma.com",
+      "https://facebook.com/alfirmaagency",
+      "https://instagram.com/alfirmaagency",
+      "https://linkedin.com/company/al-firma",
+      "https://x.com/alfirmaagency"
+    ]
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
