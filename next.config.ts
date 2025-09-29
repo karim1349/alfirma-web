@@ -1,15 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Static export for hosting on static servers
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'out',
+  
   // Performance optimizations
   compress: true,
   
-  // Image optimization
+  // Image optimization (disabled for static export)
   images: {
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
+    unoptimized: true,
   },
   
   // Experimental features for better performance
