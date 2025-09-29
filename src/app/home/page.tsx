@@ -1,8 +1,9 @@
+"use client"
+
 import React from 'react';
 import NavBar from './components/NavBar';
 import ContactForm from './components/ContactForm';
 import partners from '../../content/partners.json'
-import Loading from './components/Loading';
 import Lottie from 'lottie-react';
 import earth from '../../content/earth.json'
 import { EffectCards } from 'swiper/modules';
@@ -11,14 +12,11 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/effect-cards';
 import Card from './components/Card';
+
 function Home() {
-    const [loading, setLoading] = React.useState(true);
     return (
         <>
-        <div className={`transition ease-linear duration-700 ${loading ? 'opacity-100' : 'opacity-0'}`}>
-            <Loading loading={loading} setLoading={setLoading} />
-        </div> 
-        <div className={`transition ease-linear duration-700 z-50 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`transition ease-linear duration-700 z-50`}>
         <div className='flex items-center bg-white justify-center mb-20'>
             <div className='flex-1 flex flex-col items-center justify-center self-center overflow-hidden'>
                 <NavBar />
@@ -39,7 +37,7 @@ function Home() {
                 </div>
                 <div className='max-w-7xl flex flex-col items-center justify-center self-center overflow-hidden'>
                     <div className='grid grid-cols-1 md:grid-cols-3 md:h-80'>
-                        <div className='flex flex-1 px-2 py-12 md:border-r group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
+                        <div className='flex flex-1 px-2 py-12 md:border-r border-gray-200 group hover:bg-[url(/assets/illustrations/backgroundDiscussion.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
                                 <h1 className='text-2xl font-medium'>Discussion du projet</h1>
@@ -48,7 +46,7 @@ function Home() {
                                 <h1 className='text-7xl self-end text-gray-200 font-semibold'>01.</h1>
                             </div>
                         </div>
-                        <div className='flex px-2 py-12 md:border-r group hover:bg-[url(/assets/illustrations/backgroundCreation.png)] bg-cover bg-center hover:text-white'>
+                        <div className='flex px-2 py-12 md:border-r border-gray-200 group hover:bg-[url(/assets/illustrations/backgroundCreation.png)] bg-cover bg-center hover:text-white'>
                             <div className='w-4 h-4 rounded-full bg-blue-50 mr-7 mt-2'/>
                             <div className='flex-1 flex flex-col justify-between'>
                                 <h1 className='text-2xl font-medium'>Création sur Mesure</h1>
@@ -257,12 +255,12 @@ function Home() {
                     <h1 id="SECTION_PROJETS" className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>NOTRE STUDIO D'APPLICATIONS</h1>
                     <p className='text-center'>Découvrez nos projets les plus récents et les plus innovants. Chaque application est unique et conçue sur mesure pour répondre aux besoins spécifiques de nos clients. Nous sommes fiers de notre travail et de la confiance que nos clients nous accordent pour donner vie à leurs idées. Explorez nos projets et laissez-vous inspirer pour votre prochaine application !</p>
                     <div className='flex w-full flex-col my-6 items-center'>
-                        <div className='bg-gray-800 rounded-3xl p-8 justify-between md:w-2/3 my-6'>
-                        <div class="flex flex-wrap items-center justify-end mb-4 md:mb-0">
-                            <div class="bg-blue-300 rounded-full px-2 mr-2 mb-2">Mobile App</div>
-                            <div class="bg-blue-300 rounded-full px-2 mr-2 mb-2">In-App Ads</div>
-                            <div class="bg-blue-300 rounded-full px-2 mr-2 mb-2">UX/UI Design</div>
-                            <div class="bg-blue-300 rounded-full px-2 mr-2 mb-2">API</div>
+                        <div id="PROJECT_DUODOKU" className='bg-gray-800 rounded-3xl p-8 justify-between md:w-2/3 my-6'>
+                        <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
+                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">Mobile App</div>
+                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">In-App Ads</div>
+                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">UX/UI Design</div>
+                            <div className="bg-blue-300 rounded-full px-2 mr-2 mb-2">API</div>
                         </div>
                         <div className='flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full'>
                             <div className='flex-1 p-4'>
@@ -278,8 +276,8 @@ function Home() {
                             </div>
                         </div>
                         </div>
-                        <div className='bg-orange-200 rounded-3xl p-8 justify-between md:w-2/3 my-6'>
-                        <div class="flex flex-wrap items-center justify-end mb-4 md:mb-0">
+                        <div id="PROJECT_SAYAR" className='bg-orange-200 rounded-3xl p-8 justify-between md:w-2/3 my-6'>
+                        <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
                                     <div className='bg-orange-300 rounded-full px-2 ml-2 my-2'>Mobile App</div>
                                     <div className='bg-orange-300 rounded-full px-2 ml-2 my-2'>Web App</div>
                                     <div className='bg-orange-300 rounded-full px-2 ml-2 my-2'>API</div>

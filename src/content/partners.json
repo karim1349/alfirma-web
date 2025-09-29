@@ -19,7 +19,7 @@
         "name": "Co'Santé",
         "description": "La confédération des centres de Santé des Pays de la Loire a choisi Al Firma pour le design, développement et déploiement de son application de prévention Jeunes Santé Prévention.",
         "image": "/assets/cosante.png",
-        "review": false,
+        "review": null,
         "links": [
             {
                 "type": "appstore",
@@ -47,19 +47,21 @@
         "name": "Toutakoté",
         "description": "Nous avons réalisé pour Toutakoté la refonte intégrale d'une application mobile, ainsi que la réalisation et le déploiement d'une application web.",
         "image": "/assets/toutakote.png",
-        "review": "Al Firma s'est montré à l'écoute, très rapide dans la réalisation de la mission et le tout pour un tarif extrêmement correct. Je ne saurais que recommander ses services !"
+        "review": "Al Firma s'est montré à l'écoute, très rapide dans la réalisation de la mission et le tout pour un tarif extrêmement correct. Je ne saurais que recommander ses services !",
+        "links": []
     },
     {
         "name": "Meor",
         "description": "Nous sommes intervenus dans la réalisation de l'extension web de Meor sur la partie design et conception. ",
         "image": "/assets/meor.png",
-        "review": false
+        "review": null,
+        "links": []
     },
     {
         "name": "Nexy",
         "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Nexy. ",
         "image": "/assets/nexy.png",
-        "review": false,
+        "review": null,
         "links": [
             {
                 "type": "playstore",

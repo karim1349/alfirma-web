@@ -1,6 +1,7 @@
+"use client";
 import { useSwiper } from 'swiper/react';
 
-const Card = ({image, title, text, review, links}) => {
+const Card = ({image, title, text, review, links}: {image: string, title: string, text: string, review: string | null, links: {url: string, type: string}[]}) => {
     const swiper = useSwiper();
     return (
         <div className=" bg-white flex flex-1 self-center flex-col rounded-2xl shadow-md m-8 h-96 p-4">
@@ -11,7 +12,7 @@ const Card = ({image, title, text, review, links}) => {
                     <div className='flex flex-col sm:flex-row justify-center items-center my-2'>
                         {links.map((link, index) => (
                             <a href={link.url} target="_blank" rel="noreferrer" key={index}>
-                                <img src={`/assets/button_${link.type}.png`} alt={link.name} className="w-32 m-2 hover:scale-110 transform transition" />  
+                                <img src={`/assets/button_${link.type}.png`} className="w-32 m-2 hover:scale-110 transform transition" />  
                             </a>
                         ))}
                     </div>

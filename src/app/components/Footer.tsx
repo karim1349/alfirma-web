@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <>
+        <footer>
         <div className="bg-white flex items-center justify-center flex-col pb-12">
             <img src="/assets/logoWithoutBackground.png" alt="logo" className="w-16 h-16 object-contain z-10 filter invert" />
             <div className="flex flex-row my-4">
@@ -16,7 +16,7 @@ const Footer = () => {
 
             </p>
         </div>
-        </>
+        </footer>
     )
 }
 
