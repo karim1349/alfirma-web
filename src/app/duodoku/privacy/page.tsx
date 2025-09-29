@@ -64,7 +64,7 @@ const PrivacyDuodoku = () => {
 
                     <h2 className="text-3xl font-bold text-white mb-6">6. Contactez-nous</h2>
                     <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                        Si vous avez des questions ou des préoccupations concernant notre politique de confidentialité, veuillez nous contacter à l'adresse e-mail suivante : alfirma.contact@gmail.com
+                        Si vous avez des questions ou des préoccupations concernant notre politique de confidentialité, veuillez nous contacter à l'adresse e-mail suivante : contact@alfirma.com
                     </p>
                 </div>
 
@@ -77,7 +77,7 @@ const PrivacyDuodoku = () => {
                     </Link>
                     <span className="text-gray-400 mx-4">•</span>
                     <a 
-                        href="mailto:alfirma.contact@gmail.com"
+                        href="mailto:contact@alfirma.com"
                         className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
                     >
                         Nous contacter

@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Duodoku - Le premier Sudoku multi-joueurs',
     description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+    keywords: 'Duodoku, Sudoku multi-joueurs, jeu mobile, React Native, jeu en ligne, puzzle, classement, iOS, Android, jeu de société digital',
     openGraph: {
         title: 'Duodoku - Le premier Sudoku multi-joueurs',
         description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
@@ -183,7 +184,7 @@ function DuodokuPage() {
                     </Link>
                     <span className="text-gray-400 mx-4">•</span>
                     <a 
-                        href="mailto:alfirma.contact@gmail.com"
+                        href="mailto:contact@alfirma.com"
                         className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
                     >
                         Nous contacter

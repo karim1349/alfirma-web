@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "Al Firma - Développement d'application mobile et web",
   description:
     "Al Firma, votre agence experte en développement d'application mobile et web, vous accompagne de l'idée à la mise en marché de votre projet. Solutions personnalisées, support technique et conseil stratégique.",
+  keywords: "développement mobile, application web, React Native, Django, UX/UI design, agence digitale, développement sur mesure, applications iOS, applications Android, API REST, maintenance applicative",
   openGraph: {
     type: "website",
     url: "https://www.alfirma.com/",

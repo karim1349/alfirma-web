@@ -4,6 +4,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.alfirma.com'
   const currentDate = new Date()
   
+  // Location pages
+  const locations = [
+    // France
+    'paris', 'nantes', 'angers', 'cholet',
+    // Morocco  
+    'casablanca', 'rabat', 'tanger', 'marrakech'
+  ]
+
+  const locationPages = locations.map(location => ({
+    url: `${baseUrl}/${location}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+  
   return [
     {
       url: baseUrl,
@@ -29,5 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    ...locationPages
   ]
 }
