@@ -21,7 +21,7 @@ function GameInvitationContent() {
         }
 
         const attemptDeepLink = () => {
-            const deepLink = `duodoku:///game/${gameId}`;
+            const deepLink = `duodoku:///game/?id=${gameId}`;
             window.location.href = deepLink;
             
             
