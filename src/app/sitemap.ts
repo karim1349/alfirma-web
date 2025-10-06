@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   const locationPages = locations.map(location => ({
-    url: `${baseUrl}/${location}`,
+    url: `${baseUrl}/${location}/`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -29,19 +29,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/home`,
+      url: `${baseUrl}/home/`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/duodoku`,
+      url: `${baseUrl}/duodoku/`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/duodoku/privacy`,
+      url: `${baseUrl}/duodoku/privacy/`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,

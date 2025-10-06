@@ -18,6 +18,7 @@ interface LocationData {
   region: string;
   flagEmoji: string;
   coordinates: { lat: number; lng: number };
+  description: string;
 }
 
 interface HomeProps {
@@ -103,7 +104,7 @@ function Home({ location }: HomeProps = {}) {
                             NOS SERVICES{location ? ` À ${location.name.toUpperCase()}` : ''}
                         </h2>
                         <p className='text-center px-4 md:px-0'>
-                            Nous allions créativité et expertise technique pour concrétiser vos idées{location ? `, où que vous soyez à ${location.name}` : ''}.
+                            {location ? location.description : 'Nous allions créativité et expertise technique pour concrétiser vos idées.'}
                         </p>
                         <div className='flex w-full flex-col md:flex-row md:my-12'>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
