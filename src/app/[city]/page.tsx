@@ -155,7 +155,7 @@ export async function generateMetadata({ params }: { params: { city: string } })
         }
       ],
       type: 'website',
-      url: `https://www.alfirma.com/${city}/`,
+      url: `https://alfirma.com/${city}/`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -164,7 +164,7 @@ export async function generateMetadata({ params }: { params: { city: string } })
       images: ['/assets/logo.png'],
     },
     alternates: {
-      canonical: `https://www.alfirma.com/${city}/`
+      canonical: `https://alfirma.com/${city}/`
     }
   };
 }
@@ -191,7 +191,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   return (
     <>
       <Head>
-        <link rel="canonical" href={`https://www.alfirma.com/${city}/`} />
+        <link rel="canonical" href={`https://alfirma.com/${city}/`} />
       </Head>
       <LocalBusinessSchema 
         name={`Al Firma - ${location.name}`}

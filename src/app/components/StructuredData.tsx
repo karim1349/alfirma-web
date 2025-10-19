@@ -2,17 +2,19 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://alfirma.com/#organization",
     "name": "Al Firma",
-    "description": "Agence experte en développement d'application mobile et web, vous accompagne de l'idée à la mise en marché de votre projet. Solutions personnalisées, support technique et conseil stratégique.",
-    "url": "https://www.alfirma.com",
-    "logo": "https://www.alfirma.com/assets/logo.png",
-    "image": "https://www.alfirma.com/assets/logo.png",
-    "contactPoint": {
+    "description": "Agence experte en développement d'applications mobiles et web. Solutions personnalisées, support technique et conseil stratégique.",
+    "url": "https://alfirma.com",
+    "logo": { "@type": "ImageObject", "url": "https://alfirma.com/assets/logo.png" },
+    "image": { "@type": "ImageObject", "url": "https://alfirma.com/assets/logo.png" },
+    "contactPoint": [{
       "@type": "ContactPoint",
       "email": "contact@alfirma.com",
       "contactType": "customer service",
-      "availableLanguage": "French"
-    },
+      "availableLanguage": ["fr","en", "ar"],
+      "telephone": "+33-7-86-24-39-48" 
+    }],
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "FR"
@@ -30,7 +32,7 @@ export function OrganizationSchema() {
       {
         "@type": "Offer",
         "name": "Développement d'applications mobiles",
-        "description": "Développement et déploiement d'applications mobile cross-platform (iOS et Android) avec technologies de pointe",
+        "description": "Développement et déploiement d'applications iOS/Android cross-platform",
         "price": "8900",
         "priceCurrency": "EUR"
       },
@@ -57,77 +59,50 @@ export function OrganizationSchema() {
     ]
   }
   
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }
+
 
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://alfirma.com/#website",
     "name": "Al Firma",
-    "url": "https://www.alfirma.com",
+    "url": "https://alfirma.com",
     "description": "Agence de développement d'applications mobiles et web",
     "publisher": {
       "@type": "Organization",
-      "name": "Al Firma",
-      "url": "https://www.alfirma.com"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.alfirma.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+      "@id": "https://alfirma.com/#organization"
     }
   }
-  
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }
+
 
 export function SoftwareApplicationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://alfirma.com/duodoku/#app",
     "name": "Duodoku",
-    "description": "Le premier jeu de Sudoku multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.",
-    "url": "https://www.alfirma.com/duodoku",
-    "image": "https://www.alfirma.com/assets/duodoku.png",
+    "description": "Jeu de Sudoku multi-joueurs sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.",
+    "url": "https://alfirma.com/duodoku/",
+    "image": "https://alfirma.com/assets/duodoku.png",
     "applicationCategory": "GameApplication",
-    "operatingSystem": ["iOS", "Android"],
-    "offers": [
-      {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "ratingCount": "100"
+    "operatingSystem": ["iOS","Android"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Al Firma",
-      "url": "https://www.alfirma.com"
+      "@id": "https://alfirma.com/#organization"
     }
   }
-  
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }
 
 export function FAQSchema() {
@@ -182,15 +157,15 @@ export function ServiceSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://alfirma.com/#service",
     "name": "Développement d'applications mobiles et web",
-    "description": "Al Firma propose des services complets de développement d'applications mobiles et web, du design UX/UI au déploiement et à la maintenance.",
+    "description": "Services complets de développement d'applications mobiles et web, du design UX/UI au déploiement et à la maintenance.",
     "provider": {
       "@type": "Organization",
-      "name": "Al Firma",
-      "url": "https://www.alfirma.com"
+      "@id": "https://alfirma.com/#organization"
     },
     "serviceType": "Développement logiciel",
-    "areaServed": "Monde entier",
+    "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Services de développement",
@@ -230,16 +205,11 @@ export function ServiceSchema() {
       ]
     }
   }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }
 
-export function LocalBusinessSchema({ 
+
+export function LocalBusinessSchema({
   name, 
   city, 
   country, 
@@ -252,13 +222,15 @@ export function LocalBusinessSchema({
   region: string; 
   coordinates: { lat: number; lng: number }; 
 }) {
+  const citySlug = city.toLowerCase();
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `https://alfirma.com/${citySlug}/#localbusiness`,
     "name": name,
-    "description": `Al Firma - Agence de développement d'applications mobiles et web à ${city}, ${country}. Services de développement React Native, Django, UX/UI Design.`,
-    "url": `https://www.alfirma.com/location/${city.toLowerCase()}`,
-    "telephone": "+33-7-86-24-39-48", // Placeholder
+    "description": `Al Firma - Agence de développement d'applications mobiles et web à ${city}, ${country}. Services React Native, Django, UX/UI Design.`,
+    "url": `https://alfirma.com/${citySlug}/`,
+    "telephone": "+33-7-86-24-39-48",
     "email": "contact@alfirma.com",
     "address": {
       "@type": "PostalAddress",
@@ -274,10 +246,6 @@ export function LocalBusinessSchema({
     "areaServed": {
       "@type": "City",
       "name": city,
-      "containedInPlace": {
-        "@type": "Country",
-        "name": country
-      }
     },
     "serviceArea": {
       "@type": "GeoCircle",
@@ -286,68 +254,31 @@ export function LocalBusinessSchema({
         "latitude": coordinates.lat,
         "longitude": coordinates.lng
       },
-      "geoRadius": "50000" // 50km radius
+      "geoRadius": 50000
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Services de développement",
       "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Développement d'applications mobiles",
-            "description": `Développement d'applications iOS et Android avec React Native à ${city}`
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Développement d'applications web",
-            "description": `Développement d'applications web avec React.js et Django à ${city}`
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "UX/UI Design",
-            "description": `Design d'interface utilisateur et expérience utilisateur à ${city}`
-          }
-        }
+        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Applications Mobiles", "description": `Développement d'apps iOS/Android avec React Native à ${city}` } },
+        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"Applications Web", "description": `Développement d'applications web avec React.js et Django à ${city}` } },
+        { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"UX/UI Design", "description": `Design d'interface et expérience utilisateur à ${city}` } }
       ]
     },
     "openingHours": "Mo-Fr 09:00-18:00",
     "priceRange": "€€€",
-    "currenciesAccepted": "EUR",
+    "currenciesAccepted": country === "Maroc" ? "MAD, EUR" : "EUR",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "foundingDate": "2023",
-    "founder": {
-      "@type": "Person",
-      "name": "Karim Benchekroun"
-    },
-    "knowsAbout": [
-      "Développement d'applications mobiles",
-      "Développement d'applications web", 
-      "React Native",
-      "Django",
-      "UX/UI Design",
-      "Déploiement d'applications"
-    ],
+    "founder": { "@type": "Person", "name": "Karim Benchekroun" },
+    "knowsAbout": ["Développement d'applications mobiles","Développement d'applications web","React Native","Django","UX/UI Design","Déploiement d'applications"],
     "sameAs": [
-      "https://www.alfirma.com",
+      "https://alfirma.com",
       "https://facebook.com/alfirmaagency",
       "https://instagram.com/alfirmaagency",
       "https://linkedin.com/company/al-firma",
       "https://x.com/alfirmaagency"
     ]
   }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }
