@@ -56,7 +56,7 @@ export function BreadcrumbSchema({ items }: BreadcrumbsProps) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": item.href ? `https://www.alfirma.com${item.href}` : undefined
+      "item": item.href ? `https://alfirma.com${item.href}` : undefined
     }))
   };
 

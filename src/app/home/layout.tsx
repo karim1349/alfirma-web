@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       }
     ],
     type: 'website',
-    url: 'https://www.alfirma.com/home',
+    url: 'https://alfirma.com',
   },
   twitter: {
     card: 'summary_large_image',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ['/assets/logo.png'],
   },
   alternates: {
-    canonical: 'https://www.alfirma.com/home'
+    canonical: 'https://alfirma.com'
   }
 }
 
