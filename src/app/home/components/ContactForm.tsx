@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import axios from 'axios'
 import Lottie from "lottie-react";
+import axios from "@/lib/axios";
 const images = [
   '/assets/illustrations/mockup_insta.png',
   '/assets/illustrations/mockup_facebook.png',
