@@ -105,6 +105,11 @@ function Home({ location }: HomeProps = {}) {
                         </h2>
                         <p className='text-center px-4 md:px-0'>
                             {location ? location.description : 'Nous allions créativité et expertise technique pour concrétiser vos idées.'}
+                            {location && (location as any).marketInsights && (
+                                <span className='block mt-4 text-lg text-gray-600'>
+                                    {(location as any).marketInsights}
+                                </span>
+                            )}
                         </p>
                         <div className='flex w-full flex-col md:flex-row md:my-12'>
                             <div className='group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8'>
@@ -119,6 +124,11 @@ function Home({ location }: HomeProps = {}) {
                                 <h3 className='font-semibold'>Développement d'Applications Mobiles iOS et Android</h3>
                                 <p className='text-xs text-center mt-4'>
                                     Notre agence développe et déploie des applications mobiles cross-platform (iOS et Android) d'un haut niveau de qualité avec React Native{location ? ` pour les entreprises de ${location.name}` : ''}. 
+                                    {location && (location as any).technologies && (
+                                        <span className='block mt-2 text-xs text-gray-600'>
+                                            {(location as any).technologies}
+                                        </span>
+                                    )}
                                 </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
@@ -174,6 +184,11 @@ function Home({ location }: HomeProps = {}) {
                                 <h3 className='font-semibold'>Développement d'Applications Web avec React.js et Django</h3>
                                 <p className='text-xs text-center mt-4'>
                                     Notre agence spécialisée en développement d'applications web avec React.js et Django. Création d'applications web full-stack sur mesure{location ? ` pour ${location.name}` : ''}.
+                                    {location && (location as any).achievements && (
+                                        <span className='block mt-2 text-xs text-gray-600'>
+                                            {(location as any).achievements}
+                                        </span>
+                                    )}
                                 </p>
                                 <div className='flex flex-1 flex-col justify-start self-center my-4'>
                                     <div className='flex items-center'>
