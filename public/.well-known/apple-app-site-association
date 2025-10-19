@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "3F8R7Y3WA7.com.duodoku",
-        "paths": [ "/duodoku/*" ]
+        "paths": [ "/duodoku/game/*" ]
       }
     ]
   },
