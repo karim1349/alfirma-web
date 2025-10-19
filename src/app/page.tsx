@@ -1,7 +1,7 @@
-import { redirect } from "next/navigation";
+import Home from "./home/page";
 
 export const dynamic = 'force-static'
 
 export default function IndexPage() {
-  redirect("/home");
+  return <Home />;
 }

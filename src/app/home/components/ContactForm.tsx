@@ -3,29 +3,40 @@
 import { useEffect, useState } from "react"
 import Lottie from "lottie-react";
 import axios from "@/lib/axios";
+import { useForm } from "react-hook-form";
 const images = [
   '/assets/illustrations/mockup_insta.png',
   '/assets/illustrations/mockup_facebook.png',
   '/assets/illustrations/mockup_linkedin.png',
 ];
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
 const ContactForm = () => {
     const [currentImage, setCurrentImage] = useState(0);
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
     const [isSent, setIsSent] = useState(false)
-    const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-            axios.post('/api/message/', {
-                name:name,
-                email:email,
-                message:message
-            })
-            setIsSent(true)
-            setName('')
-            setEmail('')
-            setMessage('')
+    const [success, setSuccess] = useState(false)
+    
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
+        mode: 'onBlur'
+    });
+
+    const sendEmail = async (data: FormData) => {
+        try {
+            setIsSent(true);
+            await axios.post('/api/message/', {
+                name: data.name,
+                email: data.email,
+                message: data.message
+            });
+            reset();
+        } catch (error) {
+            console.error('Error sending message:', error);
         }
+    }
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -43,24 +54,74 @@ const ContactForm = () => {
             </div>
             <div className='flex flex-col flex-1 w-full p-4 md:p-16 md:max-w-[50%] backdrop-blur-xl bg-opacity-30 my-8 rounded-3xl overflow-hidden border-2 border-purple-350'>
                 <h2 className='text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400'>CONTACT</h2>
-                <form className='flex flex-col' onSubmit={sendEmail}>
+                <form className='flex flex-col' onSubmit={handleSubmit(sendEmail)}>
                     <div className='py-2'>
                         <label className='text-purple-750 font-bold text-sm tracking-widest'>E-mail</label>
-                        <input type="email" className=' bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border border-purple-350' onChange={(e) => setEmail(e.target.value)} />
+                        <input 
+                            type="email" 
+                            className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${errors.email ? 'border-red-500' : 'border-purple-350'}`}
+                            {...register('email', {
+                                required: 'L\'email est requis',
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: 'Format d\'email invalide'
+                                }
+                            })}
+                        />
+                        {errors.email && (
+                            <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
+                        )}
                     </div>
                     <div className='py-2'>
                         <label className='text-purple-750 font-bold text-sm tracking-widest'>Nom</label>
-                        <input type="text" className=' bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border border-purple-350' onChange={(e) => setName(e.target.value)} />
+                        <input 
+                            type="text" 
+                            className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${errors.name ? 'border-red-500' : 'border-purple-350'}`}
+                            {...register('name', {
+                                required: 'Le nom est requis',
+                                minLength: {
+                                    value: 2,
+                                    message: 'Le nom doit contenir au moins 2 caractères'
+                                }
+                            })}
+                        />
+                        {errors.name && (
+                            <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
+                        )}
                     </div>
                     <div className='py-2'>
                         <label className='text-purple-750 font-bold text-sm tracking-widest'>Message</label>
-                        <textarea className=' bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border border-purple-350' onChange={(e) => setMessage(e.target.value)}  />
+                        <textarea 
+                            className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border ${errors.message ? 'border-red-500' : 'border-purple-350'}`}
+                            {...register('message', {
+                                required: 'Le message est requis',
+                                minLength: {
+                                    value: 5,
+                                    message: 'Le message doit contenir au moins 5 caractères'
+                                }
+                            })}
+                        />
+                        {errors.message && (
+                            <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
+                        )}
                     </div>
-                    <button type="submit" className={`bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0 ${isSent ? 'bg-gradient-to-r from-purple-400 to-blue-500 border-opacity-0' : ''}`} disabled={name === '' || email === '' || message === ''}>
+                    <button 
+                        type="submit" 
+                        className={`bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0 ${isSent ? 'bg-gradient-to-r from-purple-400 to-blue-500 border-opacity-0' : ''}`}
+                    >
                         {
                             isSent ? 
-                            <Lottie animationData={require('../../../content/space_mail.json')} className='h-8' onAnimationEnd={() => setIsSent(false)} loop={false} /> :
-                            <span className='text-purple-750 font-semibold text-md group-hover:text-white'>Envoyer</span>
+                            <Lottie animationData={require('../../../content/space_mail.json')} className='h-8' onComplete={() => {setIsSent(false); setSuccess(true)}} loop={false} /> :
+                            success ? (
+                                <div className="flex items-center justify-center gap-2">
+                                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                    </svg>
+                                    <span className='text-green-500 font-semibold text-md'>Message envoyé</span>
+                                </div>
+                            ) : (
+                                <span className='text-purple-750 font-semibold text-md group-hover:text-white'>Envoyer</span>
+                            )
                         }
                     </button>
                 </form>

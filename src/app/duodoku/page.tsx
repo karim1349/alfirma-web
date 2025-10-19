@@ -21,7 +21,7 @@ export const metadata: Metadata = {
             }
         ],
         type: 'website',
-        url: 'https://www.alfirma.com/duodoku',
+        url: 'https://alfirma.com/duodoku/',
     },
     twitter: {
         card: 'summary_large_image',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         images: ['/assets/duodoku.png'],
     },
     alternates: {
-        canonical: 'https://www.alfirma.com/duodoku'
+        canonical: 'https://alfirma.com/duodoku/'
     },
     other: {
         'apple-itunes-app': 'app-id=6448099658'

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
                 }
             ],
             type: 'website',
-            url: `https://www.alfirma.com/duodoku/game?id=30`,
+            url: `https://alfirma.com/duodoku/game?id=${encodeURIComponent(gameId)}`,
         },
         twitter: {
             card: 'summary_large_image',
@@ -33,7 +33,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
             'apple-itunes-app': 'app-id=6448099658'
         },
         alternates: {
-            canonical: `https://www.alfirma.com/duodoku/game?id=30`
+            canonical: `https://alfirma.com/duodoku/game?id=${encodeURIComponent(gameId)}`
+        },
+        robots: {
+            index: false,
+            follow: true,
         }
     };
 }

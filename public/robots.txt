@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.alfirma.com/sitemap.xml
+Sitemap: https://alfirma.com/sitemap.xml
