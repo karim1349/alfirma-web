@@ -5,7 +5,7 @@ export function OrganizationSchema() {
     "@id": "https://alfirma.com/#organization",
     "name": "Al Firma",
     "description": "Agence experte en développement d'applications mobiles et web. Solutions personnalisées, support technique et conseil stratégique.",
-    "url": "https://alfirma.com",
+    "url": "https://alfirma.com/",
     "logo": { "@type": "ImageObject", "url": "https://alfirma.com/assets/logo.png" },
     "image": { "@type": "ImageObject", "url": "https://alfirma.com/assets/logo.png" },
     "contactPoint": [{
@@ -69,7 +69,7 @@ export function WebSiteSchema() {
     "@type": "WebSite",
     "@id": "https://alfirma.com/#website",
     "name": "Al Firma",
-    "url": "https://alfirma.com",
+    "url": "https://alfirma.com/",
     "description": "Agence de développement d'applications mobiles et web",
     "publisher": {
       "@type": "Organization",
@@ -273,7 +273,7 @@ export function LocalBusinessSchema({
     "founder": { "@type": "Person", "name": "Karim Benchekroun" },
     "knowsAbout": ["Développement d'applications mobiles","Développement d'applications web","React Native","Django","UX/UI Design","Déploiement d'applications"],
     "sameAs": [
-      "https://alfirma.com",
+      "https://alfirma.com/",
       "https://facebook.com/alfirmaagency",
       "https://instagram.com/alfirmaagency",
       "https://linkedin.com/company/al-firma",

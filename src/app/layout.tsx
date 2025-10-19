@@ -28,14 +28,14 @@ const clashDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://alfirma.com'),
+  metadataBase: new URL('https://alfirma.com/'),
   title: "Al Firma - Agence Développement Applications Mobiles & Web",
   description:
     "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
   keywords: "développement mobile, application web, agence développement mobile, React Native, Django, UX/UI design, agence digitale, développement sur mesure, applications iOS, applications Android, API REST, maintenance applicative, création application mobile, développement web, agence web mobile",
   openGraph: {
     type: "website",
-    url: "https://alfirma.com",
+    url: "https://alfirma.com/",
     title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
       "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://alfirma.com",
+    site: "https://alfirma.com/",
     title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
       "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://alfirma.com"
+    canonical: "https://alfirma.com/"
   },
 };
 
