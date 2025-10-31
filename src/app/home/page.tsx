@@ -37,7 +37,13 @@ function Home({ location }: HomeProps = {}) {
               className="flex justify-center items-center flex-col-reverse md:flex-row w-full"
               id="SECTION_ACCUEIL"
               style={{
-                backgroundImage: "url('/assets/illustrations/background.png')",
+                background: `
+                  linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.6) 85%, rgba(255, 255, 255, 0.85) 90%, white 95%),
+                  radial-gradient(ellipse 70% 50% at 15% 15%, rgba(67, 56, 202, 1) 0%, rgba(79, 70, 229, 0.8) 35%, rgba(99, 102, 241, 0.5) 55%, transparent 75%),
+                  linear-gradient(135deg, rgba(219, 39, 119, 0.95) 0%, rgba(236, 72, 153, 0.8) 15%, rgba(251, 113, 133, 0.6) 30%, rgba(168, 85, 247, 0.4) 45%, transparent 70%),
+                  radial-gradient(ellipse 120% 70% at 85% 40%, rgba(96, 165, 250, 0.95) 0%, rgba(147, 197, 253, 0.75) 30%, rgba(191, 219, 254, 0.5) 50%, rgba(219, 234, 254, 0.3) 70%, transparent 85%),
+                  linear-gradient(to bottom, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.25) 20%, rgba(96, 165, 250, 0.3) 40%, rgba(167, 139, 250, 0.2) 55%, transparent 70%)
+                `,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: "100vh",
@@ -98,7 +104,7 @@ function Home({ location }: HomeProps = {}) {
                   </button>
                   <a
                     href="#SECTION_CONTACT"
-                    className="text-white text-sm underline hover:text-blue-900 transition-colors"
+                    className="text-gray-700 text-sm underline hover:text-blue-900 transition-colors"
                   >
                     Ou envoyez-nous un message
                   </a>
