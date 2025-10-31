@@ -176,7 +176,7 @@ const ContactForm = () => {
                 setIsTurnstileVerified(false);
                 setTurnstileToken(null);
                 setTurnstileError(
-                  "La vérification Turnstile a échoué. Veuillez réessayer."
+                  "La vérification Cloudflare a échoué. Veuillez réessayer."
                 );
               }}
               onExpire={() => {
