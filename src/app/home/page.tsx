@@ -957,6 +957,92 @@ function Home({ location }: HomeProps = {}) {
                 laissez-vous inspirer pour votre prochaine application !
               </p>
               <div className="flex w-full flex-col my-6 items-center">
+                {/* QIIMA - Featured Project */}
+                <div
+                  id="PROJECT_QIIMA"
+                  className="bg-[#5A6A3F] rounded-3xl p-8 justify-between md:w-2/3 my-6 hover:bg-[#4a5a2f] transition-colors duration-300 cursor-pointer"
+                  onClick={() => (window.location.href = "/projets/qiima")}
+                >
+                  <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
+                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                      Mobile App
+                    </div>
+                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                      Web App
+                    </div>
+                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                      API Django
+                    </div>
+                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                      UX/UI Design
+                    </div>
+                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                      Community
+                    </div>
+                  </div>
+                  <div className="flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full">
+                    <div className="flex-1 p-4">
+                      <h3 className="text-white text-5xl">QIIMA</h3>
+                      <p className="text-white/90 text-sm my-8">
+                        Qiima est une application communautaire de partage de
+                        bons plans au Maroc. Les utilisateurs découvrent et
+                        partagent les meilleures offres des enseignes comme
+                        Marjane, BIM, Jumia et Electroplanet. La communauté vote
+                        pour garantir la qualité des deals. Développée avec
+                        React Native + Expo et une API Django robuste.
+                      </p>
+                      <div className="flex items-center my-2">
+                        <a
+                          href="https://apps.apple.com/app/id6754856570"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Image
+                            src="/assets/button_appstore.png"
+                            alt="Télécharger Qiima sur l'App Store"
+                            width={128}
+                            height={64}
+                            className="w-20 sm:w-32 mr-2 hover:scale-110 transform transition"
+                          />
+                        </a>
+                        <a
+                          href="https://play.google.com/store/apps/details?id=ma.qiima.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Image
+                            src="/assets/button_playstore.png"
+                            alt="Télécharger Qiima sur Google Play"
+                            width={128}
+                            height={64}
+                            className="w-20 sm:w-32 mr-2 hover:scale-110 transform transition"
+                          />
+                        </a>
+                        <a
+                          href="https://qiima.ma"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="bg-white text-[#5A6A3F] px-4 py-2 rounded-lg font-semibold hover:scale-110 transform transition text-sm"
+                        >
+                          Visiter le site
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-between self-center md:self-end">
+                      <Image
+                        src="/assets/projects/qiima/logo.png"
+                        alt="Qiima - Application de bons plans au Maroc"
+                        width={192}
+                        height={192}
+                        className="w-48 h-48 object-contain rounded-3xl self-end"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div
                   id="PROJECT_DUODOKU"
                   className="bg-gray-800 rounded-3xl p-8 justify-between md:w-2/3 my-6 hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
