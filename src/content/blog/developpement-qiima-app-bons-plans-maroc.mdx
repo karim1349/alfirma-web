@@ -1,0 +1,128 @@
+---
+title: "Comment nous avons développé Qiima : une app communautaire de bons plans"
+slug: "developpement-qiima-app-bons-plans-maroc"
+description: "Découvrez les coulisses du développement de Qiima, l'application communautaire de partage de bons plans au Maroc. Stack technique, défis et solutions."
+date: "2026-01-09"
+author: "Karim Benchekroun"
+category: "mobile"
+tags: ["react-native", "django", "case-study", "application-mobile", "maroc"]
+image: "/assets/projects/qiima/app_mockup.png"
+imageAlt: "Qiima - Application mobile de bons plans au Maroc"
+featured: false
+locale: "fr"
+---
+
+Chez Al Firma, nous avons récemment lancé **Qiima**, une application communautaire de partage de bons plans au Maroc. Dans cet article, nous vous emmenons dans les coulisses de ce projet passionnant.
+
+## Le Constat : Un Marché Fragmenté
+
+Au Maroc, les consommateurs passent énormément de temps à chercher les meilleures offres. Les promotions sont dispersées :
+- Sur les réseaux sociaux (groupes Facebook, WhatsApp)
+- Sur les sites des enseignes (Marjane, BIM, Jumia...)
+- Dans les prospectus papier
+- Par bouche-à-oreille
+
+**Le problème ?** Aucune source centralisée et fiable. Les consommateurs ne savent pas quelles offres sont actuellement valides ni lesquelles valent vraiment le coup.
+
+## Notre Vision : Le Pouvoir de la Communauté
+
+Nous avons imaginé Qiima comme une **plateforme communautaire** où :
+
+1. **Les utilisateurs partagent** les bons plans qu'ils découvrent
+2. **La communauté vote** pour valider la qualité des offres
+3. **L'algorithme met en avant** les deals les plus appréciés
+4. **Tout le monde économise** grâce à l'intelligence collective
+
+## Architecture Technique
+
+### Stack Mobile : React Native + Expo
+
+Pour le développement mobile, nous avons choisi **React Native avec Expo** pour plusieurs raisons :
+
+- **Cross-platform** : Un seul code pour iOS et Android
+- **Rapidité de développement** : Hot reload, outils intégrés
+- **Expo Router** : Navigation fichier-basée intuitive
+- **EAS Build** : Déploiement simplifié sur les stores
+
+```typescript
+// Structure du projet mobile
+apps/mobile/
+├── app/                 # Pages (Expo Router)
+│   ├── (tabs)/          # Navigation par onglets
+│   ├── deals/[id].tsx   # Page détail d'une offre
+│   └── create/          # Workflow de création
+├── components/          # Composants réutilisables
+└── hooks/               # Hooks personnalisés
+```
+
+### Backend : Django REST Framework
+
+Notre API est construite avec **Django REST Framework**, offrant :
+
+- **Robustesse** : Framework mature et éprouvé
+- **ORM puissant** : Gestion simplifiée des données
+- **Admin intégré** : Interface d'administration prête à l'emploi
+- **DRF Spectacular** : Documentation OpenAPI automatique
+
+### Gestion d'État : TanStack Query + Zustand
+
+Pour la gestion d'état, nous utilisons une combinaison moderne :
+
+- **TanStack Query** : Cache et synchronisation des données serveur
+- **Zustand** : État local léger et performant
+
+Cette approche sépare clairement l'état serveur de l'état client.
+
+## Défis Rencontrés
+
+### 1. Système de Vote en Temps Réel
+
+Implémenter un système de votes avec des mises à jour instantanées était crucial pour l'expérience utilisateur. Nous avons opté pour :
+
+- **Optimistic updates** : L'interface réagit immédiatement
+- **Cache intelligent** : TanStack Query gère la synchronisation
+- **Compteurs agrégés** : Calculs côté serveur pour la cohérence
+
+### 2. Modération Communautaire
+
+Avec une plateforme ouverte, la modération est essentielle :
+
+- **Signalement** : Les utilisateurs peuvent reporter les contenus
+- **Score de confiance** : Les utilisateurs gagnent en crédibilité
+- **Modération proactive** : Détection automatique de spam
+
+### 3. Performance sur les Listings
+
+Afficher des centaines de deals avec images requiert de l'optimisation :
+
+- **Pagination infinie** : Chargement progressif
+- **Image lazy loading** : Chargement différé des visuels
+- **Cache optimisé** : Stockage local des données fréquentes
+
+## Résultats
+
+Depuis le lancement de Qiima :
+
+- 📱 Application disponible sur **iOS et Android**
+- 🌐 Version web accessible sur [qiima.ma](https://qiima.ma)
+- 👥 Communauté active de chasseurs de bons plans
+- ⭐ Note moyenne de **4.8/5** sur les stores
+
+## Leçons Apprises
+
+1. **Commencer simple** : MVP d'abord, fonctionnalités ensuite
+2. **Écouter la communauté** : Les utilisateurs guident les priorités
+3. **Automatiser tôt** : CI/CD et tests dès le début
+4. **Investir dans l'UX** : Une interface intuitive fait la différence
+
+## Vous Avez un Projet Similaire ?
+
+Chez Al Firma, nous développons des applications communautaires, marketplaces et plateformes de deals. Si vous avez un projet en tête :
+
+- 📞 [Réservez un appel gratuit](https://calendly.com/karimbenchekroun/30min)
+- 🌐 [Découvrez nos services](/home#SECTION_A_PROPOS)
+- 📱 [Voir le projet Qiima](/projets/qiima/)
+
+---
+
+**Technologies utilisées :** React Native, Expo, Django, PostgreSQL, TanStack Query, Zustand, Turborepo

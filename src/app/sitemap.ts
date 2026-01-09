@@ -1,4 +1,5 @@
-import { MetadataRoute } from 'next'
+import { getAllPosts } from '@/lib/blog';
+import { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static'
 
@@ -20,6 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
+
+  // Blog posts
+  const blogPosts = getAllPosts().map(post => ({
+    url: `${baseUrl}/blog/${post.slug}/`,
+    lastModified: new Date(post.updatedAt || post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
   
   return [
     {
@@ -35,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog/`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/duodoku/`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -46,6 +61,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
-    ...locationPages
+    {
+      url: `${baseUrl}/projets/qiima/`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...locationPages,
+    ...blogPosts,
   ]
 }
+
