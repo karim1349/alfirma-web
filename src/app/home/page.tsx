@@ -125,7 +125,7 @@ function Home({ location }: HomeProps = {}) {
                       {location ? ` à ${location.name}` : ""}.
                     </p>
 
-                    <h2 className="text-7xl self-end text-gray-200 font-semibold">
+                    <h2 className="text-7xl self-end text-gray-400 font-semibold">
                       01.
                     </h2>
                   </div>
@@ -142,7 +142,7 @@ function Home({ location }: HomeProps = {}) {
                       chaque étape.
                     </p>
 
-                    <h2 className="text-7xl self-end text-gray-200 font-semibold ">
+                    <h2 className="text-7xl self-end text-gray-400 font-semibold ">
                       02.
                     </h2>
                   </div>
@@ -157,7 +157,7 @@ function Home({ location }: HomeProps = {}) {
                       continu.
                     </p>
 
-                    <h2 className=" text-7xl self-end text-gray-200 font-semibold">
+                    <h2 className=" text-7xl self-end text-gray-400 font-semibold">
                       03.
                     </h2>
                   </div>
@@ -964,19 +964,19 @@ function Home({ location }: HomeProps = {}) {
                   onClick={() => (window.location.href = "/projets/qiima")}
                 >
                   <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
-                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                    <div className="bg-[#5a7a30] rounded-full px-2 mr-2 mb-2 text-white">
                       Mobile App
                     </div>
-                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                    <div className="bg-[#5a7a30] rounded-full px-2 mr-2 mb-2 text-white">
                       Web App
                     </div>
-                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                    <div className="bg-[#5a7a30] rounded-full px-2 mr-2 mb-2 text-white">
                       API Django
                     </div>
-                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                    <div className="bg-[#5a7a30] rounded-full px-2 mr-2 mb-2 text-white">
                       UX/UI Design
                     </div>
-                    <div className="bg-[#8fa85a] rounded-full px-2 mr-2 mb-2 text-white">
+                    <div className="bg-[#5a7a30] rounded-full px-2 mr-2 mb-2 text-white">
                       Community
                     </div>
                   </div>
@@ -1141,8 +1141,8 @@ function Home({ location }: HomeProps = {}) {
                   </div>
                   <div className="flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full">
                     <div className="flex-1 p-4">
-                      <h3 className="text-orange-600 text-5xl">SAYAR</h3>
-                      <p className="text-orange-600 text-sm my-8">
+                      <h3 className="text-orange-800 text-5xl">SAYAR</h3>
+                      <p className="text-orange-800 text-sm my-8">
                         Sayar est une market-place digitale d'auto-partage de
                         véhicules entre particuliers au Maroc. Nous avons
                         développé une application permettant aux propriétaires
@@ -1206,9 +1206,9 @@ function Home({ location }: HomeProps = {}) {
 
                         {/* Content */}
                         <div className="flex-1 text-center lg:text-left">
-                          <h4 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mb-4">
+                          <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mb-4">
                             {partners[0].name}
-                          </h4>
+                          </h3>
                           <p className="text-gray-600 mb-6 text-lg leading-relaxed">
                             {partners[0].description}
                           </p>
@@ -1270,9 +1270,9 @@ function Home({ location }: HomeProps = {}) {
                             </div>
 
                             {/* Name */}
-                            <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mb-3">
+                            <h3 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400 mb-3">
                               {partner.name}
-                            </h4>
+                            </h3>
 
                             {/* Description */}
                             <p className="text-sm text-gray-600 mb-4">

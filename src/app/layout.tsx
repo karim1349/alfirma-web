@@ -1,10 +1,10 @@
+import CursorEffect from "@/app/components/CursorEffect";
+import "@/lib/axios"; // Initialize axios configuration
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import CursorEffect from "@/app/components/CursorEffect";
 import Footer from "./components/Footer";
 import { OrganizationSchema, WebSiteSchema } from "./components/StructuredData";
-import "@/lib/axios"; // Initialize axios configuration
+import "./globals.css";
 
 const clashDisplay = localFont({
   src: [
@@ -25,6 +25,8 @@ const clashDisplay = localFont({
     },
   ],
   variable: "--font-clash-display",
+  display: "swap", // Prevents font from blocking render
+  preload: true,   // Preloads font for faster loading
 });
 
 export const metadata: Metadata = {
@@ -77,13 +79,32 @@ export default function RootLayout({
           name="google-site-verification"
           content="IOj81QGQJuPWZ9jeC_pOHCHOhWy3Jjb8qTdLqHOPV14"
         />
+        {/* Preload critical fonts to reduce network dependency chain */}
+        <link
+          rel="preload"
+          href="/fonts/ClashDisplay.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ClashDisplay-Semibold.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
         <OrganizationSchema />
         <WebSiteSchema />
       </head>
       <body
         className={`${clashDisplay.variable} antialiased`}
       >
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         {/* Cursor effect now lives in a client component */}
         <CursorEffect />
         <Footer />
