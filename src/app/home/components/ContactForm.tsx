@@ -5,11 +5,13 @@ import { Turnstile } from "@marsidev/react-turnstile";
 import Lottie from "lottie-react";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+
 const images = [
   "/assets/illustrations/mockup_insta.png",
   "/assets/illustrations/mockup_facebook.png",
   "/assets/illustrations/mockup_linkedin.png",
 ];
+
 interface FormData {
   name: string;
   email: string;
@@ -23,6 +25,7 @@ const ContactForm = () => {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
   const [turnstileError, setTurnstileError] = useState<string | null>(null);
+  const [showTurnstile, setShowTurnstile] = useState(false); // Lazy-load Turnstile
   const turnstileRef = useRef<any>(null);
 
   const {
@@ -33,6 +36,13 @@ const ContactForm = () => {
   } = useForm<FormData>({
     mode: "onBlur",
   });
+
+  // Handler to trigger Turnstile loading on first form interaction
+  const handleFormInteraction = () => {
+    if (!showTurnstile) {
+      setShowTurnstile(true);
+    }
+  };
 
   const sendEmail = async (data: FormData) => {
     if (!isTurnstileVerified || !turnstileToken) {
@@ -75,6 +85,7 @@ const ContactForm = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+
   return (
     <div className="flex md:flex-row flex-col-reverse justify-center items-end flex-1">
       <div className="relative w-full md:w-1/3 h-96">
@@ -104,6 +115,7 @@ const ContactForm = () => {
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${
                 errors.email ? "border-red-500" : "border-purple-350"
               }`}
+              onFocus={handleFormInteraction}
               {...register("email", {
                 required: "L'email est requis",
                 pattern: {
@@ -128,6 +140,7 @@ const ContactForm = () => {
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${
                 errors.name ? "border-red-500" : "border-purple-350"
               }`}
+              onFocus={handleFormInteraction}
               {...register("name", {
                 required: "Le nom est requis",
                 minLength: {
@@ -149,6 +162,7 @@ const ContactForm = () => {
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border ${
                 errors.message ? "border-red-500" : "border-purple-350"
               }`}
+              onFocus={handleFormInteraction}
               {...register("message", {
                 required: "Le message est requis",
                 minLength: {
@@ -163,33 +177,39 @@ const ContactForm = () => {
               </p>
             )}
           </div>
-          <div className="py-2">
-            <Turnstile
-              ref={turnstileRef}
-              options={{
-                theme: "light",
-              }}
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
-              onSuccess={(token) => {
-                setTurnstileToken(token);
-                setIsTurnstileVerified(true);
-                setTurnstileError(null);
-              }}
-              onError={() => {
-                setIsTurnstileVerified(false);
-                setTurnstileToken(null);
-                setTurnstileError(
-                  "La vérification Cloudflare a échoué. Veuillez réessayer."
-                );
-              }}
-              onExpire={() => {
-                setIsTurnstileVerified(false);
-                setTurnstileToken(null);
-                setTurnstileError(
-                  "La vérification a expiré. Veuillez la refaire."
-                );
-              }}
-            />
+          <div className="py-2 min-h-[80px]">
+            {showTurnstile ? (
+              <Turnstile
+                ref={turnstileRef}
+                options={{
+                  theme: "light",
+                }}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
+                onSuccess={(token) => {
+                  setTurnstileToken(token);
+                  setIsTurnstileVerified(true);
+                  setTurnstileError(null);
+                }}
+                onError={() => {
+                  setIsTurnstileVerified(false);
+                  setTurnstileToken(null);
+                  setTurnstileError(
+                    "La vérification Cloudflare a échoué. Veuillez réessayer."
+                  );
+                }}
+                onExpire={() => {
+                  setIsTurnstileVerified(false);
+                  setTurnstileToken(null);
+                  setTurnstileError(
+                    "La vérification a expiré. Veuillez la refaire."
+                  );
+                }}
+              />
+            ) : (
+              <div className="text-gray-400 text-sm">
+                Remplissez le formulaire pour activer la vérification
+              </div>
+            )}
             {turnstileError && (
               <p className="text-red-500 text-xs mt-1">{turnstileError}</p>
             )}
