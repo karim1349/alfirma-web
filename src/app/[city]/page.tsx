@@ -1,8 +1,7 @@
-import React from 'react';
-import Home from '../home/page';
-import { LocalBusinessSchema } from '../components/StructuredData';
 import type { Metadata } from 'next';
-import Head from 'next/head'
+import Head from 'next/head';
+import { LocalBusinessSchema } from '../components/StructuredData';
+import Home from '../home/page';
 
 // Location data - centralized and easy to maintain
 const locations = {
@@ -139,19 +138,25 @@ export async function generateMetadata({ params }: { params: { city: string } })
     };
   }
 
+  // SEO-optimized title with exact keyword match
+  const title = `Agence Développement Application Mobile ${location.name} | Al Firma`;
+  
+  // SEO-optimized description with target keyword and CTA
+  const description = `Al Firma, votre agence de développement d'applications mobiles à ${location.name}. React Native, Django, iOS, Android. Devis gratuit ✓ Équipe experte - ${location.country}.`;
+
   return {
-    title: `Al Firma - Applications Mobiles & Web à ${location.name}`,
-    description: `Al Firma, agence experte en développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.`,
+    title,
+    description,
     keywords: location.keywords,
     openGraph: {
-      title: `Al Firma - Applications Mobiles & Web à ${location.name}`,
-      description: `Al Firma, agence experte en développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.`,
+      title: `Développement Application Mobile ${location.name} | Al Firma`,
+      description: `Agence de développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Devis gratuit.`,
       images: [
         {
           url: '/assets/logo.png',
           width: 1200,
           height: 630,
-          alt: `Al Firma - Agence de développement mobile et web à ${location.name}`,
+          alt: `Al Firma - Agence développement application mobile ${location.name}`,
         }
       ],
       type: 'website',
@@ -159,8 +164,8 @@ export async function generateMetadata({ params }: { params: { city: string } })
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Al Firma - Applications Mobiles & Web à ${location.name}`,
-      description: `Al Firma, agence experte en développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.`,
+      title: `Développement Application Mobile ${location.name} | Al Firma`,
+      description: `Agence de développement d'applications mobiles à ${location.name}. React Native, Django. Devis gratuit.`,
       images: ['/assets/logo.png'],
     },
     alternates: {
@@ -200,6 +205,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
         region={location.region}
         coordinates={location.coordinates}
       />
+      {/* City-specific H1 for SEO - visually hidden but accessible */}
+      <h1 className="sr-only">
+        Agence Développement Application Mobile {location.name}
+      </h1>
       <Home location={location} />
     </>
   );

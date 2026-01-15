@@ -95,10 +95,11 @@ const ContactForm = () => {
         </h2>
         <form className="flex flex-col" onSubmit={handleSubmit(sendEmail)}>
           <div className="py-2">
-            <label className="text-purple-750 font-bold text-sm tracking-widest">
+            <label htmlFor="contact-email" className="text-purple-750 font-bold text-sm tracking-widest">
               E-mail
             </label>
             <input
+              id="contact-email"
               type="email"
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${
                 errors.email ? "border-red-500" : "border-purple-350"
@@ -118,10 +119,11 @@ const ContactForm = () => {
             )}
           </div>
           <div className="py-2">
-            <label className="text-purple-750 font-bold text-sm tracking-widest">
+            <label htmlFor="contact-name" className="text-purple-750 font-bold text-sm tracking-widest">
               Nom
             </label>
             <input
+              id="contact-name"
               type="text"
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${
                 errors.name ? "border-red-500" : "border-purple-350"
@@ -139,10 +141,11 @@ const ContactForm = () => {
             )}
           </div>
           <div className="py-2">
-            <label className="text-purple-750 font-bold text-sm tracking-widest">
+            <label htmlFor="contact-message" className="text-purple-750 font-bold text-sm tracking-widest">
               Message
             </label>
             <textarea
+              id="contact-message"
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border ${
                 errors.message ? "border-red-500" : "border-purple-350"
               }`}
