@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import { BreadcrumbSchema } from "../../components/StructuredData";
 import { ArticleSchema } from "../components/ArticleSchema";
 import BlogCard from "../components/BlogCard";
 import BlogHeader from "../components/BlogHeader";
@@ -166,6 +167,13 @@ export default async function BlogPostPage({
         dateModified={post.updatedAt}
         image={post.image}
         url={`https://alfirma.com/blog/${slug}/`}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Accueil", url: "https://alfirma.com/" },
+          { name: "Blog", url: "https://alfirma.com/blog/" },
+          { name: post.title, url: `https://alfirma.com/blog/${slug}/` },
+        ]}
       />
       <div className="flex items-center justify-center">
         <BlogNavBar />

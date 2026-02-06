@@ -1,0 +1,215 @@
+---
+title: "Comment rédiger un cahier des charges pour votre application mobile"
+slug: "comment-rediger-cahier-des-charges-application-mobile"
+description: "Guide complet pour rédiger un cahier des charges efficace pour votre projet d'application mobile. Template gratuit et conseils d'experts inclus."
+date: "2026-01-18"
+author: "Karim Benchekroun"
+category: "business"
+tags: ["cahier-des-charges", "application-mobile", "gestion-projet", "startup", "template"]
+image: "/assets/illustrations/appmobile.png"
+imageAlt: "Comment rédiger un cahier des charges pour une application mobile"
+featured: false
+locale: "fr"
+---
+
+Un **cahier des charges** (CDC) bien rédigé est la clé d'un projet d'application réussi. Il aligne les attentes entre vous et votre prestataire, réduit les risques de dérive et facilite le chiffrage. Voici comment le rédiger efficacement.
+
+## Pourquoi un cahier des charges est essentiel
+
+Sans cahier des charges clair :
+- **Mauvaises surprises** : fonctionnalités oubliées ou mal comprises
+- **Budget dépassé** : changements de scope non anticipés
+- **Délais rallongés** : itérations évitables
+- **Frustration** : des deux côtés
+
+Un bon CDC vous fait gagner du temps et de l'argent.
+
+## Structure d'un cahier des charges efficace
+
+### 1. Présentation du projet
+
+**Objectif** : Donner le contexte à votre prestataire.
+
+À inclure :
+- Nom du projet et de l'entreprise
+- Votre activité et votre marché
+- Le problème que l'application résout
+- Vos objectifs business (acquisition, rétention, monétisation)
+
+**Exemple** :
+> "FitTrack est une startup spécialisée dans le coaching sportif. Notre application permet aux coachs de suivre et motiver leurs clients à distance. Objectif : 5 000 utilisateurs actifs en 6 mois."
+
+### 2. Cible utilisateur
+
+**Objectif** : Identifier qui va utiliser l'application.
+
+À définir :
+- Profil démographique (âge, profession, localisation)
+- Niveau technique (tech-savvy ou débutant)
+- Besoins et frustrations actuelles
+- Appareils utilisés (iOS vs Android, anciens vs récents)
+
+**Format recommandé** : Créez 1 à 3 personas.
+
+| Persona | Âge | Profession | Besoin principal | Frustration |
+|---------|-----|------------|-----------------|-------------|
+| Sophie | 35 | Coach sportif | Suivre mes 50 clients | Trop d'outils différents |
+| Marc | 28 | Pratiquant | Rester motivé | J'oublie mes séances |
+
+### 3. Fonctionnalités détaillées
+
+**Objectif** : Lister ce que l'application doit faire.
+
+**Méthode MoSCoW** recommandée :
+
+| Priorité | Signification | Exemple |
+|----------|---------------|---------|
+| **Must have** | Indispensable au lancement | Inscription, profil, exercices |
+| **Should have** | Important mais pas bloquant | Notifications push |
+| **Could have** | Bonus si le temps le permet | Mode sombre |
+| **Won't have** | Pas pour cette version | Chat vidéo |
+
+**Format par fonctionnalité** :
+
+```
+Fonctionnalité : Inscription utilisateur
+Priorité : Must have
+Description : L'utilisateur peut créer un compte avec email ou via Google/Apple
+Règles métier :
+  - Email unique obligatoire
+  - Mot de passe minimum 8 caractères
+  - Validation email par lien
+Écrans concernés : Inscription, Connexion, Vérification email
+```
+
+### 4. Parcours utilisateur
+
+**Objectif** : Décrire le flux d'utilisation principal.
+
+Décrivez les scénarios clés étape par étape :
+
+**Exemple - Réservation d'une séance** :
+1. L'utilisateur ouvre l'app
+2. Il voit le calendrier de son coach
+3. Il sélectionne un créneau disponible
+4. Il confirme la réservation
+5. Il reçoit une notification de confirmation
+6. Le coach reçoit une notification
+
+### 5. Design et identité visuelle
+
+**Objectif** : Guider les choix graphiques.
+
+À fournir si possible :
+- Charte graphique (logo, couleurs, polices)
+- Références de design (apps que vous aimez)
+- Contraintes (accessibilité, marque employeur)
+
+**Pas de charte ?** Indiquez :
+- 3 mots-clés décrivant l'ambiance souhaitée (ex: professionnel, dynamique, minimaliste)
+- 3 applications dont vous aimez le design
+- Ce que vous n'aimez pas (ex: pas de couleurs vives)
+
+### 6. Contraintes techniques
+
+**Objectif** : Identifier les contraintes et intégrations.
+
+À définir :
+- **Plateformes** : iOS, Android, ou les deux ?
+- **Versions OS minimales** : iOS 15+ ? Android 10+ ?
+- **Intégrations** : CRM, paiement (Stripe), analytics
+- **Hébergement** : Cloud, on-premise, région (RGPD)
+- **Sécurité** : Authentification 2FA, chiffrement
+
+### 7. Budget et délais
+
+**Objectif** : Cadrer les attentes financières et temporelles.
+
+Soyez transparent sur :
+- **Budget** : fourchette min/max
+- **Délai** : date de livraison souhaitée
+- **Priorités** : si conflit, privilégiez-vous le budget ou le délai ?
+
+**Tableau exemple** :
+
+| Paramètre | Valeur |
+|-----------|--------|
+| Budget | 15 000 - 20 000€ HT |
+| Délai souhaité | Livraison fin mars 2026 |
+| Priorité | Qualité > Délai > Budget |
+
+### 8. Critères de succès
+
+**Objectif** : Définir comment mesurer le succès.
+
+Exemples de KPIs :
+- Nombre de téléchargements (1er mois)
+- Taux de rétention J7
+- Note moyenne sur les stores
+- Temps passé dans l'app
+
+## Template de cahier des charges
+
+Voici un template prêt à l'emploi :
+
+```markdown
+# Cahier des charges - [Nom du projet]
+
+## 1. Contexte
+- Entreprise : 
+- Secteur :
+- Problème à résoudre :
+- Objectifs business :
+
+## 2. Cible
+| Persona | Profil | Besoin | Frustration |
+|---------|--------|--------|-------------|
+| ... | ... | ... | ... |
+
+## 3. Fonctionnalités
+
+### Must have (V1)
+- [ ] ...
+
+### Should have (V1.1)
+- [ ] ...
+
+### Won't have (V2+)
+- [ ] ...
+
+## 4. Contraintes techniques
+- Plateformes :
+- Intégrations :
+- Sécurité :
+
+## 5. Design
+- Références :
+- Charte graphique : [lien ou "à créer"]
+
+## 6. Budget & Délais
+- Budget :
+- Délai :
+
+## 7. Contact
+- Nom :
+- Email :
+- Téléphone :
+```
+
+## Erreurs à éviter
+
+❌ **Trop vague** : "L'app doit être rapide" → Définissez : "Temps de chargement < 2 secondes"
+
+❌ **Trop détaillé techniquement** : Laissez le prestataire proposer la stack technique
+
+❌ **Oublier les contraintes légales** : RGPD, conditions d'utilisation, politique de confidentialité
+
+❌ **Ignorer la maintenance** : Prévoyez le post-lancement
+
+## Conclusion
+
+Un bon cahier des charges ne doit pas faire 50 pages. **5 à 10 pages** suffisent si elles sont bien structurées. L'essentiel : être clair sur le problème à résoudre, les utilisateurs cibles, et les fonctionnalités prioritaires.
+
+---
+
+**Besoin d'aide pour structurer votre projet ?** [Réservez un appel gratuit](https://calendly.com/karimbenchekroun/30min) et nous vous aiderons à clarifier votre vision.
