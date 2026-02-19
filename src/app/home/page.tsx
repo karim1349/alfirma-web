@@ -63,9 +63,14 @@ function Home({ location }: HomeProps = {}) {
                 <h1 className="text-4xl md:text-8xl text-white text-center self-center font-bold mb-4">
                   AL FIRMA
                 </h1>
-                <h2 className="text-white my-4 text-3xl md:text-5xl text-center">
-                  Développement d'Applications Mobiles et Web
+                <h2 className="text-white my-4 text-2xl md:text-4xl text-center max-w-4xl">
+                  Votre application mobile, livrée en 20 jours
                 </h2>
+                <p className="text-white/90 text-lg md:text-xl text-center max-w-2xl mb-2">
+                  De l'idée à l'App Store : développement React Native, API Django, design Figma.
+                  <br className="hidden md:block" />
+                  <span className="font-semibold">À partir de 8 900€</span> • iOS & Android • Retours illimités
+                </p>
                 {location && (
                   <div className="flex items-center justify-center text-white text-lg md:text-xl mb-4">
                     <svg
@@ -87,27 +92,60 @@ function Home({ location }: HomeProps = {}) {
                 )}
                 <div className="flex flex-col items-center space-y-4">
                   <button
-                    className="group w-64 py-4 border border-white rounded-full hover:bg-white cursor-pointer transition"
+                    className="group w-72 py-4 bg-white text-gray-900 rounded-full hover:scale-105 cursor-pointer transition-all shadow-lg font-semibold"
                     onClick={() =>
                       window.open(
                         "https://calendly.com/karimbenchekroun/30min",
                         "_blank"
                       )
                     }
+                    aria-label="Réserver un appel découverte gratuit"
                   >
-                    <span className="block group-hover:hidden">
-                      On discute ?
-                    </span>
-                    <span className="hidden group-hover:block text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
-                      Réserver un appel
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-blue-500">
+                      Réserver mon appel découverte
                     </span>
                   </button>
+                  <p className="text-white/70 text-sm">30 minutes • 100% gratuit • Sans engagement</p>
                   <a
-                    href="#SECTION_CONTACT"
-                    className="text-gray-700 text-sm underline hover:text-blue-900 transition-colors"
+                    href="#SECTION_PROJETS"
+                    className="text-white text-sm underline hover:text-blue-200 transition-colors flex items-center gap-1"
                   >
-                    Ou envoyez-nous un message
+                    Voir nos réalisations
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                   </a>
+                </div>
+              </div>
+            </div>
+            {/* Social Proof Stats Bar */}
+            <div className="w-full bg-white border-y border-gray-100 py-8">
+              <div className="max-w-5xl mx-auto px-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
+                      10+
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">Applications livrées</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
+                      100%
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">Clients satisfaits</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
+                      20j
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">Livraison minimum</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
+                      5★
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">Note moyenne</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1320,14 +1358,68 @@ function Home({ location }: HomeProps = {}) {
                 </div>
               </div>
               <h3 className="text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
-                BESOIN D'UN RENSEIGNEMENT ?
+                QUESTIONS FRÉQUENTES
               </h3>
-              <p className="px-4 md:px-0">
-                Des questions ? On a toutes les réponses ! Remplissez le
-                formulaire ci-dessous et suivez-nous sur nos réseaux sociaux
-                pour rester connectés ! Notre équipe est là pour vous répondre
-                avec enthousiasme et nos réseaux regorgent de contenus
-                passionnants.
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 px-4 md:px-0">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">?</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Quels sont vos délais de livraison ?</h4>
+                      <p className="text-gray-600 text-sm">
+                        Applications mobiles à partir de <strong>20 jours</strong>, applications web à partir de <strong>15 jours</strong>, et APIs à partir de <strong>10 jours</strong>. Chaque projet inclut des démos hebdomadaires.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">?</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Que se passe-t-il si je ne suis pas satisfait ?</h4>
+                      <p className="text-gray-600 text-sm">
+                        Vous bénéficiez de <strong>30 jours de garantie</strong> après livraison pour signaler tout problème. Les retours sont <strong>illimités</strong> pendant le développement.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">?</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Proposez-vous la maintenance après livraison ?</h4>
+                      <p className="text-gray-600 text-sm">
+                        Oui, nous proposons des <strong>contrats de maintenance</strong> adaptés à vos besoins. Support technique, mises à jour, et évolutions fonctionnelles inclus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">?</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Comment se passe le suivi du projet ?</h4>
+                      <p className="text-gray-600 text-sm">
+                        Vous avez accès à un <strong>canal Slack dédié</strong>, des démos hebdomadaires, et un suivi transparent de l'avancement. Vous êtes impliqué à chaque étape.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
+                PARLONS DE VOTRE PROJET
+              </h3>
+              <p className="px-4 md:px-0 text-center max-w-2xl mx-auto">
+                Prêt à lancer votre application ? Remplissez le formulaire ci-dessous 
+                et nous vous répondrons sous 24h avec une première estimation.
               </p>
             </div>
             <div
