@@ -1,9 +1,7 @@
 "use client";
 
-import axios from "@/lib/axios";
-import { Turnstile } from "@marsidev/react-turnstile";
 import Lottie from "lottie-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const images = [
@@ -22,11 +20,7 @@ const ContactForm = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isSent, setIsSent] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
-  const [turnstileError, setTurnstileError] = useState<string | null>(null);
-  const [showTurnstile, setShowTurnstile] = useState(false); // Lazy-load Turnstile
-  const turnstileRef = useRef<any>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const {
     register,
@@ -37,43 +31,39 @@ const ContactForm = () => {
     mode: "onBlur",
   });
 
-  // Handler to trigger Turnstile loading on first form interaction
-  const handleFormInteraction = () => {
-    if (!showTurnstile) {
-      setShowTurnstile(true);
-    }
-  };
+  const onSubmit = async (data: FormData) => {
+    setIsSent(true);
+    setErrorMessage(null);
 
-  const sendEmail = async (data: FormData) => {
-    if (!isTurnstileVerified || !turnstileToken) {
-      setTurnstileError("Veuillez compléter la vérification Turnstile");
-      return;
-    }
+    const formData = new FormData();
+    formData.append("access_key", "9fb0108f-44a5-40fe-8d22-dd748edfed17");
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("message", data.message);
 
     try {
-      setIsSent(true);
-      setTurnstileError(null);
-      await axios.post("/api/message/", {
-        name: data.name,
-        email: data.email,
-        message: data.message,
-        turnstile_token: turnstileToken,
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      reset();
-      setIsTurnstileVerified(false);
-      setTurnstileToken(null);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSent(false);
+        setSuccess(true);
+        reset();
+        setTimeout(() => {
+          setSuccess(false);
+        }, 5000);
+      } else {
+        throw new Error(result.message || "Une erreur est survenue lors de l'envoi.");
+      }
     } catch (error: any) {
       console.error("Error sending message:", error);
       setIsSent(false);
-      // Reset Turnstile on error so user can retry
-      setIsTurnstileVerified(false);
-      setTurnstileToken(null);
-      if (turnstileRef.current) {
-        turnstileRef.current.reset();
-      }
-      setTurnstileError(
-        error.response?.data?.message ||
-          "Une erreur est survenue. Veuillez réessayer."
+      setErrorMessage(
+        error.message || "Une erreur est survenue. Veuillez réessayer."
       );
     }
   };
@@ -104,7 +94,7 @@ const ContactForm = () => {
         <h2 className="text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
           CONTACT
         </h2>
-        <form className="flex flex-col" onSubmit={handleSubmit(sendEmail)}>
+        <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
           <div className="py-2">
             <label htmlFor="contact-email" className="text-purple-750 font-bold text-sm tracking-widest">
               E-mail
@@ -115,7 +105,6 @@ const ContactForm = () => {
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${
                 errors.email ? "border-red-500" : "border-purple-350"
               }`}
-              onFocus={handleFormInteraction}
               {...register("email", {
                 required: "L'email est requis",
                 pattern: {
@@ -140,7 +129,6 @@ const ContactForm = () => {
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 border ${
                 errors.name ? "border-red-500" : "border-purple-350"
               }`}
-              onFocus={handleFormInteraction}
               {...register("name", {
                 required: "Le nom est requis",
                 minLength: {
@@ -162,7 +150,6 @@ const ContactForm = () => {
               className={`bg-transparent w-full py-2 px-4 my-2 rounded-md outline-none text-purple-750 focus:bg-purple-350 h-36 border ${
                 errors.message ? "border-red-500" : "border-purple-350"
               }`}
-              onFocus={handleFormInteraction}
               {...register("message", {
                 required: "Le message est requis",
                 minLength: {
@@ -177,46 +164,14 @@ const ContactForm = () => {
               </p>
             )}
           </div>
-          <div className="py-2 min-h-[80px]">
-            {showTurnstile ? (
-              <Turnstile
-                ref={turnstileRef}
-                options={{
-                  theme: "light",
-                }}
-                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
-                onSuccess={(token) => {
-                  setTurnstileToken(token);
-                  setIsTurnstileVerified(true);
-                  setTurnstileError(null);
-                }}
-                onError={() => {
-                  setIsTurnstileVerified(false);
-                  setTurnstileToken(null);
-                  setTurnstileError(
-                    "La vérification Cloudflare a échoué. Veuillez réessayer."
-                  );
-                }}
-                onExpire={() => {
-                  setIsTurnstileVerified(false);
-                  setTurnstileToken(null);
-                  setTurnstileError(
-                    "La vérification a expiré. Veuillez la refaire."
-                  );
-                }}
-              />
-            ) : (
-              <div className="text-gray-400 text-sm">
-                Remplissez le formulaire pour activer la vérification
-              </div>
-            )}
-            {turnstileError && (
-              <p className="text-red-500 text-xs mt-1">{turnstileError}</p>
-            )}
-          </div>
+          
+          {errorMessage && (
+            <p className="text-red-500 text-xs mt-2 text-center">{errorMessage}</p>
+          )}
+
           <button
             type="submit"
-            disabled={!isTurnstileVerified || isSent}
+            disabled={isSent}
             className={`bg-transparent w-3/4 py-4 cursor-pointer rounded-md self-center my-4 disabled:opacity-50 disabled:cursor-not-allowed border-purple-750 border hover:bg-gradient-to-r hover:from-purple-400 hover:to-blue-500 group hover:border-opacity-0 ${
               isSent
                 ? "bg-gradient-to-r from-purple-400 to-blue-500 border-opacity-0"
@@ -227,19 +182,7 @@ const ContactForm = () => {
               <Lottie
                 animationData={require("../../../content/space_mail.json")}
                 className="h-8"
-                onComplete={() => {
-                  setIsSent(false);
-                  setSuccess(true);
-                  // Reset Turnstile widget after successful submission
-                  if (turnstileRef.current) {
-                    turnstileRef.current.reset();
-                  }
-                  // Reset success message after 5 seconds to allow form reuse
-                  setTimeout(() => {
-                    setSuccess(false);
-                  }, 5000);
-                }}
-                loop={false}
+                loop={true}
               />
             ) : success ? (
               <div className="flex items-center justify-center gap-2">

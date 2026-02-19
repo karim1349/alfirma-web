@@ -1,5 +1,5 @@
 import CursorEffect from "@/app/components/CursorEffect";
-import "@/lib/axios"; // Initialize axios configuration
+
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Footer from "./components/Footer";
@@ -94,8 +94,7 @@ export default function RootLayout({
           type="font/otf"
           crossOrigin="anonymous"
         />
-        {/* DNS prefetch for external resources */}
-        <link rel="dns-prefetch" href="https://challenges.cloudflare.com" />
+
         <OrganizationSchema />
         <WebSiteSchema />
       </head>
