@@ -22,6 +22,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // Service pages
+  const services = [
+    'developpement-mobile',
+    'developpement-web-django',
+    'api-rest-python',
+    'design-ux-ui'
+  ]
+
+  const servicePages = services.map(service => ({
+    url: `${baseUrl}/services/${service}/`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
   // Blog posts
   const blogPosts = getAllPosts().map(post => ({
     url: `${baseUrl}/blog/${post.slug}/`,
@@ -73,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...servicePages,
     ...locationPages,
     ...blogPosts,
   ]

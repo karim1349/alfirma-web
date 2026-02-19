@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 
@@ -10,9 +10,15 @@ const NavBar = () => {
     const [isMounted, setIsMounted] = useState(false);
     const sectionIds = ["SECTION_ACCUEIL", "SECTION_A_PROPOS", "SECTION_PROJETS", "SECTION_AVIS", "SECTION_CONTACT"];
     const router = useRouter();
+    const pathname = usePathname();
+
     const scrollTo = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({behavior: "smooth"})
-        router.push(`?section=${id.toLowerCase()}`, { scroll: false });
+        if (pathname === '/home' || pathname === '/') {
+            document.getElementById(id)?.scrollIntoView({behavior: "smooth"})
+            router.push(`?section=${id.toLowerCase()}`, { scroll: false });
+        } else {
+            router.push(`/home?section=${id.toLowerCase()}`);
+        }
     }
 
     useEffect(() => {

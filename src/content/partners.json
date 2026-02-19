@@ -42,16 +42,47 @@
         "links": []
     },
     {
-        "name": "Meor",
-        "description": "Nous sommes intervenus dans la réalisation de l'extension web de Meor sur la partie design et conception. ",
-        "image": "/assets/meor.png",
+        "name": "Nexy",
+        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Nexy. ",
+        "image": "/assets/nexy.png",
         "review": null,
         "links": []
     },
     {
-        "name": "Nexy",
-        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Nexy. ",
-        "image": "/assets/nexy.png",
+        "name": "Spore.bio",
+        "description": "Nous avons développé une application web interne full-stack (React et Django) conçue sur-mesure pour les équipes de Spore.bio.",
+        "image": "/assets/sporebio.png",
+        "review": null,
+        "links": [
+            {
+                "type": "website",
+                "url": "https://spore.bio/"
+            }
+        ]
+    },
+    {
+        "name": "Deloitte",
+        "description": "Nous avons accompagné Deloitte dans les développements d'une application web interne complète, développée en full-stack avec Angular et Django.",
+        "image": "/assets/deloitte.png",
+        "review": null,
+        "links": [
+            {
+                "type": "website",
+                "url": "https://www.deloitte.com/"
+            }
+        ]
+    },
+    {
+        "name": "Moba",
+        "description": "Pour Moba, nous avons construit et déployé une application web full-stack associant la flexibilité de React en front-end à la puissance de Django en back-end.",
+        "image": "/assets/moba.png",
+        "review": null,
+        "links": []
+    },
+    {
+        "name": "B-flow",
+        "description": "Nous avons réalisé pour B-flow des prestations de diagnostic, migrations et bug fixes sur son application mobile hybride, développée avec le framework Capacitor.",
+        "image": "/assets/b-flow.webp",
         "review": null,
         "links": []
     }
