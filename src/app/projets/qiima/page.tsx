@@ -228,7 +228,7 @@ export default function QiimaProjectPage() {
                   href="https://qiima.ma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-[#5A6A3F] px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform"
+                  className="bg-white text-[#5A6A3F] px-6 h-12 flex items-center justify-center rounded-lg font-semibold hover:scale-105 transition-transform"
                 >
                   Visiter qiima.ma
                 </a>
