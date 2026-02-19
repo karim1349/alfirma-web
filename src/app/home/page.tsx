@@ -33,89 +33,138 @@ function Home({ location }: HomeProps = {}) {
         <div className="flex items-center bg-white justify-center">
           <div className="flex-1 flex flex-col items-center justify-center self-center overflow-hidden">
             <NavBar />
+            
+            {/* Redesigned Hero Section - Editorial & Premium */}
             <div
-              className="flex justify-center items-center flex-col-reverse md:flex-row w-full"
+              className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden bg-slate-50"
               id="SECTION_ACCUEIL"
-              style={{
-                background: `
-                  linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.6) 85%, rgba(255, 255, 255, 0.85) 90%, white 95%),
-                  radial-gradient(ellipse 70% 50% at 15% 15%, rgba(67, 56, 202, 1) 0%, rgba(79, 70, 229, 0.8) 35%, rgba(99, 102, 241, 0.5) 55%, transparent 75%),
-                  linear-gradient(135deg, rgba(219, 39, 119, 0.95) 0%, rgba(236, 72, 153, 0.8) 15%, rgba(251, 113, 133, 0.6) 30%, rgba(168, 85, 247, 0.4) 45%, transparent 70%),
-                  radial-gradient(ellipse 120% 70% at 85% 40%, rgba(96, 165, 250, 0.95) 0%, rgba(147, 197, 253, 0.75) 30%, rgba(191, 219, 254, 0.5) 50%, rgba(219, 234, 254, 0.3) 70%, transparent 85%),
-                  linear-gradient(to bottom, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.25) 20%, rgba(96, 165, 250, 0.3) 40%, rgba(167, 139, 250, 0.2) 55%, transparent 70%)
-                `,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                height: "100vh",
-              }}
             >
-              <div className="px-4 md:mx-12 md:px-0 flex flex-col items-center max-w-7xl">
-                <Image
-                  src="/assets/logoWithoutBackground.png"
-                  alt={`Al Firma - Agence de développement d'applications mobiles et web${
-                    location ? ` à ${location.name}` : ""
-                  }`}
-                  width={200}
-                  height={200}
-                  className="w-1/2 md:w-1/5 hover:transform hover:rotate-[57deg] transition-all duration-200 my-20"
-                  priority
-                />
-                <h1 className="text-4xl md:text-8xl text-white text-center self-center font-bold mb-4">
-                  AL FIRMA
-                </h1>
-                <h2 className="text-white my-4 text-2xl md:text-4xl text-center max-w-4xl">
-                  Votre application mobile, livrée en 20 jours
-                </h2>
-                <p className="text-white/90 text-lg md:text-xl text-center max-w-2xl mb-2">
-                  De l'idée à l'App Store : développement React Native, API Django, design Figma.
-                  <br className="hidden md:block" />
-                  <span className="font-semibold">À partir de 8 900€</span> • iOS & Android • Retours illimités
-                </p>
-                {location && (
-                  <div className="flex items-center justify-center text-white text-lg md:text-xl mb-4">
-                    <svg
-                      className="w-5 h-5 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span>
-                      Agence de développement web & mobile
+              {/* Complex Animated Background Mesh */}
+              <div className="absolute inset-0 z-0 bg-slate-50">
+                 {/* Top Left Deep Indigo */}
+                 <div className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] rounded-full blur-[120px] opacity-40 mix-blend-multiply bg-indigo-200 animate-[pulse_8s_ease-in-out_infinite]" />
+                 {/* Center Right Warm Rose */}
+                 <div className="absolute top-[20%] -right-[20%] w-[60vw] h-[60vw] rounded-full blur-[140px] opacity-50 mix-blend-multiply bg-rose-200 animate-[pulse_10s_ease-in-out_infinite_2s]" />
+                 {/* Bottom Left Soft Blue */}
+                 <div className="absolute -bottom-[30%] left-[10%] w-[80vw] h-[80vw] rounded-full blur-[130px] opacity-40 mix-blend-multiply bg-blue-200 animate-[pulse_12s_ease-in-out_infinite_4s]" />
+                 {/* Subtle Light Overlay */}
+                 <div className="absolute inset-0 bg-white/40 backdrop-blur-[20px]" />
+              </div>
+
+              {/* Main Content Container - 60/40 Split on Desktop */}
+              <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 pt-32 pb-20 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                
+                {/* Left Column (60%) - Typography & CTA */}
+                <div className="w-full lg:w-[60%] flex flex-col items-start text-left">
+                  
+                  {/* Eyebrow Label */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-white/80 shadow-[0_2px_10px_rgb(0,0,0,0.03)] backdrop-blur-md mb-8">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span>
+                    </span>
+                    <span className="text-sm font-semibold tracking-wide text-slate-700 uppercase">
+                      Agence de développement
                       {location ? ` à ${location.name}` : ""}
                     </span>
                   </div>
-                )}
-                <div className="flex flex-col items-center space-y-4">
-                  <button
-                    className="group w-72 py-4 bg-white text-gray-900 rounded-full hover:scale-105 cursor-pointer transition-all shadow-lg font-semibold"
-                    onClick={() =>
-                      window.open(
-                        "https://calendly.com/karimbenchekroun/30min",
-                        "_blank"
-                      )
-                    }
-                    aria-label="Réserver un appel découverte gratuit"
-                  >
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-blue-500">
-                      Réserver mon appel découverte
-                    </span>
-                  </button>
-                  <p className="text-white/70 text-sm">30 minutes • 100% gratuit • Sans engagement</p>
-                  <a
-                    href="#SECTION_PROJETS"
-                    className="text-white text-sm underline hover:text-blue-200 transition-colors flex items-center gap-1"
-                  >
-                    Voir nos réalisations
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </a>
+
+                  <h1 className="sr-only">
+                    Al Firma - Agence Développement Applications Mobiles & Web
+                  </h1>
+                  
+                  <div className="text-6xl sm:text-7xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-[1.05] mb-6">
+                    AL FIRMA
+                  </div>
+                  
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-slate-800 tracking-tight leading-tight mb-6 max-w-2xl">
+                    Votre application mobile,<br className="hidden sm:block" /> livrée en <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-indigo-600">20 jours</span>.
+                  </h2>
+                  
+                  <p className="text-lg sm:text-xl text-slate-600 font-light leading-relaxed max-w-xl mb-10">
+                    De l'idée à l'App Store : développement React Native, API Django, design Figma.
+                    <br className="hidden sm:block" />
+                    <span className="font-semibold text-slate-800">À partir de 8 900€</span> • iOS & Android • Retours illimités
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <button
+                      className="group relative inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-slate-800 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgb(79,70,229,0.3)] transition-all duration-300 w-full sm:w-auto overflow-hidden"
+                      onClick={() => window.open("https://calendly.com/karimbenchekroun/30min", "_blank")}
+                      aria-label="Réserver un appel découverte gratuit"
+                    >
+                      <span className="relative z-10">Réserver mon appel</span>
+                      <svg className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                      {/* Button Gloss Overlay */}
+                      <div className="absolute inset-0 top-0 left-0 w-full h-[50%] bg-white/10 group-hover:bg-transparent transition-colors duration-300" />
+                    </button>
+                    
+                    <div className="flex flex-col gap-1">
+                       <p className="text-slate-500 text-sm font-medium">30 minutes • 100% gratuit</p>
+                       <a
+                        href="#SECTION_PROJETS"
+                        className="text-indigo-600 text-sm font-semibold hover:text-indigo-700 transition-colors flex items-center gap-1 group w-fit"
+                      >
+                        Voir nos réalisations
+                        <svg className="w-4 h-4 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
                 </div>
+
+                {/* Right Column (40%) - App Visual / 3D Element Showcase */}
+                <div className="w-full lg:w-[40%] relative mt-12 lg:mt-0 flex justify-center lg:justify-end perspective-1000">
+                   <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-[2rem] bg-white border border-white/40 shadow-[0_40px_100px_-20px_rgb(0,0,0,0.1)] p-4 transform lg:rotate-y-[-10deg] lg:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 ease-out group">
+                      
+                      {/* Content inside the mock screen */}
+                      <div className="w-full h-full rounded-[1.5rem] bg-slate-50 overflow-hidden relative border border-slate-100/50">
+                        {/* Mock App Header */}
+                        <div className="absolute top-0 w-full h-16 bg-white border-b border-slate-100 flex items-center px-6 justify-between z-10">
+                           <div className="w-10 h-10 rounded-full bg-slate-100 overflow-hidden p-2">
+                             <Image src="/assets/logoWithoutBackground.png" alt="Logo" width={40} height={40} className="object-contain" />
+                           </div>
+                           <div className="flex gap-2">
+                              <div className="w-2 h-2 rounded-full bg-slate-200" />
+                              <div className="w-2 h-2 rounded-full bg-slate-200" />
+                           </div>
+                        </div>
+                        
+                        {/* Mock App Content Area */}
+                        <div className="absolute inset-0 pt-20 px-6 pb-6 flex flex-col gap-4">
+                           <div className="w-3/4 h-8 rounded-lg bg-indigo-100/50 animate-pulse" />
+                           <div className="w-full h-32 rounded-xl bg-gradient-to-br from-rose-100/50 to-indigo-100/50 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center">
+                              <Image src="/assets/logoWithoutBackground.png" alt="Logo" width={80} height={80} className="object-contain opacity-20 invert" />
+                           </div>
+                           <div className="w-full h-2 rounded-full bg-slate-200" />
+                           <div className="w-5/6 h-2 rounded-full bg-slate-200" />
+                           <div className="w-full h-2 rounded-full bg-slate-200" />
+                           <div className="w-4/6 h-2 rounded-full bg-slate-200" />
+                           
+                           <div className="mt-auto w-full h-12 rounded-xl bg-slate-900 flex items-center justify-center">
+                             <div className="w-1/3 h-2 rounded-full bg-white/20" />
+                           </div>
+                        </div>
+                      </div>
+
+                      {/* Floating Decorative Elements around the screen */}
+                      <div className="absolute -top-6 -right-6 w-24 h-24 rounded-2xl bg-white shadow-xl flex items-center justify-center transform md:group-hover:-translate-y-4 md:group-hover:translate-x-4 transition-transform duration-500 ease-out z-20">
+                         <div className="text-4xl">🚀</div>
+                      </div>
+                      <div className="absolute -bottom-10 -left-6 w-32 h-20 rounded-2xl bg-white shadow-xl flex items-center justify-center transform md:group-hover:translate-y-4 md:group-hover:-translate-x-4 transition-transform duration-500 ease-out z-20 border border-slate-50">
+                         <div className="text-center">
+                           <div className="text-xs text-slate-400 font-medium uppercase tracking-wider">Temps</div>
+                           <div className="text-xl font-bold text-slate-800">20 Jours</div>
+                         </div>
+                      </div>
+
+                   </div>
+                </div>
+
               </div>
             </div>
             {/* Social Proof Stats Bar */}
@@ -413,6 +462,12 @@ function Home({ location }: HomeProps = {}) {
                       >
                         Voir notre projet Duodoku →
                       </Link>
+                      <Link
+                        href="/services/developpement-mobile"
+                        className="text-xs text-blue-600 hover:text-blue-800 underline mt-2"
+                      >
+                        En savoir plus sur le dev mobile →
+                      </Link>
                     </div>
                   </div>
                   <div className="group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8">
@@ -587,9 +642,17 @@ function Home({ location }: HomeProps = {}) {
                         </p>
                       </div>
                     </div>
-                    <h4 className="self-end text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
-                      À partir de 6900€
-                    </h4>
+                    <div className="flex flex-col items-end space-y-2 self-end">
+                      <h4 className="text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
+                        À partir de 6900€
+                      </h4>
+                      <Link
+                        href="/services/developpement-web-django"
+                        className="text-xs text-blue-600 hover:text-blue-800 underline"
+                      >
+                        En savoir plus sur le dev web →
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className="flex w-full flex-col md:flex-row md:my-12">
@@ -683,19 +746,26 @@ function Home({ location }: HomeProps = {}) {
                         <p className="text-xs flex-1">Retours illimités</p>
                       </div>
                     </div>
-                    <button
-                      className="self-end"
-                      onClick={() =>
-                        window.open(
-                          "https://calendly.com/karimbenchekroun/30min",
-                          "_blank"
-                        )
-                      }
-                    >
-                      <h4 className="text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
-                        Nous contacter
-                      </h4>
-                    </button>
+                    <div className="flex flex-col items-end space-y-2 self-end">
+                      <button
+                        onClick={() =>
+                          window.open(
+                            "https://calendly.com/karimbenchekroun/30min",
+                            "_blank"
+                          )
+                        }
+                      >
+                        <h4 className="text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
+                          Nous contacter
+                        </h4>
+                      </button>
+                      <Link
+                        href="/services/design-ux-ui"
+                        className="text-xs text-blue-600 hover:text-blue-800 underline"
+                      >
+                        En savoir plus sur l'UX/UI →
+                      </Link>
+                    </div>
                   </div>
                   <div className="group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8">
                     <Image
@@ -870,9 +940,17 @@ function Home({ location }: HomeProps = {}) {
                         </p>
                       </div>
                     </div>
-                    <h4 className="self-end text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
-                      À partir de 4900€
-                    </h4>
+                    <div className="flex flex-col items-end space-y-2 self-end">
+                      <h4 className="text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
+                        À partir de 4900€
+                      </h4>
+                      <Link
+                        href="/services/api-rest-python"
+                        className="text-xs text-blue-600 hover:text-blue-800 underline"
+                      >
+                        En savoir plus sur le dev API →
+                      </Link>
+                    </div>
                   </div>
                   <div className="group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8">
                     <Image
@@ -1408,7 +1486,7 @@ function Home({ location }: HomeProps = {}) {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-2">Comment se passe le suivi du projet ?</h4>
                       <p className="text-gray-600 text-sm">
-                        Vous avez accès à un <strong>canal Slack dédié</strong>, des démos hebdomadaires, et un suivi transparent de l'avancement. Vous êtes impliqué à chaque étape.
+                        Vous avez accès à une <strong>version de test dédiée</strong>, des démos hebdomadaires, et un suivi transparent de l'avancement. Vous êtes impliqué à chaque étape.
                       </p>
                     </div>
                   </div>
