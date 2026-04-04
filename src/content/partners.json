@@ -1,5 +1,34 @@
 [
     {
+        "name": "MyLegal",
+        "description": "Plateforme complète de création d'entreprise au Maroc. Al Firma a conçu et développé l'intégralité du produit : application web, API back-end et interface d'administration. Hébergement sur un serveur localisé au Maroc pour répondre aux exigences de résidence des données. Un projet mené de A à Z en autonomie totale.",
+        "image": "/assets/mylegal.png",
+        "review": null,
+        "links": [
+            {
+                "type": "website",
+                "url": "https://mylegal.ma"
+            }
+        ],
+        "stack": ["Next.js", "React.js", "Django REST", "PostgreSQL"]
+    },
+    {
+        "name": "VoltaBack",
+        "description": "Développement de l'application mobile et refactoring du front-end web pour une start-up parisienne spécialisée dans la mobilité électrique. Mission incluant le lead technique mobile et l'amélioration de l'architecture web existante.",
+        "image": "/assets/voltaback.png",
+        "review": null,
+        "links": [],
+        "stack": ["React Native", "Expo", "TypeScript", "React.js"]
+    },
+    {
+        "name": "CuirUnique",
+        "description": "MVP d'une plateforme de mise en relation entre acheteurs et fabricants de maroquinerie au Maroc. Application web complète livrée en deux semaines : API, front-end et déploiement.",
+        "image": "/assets/cuirunique.png",
+        "review": null,
+        "links": [],
+        "stack": ["Django REST", "React.js", "PostgreSQL"]
+    },
+    {
         "name": "Co'Santé",
         "description": "La confédération des centres de Santé des Pays de la Loire a choisi Al Firma pour le design, développement et déploiement de son application de prévention Jeunes Santé Prévention.",
         "image": "/assets/cosante.png",
@@ -13,52 +42,29 @@
                 "type": "playstore",
                 "url": "https://play.google.com/store/apps/details?id=i.e.com.cosante.appjeunespreventionsante"
             }
-        ]
+        ],
+        "stack": null
     },
     {
         "name": "Leexit",
         "description": "Leexit nous a confié le développement intégral et le déploiement de son application mobile de rencontre d'amis, sur la base d'un design existant. Une API REST Django nécessaire pour les besoins du projet a été réalisée par nos soins. ",
         "image": "/assets/leexit.png",
-        "review": "Nous avons fait appel à Al Firma pour effectuer le développement complet d'une app mobile. Très compétents et disponibles, ils ont été à l'écoute de nos demandes en nous apportant son expertise et ses conseils à chaque étape du projet. Nous recommandons vivement leur service et espérons avoir l’occasion de travailler avec eux de nouveau. ",
-        "links": []
+        "review": "Nous avons fait appel à Al Firma pour effectuer le développement complet d'une app mobile. Très compétents et disponibles, ils ont été à l'écoute de nos demandes en nous apportant son expertise et ses conseils à chaque étape du projet. Nous recommandons vivement leur service et espérons avoir l'occasion de travailler avec eux de nouveau. ",
+        "links": [],
+        "stack": null
     },
     {
         "name": "Neuroptimisme",
         "description": "Nous avons réalisé pour le cabinet de neuropsychologie Neuroptimisme le développement intégral et le déploiement de son application web.",
         "image": "/assets/neuroptimisme.png",
-        "review": "J’ai confié la réalisation de mon application web aux équipes d’Al Firma, et je ne peux que recommander leurs services ! Ils ont su m’accompagner, répondre à mes questions et me fournir un rendu dans les temps, le tout pour un tarif que je n’ai trouvé nulle part ailleurs. Merci !!",
+        "review": "J'ai confié la réalisation de mon application web aux équipes d'Al Firma, et je ne peux que recommander leurs services ! Ils ont su m'accompagner, répondre à mes questions et me fournir un rendu dans les temps, le tout pour un tarif que je n'ai trouvé nulle part ailleurs. Merci !!",
         "links": [
             {
                 "type": "website",
                 "url": "https://neuroptimisme.fr/"
             }
-        ]
-    },
-    {
-        "name": "Toutakoté",
-        "description": "Nous avons réalisé pour Toutakoté la refonte intégrale d'une application mobile, ainsi que la réalisation et le déploiement d'une application web.",
-        "image": "/assets/toutakote.png",
-        "review": "Al Firma s'est montré à l'écoute, très rapide dans la réalisation de la mission et le tout pour un tarif extrêmement correct. Je ne saurais que recommander ses services !",
-        "links": []
-    },
-    {
-        "name": "Nexy",
-        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Nexy. ",
-        "image": "/assets/nexy.png",
-        "review": null,
-        "links": []
-    },
-    {
-        "name": "Spore.bio",
-        "description": "Nous avons développé une application web interne full-stack (React et Django) conçue sur-mesure pour les équipes de Spore.bio.",
-        "image": "/assets/sporebio.png",
-        "review": null,
-        "links": [
-            {
-                "type": "website",
-                "url": "https://spore.bio/"
-            }
-        ]
+        ],
+        "stack": null
     },
     {
         "name": "Deloitte",
@@ -70,20 +76,52 @@
                 "type": "website",
                 "url": "https://www.deloitte.com/"
             }
-        ]
+        ],
+        "stack": null
+    },
+    {
+        "name": "Spore.bio",
+        "description": "Nous avons développé une application web interne full-stack (React et Django) conçue sur-mesure pour les équipes de Spore.bio.",
+        "image": "/assets/sporebio.png",
+        "review": null,
+        "links": [
+            {
+                "type": "website",
+                "url": "https://spore.bio/"
+            }
+        ],
+        "stack": null
+    },
+    {
+        "name": "Toutakoté",
+        "description": "Nous avons réalisé pour Toutakoté la refonte intégrale d'une application mobile, ainsi que la réalisation et le déploiement d'une application web.",
+        "image": "/assets/toutakote.png",
+        "review": "Al Firma s'est montré à l'écoute, très rapide dans la réalisation de la mission et le tout pour un tarif extrêmement correct. Je ne saurais que recommander ses services !",
+        "links": [],
+        "stack": null
     },
     {
         "name": "Moba",
         "description": "Pour Moba, nous avons construit et déployé une application web full-stack associant la flexibilité de React en front-end à la puissance de Django en back-end.",
         "image": "/assets/moba.png",
         "review": null,
-        "links": []
+        "links": [],
+        "stack": null
     },
     {
         "name": "B-flow",
         "description": "Nous avons réalisé pour B-flow des prestations de diagnostic, migrations et bug fixes sur son application mobile hybride, développée avec le framework Capacitor.",
         "image": "/assets/b-flow.webp",
         "review": null,
-        "links": []
+        "links": [],
+        "stack": null
+    },
+    {
+        "name": "Nexy",
+        "description": "Nous avons réalisé des prestations de bug fixing et maintenance pour le réseau social NFT Nexy. ",
+        "image": "/assets/nexy.png",
+        "review": null,
+        "links": [],
+        "stack": null
     }
 ]
