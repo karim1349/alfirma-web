@@ -1182,14 +1182,12 @@ function Home({ location }: HomeProps = {}) {
                     <div className="flex-1 p-4">
                       <h3 className="text-white text-5xl">DUODOKU</h3>
                       <p className="text-white text-sm my-8">
-                        Duodoku est une application de jeu de Sudoku innovante
-                        qui offre une expérience de jeu unique pour les joueurs
-                        solitaires ainsi que pour les joueurs en compétition.
-                        Avec Duodoku, les joueurs peuvent profiter d'un jeu de
-                        Sudoku classique en solo ou en mode multijoueur, et
-                        tenter d'atteindre les plus hautes places du classement.
-                        Développée en React Native, et s'appuyant sur une API
-                        REST Django, elle est disponible sous iOS et Android.{" "}
+                        Duodoku est le premier jeu de Sudoku multijoueur en
+                        temps réel, disponible sur iOS et Android. Plus de
+                        10 000 joueurs actifs, avec matchmaking et modes
+                        compétitifs. Développée en React Native et s'appuyant
+                        sur une API REST Django, elle est disponible sous iOS et
+                        Android.{" "}
                       </p>
                       <div className="flex items-center my-2">
                         <a
@@ -1226,6 +1224,108 @@ function Home({ location }: HomeProps = {}) {
                       <Image
                         src="/assets/duodoku.png"
                         alt="Duodoku - Premier jeu de Sudoku multi-joueurs"
+                        width={192}
+                        height={192}
+                        className="w-48 h-48 object-contain rounded-3xl self-end"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="PROJECT_AINKLUS"
+                  className="rounded-3xl p-8 justify-between md:w-2/3 my-6 hover:opacity-95 transition-opacity duration-300"
+                  style={{ backgroundColor: "#FAF3EE" }}
+                >
+                  <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C35C41" }}>
+                      Web App
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C35C41" }}>
+                      IA
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C35C41" }}>
+                      OCR
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C35C41" }}>
+                      PDF
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C35C41" }}>
+                      Éducation inclusive
+                    </div>
+                  </div>
+                  <div className="flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full">
+                    <div className="flex-1 p-4">
+                      <h3 className="text-5xl" style={{ color: "#28211F" }}>AINKLUS</h3>
+                      <p className="text-sm my-8" style={{ color: "#28211F", opacity: 0.8 }}>
+                        AInklus est une plateforme d'adaptation automatique de
+                        documents scolaires pour enfants à besoins spécifiques
+                        (TDAH, dyscalculie, TSA, dyspraxie). Elle combine OCR
+                        et intelligence artificielle pour transformer les
+                        contenus pédagogiques en exercices adaptés, générés au
+                        format PDF. Développée avec Next.js, Django REST et
+                        WeasyPrint.
+                      </p>
+                      <div className="flex items-start">
+                        <div className="p-2 rounded-md" style={{ backgroundColor: "#C35C41" }}>
+                          <p className="text-white text-sm">
+                            Bientôt disponible !
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-between self-center md:self-end">
+                      <img
+                        src="/assets/ainklus.svg"
+                        alt="AInklus - Adaptation scolaire par l'IA"
+                        className="w-48 h-48 object-contain rounded-3xl self-end"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="PROJECT_PETITPAS"
+                  className="rounded-3xl p-8 justify-between md:w-2/3 my-6 hover:opacity-95 transition-opacity duration-300"
+                  style={{ backgroundColor: "#2B2320" }}
+                >
+                  <div className="flex flex-wrap items-center justify-end mb-4 md:mb-0">
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C46848" }}>
+                      Mobile App
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#5B8C6A" }}>
+                      TDAH
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#C46848" }}>
+                      Coaching
+                    </div>
+                    <div className="rounded-full px-2 mr-2 mb-2 text-white" style={{ backgroundColor: "#5B8C6A" }}>
+                      Parentalité
+                    </div>
+                  </div>
+                  <div className="flex flex-col-reverse md:flex-row flex-1 rounded-3xl justify-between w-full">
+                    <div className="flex-1 p-4">
+                      <h3 className="text-5xl" style={{ color: "#FAF6F1" }}>PETIT PAS</h3>
+                      <p className="text-sm my-8" style={{ color: "#FAF6F1", opacity: 0.9 }}>
+                        Petit Pas est une application mobile d'accompagnement
+                        au quotidien pour les familles confrontées au TDAH.
+                        Elle propose des routines structurées et des outils de
+                        coaching accessibles, pensés pour aider les parents à
+                        mieux accompagner leurs enfants. Développée avec React
+                        Native, Expo et une API Django REST.
+                      </p>
+                      <div className="flex items-start">
+                        <div className="p-2 rounded-md" style={{ backgroundColor: "#C46848" }}>
+                          <p className="text-white text-sm">
+                            Bientôt disponible !
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-between self-center md:self-end">
+                      <Image
+                        src="/assets/petitpas.png"
+                        alt="Petit Pas - Coaching TDAH parent-enfant"
                         width={192}
                         height={192}
                         className="w-48 h-48 object-contain rounded-3xl self-end"
@@ -1352,6 +1452,17 @@ function Home({ location }: HomeProps = {}) {
                             </div>
                           )}
 
+                          {/* Stack */}
+                          {(partners[0] as { stack?: string[] | null }).stack && (
+                            <div className="flex flex-wrap gap-2 mb-6">
+                              {((partners[0] as { stack?: string[] | null }).stack as string[]).map((tech, i) => (
+                                <span key={i} className="text-xs px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200 font-medium">
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
                           {/* Review */}
                           {partners[0].review && (
                             <div className="bg-gradient-to-r from-rose-50 to-blue-50 rounded-2xl p-6 border-l-4 border-rose-400">
@@ -1394,6 +1505,17 @@ function Home({ location }: HomeProps = {}) {
                             <p className="text-sm text-gray-600 mb-4">
                               {partner.description}
                             </p>
+
+                            {/* Stack */}
+                            {(partner as { stack?: string[] | null }).stack && (
+                              <div className="flex flex-wrap justify-center gap-1 mb-4">
+                                {((partner as { stack?: string[] | null }).stack as string[]).map((tech, i) => (
+                                  <span key={i} className="text-xs px-2 py-0.5 bg-slate-100 text-slate-600 rounded-full border border-slate-200">
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
 
                             {/* Links */}
                             {partner.links?.length > 0 && (
