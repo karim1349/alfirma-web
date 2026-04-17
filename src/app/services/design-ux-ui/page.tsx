@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agence Design UX/UI & Conception Maquettes Figma | Al Firma',
     description: "Expertise en UX/UI pour concevoir les interfaces de vos applications web et mobiles.",
-    images: ['/assets/logo.png'],
+    images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Design UX/UI et conception maquettes Figma - Al Firma' }],
     type: 'website',
     url: 'https://alfirma.com/services/design-ux-ui',
   },

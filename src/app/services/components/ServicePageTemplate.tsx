@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "../../home/components/ContactForm";
@@ -12,6 +13,7 @@ interface ServicePageProps {
   imageSrc: string;
   features: string[];
   price: string;
+  seoContent?: React.ReactNode;
 }
 
 export default function ServicePageTemplate({
@@ -21,6 +23,7 @@ export default function ServicePageTemplate({
   imageSrc,
   features,
   price,
+  seoContent,
 }: ServicePageProps) {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-rose-500/30 selection:text-rose-900 overflow-hidden font-sans">
@@ -129,6 +132,13 @@ export default function ServicePageTemplate({
              </ul>
            </div>
         </div>
+
+        {/* SEO Rich Content */}
+        {seoContent && (
+          <div className="mt-24">
+            {seoContent}
+          </div>
+        )}
 
       </main>
 

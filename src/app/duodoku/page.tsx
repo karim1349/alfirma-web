@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Duodoku - Le premier Sudoku multi-joueurs',
         description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
-        images: ['/assets/duodoku.png'],
+        images: [{ url: '/assets/duodoku.png', width: 1200, height: 630, alt: 'Duodoku - Le premier Sudoku multi-joueurs' }],
     },
     alternates: {
         canonical: 'https://alfirma.com/duodoku/'
