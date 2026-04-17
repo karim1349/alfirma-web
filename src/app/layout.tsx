@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
       "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
-    images: ["/assets/logo.png"],
+    images: [{ url: "/assets/logo.png", width: 1200, height: 630, alt: "Al Firma - Agence développement d'applications mobiles et web" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
       "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
-    images: ["/assets/logo.png"],
+    images: [{ url: "/assets/logo.png", width: 1200, height: 630, alt: "Al Firma - Agence développement d'applications mobiles et web" }],
   },
   icons: {
     icon: "/favicon.ico",

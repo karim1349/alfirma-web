@@ -21,6 +21,7 @@ export interface LocationData {
     technologies: string[];
     image?: string;
   }>;
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
 interface CityPageTemplateProps {
@@ -190,6 +191,24 @@ export default function CityPageTemplate({ location }: CityPageTemplateProps) {
         </div>
 
       </section>
+
+      {/* FAQ Section */}
+      {location.faqs && location.faqs.length > 0 && (
+        <section className="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-16 py-24 border-t border-slate-100">
+          <div className="text-center mb-16">
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-rose-500 mb-4">FAQ</h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Questions fréquentes</h2>
+          </div>
+          <div className="max-w-3xl mx-auto flex flex-col gap-6">
+            {location.faqs.map((faq, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{faq.question}</h3>
+                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA Section - Consistent with Service Pages */}
       <section className="relative z-20 w-full bg-white py-32 px-6 md:px-16 mt-12 border-t border-slate-100">

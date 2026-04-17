@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agence Développement API RESTful en Python | Al Firma',
     description: "Développement certifié d'APIs tierces et back-ends évolutifs en Python/Django.",
-    images: ['/assets/logo.png'],
+    images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Développement API RESTful Python Django - Al Firma' }],
     type: 'website',
     url: 'https://alfirma.com/services/api-rest-python',
   },

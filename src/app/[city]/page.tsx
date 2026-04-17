@@ -103,25 +103,61 @@ const locations = {
     region: 'Île-de-France',
     flagEmoji: '🇫🇷',
     coordinates: { lat: 48.8566, lng: 2.3522 },
-    description: 'Présente à Paris, Al Firma accompagne startups et entreprises établies dans la conception d\'applications mobiles et web performantes. Nous combinons expertise technique (Django, React Native, TypeScript) et design UX/UI pour créer des produits digitaux sur mesure, adaptés aux besoins du marché parisien.',
+    description: 'Depuis notre présence à Paris, Al Firma travaille avec des startups en hypercroissance, des ETI et des grands comptes pour concevoir des applications mobiles et des plateformes web qui font la différence sur le marché. Capital de la French Tech, Paris exige des standards d\'exécution élevés : interfaces soignées, architectures scalables, sécurité des données irréprochable. Nous répondons à ces exigences avec une équipe pluridisciplinaire couvrant le développement React Native, Django, Next.js, l\'UX/UI Design et le déploiement cloud.',
     keywords: 'développement mobile Paris, application web Paris, agence digitale Paris, React Native Paris, Django Paris, développement sur mesure Paris, applications iOS Paris, applications Android Paris, API REST Paris, maintenance applicative Paris',
-    marketInsights: 'Le marché tech parisien privilégie les applications B2B, les solutions de gestion d\'entreprise, et les plateformes e-commerce. L\'adoption des applications métier avec une forte exigence de sécurité des données est au cœur de la demande.',
-    technologies: 'Notre expertise React Native et Django répond parfaitement aux besoins des entreprises de la capitale. Nous intégrons TypeScript, Next.js, PostgreSQL, et les services cloud AWS/Azure pour des solutions robustes.',
-    achievements: 'Découvrez nos réalisations phares, conçues avec la même exigence de qualité que nous apportons à nos clients franciliens.',
+    marketInsights: 'L\'écosystème tech parisien est l\'un des plus compétitifs d\'Europe, animé par Station F, La French Tech Paris, et des centaines de startups en quête de partenaires techniques fiables. Les besoins dominants portent sur les applications B2B de gestion et de productivité, les marketplaces, les outils SaaS et les applications mobiles grand public à forte scalabilité. Les entreprises parisiennes sont sensibles au time-to-market et choisissent généralement leurs prestataires sur la capacité à livrer vite et bien — ce qui est au cœur de notre ADN.',
+    technologies: 'Notre expertise React Native et Django répond aux exigences techniques des entreprises de la capitale. Nous maîtrisons TypeScript, Next.js, GraphQL, PostgreSQL, Redis et les services cloud AWS et Azure. Pour les applications nécessitant des niveaux élevés de sécurité (fintech, legaltech, santé), nous appliquons les meilleures pratiques de chiffrement et de conformité RGPD. Notre process de développement agile garantit une visibilité totale à chaque sprint, avec des livrables concrets toutes les deux semaines.',
+    achievements: 'Nos références parisiennes illustrent notre capacité à gérer des projets techniquement exigeants : Leexit, application de rencontre amicale déployée sur iOS et Android, Meor, extension web avec une conception UX/UI poussée, et Duodoku, jeu mobile multijoueur disponible internationalement. Chaque projet incarne notre engagement : livrer un produit dont vous serez fier, dans les temps et le budget convenus.',
     caseStudies: [clientLeexit, clientMeor, projectDuodoku],
+    faqs: [
+      {
+        question: "Quelle est la différence entre une agence de développement à Paris et Al Firma ?",
+        answer: "Les agences parisiennes traditionnelles facturent souvent des frais de structure élevés qui se répercutent sur vos devis. Al Firma offre un niveau d'expertise équivalent — React Native, Django, UX/UI Design — avec une équipe senior directement impliquée sur votre projet, pour un budget maîtrisé et des délais de livraison records (20 jours pour une application mobile)."
+      },
+      {
+        question: "Développez-vous des applications pour les startups parisiennes ?",
+        answer: "Oui, les startups représentent une part importante de notre clientèle. Nous comprenons leurs contraintes : budget optimisé, time-to-market serré, besoin de scalabilité rapide. Nous proposons des MVPs fonctionnels rapidement déployables, avec une architecture conçue dès le départ pour évoluer avec votre croissance. Plusieurs de nos clients parisiens ont lancé leur produit en moins d'un mois."
+      },
+      {
+        question: "Combien coûte le développement d'une application mobile à Paris ?",
+        answer: "Nos tarifs sont les mêmes quelle que soit la localisation du client : à partir de 8 900€ pour une application mobile React Native (iOS + Android). Ce positionnement vous permet d'accéder à une expertise de niveau parisien sans payer la prime géographique. Un devis détaillé est fourni sous 24h après un premier échange de 30 minutes."
+      },
+      {
+        question: "Gérez-vous le déploiement et la maintenance après la livraison ?",
+        answer: "Chaque application livrée bénéficie de 30 jours de garantie incluse couvrant les corrections de bugs et ajustements post-lancement. Au-delà, nous proposons des contrats de maintenance évolutive adaptés à vos besoins : mises à jour de compatibilité, nouvelles fonctionnalités, monitoring des performances. Vous n'êtes jamais laissé seul après la livraison."
+      }
+    ],
   },
   'nantes': {
     name: 'Nantes',
-    country: 'France', 
+    country: 'France',
     region: 'Pays de la Loire',
     flagEmoji: '🇫🇷',
     coordinates: { lat: 47.2184, lng: -1.5536 },
-    description: 'À Nantes, notre équipe aide les acteurs locaux et les jeunes pousses à accélérer leur transformation numérique. Nous réalisons des applications mobiles, sites web et API robustes, en favorisant la collaboration agile.',
+    description: 'Al Firma accompagne les startups, PME et scaleups de la métropole nantaise dans la création d\'applications mobiles et web sur mesure. Réputée pour son dynamisme entrepreneurial et son écosystème French Tech, Nantes concentre une demande croissante en solutions digitales à forte valeur ajoutée. Notre équipe conçoit des produits mobiles iOS et Android avec React Native, des plateformes web React/Django robustes, et des API REST performantes — livrés en un temps record, avec un accompagnement humain à chaque étape.',
     keywords: 'développement mobile Nantes, application web Nantes, agence digitale Nantes, React Native Nantes, Django Nantes, développement sur mesure Nantes, applications iOS Nantes, API REST Nantes',
-    marketInsights: 'L\'écosystème nantais se distingue par son dynamisme entrepreneurial. De nombreuses PME nantaises recherchent des solutions digitales personnalisées pour booster leur productivité et leur relation client.',
-    technologies: 'Notre expertise technique à Nantes s\'appuie sur la stack Django + React Native. Nous maîtrisons l\'intégration de systèmes back-end complexes et le déploiement continu d\'applications de haute performance.',
-    achievements: 'Découvrez nos récents projets digitaux, illustrant le niveau d\'exigence que nous offrons aux entreprises de la région nantaise.',
+    marketInsights: 'Nantes s\'est imposée comme l\'une des métropoles tech les plus actives de France, portée par le label French Tech Nantes Saint-Nazaire et un tissu de PME innovantes concentré sur l\'Île de Nantes. Les secteurs de la santé numérique, de la logistique et du retail sont particulièrement demandeurs d\'applications mobiles sur mesure. Les entreprises nantaises recherchent des partenaires capables de livrer vite, sans sacrifier la qualité — c\'est exactement notre positionnement. La mobilité, l\'accessibilité et l\'expérience utilisateur y sont des critères décisifs dans le choix d\'une application.',
+    technologies: 'Pour les entreprises de la région nantaise, nous déployons une stack éprouvée : React Native pour les applications iOS et Android cross-platform, Django (Python) pour des back-ends solides et sécurisés, Next.js pour des interfaces web ultra-performantes, et PostgreSQL pour des bases de données fiables. Nous intégrons également les outils métiers les plus courants (CRM, ERP, outils de paiement) et assurons le déploiement via AWS, OVH ou les infrastructures de votre choix. Chaque projet bénéficie d\'un design UX/UI pensé pour maximiser l\'adoption utilisateur.',
+    achievements: 'Parmi nos réalisations les plus représentatives de l\'exigence nantaise : Co\'Santé, une application mobile de prévention santé pour les jeunes développée pour la confédération des centres de santé des Pays de la Loire, et Nexy, un réseau social Web3 nécessitant une architecture back-end complexe et des performances temps réel. Des projets livrés dans les délais, avec une satisfaction client que nos références témoignent.',
     caseStudies: [clientCosante, clientNexy],
+    faqs: [
+      {
+        question: "Quel est le coût de développement d'une application mobile à Nantes ?",
+        answer: "Le développement d'une application mobile sur mesure à Nantes débute généralement à partir de 8 900€ pour une application React Native iOS et Android. Le tarif varie selon la complexité des fonctionnalités, le niveau de design et les intégrations requises. Al Firma propose des devis détaillés et transparents sous 24h — sans engagement."
+      },
+      {
+        question: "Combien de temps faut-il pour développer une application mobile ?",
+        answer: "Chez Al Firma, nous livrons une application mobile en 20 jours ouvrés pour un projet standard. Ce délai record est rendu possible grâce à notre process agile éprouvé et notre équipe pluridisciplinaire. Pour des projets complexes nécessitant des intégrations spécifiques ou un design très élaboré, le délai est ajusté en conséquence et communiqué dès le cadrage."
+      },
+      {
+        question: "Travaillez-vous avec des entreprises basées à Nantes à distance ?",
+        answer: "Oui, nous collaborons efficacement à distance avec nos clients nantais grâce à des outils de gestion de projet modernes (Notion, Figma, Slack) et des points de suivi réguliers. Nous pouvons également nous déplacer pour des ateliers de cadrage ou des présentations. Notre fonctionnement hybride garantit réactivité et proximité quel que soit votre localisation en Pays de la Loire."
+      },
+      {
+        question: "Quelles technologies utilisez-vous pour le développement mobile à Nantes ?",
+        answer: "Nous développons principalement avec React Native pour les applications iOS et Android cross-platform, ce qui réduit le coût de développement tout en garantissant des performances proches du natif. Côté back-end, nous utilisons Django (Python) pour sa robustesse et sa sécurité. Pour les applications web, nous combinons React/Next.js et Django REST Framework."
+      }
+    ],
   },
   'angers': {
     name: 'Angers',
@@ -156,11 +192,11 @@ const locations = {
     region: 'Casablanca-Settat',
     flagEmoji: '🇲🇦',
     coordinates: { lat: 33.5731, lng: -7.5898 },
-    description: 'Au cœur de Casablanca, hub économique du Maroc, Al Firma accompagne les entreprises dans leur transformation digitale avec des solutions web et mobiles sur mesure, innovantes et performantes.',
+    description: 'Hub économique et financier du Maroc, Casablanca concentre les ambitions digitales des plus grandes entreprises du pays. Al Firma accompagne startups, PME et grands groupes casablancais dans la création d\'applications mobiles iOS et Android, de plateformes web et d\'API robustes. Notre double ancrage franco-marocain nous permet de comprendre les enjeux locaux tout en apportant les standards d\'excellence du marché européen. Nous maîtrisons l\'intégration des solutions de paiement locales (CMI, PayZone, CashPlus) pour des expériences transactionnelles sans friction.',
     keywords: 'développement mobile Casablanca, application web Casablanca, agence digitale Maroc, React Native Casablanca, Django Casablanca, développement sur mesure Casablanca, applications iOS Casablanca, applications Android Casablanca, API REST Casablanca, transformation digitale Maroc',
-    marketInsights: 'Le marché digital casablancais est en pleine effervescence avec une forte demande pour les applications mobiles grand public, les plateformes B2B innovantes et les services de type marketplace.',
-    technologies: 'Nous maîtrisons les stacks modernes (React Native, Django) pour relever les défis techniques des startups et grands comptes marocains, incluant l\'intégration des solutions de paiement locales.',
-    achievements: 'Découvrez nos projets à succès, conçus pour offrir des expériences digitales de premier plan à l\'échelle nationale et internationale.',
+    marketInsights: 'Casablanca est le moteur économique du Maroc, avec un écosystème tech en plein essor porté par des initiatives comme Casablanca Finance City et la croissance de startups dans les secteurs fintech, e-commerce et logistique. La demande en applications mobiles grand public, marketplaces et outils B2B y est en forte croissance. Les entreprises locales cherchent des partenaires capables d\'allier rigueur technique, sens du design et connaissance du marché marocain — un profil qui correspond exactement à notre positionnement.',
+    technologies: 'Pour les entreprises casablancaises, nous développons des applications React Native cross-platform iOS et Android, des back-ends Django Python sécurisés, et des interfaces web React/Next.js performantes. Nous intégrons les solutions de paiement locales (CMI, PayZone) et internationales (Stripe), configurons des infrastructures cloud résilientes (AWS, OVH), et garantissons la conformité aux réglementations marocaines en vigueur. Chaque produit est conçu pour fonctionner de manière optimale sur les réseaux et appareils utilisés au Maroc.',
+    achievements: 'Parmi nos projets emblématiques au Maroc : Qiima, application communautaire de bons plans devenue une référence locale, Sayar, marketplace d\'autopartage de véhicules avec paiement intégré, et Spore.bio, application web interne full-stack. Des réalisations qui attestent de notre capacité à comprendre le marché marocain et à y livrer des produits de classe internationale.',
     caseStudies: [projectQiima, clientSporebio, projectSayar],
   },
   'rabat': {
@@ -195,11 +231,11 @@ const locations = {
     region: 'Marrakech-Safi',
     flagEmoji: '🇲🇦',
     coordinates: { lat: 31.6295, lng: -7.9811 },
-    description: 'Al Firma associe design d\'excellence et prouesses techniques pour doter les professionnels du tourisme et les startups de Marrakech d\'applications web et mobiles de qualité supérieure.',
+    description: 'Marrakech conjugue rayonnement international et dynamisme économique local, portée par un secteur touristique de premier plan et une scène entrepreneuriale en pleine mutation. Al Firma accompagne les professionnels du tourisme, les startups marrakchies et les PME locales dans la création d\'applications mobiles, plateformes web et solutions digitales sur mesure. De la réservation en ligne aux applications de gestion hôtelière, en passant par les outils e-commerce, nous transformons vos idées en produits qui conquièrent leurs utilisateurs.',
     keywords: 'développement mobile Marrakech, application web Marrakech, agence digitale Marrakech, React Native Marrakech, Django Marrakech, développement sur mesure Marrakech, applications iOS Marrakech, applications Android Marrakech, API REST Marrakech, e-tourisme',
-    marketInsights: 'Ville très dynamique, Marrakech exprime un fort besoin en applications mobiles orientées B2C, plateformes de services, e-commerce et solutions SaaS pour les professionnels.',
-    technologies: 'En tirant parti des frameworks modernes comme React Native et Django REST, nous garantissons des applications ultra-réactives et des API puissantes pour tout type d\'audience.',
-    achievements: 'Découvrez notre portfolio composé d\'applications plébiscitées par leurs utilisateurs, démontrant notre passion pour la qualité.',
+    marketInsights: 'L\'économie digitale de Marrakech est tirée par le tourisme, l\'hôtellerie et les services B2C, avec une demande croissante pour des applications de réservation, de fidélisation client, et de gestion des opérations. Les entrepreneurs marrakchis cherchent à digitaliser leurs processus pour gagner en compétitivité, réduire leurs coûts et offrir une expérience client différenciante. Les applications mobiles B2C et les plateformes SaaS d\'entreprise constituent les segments les plus demandeurs.',
+    technologies: 'Nous développons pour les entreprises marrakchies des applications React Native disponibles sur l\'App Store et Google Play, des plateformes web React/Django optimisées pour les fortes audiences, et des API REST scalables. Nous intégrons les outils de réservation (calendriers, paiements, notifications push), les solutions d\'analyse (analytics, CRM) et veillons à l\'optimisation des performances pour une expérience utilisateur irréprochable même sur connexions limitées.',
+    achievements: 'Notre expertise au service du marché marrakchi : Toutakoté, refonte complète d\'une application mobile et développement d\'une nouvelle application web synchronisée, Qiima, application de bons plans à succès couvrant tout le territoire marocain, et notre collaboration avec Deloitte pour une plateforme web interne à haute exigence. Des références qui parlent d\'elles-mêmes.',
     caseStudies: [clientToutakote, projectQiima, clientDeloitte],
   }
 };

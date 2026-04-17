@@ -1,6 +1,7 @@
 {
   "short_name": "Al Firma",
   "name": "Al Firma",
+  "description": "Al Firma - Agence de développement d'applications mobiles et web sur mesure",
   "icons": [
     {
       "src": "favicon.ico",

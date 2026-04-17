@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Tarifs - Al Firma | Développement Applications Mobiles & Web",
     description:
       "Tarifs transparents pour le développement d'applications. Mobile à partir de 8 900€, Web à partir de 6 900€.",
-    images: ["/assets/logo.png"],
+    images: [{ url: "/assets/logo.png", width: 1200, height: 630, alt: "Tarifs Al Firma - Développement application mobile et web" }],
     type: "website",
     url: "https://alfirma.com/tarifs/",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Tarifs - Al Firma | Développement Applications Mobiles & Web",
     description:
       "Tarifs transparents pour le développement d'applications. Mobile à partir de 8 900€.",
-    images: ["/assets/logo.png"],
+    images: [{ url: "/assets/logo.png", width: 1200, height: 630, alt: "Tarifs Al Firma - Développement application mobile et web" }],
   },
   alternates: {
     canonical: "https://alfirma.com/tarifs/",
