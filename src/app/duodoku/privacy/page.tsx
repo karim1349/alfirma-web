@@ -20,7 +20,7 @@ const PrivacyDuodoku = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 pt-20">
+        <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 pt-20">
             <BreadcrumbSchema items={breadcrumbItems} />
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-6">
