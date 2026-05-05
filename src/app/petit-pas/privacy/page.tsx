@@ -54,8 +54,16 @@ const PrivacyPetitPas = () => {
                     </ul>
 
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">3. Partage des informations</h2>
+                    <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                        Nous ne vendons pas, ne louons pas et ne partageons pas vos informations personnelles avec des tiers, à l&apos;exception des sous-traitants strictement nécessaires au fonctionnement du service :
+                    </p>
+                    <ul className="text-gray-700 space-y-2 mb-4">
+                        <li>• <strong>Apple Inc.</strong> et <strong>Google LLC</strong> — traitement des paiements et de la facturation des abonnements Petit Pas Premium via l&apos;App Store et le Google Play Store. Aucune information concernant votre enfant ne leur est transmise.</li>
+                        <li>• <strong>RevenueCat, Inc.</strong> — gestion technique des abonnements (validation des reçus, synchronisation entre appareils). Reçoit un identifiant interne, le statut d&apos;abonnement et la plateforme.</li>
+                        <li>• <strong>PostHog</strong> et <strong>Sentry</strong> — analyse anonymisée de l&apos;usage de l&apos;application et collecte des erreurs techniques pour améliorer la stabilité du service.</li>
+                    </ul>
                     <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                        Nous ne vendons pas, ne louons pas et ne partageons pas vos informations personnelles avec des tiers.
+                        Tous ces sous-traitants sont liés par des accords de traitement de données conformes au RGPD. Aucune donnée concernant votre enfant n&apos;est partagée à des fins commerciales ou publicitaires.
                     </p>
 
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">4. Sécurité des informations</h2>
@@ -98,6 +106,13 @@ const PrivacyPetitPas = () => {
                 </div>
 
                 <div className="text-center">
+                    <Link
+                        href="/petit-pas/terms/"
+                        className="text-blue-600 hover:text-blue-700 underline transition-colors duration-300"
+                    >
+                        Conditions générales
+                    </Link>
+                    <span className="text-gray-400 mx-4">•</span>
                     <Link
                         href="/home"
                         className="text-blue-600 hover:text-blue-700 underline transition-colors duration-300"
