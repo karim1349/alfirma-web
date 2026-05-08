@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import ContactForm from "../../home/components/ContactForm";
 import NavBar from "../../home/components/NavBar";
 
@@ -26,9 +27,18 @@ export interface LocationData {
 
 interface CityPageTemplateProps {
   location: LocationData;
+  currentSlug: string;
+  otherCities: Array<{ slug: string; name: string; flagEmoji: string }>;
 }
 
-export default function CityPageTemplate({ location }: CityPageTemplateProps) {
+const services = [
+  { href: "/services/developpement-mobile/", label: "Développement mobile React Native" },
+  { href: "/services/developpement-web-django/", label: "Développement web Django" },
+  { href: "/services/api-rest-python/", label: "APIs REST Python" },
+  { href: "/services/design-ux-ui/", label: "UX/UI Design" },
+];
+
+export default function CityPageTemplate({ location, otherCities }: CityPageTemplateProps) {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-rose-500/30 selection:text-rose-900 overflow-hidden font-sans">
       
@@ -209,6 +219,55 @@ export default function CityPageTemplate({ location }: CityPageTemplateProps) {
           </div>
         </section>
       )}
+
+      {/* Related Links — Services + Other Cities (Internal Linking for SEO) */}
+      <section className="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-16 py-20 border-t border-slate-100">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-rose-500 mb-4">Nos services à {location.name}</h3>
+            <h4 className="text-2xl font-bold text-slate-900 mb-6">Une équipe pluridisciplinaire</h4>
+            <ul className="flex flex-col gap-3">
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="group flex items-center gap-3 text-slate-700 hover:text-rose-500 transition-colors"
+                  >
+                    <span className="w-8 h-px bg-slate-300 group-hover:bg-rose-500 group-hover:w-12 transition-all" />
+                    <span className="font-medium">{service.label}</span>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/tarifs/"
+                  className="group flex items-center gap-3 text-slate-700 hover:text-rose-500 transition-colors"
+                >
+                  <span className="w-8 h-px bg-slate-300 group-hover:bg-rose-500 group-hover:w-12 transition-all" />
+                  <span className="font-medium">Voir nos tarifs</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-500 mb-4">Nos autres implantations</h3>
+            <h4 className="text-2xl font-bold text-slate-900 mb-6">Al Firma proche de vous</h4>
+            <ul className="flex flex-wrap gap-3">
+              {otherCities.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/${c.slug}/`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all text-sm font-medium"
+                  >
+                    <span>{c.flagEmoji}</span>
+                    <span>Agence {c.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section - Consistent with Service Pages */}
       <section className="relative z-20 w-full bg-white py-32 px-6 md:px-16 mt-12 border-t border-slate-100">

@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     description: "Développement d'applications mobiles iOS et Android sur mesure avec React Native.",
     images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Développement application mobile iOS et Android - Al Firma' }],
     type: 'website',
-    url: 'https://alfirma.com/services/developpement-mobile',
+    url: 'https://alfirma.com/services/developpement-mobile/',
   },
   alternates: {
-    canonical: 'https://alfirma.com/services/developpement-mobile',
+    canonical: 'https://alfirma.com/services/developpement-mobile/',
   },
 };
 
@@ -54,7 +54,7 @@ export default function DeveloppementMobilePage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://alfirma.com/services/developpement-mobile" />
+        <link rel="canonical" href="https://alfirma.com/services/developpement-mobile/" />
       </Head>
       <h1 className="sr-only">
         Agence Développement Application Mobile (iOS & Android)
