@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
-import { LocalBusinessSchema } from '../components/StructuredData';
+import { LocalBusinessSchema, FAQPageSchema, BreadcrumbSchema } from '../components/StructuredData';
 import CityPageTemplate from './components/CityPageTemplate';
 // Real projects and client experiences to showcase on local pages
 const projectQiima = {
@@ -162,15 +162,33 @@ const locations = {
   'angers': {
     name: 'Angers',
     country: 'France',
-    region: 'Pays de la Loire', 
+    region: 'Pays de la Loire',
     flagEmoji: '🇫🇷',
     coordinates: { lat: 47.4784, lng: -0.5632 },
-    description: 'Basée dans la région angevine, Al Firma met son savoir-faire en développement sur mesure au service des entreprises d\'Angers. De la conception à la maintenance, nous livrons des solutions stables.',
-    keywords: 'développement mobile Angers, application web Angers, agence digitale Angers, React Native Angers, Django Angers, applications Android Angers',
-    marketInsights: 'Angers se caractérise par un tissu économique alliant tradition et French Tech. Les entreprises angevines privilégient de plus en plus la digitalisation sur mesure de leurs activités.',
-    technologies: 'Nous combinons l\'agilité de React Native et la solidité de Django pour créer des applications métier complexes, évolutives et parfaitement intégrées à vos environnements existants.',
-    achievements: 'Découvrez ci-dessous l\'impact de nos réalisations, reflets du savoir-faire technique déployé pour tous nos clients.',
-    caseStudies: [clientNeuroptimisme, clientToutakote],
+    description: 'Al Firma accompagne les startups, PME et institutions angevines dans la création d\'applications mobiles iOS et Android, de plateformes web et d\'outils métier sur mesure. Reconnue comme l\'une des villes les plus dynamiques de l\'ouest grâce à son label French Tech, à son écosystème végétal et numérique (Végépolys Valley), et à ses pôles universitaires de premier plan, Angers concentre des acteurs ambitieux qui cherchent à digitaliser leurs activités sans compromis sur la qualité. Nous y livrons des produits sur mesure conçus avec React Native et Django, déployés rapidement et maintenus dans la durée.',
+    keywords: 'développement mobile Angers, application web Angers, agence digitale Angers, React Native Angers, Django Angers, agence application mobile Angers, applications iOS Angers, applications Android Angers, API REST Angers, développement sur mesure Angers',
+    marketInsights: 'Angers conjugue un tissu industriel solide (santé, agroalimentaire, viticulture, électronique) et une scène tech en forte croissance, portée par la French Tech Angers et des incubateurs comme WeForge. Les besoins dominants concernent les outils métier B2B, les applications de gestion logistique et de traçabilité, ainsi que les plateformes de services aux particuliers. Les entreprises angevines apprécient les partenaires capables d\'allier proximité, exigence technique et sens du concret — exactement ce que propose notre équipe basée dans la région.',
+    technologies: 'Pour les entreprises de la région angevine, nous déployons React Native pour les applications mobiles cross-platform iOS et Android, Django (Python) pour des back-ends robustes et sécurisés, et Next.js pour des interfaces web performantes. Nous intégrons les outils métiers (ERP, CRM, solutions de paiement, plateformes e-commerce) et garantissons des architectures évolutives sur AWS, OVH ou tout autre cloud de votre choix. Chaque projet bénéficie d\'un design UX/UI conçu pour maximiser l\'engagement utilisateur dès la première interaction.',
+    achievements: 'Nos réalisations en Pays de la Loire reflètent notre exigence : Neuroptimisme, plateforme web pour un cabinet de neuropsychologie, et Toutakoté, refonte complète d\'un écosystème mobile et web pour un acteur local. Des projets livrés dans les délais, avec un accompagnement humain à chaque étape.',
+    caseStudies: [clientNeuroptimisme, clientToutakote, clientCosante],
+    faqs: [
+      {
+        question: "Combien coûte le développement d'une application mobile à Angers ?",
+        answer: "Une application mobile sur mesure développée par Al Firma à Angers démarre à 8 900€ pour une application React Native (iOS + Android). Le tarif s\'adapte selon les fonctionnalités, le niveau de design et les intégrations métier (paiements, notifications, API tierces). Devis détaillé sous 24h après un premier échange."
+      },
+      {
+        question: "Quel est le délai pour livrer une application mobile à Angers ?",
+        answer: "Nous livrons une application mobile en 20 jours ouvrés pour un projet standard, grâce à notre process agile et notre équipe pluridisciplinaire. Pour des projets plus complexes (intégrations métier, multi-rôles, paiements), le délai est ajusté dès le cadrage initial et communiqué clairement avant signature."
+      },
+      {
+        question: "Travaillez-vous avec des entreprises basées à Angers en mode hybride ?",
+        answer: "Oui, nous combinons rendez-vous présentiels (ateliers de cadrage, présentations) et collaboration à distance via Notion, Figma et Slack. Notre proximité géographique avec Angers nous permet d\'organiser facilement des points en présentiel quand cela apporte de la valeur — sans imposer la contrainte d\'un déplacement systématique."
+      },
+      {
+        question: "Quelles entreprises angevines ont déjà fait appel à Al Firma ?",
+        answer: "Nous avons accompagné des acteurs représentatifs du tissu local : Neuroptimisme (cabinet de neuropsychologie, plateforme web), Toutakoté (refonte mobile + web), et Co\'Santé pour la confédération des centres de santé des Pays de la Loire. Chaque référence illustre notre capacité à adapter notre approche au secteur d\'activité et au stade de maturité du client."
+      }
+    ],
   },
   'cholet': {
     name: 'Cholet',
@@ -184,6 +202,24 @@ const locations = {
     technologies: 'Depuis notre siège, nous développons des architectures modernes (Next.js, Django, React Native) garantissant des applications performantes, sécurisées et facilement maintenables au quotidien.',
     achievements: 'Fiers de nos racines choletaises, découvrez les projets majeurs que nous avons réalisés avec notre exigence artisanale.',
     caseStudies: [clientCosante, clientLeexit, projectQiima],
+    faqs: [
+      {
+        question: "Combien coûte une application mobile sur mesure depuis Cholet ?",
+        answer: "Le tarif d'entrée pour une application mobile React Native (iOS + Android) débute à 8 900€. Le coût final dépend des fonctionnalités, du niveau d'intégration métier et du design souhaité. Étant basés à Cholet, nous bénéficions d'une structure optimisée qui nous permet de proposer un excellent rapport qualité/prix par rapport aux grandes métropoles."
+      },
+      {
+        question: "Pourquoi choisir une agence basée à Cholet plutôt qu'à Paris ou Nantes ?",
+        answer: "Notre ancrage choletais nous permet une réactivité, une proximité humaine et une rigueur industrielle qui font notre différence. Nous appliquons les mêmes standards techniques que les grandes agences parisiennes (React Native, Django, OWASP, RGPD) sans la prime géographique des grandes métropoles. Vous gagnez sur le coût, la disponibilité et la simplicité d'échange."
+      },
+      {
+        question: "Quels secteurs accompagnez-vous dans le bassin choletais ?",
+        answer: "Le tissu industriel local — textile, agroalimentaire, mécanique — exprime des besoins concrets en outils métier : suivi de production, gestion d'inventaire, traçabilité, applications de force de vente, plateformes B2B. Nous accompagnons aussi les acteurs des services et du tourisme régional (santé, hôtellerie, culture)."
+      },
+      {
+        question: "Travaillez-vous uniquement avec des clients choletais ?",
+        answer: "Non, Cholet est notre siège mais nous travaillons avec des clients dans toute la France et au Maroc. Notre méthode hybride — points présentiels quand cela ajoute de la valeur, collaboration à distance via Notion/Figma/Slack le reste du temps — fonctionne aussi bien à Cholet qu'à Paris, Nantes, Casablanca ou Marrakech."
+      }
+    ],
   },
   // Morocco
   'casablanca': {
@@ -198,6 +234,24 @@ const locations = {
     technologies: 'Pour les entreprises casablancaises, nous développons des applications React Native cross-platform iOS et Android, des back-ends Django Python sécurisés, et des interfaces web React/Next.js performantes. Nous intégrons les solutions de paiement locales (CMI, PayZone) et internationales (Stripe), configurons des infrastructures cloud résilientes (AWS, OVH), et garantissons la conformité aux réglementations marocaines en vigueur. Chaque produit est conçu pour fonctionner de manière optimale sur les réseaux et appareils utilisés au Maroc.',
     achievements: 'Parmi nos projets emblématiques au Maroc : Qiima, application communautaire de bons plans devenue une référence locale, Sayar, marketplace d\'autopartage de véhicules avec paiement intégré, et Spore.bio, application web interne full-stack. Des réalisations qui attestent de notre capacité à comprendre le marché marocain et à y livrer des produits de classe internationale.',
     caseStudies: [projectQiima, clientSporebio, projectSayar],
+    faqs: [
+      {
+        question: "Combien coûte le développement d'une application mobile à Casablanca ?",
+        answer: "Une application mobile sur mesure développée par Al Firma démarre à 8 900€ pour une application React Native iOS et Android. Pour les entreprises casablancaises, nous adaptons les modes de facturation (EUR/MAD, paiement échelonné) et tenons compte des spécificités locales : intégration CMI/PayZone, optimisation pour les réseaux marocains, conformité loi 09-08."
+      },
+      {
+        question: "Intégrez-vous les solutions de paiement marocaines (CMI, PayZone, CashPlus) ?",
+        answer: "Oui, l\'intégration des solutions de paiement locales fait partie de notre savoir-faire. Nous maîtrisons les API CMI (paiements par carte bancaire marocaine), PayZone, CashPlus et les solutions internationales (Stripe, PayPal). Nous gérons l\'authentification 3D Secure, les retours utilisateurs et la conformité PCI-DSS."
+      },
+      {
+        question: "Quels secteurs d'activité accompagnez-vous à Casablanca ?",
+        answer: "Nous travaillons avec un large éventail de secteurs : fintech (applications bancaires, wallets), e-commerce et marketplaces, logistique et livraison, santé (téléconsultation, gestion de cabinets), retail et CRM, ainsi qu\'avec des startups SaaS B2B. Notre expertise transverse nous permet d\'apporter à chaque secteur les bonnes pratiques techniques et UX."
+      },
+      {
+        question: "Travaillez-vous en français, en arabe et en anglais ?",
+        answer: "Oui, notre équipe est trilingue (français, arabe darija et standard, anglais). Nous gérons les projets en français par défaut, mais pouvons mener les ateliers, livrer la documentation et coder les applications dans les trois langues. Nos applications supportent le multilingue et le RTL (droite-à-gauche) pour l\'arabe nativement."
+      }
+    ],
   },
   'rabat': {
     name: 'Rabat',
@@ -205,12 +259,30 @@ const locations = {
     region: 'Rabat-Salé-Kénitra',
     flagEmoji: '🇲🇦',
     coordinates: { lat: 34.0209, lng: -6.8416 },
-    description: 'Implantée au Maroc, Al Firma répond aux exigences des institutions et entreprises de Rabat en créant des applications web et mobiles robustes, sécurisées et adaptées aux enjeux de la capitale.',
-    keywords: 'développement mobile Rabat, application web Rabat, agence digitale Rabat, React Native Rabat, Django Rabat, développement sur mesure Rabat, applications iOS Rabat, applications Android Rabat, API REST Rabat, e-gov Maroc',
-    marketInsights: 'La capitale du Maroc concentre d\'importants besoins en matière de plateformes sécurisées, d\'outils institutionnels et de systèmes de gestion dématérialisés hautement performants.',
-    technologies: 'Notre pôle d\'ingénierie s\'appuie sur la puissance de Django et PostgreSQL pour les architectures back-end complexes, et sur React/React Native pour des interfaces utilisateurs fluides.',
-    achievements: 'Voici un aperçu de l\'expertise Al Firma à travers nos dernières applications et plateformes de grande envergure.',
+    description: 'Capitale administrative et politique du Maroc, Rabat concentre les ministères, agences publiques, sièges institutionnels et organismes internationaux. Al Firma accompagne les administrations, ETI et startups rabatîs dans la conception d\'applications mobiles, plateformes web et systèmes back-end conformes aux exigences les plus strictes en matière de sécurité, de souveraineté des données et de conformité réglementaire. Notre double ancrage franco-marocain nous permet de comprendre les enjeux locaux tout en apportant les meilleures pratiques internationales.',
+    keywords: 'développement mobile Rabat, application web Rabat, agence digitale Rabat, React Native Rabat, Django Rabat, développement sur mesure Rabat, applications iOS Rabat, applications Android Rabat, API REST Rabat, e-gov Maroc, transformation digitale Rabat',
+    marketInsights: 'Rabat est le centre névralgique de la transformation digitale institutionnelle au Maroc, avec des projets ambitieux portés par l\'Agence de Développement du Digital (ADD), la Stratégie Maroc Digital 2025, et la digitalisation des services publics. Au-delà de l\'institutionnel, la ville accueille un écosystème tech en forte croissance autour du Technopark Rabat et des startups portées par UM6P/UIR. Les besoins dominants : plateformes sécurisées, systèmes d\'information métier, applications de gestion documentaire, et outils B2B à haute valeur ajoutée.',
+    technologies: 'Pour les organisations rabatîs, nous déployons Django (Python) — choisi par la NASA, l\'Instagram et la majorité des administrations européennes — pour sa robustesse, sa sécurité native et sa capacité à gérer des architectures complexes. Côté front-end, React Native couvre les besoins mobiles iOS et Android, tandis que Next.js et React équipent les plateformes web. Nous appliquons les standards OWASP, le chiffrement AES-256, l\'authentification OAuth2/JWT et la conformité RGPD/loi 09-08, avec des déploiements résilients sur AWS, OVH ou infrastructures souveraines selon les besoins.',
+    achievements: 'Nos références illustrent notre capacité à livrer pour des organisations exigeantes : Deloitte (plateforme web interne full-stack Angular + Django), Duodoku (jeu mobile multijoueur déployé internationalement), et Neuroptimisme (plateforme web sécurisée pour cabinet de neuropsychologie). Des projets livrés dans les délais, avec une qualité d\'exécution qui parle d\'elle-même.',
     caseStudies: [projectDuodoku, clientDeloitte, clientNeuroptimisme],
+    faqs: [
+      {
+        question: "Quel est le coût de développement d'une application mobile à Rabat ?",
+        answer: "Le développement d\'une application mobile sur mesure à Rabat démarre à partir de 8 900€ pour une application React Native iOS et Android. Le tarif évolue selon la complexité fonctionnelle, le niveau de sécurité requis (chiffrement, authentification renforcée) et les intégrations avec vos systèmes existants. Nous fournissons un devis détaillé et transparent sous 24h."
+      },
+      {
+        question: "Pouvez-vous développer pour des administrations ou organismes publics à Rabat ?",
+        answer: "Oui, notre stack technique (Django, PostgreSQL, infrastructures sécurisées) répond aux exigences des projets institutionnels. Nous appliquons les standards de sécurité (OWASP, chiffrement, authentification OAuth2), la conformité RGPD et loi 09-08, et pouvons déployer sur des infrastructures souveraines. Notre expérience avec des grands comptes comme Deloitte atteste de notre capacité à respecter les contraintes de gouvernance et d\'audit."
+      },
+      {
+        question: "Comment gérez-vous la souveraineté des données pour les projets rabatîs ?",
+        answer: "Selon vos exigences, nous pouvons héberger les données au Maroc (data centers locaux), en Europe (conformité RGPD), ou dans des cloud privés sur des infrastructures souveraines. Le choix d\'hébergement est défini dès le cadrage en fonction de la nature des données, des contraintes réglementaires et de votre politique IT. Nous documentons l\'ensemble des flux pour faciliter les audits."
+      },
+      {
+        question: "Quels délais pour un projet à Rabat ?",
+        answer: "Une application mobile standard est livrée en 20 jours ouvrés, une application web en 15 jours, une API en 10 jours. Pour les projets institutionnels avec contraintes de sécurité renforcée, le cadrage initial dure quelques jours supplémentaires pour valider l\'architecture avant le lancement du sprint de développement."
+      }
+    ],
   },
   'tanger': {
     name: 'Tanger',
@@ -218,12 +290,30 @@ const locations = {
     region: 'Tanger-Tétouan-Al Hoceïma',
     flagEmoji: '🇲🇦',
     coordinates: { lat: 35.7595, lng: -5.8340 },
-    description: 'Tournée vers l\'avenir, Al Firma soutient le développement économique de Tanger en proposant des services de développement d\'applications web et mobiles à la pointe de la technologie.',
-    keywords: 'développement mobile Tanger, application web Tanger, agence digitale Tanger, React Native Tanger, Django Tanger, développement sur mesure Tanger, applications iOS Tanger, applications Android Tanger, API REST Tanger, logistique digitale',
-    marketInsights: 'Pôle industriel et logistique d\'excellence, Tanger voit naître de nombreux besoins en création de plateformes logicielles, d\'applications de suivi et de marketplaces d\'envergure.',
-    technologies: 'Nous déployons des solutions scalables et robustes basées sur Django, Next.js et React Native, parfaites pour répondre aux fortes exigences opérationnelles.',
-    achievements: 'Explorez nos "success stories" reflétant notre capacité à livrer des produits numériques premium et fiables.',
+    description: 'Porte de l\'Afrique sur l\'Europe, Tanger s\'est imposée comme l\'un des hubs économiques et logistiques les plus dynamiques du continent grâce à Tanger Med — premier port d\'Afrique — et à des zones franches industrielles attirant les leaders mondiaux de l\'automobile, de l\'aéronautique et du textile. Al Firma accompagne les industriels, exportateurs, opérateurs logistiques et startups tangéroises dans la création d\'applications mobiles, plateformes web et systèmes de gestion sur mesure. Nos solutions en React Native et Django sont conçues pour encaisser les volumes de transactions, suivre les flux logistiques en temps réel et garantir une traçabilité irréprochable.',
+    keywords: 'développement mobile Tanger, application web Tanger, agence digitale Tanger, React Native Tanger, Django Tanger, développement sur mesure Tanger, applications iOS Tanger, applications Android Tanger, API REST Tanger, logistique digitale Tanger, supply chain Maroc',
+    marketInsights: 'Le bassin économique de Tanger est dominé par la logistique portuaire (Tanger Med), l\'industrie automobile (Renault, Stellantis), l\'aéronautique, et un secteur textile en pleine modernisation. Les besoins digitaux sont concrets et exigeants : applications de suivi de flotte, plateformes de gestion documentaire export/import, outils B2B pour la coordination logistique, marketplaces sectorielles, et systèmes ERP/WMS sur mesure. La Tanger Tech City et les startups locales ajoutent une dimension B2C en forte croissance, notamment autour du tourisme, des services et du e-commerce.',
+    technologies: 'Pour répondre aux exigences opérationnelles de Tanger, nous combinons Django (Python) pour des back-ends à haute disponibilité, PostgreSQL pour la fiabilité transactionnelle, et React Native pour des applications mobiles fluides utilisables sur le terrain. Nous intégrons les API logistiques (suivi GPS, EDI, douanes), les solutions de paiement locales (CMI, PayZone) et internationales (Stripe), et concevons des architectures cloud résilientes (AWS, OVH) capables de gérer des pics d\'activité saisonniers. Chaque solution est pensée pour fonctionner même en conditions réseau dégradées.',
+    achievements: 'Nos réalisations parlent d\'elles-mêmes : Sayar, marketplace d\'autopartage avec gestion de flotte et paiements intégrés ; Moba, application web full-stack React + Django pour un opérateur exigeant ; et B-flow, application mobile hybride Capacitor pour laquelle nous avons mené diagnostics et migrations. Des projets livrés dans les délais, avec une rigueur qui correspond aux standards industriels de Tanger.',
     caseStudies: [projectSayar, clientMoba, clientBFlow],
+    faqs: [
+      {
+        question: "Combien coûte une application mobile pour une entreprise de Tanger ?",
+        answer: "Une application mobile sur mesure développée par Al Firma démarre à 8 900€ pour une application React Native (iOS + Android). Le tarif évolue selon la complexité fonctionnelle (suivi GPS, scan de codes-barres, authentification renforcée, multi-rôles, intégrations EDI/ERP). Devis détaillé sous 24h après un premier échange de cadrage."
+      },
+      {
+        question: "Développez-vous des applications de gestion logistique et supply chain pour Tanger ?",
+        answer: "Oui, c\'est l\'un de nos domaines d\'expertise. Nous concevons des outils de suivi de flotte, de gestion d\'entrepôt (WMS), de tracking d\'expéditions, de gestion documentaire douane/export, et de coordination multi-acteurs. Nos applications fonctionnent en mode connecté ou hors-ligne (synchronisation différée), critique pour les opérations terrain au port ou en zone industrielle."
+      },
+      {
+        question: "Pouvez-vous intégrer nos systèmes existants (ERP, WMS, douanes) ?",
+        answer: "Oui, nous concevons des connecteurs sur mesure pour vos systèmes existants : SAP, Sage, Oracle, JD Edwards, ainsi que les API douanes (BADR, PortNet). Nous gérons les flux EDI standards (EDIFACT, XML, JSON), l\'authentification sécurisée et la résilience face aux pannes réseau. L\'intégration est cadrée dès la phase de cadrage initial."
+      },
+      {
+        question: "Quelle est la différence entre une agence à Tanger et Al Firma ?",
+        answer: "Al Firma combine ancrage marocain et standards d\'exécution internationaux. Nos équipes maîtrisent le contexte local (paiements CMI/PayZone, douanes marocaines, écosystème Tanger Med) tout en appliquant les meilleures pratiques techniques mondiales (Django, React Native, OWASP, conformité RGPD/loi 09-08). Vous bénéficiez d\'une équipe qui parle votre langue — au sens propre comme au figuré — sans compromis sur la qualité."
+      }
+    ],
   },
   'marrakech': {
     name: 'Marrakech',
@@ -237,6 +327,24 @@ const locations = {
     technologies: 'Nous développons pour les entreprises marrakchies des applications React Native disponibles sur l\'App Store et Google Play, des plateformes web React/Django optimisées pour les fortes audiences, et des API REST scalables. Nous intégrons les outils de réservation (calendriers, paiements, notifications push), les solutions d\'analyse (analytics, CRM) et veillons à l\'optimisation des performances pour une expérience utilisateur irréprochable même sur connexions limitées.',
     achievements: 'Notre expertise au service du marché marrakchi : Toutakoté, refonte complète d\'une application mobile et développement d\'une nouvelle application web synchronisée, Qiima, application de bons plans à succès couvrant tout le territoire marocain, et notre collaboration avec Deloitte pour une plateforme web interne à haute exigence. Des références qui parlent d\'elles-mêmes.',
     caseStudies: [clientToutakote, projectQiima, clientDeloitte],
+    faqs: [
+      {
+        question: "Quel est le coût de développement d'une application mobile à Marrakech ?",
+        answer: "Une application mobile sur mesure démarre à partir de 8 900€ pour une application React Native iOS et Android, identique à nos tarifs Casablanca ou Paris. Le coût varie selon les fonctionnalités spécifiques au secteur visé (réservation, paiement multilingue, gestion d\'inventaire hôtelier, fidélisation client, etc.). Devis détaillé sous 24h."
+      },
+      {
+        question: "Développez-vous des applications pour le secteur touristique et hôtelier ?",
+        answer: "Oui, c\'est l\'un de nos domaines de prédilection à Marrakech. Nous concevons des applications de réservation en ligne, des outils de gestion hôtelière (PMS sur mesure), des plateformes de fidélisation client, des marketplaces d\'expériences touristiques, et des applications de conciergerie digitale. Nous intégrons les systèmes de paiement (CMI, Stripe), les gateways de réservation (Booking, Channel Manager) et le multilingue natif (FR/AR/EN)."
+      },
+      {
+        question: "Vos applications fonctionnent-elles bien sur les connexions limitées ?",
+        answer: "Oui, c\'est une contrainte que nous prenons en compte dès la conception, particulièrement importante au Maroc. Nous optimisons le poids des bundles JavaScript, mettons en place des stratégies de cache offline (mode hors-ligne avec synchronisation différée), compressons les images via WebP/AVIF, et minimisons les appels API. Le résultat : une application fluide même en 3G ou réseau saturé."
+      },
+      {
+        question: "Pouvez-vous adapter une application existante au marché marrakchi ?",
+        answer: "Absolument. Nous menons des refontes complètes ou partielles d\'applications existantes pour les adapter aux spécificités locales : ajout du multilingue arabe avec support RTL, intégration des paiements marocains, optimisation pour les usages locaux (préférences culturelles, comportements de réservation), conformité loi 09-08. Le projet Toutakoté que nous avons refondu en est un parfait exemple."
+      }
+    ],
   }
 };
 
@@ -321,18 +429,31 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <Head>
         <link rel="canonical" href={`https://alfirma.com/${city}/`} />
       </Head>
-      <LocalBusinessSchema 
+      <LocalBusinessSchema
         name={`Al Firma - ${location.name}`}
         city={location.name}
         country={location.country}
         region={location.region}
         coordinates={location.coordinates}
       />
+      <BreadcrumbSchema items={[
+        { name: "Accueil", url: "https://alfirma.com/" },
+        { name: location.name, url: `https://alfirma.com/${city}/` },
+      ]} />
+      {location.faqs && location.faqs.length > 0 && (
+        <FAQPageSchema faqs={location.faqs} />
+      )}
       {/* City-specific H1 for SEO - visually hidden but accessible */}
       <h1 className="sr-only">
         Agence Développement Application Mobile {location.name}
       </h1>
-      <CityPageTemplate location={location} />
+      <CityPageTemplate
+        location={location}
+        currentSlug={city}
+        otherCities={Object.entries(locations)
+          .filter(([slug]) => slug !== city)
+          .map(([slug, l]) => ({ slug, name: l.name, flagEmoji: l.flagEmoji }))}
+      />
     </>
   );
 }

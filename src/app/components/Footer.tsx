@@ -83,7 +83,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/home#SECTION_A_PROPOS"
+                  href="/services/developpement-mobile/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Applications Mobiles
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/home#SECTION_A_PROPOS"
+                  href="/services/developpement-web-django/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Applications Web
@@ -99,7 +99,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/home#SECTION_A_PROPOS"
+                  href="/services/design-ux-ui/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   UX/UI Design
@@ -107,7 +107,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/home#SECTION_A_PROPOS"
+                  href="/services/api-rest-python/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   APIs & Backend
@@ -115,10 +115,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/home#SECTION_A_PROPOS"
+                  href="/tarifs/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Maintenance
+                  Tarifs
                 </Link>
               </li>
             </ul>
@@ -138,7 +138,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/tarifs"
+                  href="/tarifs/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Tarifs
@@ -170,7 +170,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/duodoku"
+                  href="/duodoku/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Duodoku
@@ -178,7 +178,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/duodoku/privacy"
+                  href="/duodoku/privacy/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Politique de Confidentialité
@@ -197,7 +197,7 @@ const Footer = () => {
                 <ul className="space-y-1 text-sm">
                   <li>
                     <Link
-                      href="/paris"
+                      href="/paris/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Paris
@@ -205,7 +205,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/nantes"
+                      href="/nantes/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Nantes
@@ -213,7 +213,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/angers"
+                      href="/angers/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Angers
@@ -221,7 +221,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/cholet"
+                      href="/cholet/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Cholet
@@ -236,7 +236,7 @@ const Footer = () => {
                 <ul className="space-y-1 text-sm">
                   <li>
                     <Link
-                      href="/casablanca"
+                      href="/casablanca/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Casablanca
@@ -244,7 +244,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/rabat"
+                      href="/rabat/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Rabat
@@ -252,7 +252,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/tanger"
+                      href="/tanger/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Tanger
@@ -260,7 +260,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/marrakech"
+                      href="/marrakech/"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       Marrakech

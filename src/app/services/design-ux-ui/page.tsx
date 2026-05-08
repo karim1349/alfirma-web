@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import ServicePageTemplate from '../components/ServicePageTemplate';
 
 export const dynamic = 'force-static';
@@ -13,10 +14,10 @@ export const metadata: Metadata = {
     description: "Expertise en UX/UI pour concevoir les interfaces de vos applications web et mobiles.",
     images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Design UX/UI et conception maquettes Figma - Al Firma' }],
     type: 'website',
-    url: 'https://alfirma.com/services/design-ux-ui',
+    url: 'https://alfirma.com/services/design-ux-ui/',
   },
   alternates: {
-    canonical: 'https://alfirma.com/services/design-ux-ui',
+    canonical: 'https://alfirma.com/services/design-ux-ui/',
   },
 };
 
@@ -32,22 +33,46 @@ export default function UxUiDesignPage() {
     "Retours illimités jusqu'à satisfaction parfaite"
   ];
 
+  const seoContent = (
+    <div className="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
+      <h2 className="text-xl font-bold text-slate-900 mb-4">Du wireframe Figma à l&apos;application livrée</h2>
+      <p className="text-slate-600 mb-4">
+        Un design UX/UI réussi ne s&apos;arrête pas à la maquette : il se confronte à la réalité du développement mobile et web. C&apos;est pourquoi nos designers travaillent main dans la main avec nos développeurs React Native et Django dès la phase de wireframing — pour anticiper les contraintes techniques, optimiser les parcours utilisateurs et livrer des interfaces qui se construisent sans friction.
+      </p>
+      <p className="text-slate-600 mb-6">
+        Vous démarrez un nouveau projet ? Notre offre couvre l&apos;ensemble : design UX/UI, développement mobile, développement web et APIs. Une équipe unique, des livrables cohérents, et un budget maîtrisé.
+      </p>
+      <div className="flex flex-wrap gap-4">
+        <Link href="/services/developpement-mobile/" className="inline-flex items-center gap-2 bg-white border border-indigo-200 text-indigo-700 px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all">
+          Développement mobile →
+        </Link>
+        <Link href="/services/developpement-web-django/" className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all">
+          Développement web Django →
+        </Link>
+        <Link href="/tarifs/" className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all">
+          Voir les tarifs →
+        </Link>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://alfirma.com/services/design-ux-ui" />
+        <link rel="canonical" href="https://alfirma.com/services/design-ux-ui/" />
       </Head>
       <h1 className="sr-only">
         Agence Design UX/UI & Conception Maquettes Figma
       </h1>
       
-      <ServicePageTemplate 
+      <ServicePageTemplate
         title="UX/UI Design et Branding pour Applications"
         description="La première impression de votre application est primordiale. Nos designers conçoivent des interfaces (UI) modernes et des parcours utilisateurs (UX) logiques qui convertissent. De la wireframe brute à la maquette Figma Haute Fidélité et au prototypage cliquable."
         imageSrc="/assets/illustrations/uiuxdesign.png"
         imageAlt="Agence Design UX/UI et conception de maquettes Figma"
         features={features}
         price="Sur Devis"
+        seoContent={seoContent}
       />
     </>
   );
