@@ -36,11 +36,22 @@ export async function generateMetadata({
     };
   }
 
+  const canonicalUrl =
+    post.canonicalUrl || `https://alfirma.com/blog/${slug}/`;
+
   return {
-    title: `${post.title} - Al Firma Blog`,
+    title: post.metaTitle || `${post.title} - Al Firma Blog`,
     description: post.description,
     keywords: post.tags.join(", "),
-    authors: [{ name: post.author }],
+    authors: [
+      {
+        name: post.author,
+        url: "https://alfirma.com/auteurs/karim-benchekroun/",
+      },
+    ],
+    robots: post.noIndex
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -53,7 +64,7 @@ export async function generateMetadata({
         },
       ],
       type: "article",
-      url: `https://alfirma.com/blog/${slug}/`,
+      url: canonicalUrl,
       publishedTime: post.date,
       modifiedTime: post.updatedAt || post.date,
       authors: [post.author],
@@ -66,7 +77,7 @@ export async function generateMetadata({
       images: [post.image],
     },
     alternates: {
-      canonical: `https://alfirma.com/blog/${slug}/`,
+      canonical: canonicalUrl,
     },
   };
 }
@@ -141,6 +152,12 @@ const mdxComponents = {
   td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td className="px-4 py-3 text-sm text-gray-700 border-b" {...props} />
   ),
+  strong: (props: React.HTMLAttributes<HTMLElement>) => (
+    <strong className="font-semibold text-gray-900" {...props} />
+  ),
+  hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
+    <hr className="my-10 border-gray-200" {...props} />
+  ),
 };
 
 export default async function BlogPostPage({
@@ -155,6 +172,35 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  if (post.redirectTo) {
+    return (
+      <>
+        <meta httpEquiv="refresh" content={`0;url=${post.redirectTo}`} />
+        <div className="flex items-center justify-center">
+          <BlogNavBar />
+        </div>
+        <main className="min-h-screen bg-white pt-32">
+          <div className="max-w-2xl mx-auto px-4 py-20 text-center">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              Cet article a été regroupé
+            </h1>
+            <p className="text-gray-600 mb-8">
+              Une version plus récente et complète est maintenant disponible.
+            </p>
+            <Link
+              href={post.redirectTo}
+              className="inline-block bg-gray-900 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-700"
+            >
+              Lire le guide mis à jour
+            </Link>
+          </div>
+        </main>
+      </>
+    );
+  }
+
+  const canonicalUrl =
+    post.canonicalUrl || `https://alfirma.com/blog/${slug}/`;
   const relatedPosts = getRelatedPosts(slug, 3);
 
   return (
@@ -166,13 +212,13 @@ export default async function BlogPostPage({
         datePublished={post.date}
         dateModified={post.updatedAt}
         image={post.image}
-        url={`https://alfirma.com/blog/${slug}/`}
+        url={canonicalUrl}
       />
       <BreadcrumbSchema
         items={[
           { name: "Accueil", url: "https://alfirma.com/" },
           { name: "Blog", url: "https://alfirma.com/blog/" },
-          { name: post.title, url: `https://alfirma.com/blog/${slug}/` },
+          { name: post.title, url: canonicalUrl },
         ]}
       />
       <div className="flex items-center justify-center">
@@ -223,7 +269,14 @@ export default async function BlogPostPage({
                 {post.author.charAt(0)}
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">{post.author}</h3>
+                <h3 className="font-semibold text-gray-900">
+                  <Link
+                    href="/auteurs/karim-benchekroun/"
+                    className="hover:text-blue-600"
+                  >
+                    {post.author}
+                  </Link>
+                </h3>
                 <p className="text-gray-600">
                   Fondateur d'Al Firma, expert en développement mobile et web
                 </p>

@@ -23,7 +23,7 @@ export function ArticleSchema({
     "author": {
       "@type": "Person",
       "name": author,
-      "url": "https://alfirma.com/",
+      "url": "https://alfirma.com/auteurs/karim-benchekroun/",
     },
     "publisher": {
       "@type": "Organization",
@@ -59,7 +59,7 @@ export function BlogListSchema({ posts }: { posts: { title: string; url: string 
     "@type": "Blog",
     "@id": "https://alfirma.com/blog/#blog",
     "name": "Blog Al Firma",
-    "description": "Articles et guides sur le développement d'applications mobiles et web",
+    "description": "Analyses et guides sur le développement, les API, le produit numérique et la fintech",
     "url": "https://alfirma.com/blog/",
     "publisher": {
       "@type": "Organization",

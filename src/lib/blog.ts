@@ -1,41 +1,45 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import { parse as parseYaml } from 'yaml';
+import { CATEGORY_CONFIG } from '@/lib/blog-config';
+import type { BlogCategory, BlogPost, BlogPostMeta } from '@/types/blog';
 
 const BLOG_CONTENT_PATH = path.join(process.cwd(), 'src/content/blog');
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  updatedAt?: string;
-  author: string;
-  category: 'mobile' | 'web' | 'design' | 'backend' | 'business';
-  tags: string[];
-  image: string;
-  imageAlt: string;
-  featured?: boolean;
-  readingTime: number;
-  locale: string;
+export type { BlogPost, BlogPostMeta } from '@/types/blog';
+
+function parseMdxFile(fileContent: string): {
+  data: Record<string, unknown>;
   content: string;
+} {
+  const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(fileContent);
+
+  if (!frontmatter) {
+    return { data: {}, content: fileContent };
+  }
+
+  const parsed = parseYaml(frontmatter[1]);
+  const data =
+    parsed && typeof parsed === 'object' && !Array.isArray(parsed)
+      ? (parsed as Record<string, unknown>)
+      : {};
+
+  return {
+    data,
+    content: fileContent.slice(frontmatter[0].length),
+  };
 }
 
-export interface BlogPostMeta {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  updatedAt?: string;
-  author: string;
-  category: 'mobile' | 'web' | 'design' | 'backend' | 'business';
-  tags: string[];
-  image: string;
-  imageAlt: string;
-  featured?: boolean;
-  readingTime: number;
-  locale: string;
+function normalizeCategory(category: unknown): BlogCategory {
+  if (
+    typeof category === 'string' &&
+    Object.prototype.hasOwnProperty.call(CATEGORY_CONFIG, category)
+  ) {
+    return category as BlogCategory;
+  }
+
+  return 'business';
 }
 
 /**
@@ -53,25 +57,38 @@ export function getAllPosts(): BlogPostMeta[] {
     const slug = filename.replace('.mdx', '');
     const filePath = path.join(BLOG_CONTENT_PATH, filename);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const { data, content } = matter(fileContent);
+    const { data, content } = parseMdxFile(fileContent);
     const stats = readingTime(content);
 
     return {
       slug,
-      title: data.title || '',
-      description: data.description || '',
-      date: data.date || '',
-      updatedAt: data.updatedAt,
-      author: data.author || 'Al Firma',
-      category: data.category || 'business',
-      tags: data.tags || [],
-      image: data.image || '/assets/logo.png',
-      imageAlt: data.imageAlt || data.title || '',
-      featured: data.featured || false,
+      title: typeof data.title === 'string' ? data.title : '',
+      metaTitle: typeof data.metaTitle === 'string' ? data.metaTitle : undefined,
+      description: typeof data.description === 'string' ? data.description : '',
+      date: typeof data.date === 'string' ? data.date : '',
+      updatedAt: typeof data.updatedAt === 'string' ? data.updatedAt : undefined,
+      author: typeof data.author === 'string' ? data.author : 'Al Firma',
+      category: normalizeCategory(data.category),
+      tags: Array.isArray(data.tags)
+        ? data.tags.filter((tag): tag is string => typeof tag === 'string')
+        : [],
+      image: typeof data.image === 'string' ? data.image : '/assets/logo.png',
+      imageAlt:
+        typeof data.imageAlt === 'string'
+          ? data.imageAlt
+          : typeof data.title === 'string'
+            ? data.title
+            : '',
+      featured: data.featured === true,
       readingTime: Math.ceil(stats.minutes),
-      locale: data.locale || 'fr',
+      locale: typeof data.locale === 'string' ? data.locale : 'fr',
+      canonicalUrl:
+        typeof data.canonicalUrl === 'string' ? data.canonicalUrl : undefined,
+      noIndex: data.noIndex === true,
+      redirectTo:
+        typeof data.redirectTo === 'string' ? data.redirectTo : undefined,
     } as BlogPostMeta;
-  });
+  }).filter((post) => !post.redirectTo);
 
   // Sort by date (newest first)
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -88,23 +105,36 @@ export function getPostBySlug(slug: string): BlogPost | null {
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(fileContent);
+  const { data, content } = parseMdxFile(fileContent);
   const stats = readingTime(content);
 
   return {
     slug,
-    title: data.title || '',
-    description: data.description || '',
-    date: data.date || '',
-    updatedAt: data.updatedAt,
-    author: data.author || 'Al Firma',
-    category: data.category || 'business',
-    tags: data.tags || [],
-    image: data.image || '/assets/logo.png',
-    imageAlt: data.imageAlt || data.title || '',
-    featured: data.featured || false,
+    title: typeof data.title === 'string' ? data.title : '',
+    metaTitle: typeof data.metaTitle === 'string' ? data.metaTitle : undefined,
+    description: typeof data.description === 'string' ? data.description : '',
+    date: typeof data.date === 'string' ? data.date : '',
+    updatedAt: typeof data.updatedAt === 'string' ? data.updatedAt : undefined,
+    author: typeof data.author === 'string' ? data.author : 'Al Firma',
+    category: normalizeCategory(data.category),
+    tags: Array.isArray(data.tags)
+      ? data.tags.filter((tag): tag is string => typeof tag === 'string')
+      : [],
+    image: typeof data.image === 'string' ? data.image : '/assets/logo.png',
+    imageAlt:
+      typeof data.imageAlt === 'string'
+        ? data.imageAlt
+        : typeof data.title === 'string'
+          ? data.title
+          : '',
+    featured: data.featured === true,
     readingTime: Math.ceil(stats.minutes),
-    locale: data.locale || 'fr',
+    locale: typeof data.locale === 'string' ? data.locale : 'fr',
+    canonicalUrl:
+      typeof data.canonicalUrl === 'string' ? data.canonicalUrl : undefined,
+    noIndex: data.noIndex === true,
+    redirectTo:
+      typeof data.redirectTo === 'string' ? data.redirectTo : undefined,
     content,
   };
 }
@@ -195,13 +225,4 @@ export function getAllSlugs(): string[] {
     .map(file => file.replace('.mdx', ''));
 }
 
-/**
- * Category display names and colors
- */
-export const CATEGORY_CONFIG: Record<string, { name: string; color: string }> = {
-  mobile: { name: 'Mobile', color: 'bg-blue-500' },
-  web: { name: 'Web', color: 'bg-green-500' },
-  design: { name: 'Design', color: 'bg-purple-500' },
-  backend: { name: 'Backend', color: 'bg-orange-500' },
-  business: { name: 'Business', color: 'bg-rose-500' },
-};
+export { CATEGORY_CONFIG } from '@/lib/blog-config';

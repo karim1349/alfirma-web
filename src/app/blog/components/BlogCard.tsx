@@ -1,26 +1,7 @@
+import { CATEGORY_CONFIG } from "@/lib/blog-config";
+import type { BlogPostMeta } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
-
-// Inline to avoid importing from lib/blog (which uses Node.js fs)
-const CATEGORY_CONFIG: Record<string, { name: string; color: string }> = {
-  mobile: { name: "Mobile", color: "bg-blue-500" },
-  web: { name: "Web", color: "bg-green-500" },
-  design: { name: "Design", color: "bg-purple-500" },
-  backend: { name: "Backend", color: "bg-orange-500" },
-  business: { name: "Business", color: "bg-rose-500" },
-};
-
-interface BlogPostMeta {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  author: string;
-  category: string;
-  image: string;
-  imageAlt: string;
-  readingTime: number;
-}
 
 interface BlogCardProps {
   post: BlogPostMeta;

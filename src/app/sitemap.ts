@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/auteurs/karim-benchekroun/`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/duodoku/`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -105,4 +111,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPosts,
   ]
 }
-

@@ -1,26 +1,7 @@
+import { CATEGORY_CONFIG } from "@/lib/blog-config";
+import type { BlogPostMeta } from "@/types/blog";
 import Image from "next/image";
-
-// Inline to avoid importing from lib/blog (which uses Node.js fs)
-const CATEGORY_CONFIG: Record<string, { name: string; color: string }> = {
-  mobile: { name: "Mobile", color: "bg-blue-500" },
-  web: { name: "Web", color: "bg-green-500" },
-  design: { name: "Design", color: "bg-purple-500" },
-  backend: { name: "Backend", color: "bg-orange-500" },
-  business: { name: "Business", color: "bg-rose-500" },
-};
-
-interface BlogPostMeta {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  author: string;
-  category: string;
-  tags: string[];
-  image: string;
-  imageAlt: string;
-  readingTime: number;
-}
+import Link from "next/link";
 
 interface BlogHeaderProps {
   post: BlogPostMeta;
@@ -56,7 +37,12 @@ export default function BlogHeader({ post }: BlogHeaderProps) {
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-rose-400 to-blue-400 flex items-center justify-center text-white font-semibold">
             {post.author.charAt(0)}
           </div>
-          <span className="font-medium text-gray-900">{post.author}</span>
+          <Link
+            href="/auteurs/karim-benchekroun/"
+            className="font-medium text-gray-900 hover:text-blue-600"
+          >
+            {post.author}
+          </Link>
         </div>
         <span>•</span>
         <time dateTime={post.date}>

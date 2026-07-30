@@ -1,0 +1,480 @@
+---
+title: "Open banking au Maroc en 2026 : blocages et leçons françaises"
+metaTitle: "Open banking au Maroc : blocages et voie à suivre"
+slug: "open-banking-maroc-france-2026"
+description: "Analyse critique de l’open banking au Maroc, de ses freins réglementaires et techniques, et des leçons à tirer de l’expérience française."
+date: "2026-07-29"
+author: "Karim Benchekroun"
+category: "fintech"
+tags: ["open banking Maroc", "fintech Maroc", "API bancaire", "DSP2", "paiement", "inclusion financière"]
+image: "/assets/blog/open-banking-maroc-france-2026.webp"
+imageAlt: "Deux écosystèmes bancaires marocain et français reliés par des flux de données sécurisés"
+featured: true
+locale: "fr"
+---
+
+À première vue, l’open banking ressemble à un sujet d’API. Une banque ouvre
+quelques endpoints, une fintech s’y connecte et le travail semble terminé. En
+pratique, le code est rarement le morceau le plus difficile.
+
+Une API bancaire ne sert à rien si le client ne comprend pas ce qu’il autorise,
+si chaque établissement impose son propre format ou si personne ne sait qui
+répond lorsqu’un paiement échoue. Pour une fintech, le vrai test arrive au
+moment de quitter le bac à sable. Doit-elle alors renégocier une intégration
+complète avec chaque banque ?
+
+En juillet 2026, le Maroc a déjà un régulateur au travail, des banques capables
+d’intégrer des systèmes complexes, une soixantaine de fintechs opérationnelles
+et des usages numériques qui progressent. Il lui manque encore un marché
+d’open banking standardisé, avec des règles que tous les acteurs peuvent faire
+valoir. La France, encadrée par la DSP2 depuis 2018, permet de mesurer le chemin
+parcouru, mais aussi les limites d’un modèle plus mature. Son expérience mérite
+d’être étudiée, pas recopiée.
+
+> **Périmètre.** Cet article repose sur des documents publics disponibles au
+> 29 juillet 2026. Il porte sur l’ouverture des données de comptes et
+> l’initiation de paiement. Il ne constitue pas un avis juridique.
+
+## L’open banking, concrètement, c’est quoi ?
+
+L’open banking permet à un client d’autoriser un prestataire tiers à consulter
+certaines données bancaires ou à initier une opération depuis son compte. Cela
+recouvre l’information sur les comptes, comme les soldes, les transactions ou
+l’agrégation de plusieurs banques, ainsi que l’initiation de paiement depuis un
+compte. Ces accès peuvent ensuite alimenter une gestion de trésorerie, une
+comptabilité automatisée, une vérification de revenus ou une analyse de
+solvabilité, dans les limites du consentement donné.
+
+L’open banking ne signifie donc pas que les données deviennent publiques. Il
+organise un accès autorisé, limité, traçable et révocable. L’API n’est qu’une
+pièce du dispositif. Il faut aussi un standard commun, de la confiance et des
+responsabilités clairement attribuées.
+
+L’open banking peut ensuite s’étendre au crédit, à l’assurance, à l’épargne ou
+à l’investissement. On parle alors d’open finance. Pour le Maroc, réussir un
+périmètre bancaire précis paraît plus utile que d’élargir trop tôt la promesse.
+
+## Où en est le Maroc en 2026 ?
+
+Le [rapport 2024 de Bank Al-Maghrib sur la supervision
+bancaire](https://www.bkam.ma/fr/content/download/828688/9035256/Rapport%20DSB%202024.pdf)
+indique que les travaux ont couvert l’évaluation juridique et réglementaire,
+la gouvernance, ainsi que des benchmarks internationaux, notamment le
+Royaume-Uni, le Brésil et la Corée du Sud. La Banque mondiale accompagne
+également des travaux préparatoires et des pilotes. Les cas d’usage envisagés
+incluent l’agrégation de comptes, l’initiation de paiement et les services
+d’identité ou d’authentification.
+
+Ces travaux préparent le terrain. Ils ne donnent pas encore aux acteurs un
+droit d’accès opérationnel en production. Un pilote et un marché ouvert restent
+deux choses très différentes.
+
+Le [Livre blanc 2026 de Morocco Fintech
+Center](https://mfc.ma/download?filename=Livre_Blanc_sur_le_Secteur_Fintech_au_Maroc_VF.pdf)
+décrit un secteur d’environ 60 fintechs opérationnelles, principalement
+orientées vers le paiement et les services B2B. Il recense 13,8 millions de
+comptes de paiement mobile à fin 2024 et environ 62 millions de dollars levés
+par les fintechs marocaines depuis 2019. Mais le même document relève une
+« API-sation » hétérogène et l’absence d’un cadre d’open banking complètement
+formalisé. Des connexions existent, souvent au cas par cas. Elles ne forment pas
+encore une infrastructure commune.
+
+Le [Morocco Fintech Center, lancé en janvier
+2025](https://www.bkam.ma/en/content/download/818264/8961575/CdP_Morocco%20Fintech%20Center_ANG.pdf),
+réunit régulateurs, institutions publiques et acteurs financiers. Les fintechs
+disposent ainsi d’une porte d’entrée commune pour l’accompagnement, le
+financement et le dialogue réglementaire. Son utilité se mesurera surtout au
+temps gagné entre une expérimentation et une mise en production.
+
+### Maroc et France : une comparaison sans caricature
+
+| Dimension | Maroc en 2026 | France en 2026 |
+|---|---|---|
+| Cadre d’accès | Travaux réglementaires et pilotes ; cadre transversal encore en construction | Accès aux comptes encadré par la DSP2 depuis 2018 |
+| Standardisation | APIs et partenariats surtout hétérogènes ou bilatéraux | APIs généralisées, mais qualité et performance encore variables |
+| Marché fintech | Jeune, concentré sur paiements et B2B, financement limité | Davantage d’acteurs agréés et de consolidations |
+| Adoption | Wallets en croissance, cash et acceptation marchande encore structurants | Agrégation installée, mais adoption loin d’être massive |
+| Problème central | Créer une infrastructure partagée et un passage vers la production | Transformer la conformité en usages rentables et réguliers |
+
+La France a pris de l’avance sur le cadre et l’industrialisation. Je ne pense
+pas que le Maroc ait intérêt à suivre exactement la même trajectoire. Il peut
+viser des usages locaux que le dispositif européen, conçu pour un autre marché,
+traite mal ou pas du tout.
+
+## Ce qui fonctionne déjà au Maroc
+
+### Le régulateur regarde au-delà de l’API
+
+Bank Al-Maghrib ne réduit pas le projet à une spécification technique. Ses
+travaux intègrent cybersécurité, protection des données personnelles,
+concurrence et confiance numérique. C’est nécessaire, car un incident d’open
+banking peut relever de plusieurs de ces domaines à la fois.
+
+### Le paiement mobile a trouvé un usage concret
+
+Selon les [statistiques 2024 de Bank Al-Maghrib sur les moyens de
+paiement](https://www.bkam.ma/fr/content/download/822877/8994591/version/1/file/Caract%C3%A9ristiques%2Bdes%2Bmoyens%2Bde%2Bpaiements%2Bscripturaux%2Bau%2BMaroc-2024.pdf),
+les transactions de paiement mobile sont passées de 9,7 millions, pour
+2,1 milliards de dirhams en 2023, à 19,7 millions, pour 3,9 milliards en 2024.
+Les aides sociales directes ont fortement contribué à cette accélération.
+
+Les chiffres ont presque doublé en un an. Cette progression ne vient pas
+seulement d’une amélioration technique. Les aides sociales ont donné au
+paiement mobile un usage concret et une distribution à grande échelle.
+
+### Les banques savent mener des intégrations complexes
+
+En juin 2026, le groupe BCP et Western Union ont annoncé une
+[connexion directe de leurs
+systèmes](https://www.groupebcp.com/fr/Pages/Communique-de-press-Le-Groupe-BCP-et-Western-Union-connectent-leurs-systemes-pour-des-transferts-d-argent-instantanes-vers-le-Maroc.aspx)
+pour créditer instantanément des comptes au Maroc. Ce partenariat n’est pas de
+l’open banking au sens réglementaire. Il montre en revanche que les compétences
+et les capacités d’intégration existent.
+
+Il montre aussi la limite actuelle. Une intégration bilatérale produit un
+service efficace, mais elle ne permet pas à un nouvel acteur de se connecter une
+fois pour servir plusieurs banques.
+
+### Des cas d’usage propres au Maroc
+
+Les transferts des Marocains résidant à l’étranger, la trésorerie des TPE, le
+rapprochement des paiements marchands, la distribution des aides et l’accès au
+crédit pour des revenus irréguliers répondent à des problèmes locaux. Une
+nouvelle application générique d’agrégation de comptes aurait probablement
+moins d’impact.
+
+## Les six barrières qui empêchent le passage à l’échelle
+
+### 1. Un droit d’accès encore flou
+
+Le Maroc ne part pas de zéro en matière d’API. Le problème est plutôt l’absence
+d’un cadre commun qui réponde à des questions très pratiques :
+
+- qui peut accéder à quelles données ;
+- sous quel statut ou agrément ;
+- selon quel standard de consentement ;
+- avec quelles obligations de disponibilité et de support ;
+- qui répond en cas de fraude, de donnée erronée ou de paiement mal exécuté ;
+- comment le client révoque son consentement et obtient réparation.
+
+Sans ces réponses, chaque partenariat exige sa propre négociation juridique,
+commerciale et technique. Un grand acteur peut absorber ce coût. Pour une jeune
+fintech, il peut suffire à bloquer le projet.
+
+### 2. La concentration réduit l’incitation à ouvrir
+
+Le [rapport de supervision 2024 de Bank
+Al-Maghrib](https://www.bkam.ma/fr/content/download/828688/9035256/Rapport%20DSB%202024.pdf)
+montre que les trois premiers groupes bancaires représentent 61,9 % des actifs,
+63,5 % des dépôts et 60,4 % des crédits. Les cinq premiers concentrent 76 % des
+actifs.
+
+Cette concentration peut simplifier la coordination initiale, puisqu’il suffit
+de réunir peu d’acteurs pour couvrir une grande partie du marché. Elle réduit
+aussi leur intérêt à avancer vite. Une infrastructure ouverte facilite la
+comparaison, le déplacement de la relation client et l’arrivée de concurrents.
+
+Le cadre doit donc mesurer la qualité de l’ouverture et appliquer les mêmes
+règles à tous. Sans contrôle, une API peut respecter l’obligation sur le papier
+tout en restant lente, incomplète ou difficile à industrialiser.
+
+Le marché du paiement marchand montre déjà l’importance de la concurrence.
+Après ses décisions sur l’acquisition monétique, le Conseil de la concurrence
+et Bank Al-Maghrib ont encore publié en juillet 2026 un
+[point conjoint sur l’ouverture du
+marché](https://conseil-concurrence.ma/communique-conjoint-du-conseil-de-la-concurrence-et-de-bank-al-maghrib/).
+Ce précédent montre pourquoi une infrastructure commune a besoin de règles
+d’accès vérifiables.
+
+### 3. Des APIs hétérogènes et un passage en production artisanal
+
+Une documentation Swagger ne suffit pas. Pour exploiter une API bancaire en
+production, une fintech a aussi besoin de :
+
+- un modèle de données partagé et versionné ;
+- des environnements de test réalistes ;
+- des parcours de consentement cohérents ;
+- des webhooks fiables et des opérations idempotentes ;
+- des niveaux de service publiés ;
+- un support d’incident et un calendrier de dépréciation.
+
+Si elle doit modifier son produit, son audit de sécurité et son modèle de
+consentement pour chaque banque, chaque nouvelle connexion coûte encore trop
+cher. L’open banking reste alors une succession de projets sur mesure.
+
+### 4. La confiance, le consentement et la protection des données
+
+La loi marocaine 09-08 encadre les traitements de données personnelles. La CNDP
+rappelle que [les traitements situés au Maroc entrent dans son
+champ](https://www.cndp.ma/traitement-des-donnees-personnelles-au-maroc/) et que
+des formalités spécifiques peuvent s’appliquer, notamment pour
+[les transferts de données à
+l’étranger](https://www.cndp.ma/conditions/).
+
+Une case « J’accepte » ne suffit pas. Le client doit comprendre :
+
+- quelle entreprise accède à ses données ;
+- quelles catégories de données sont concernées ;
+- pour quel usage et pendant combien de temps ;
+- comment retirer son autorisation ;
+- où les données sont hébergées et avec qui elles sont partagées.
+
+Un tableau de bord commun, ou au moins cohérent entre les banques, permettrait
+au client de retrouver et de révoquer ses consentements. Sans cette visibilité,
+l’open banking risque de reproduire les mauvaises pratiques du tracking
+publicitaire.
+
+### 5. Une adoption numérique encore inégale
+
+Dans son [document de programme de décembre
+2025](https://documents1.worldbank.org/curated/en/099121725081523100/pdf/P511813-6224b34e-8faf-48f7-a9aa-26d6754abeb1.pdf),
+la Banque mondiale estime que 44,4 % des adultes marocains détenaient un compte
+auprès d’une institution financière ou un compte de mobile money en 2024, un
+niveau globalement stable par rapport à 2021. Elle relève aussi le décalage
+entre détention d’un compte et usage effectif des paiements numériques, en
+particulier lorsque l’acceptation marchande reste insuffisante ou coûteuse à
+déployer.
+
+L’open banking ne corrigera pas à lui seul le poids du cash, la faible
+couverture marchande, le manque de littératie financière ou la défiance. Même
+une excellente API restera peu utilisée si le client ne peut pas payer avec le
+service ou n’en voit pas rapidement l’intérêt.
+
+### 6. Le financement et l’accès au premier client
+
+Morocco Fintech Center recense 62 millions de dollars levés depuis 2019. Cela
+témoigne d’une activité réelle, mais le capital disponible reste limité. Une
+fintech régulée finance des travaux de conformité, des audits, des intégrations,
+une assurance et du support. Elle doit aussi tenir pendant les délais de
+décision, souvent plus longs que pour une startup SaaS.
+
+Le premier contrat de production est souvent le plus difficile à obtenir. Des
+achats pilotes limités dans le temps, avec des critères de passage à l’échelle
+annoncés dès le départ, aideraient davantage que des démonstrateurs sans
+débouché.
+
+## Ce que la France a réussi, et ce qui bloque encore
+
+La [DSP2, entrée en application en
+2018](https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/bancaire-et-financiere/directive-sur-les-services-de-paiement-dsp2),
+a créé un droit d’accès aux comptes pour des prestataires autorisés, encadré
+l’initiation de paiement et généralisé l’authentification forte. Elle a obligé
+les banques à construire des interfaces et permis aux agrégateurs de sortir
+d’une dépendance structurelle au screen scraping.
+
+Le cadre est nettement plus mature qu’au Maroc. Les usages et le modèle
+économique n’ont pas progressé au même rythme.
+
+Une [étude de l’ACPR publiée en septembre
+2025](https://acpr.banque-france.fr/system/files/2025-09/20250918_Document_reflexion_Open_banking_France.pdf),
+fondée sur six grandes banques françaises, chiffre à plus de 100 millions
+d’euros leurs coûts liés aux APIs en 2023. Elle dénombre 4,2 millions de clients
+utilisant des services d’information sur les comptes, soit seulement 3,2 % de
+la clientèle de détail couverte par l’enquête. L’information sur les comptes
+représente 58 % des activités observées, l’initiation de paiement 38 %, et les
+services au-delà de la DSP2 seulement 3 %.
+
+L’étude note aussi que quatre plateformes concentrent plus de 75 % du volume de
+l’information sur les comptes. Après plusieurs années de DSP2, quatre problèmes
+restent visibles :
+
+- l’adoption reste limitée chez les particuliers et les entreprises ;
+- le modèle économique reste difficile pour les fintechs ;
+- la qualité des APIs varie encore d’une banque à l’autre ;
+- le marché reste concentré entre quelques plateformes.
+
+L’Union européenne cherche encore à corriger ces limites. L’accord politique
+provisoire de novembre 2025 sur le
+[nouveau cadre des services de
+paiement](https://www.europarl.europa.eu/news/fr/press-room/20251121IPR31540/accord-sur-les-services-de-paiement-plus-de-protection-contre-la-fraude)
+prévoit notamment de réduire les obstacles, renforcer la non-discrimination,
+mieux protéger contre la fraude et donner aux clients un tableau de bord de
+leurs permissions. D’après le
+[compte rendu FIN-NET de la Commission européenne de mai
+2026](https://finance.ec.europa.eu/document/download/a1f65f26-0f3b-4e91-9bea-5490f169f817_el?filename=260519-fin-net-plenary-minutes_en.pdf),
+la finalisation juridique et l’adoption formelle étaient encore en cours, avec
+une adoption attendue au quatrième trimestre 2026.
+
+L’expérience française montre l’utilité d’une obligation réglementaire pour
+dépasser les partenariats bilatéraux. Elle montre aussi sa limite. Sans qualité
+de service, modèle économique et cas d’usage assez convaincants pour changer
+les habitudes, l’obligation produit surtout une infrastructure de conformité.
+
+## Ce que le Maroc devrait copier, adapter et éviter
+
+### Copier le droit d’accès opposable
+
+Une fintech autorisée ne devrait pas dépendre du bon vouloir commercial de
+chaque établissement pour accéder au périmètre réglementé. Ce droit doit être
+assorti de règles d’authentification, de responsabilité et de recours.
+
+### Adapter les standards aux réalités locales
+
+Les standards internationaux de sécurité sont réutilisables. Les parcours et
+cas d’usage doivent, eux, correspondre au marché marocain : mobile first,
+français et arabe, connectivité variable, importance des MRE, TPE peu équipées
+et revenus parfois irréguliers.
+
+Une conformité calquée mot pour mot sur l’Europe pourrait créer des coûts
+disproportionnés sans résoudre les frictions locales.
+
+### Refuser l’API de conformité minimale
+
+Publier une API sans métriques ne suffit pas. Le régulateur devrait pouvoir
+comparer publiquement, par banque :
+
+- disponibilité et temps de réponse ;
+- taux de réussite des connexions et paiements ;
+- délai d’accès à la production ;
+- incidents et temps de résolution ;
+- stabilité des versions ;
+- taux d’abandon du parcours de consentement.
+
+Ces chiffres permettraient de distinguer une API réellement exploitable d’une
+API simplement publiée pour respecter une obligation.
+
+### Donner une fin aux pilotes
+
+Un sandbox est utile quand il ouvre un chemin vers la production. Chaque
+expérimentation devrait annoncer dès le départ ses critères de sortie en
+matière de sécurité, conformité, performance et volume, ainsi qu’une date de
+décision. Sans cela, la fintech dépense ses ressources pendant que
+l’organisation repousse le moment de choisir.
+
+## Une feuille de route réaliste sur 36 mois
+
+| Horizon | Priorités | Résultats mesurables |
+|---|---|---|
+| 0 à 12 mois | Publier le périmètre légal, les statuts, le modèle de consentement et un standard API commun ; ouvrir un sandbox multi-banques | Documentation versionnée, jeux de données réalistes, procédure unique d’onboarding, métriques publiques de test |
+| 12 à 24 mois | Mettre en production l’information sur les comptes et l’initiation de paiement auprès d’un premier groupe de banques | Couverture minimale du marché, SLA opposables, tableau de bord de consentements, gestion commune des incidents |
+| 24 à 36 mois | Étendre les données, renforcer les paiements marchands et lancer des cas d’usage sectoriels | TPE connectées, réduction des délais de rapprochement, financement consenti plus rapide, premiers services d’open finance évalués |
+
+Cette progression doit être gouvernée par une instance associant Bank
+Al-Maghrib, CNDP, Conseil de la concurrence, banques, établissements de
+paiement, fintechs et représentants des usagers. Les banques ne peuvent pas
+évaluer seules la qualité de leur ouverture. Les fintechs, de leur côté, ne
+peuvent pas évaluer seules leur sécurité.
+
+## Cinq usages à prioriser au Maroc
+
+### 1. La trésorerie des TPE et PME
+
+Une petite entreprise peut gagner plusieurs heures par semaine en regroupant
+ses comptes, en prévoyant sa trésorerie et en automatisant le rapprochement et
+la préparation comptable. Le gain est facile à observer et le service peut être
+facturé de façon récurrente.
+
+### 2. Les transferts des MRE
+
+Comparer le coût réel, initier le transfert, suivre son état et rapprocher
+automatiquement le crédit final réduirait la fragmentation actuelle. La
+connexion entre BCP et Western Union en montre l’intérêt. Avec un standard
+commun, davantage d’acteurs pourraient proposer leurs propres services.
+
+### 3. Le paiement de compte à compte chez les marchands
+
+Un paiement initié directement depuis le compte peut compléter la carte et le
+wallet, à condition d’être instantané, compréhensible et simple à rapprocher.
+Le commerçant doit y gagner en coût ou en risque. Le client doit, lui aussi, y
+voir un avantage immédiat.
+
+### 4. Le crédit fondé sur des données consenties
+
+Avec l’accord du client, l’historique de flux peut aider à évaluer un revenu
+irrégulier ou l’activité d’une TPE. Il faut toutefois empêcher qu’un score
+opaque transforme l’inclusion promise en discrimination automatisée. Droit
+d’explication, minimisation des données et possibilité de contestation doivent
+être prévus dès la conception.
+
+### 5. Les aides et services publics
+
+La progression du paiement mobile liée aux aides directes montre la puissance
+d’un cas d’usage distribué à grande échelle. L’open banking pourrait simplifier
+la vérification, le versement et le suivi, sans créer une base de données
+financière centralisée inutile.
+
+## Ce que l’infrastructure doit assurer
+
+Du point de vue d’une équipe qui conçoit des
+[APIs et backends sécurisés](/services/api-rest-python/), le socle devrait
+inclure OAuth 2.0 et OpenID Connect, avec des profils de sécurité adaptés au
+secteur financier. Le client comme le prestataire doivent passer par une
+authentification forte, à l’aide de certificats ou de preuves cryptographiques.
+
+Les consentements doivent être granulaires par compte, type de donnée, finalité
+et durée. Le système doit limiter les scopes, utiliser des jetons courts et
+permettre une révocation immédiate. Pour les paiements, il faut aussi prévoir
+l’idempotence, des statuts explicites et des webhooks signés.
+
+Enfin, l’exploitation compte autant que le protocole. Les équipes ont besoin de
+journaux d’audit qui n’exposent pas les données sensibles, d’un versionnement
+prévisible et d’une période de migration avant toute rupture. Le sandbox doit
+rester proche de la production. Des tests de conformité automatisés et des SLA
+mesurés de bout en bout complètent le dispositif.
+
+Le standard technique doit être public et mis à jour à partir des incidents et
+des retours d’intégration. Un PDF révisé tous les trois ans ne suivra ni les
+menaces ni les usages.
+
+## L’open banking est-il déjà légal au Maroc ?
+
+Des APIs et partenariats bancaires existent, et les autorités travaillent
+explicitement sur l’open banking. En revanche, les sources publiques analysées
+ne décrivent pas encore un cadre transversal équivalent à la DSP2, avec un
+droit d’accès standardisé applicable à l’ensemble du marché. Une entreprise
+doit donc analyser son activité exacte : service de paiement, traitement de
+données, externalisation, transfert international et exigences de sécurité.
+
+## Quand l’open banking sera-t-il disponible au Maroc ?
+
+Les sources consultées ne donnent pas de date publique pour une ouverture
+complète. Bank Al-Maghrib travaille sur le cadre avec l’accompagnement de la
+Banque mondiale, tandis que Morocco Fintech Center organise le dialogue avec le
+secteur. Le calendrier deviendra crédible lorsque des livrables seront
+disponibles : un standard, un statut, un sandbox multi-banques, des SLA et de
+premières mises en production.
+
+## Le Maroc peut encore choisir son modèle
+
+Le Maroc ne manque ni d’idées ni de compétences techniques. Son principal
+blocage vient du coût de coordination entre institutions, banques et nouveaux
+entrants. Tant que chaque fintech paiera seule ce coût, les grands partenariats
+bilatéraux et les acteurs déjà établis resteront avantagés.
+
+La France montre qu’un cadre obligatoire crée l’infrastructure, mais pas
+nécessairement l’adoption. À mes yeux, le Maroc peut faire mieux qu’un simple
+rattrapage réglementaire : partir des usages locaux, imposer
+l’interopérabilité, publier la qualité réelle des APIs et financer le passage
+du pilote à la production.
+
+Le résultat sera tangible lorsqu’un entrepreneur autorisé pourra construire une
+intégration, se connecter à plusieurs banques et proposer un service que le
+client comprend. L’écosystème dépendra alors moins de quelques accords négociés
+au cas par cas.
+
+---
+
+## Sources et méthode
+
+Cette analyse croise en priorité des sources institutionnelles et les distingue
+des annonces commerciales :
+
+- Bank Al-Maghrib, [Rapport annuel sur la supervision bancaire
+  2024](https://www.bkam.ma/fr/content/download/828688/9035256/Rapport%20DSB%202024.pdf)
+  et [statistiques 2024 des moyens de
+  paiement](https://www.bkam.ma/fr/content/download/822877/8994591/version/1/file/Caract%C3%A9ristiques%2Bdes%2Bmoyens%2Bde%2Bpaiements%2Bscripturaux%2Bau%2BMaroc-2024.pdf) ;
+- Morocco Fintech Center, [Livre blanc du secteur fintech au
+  Maroc](https://mfc.ma/download?filename=Livre_Blanc_sur_le_Secteur_Fintech_au_Maroc_VF.pdf),
+  mars 2026 ;
+- Banque mondiale, [programme d’inclusion financière et
+  numérique](https://documents1.worldbank.org/curated/en/099121725081523100/pdf/P511813-6224b34e-8faf-48f7-a9aa-26d6754abeb1.pdf),
+  décembre 2025 ;
+- ACPR, [L’open banking en
+  France](https://acpr.banque-france.fr/system/files/2025-09/20250918_Document_reflexion_Open_banking_France.pdf),
+  septembre 2025 ;
+- Parlement européen et Commission européenne, état des travaux sur le nouveau
+  cadre européen des services de paiement.
+
+Vous préparez un produit financier, une API ou une intégration multi-acteurs ?
+[Échangeons sur son architecture et son passage en
+production](https://calendly.com/karimbenchekroun/30min).

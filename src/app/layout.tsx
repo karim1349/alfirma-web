@@ -57,7 +57,10 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://alfirma.com/"
+    canonical: "https://alfirma.com/",
+    types: {
+      "application/rss+xml": "https://alfirma.com/feed.xml",
+    },
   },
 };
 
