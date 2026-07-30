@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Al Firma
 
-## Getting Started
+Site vitrine et blog d’Al Firma, construit avec Next.js et exporté en fichiers
+statiques. Les articles sont des fichiers MDX versionnés dans Git.
 
-First, run the development server:
+## Développement
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site est disponible sur `http://localhost:3000`. La commande
+`npm run build` génère l’export de production dans `out/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rédiger et publier un article
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Les articles sont des fichiers MDX stockés dans `src/content/blog/`. Un agent
+ou un développeur peut créer un fichier, renseigner son frontmatter puis
+proposer la modification dans Git.
 
-## Learn More
+Chaque article doit contenir au minimum :
 
-To learn more about Next.js, take a look at the following resources:
+- un titre éditorial et, si nécessaire, un titre SEO ;
+- un slug stable ;
+- une description de 120 à 165 caractères ;
+- une date, un auteur, une catégorie et des mots-clés ;
+- une image principale et son texte alternatif ;
+- le contenu MDX avec ses liens vers les sources.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Après validation, le déploiement du VPS exécute `npm ci`, `npm run build`, puis
+met en ligne le dossier `out/`. Aucun contenu éditorial n’est stocké dans une
+base de données séparée.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## SEO éditorial
 
-## Deploy on Vercel
+Chaque article génère :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- une URL statique avec balise canonique ;
+- les métadonnées Open Graph et Twitter ;
+- un schéma `Article` avec auteur et dates de mise à jour ;
+- une entrée dans `sitemap.xml` et `feed.xml`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le slug d’un article publié doit rester stable. En cas de consolidation, garder
+l’ancien fichier avec `redirectTo`, `canonicalUrl` et `noIndex` afin de
+préserver l’ancienne URL.

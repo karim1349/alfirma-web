@@ -170,6 +170,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  href="/feed.xml"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Flux RSS
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/duodoku/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >

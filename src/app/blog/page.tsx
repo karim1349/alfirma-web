@@ -7,15 +7,15 @@ import BlogNavBar from "./components/BlogNavBar";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Blog - Al Firma | Développement Mobile & Web",
+  title: "Blog Al Firma | Produit, développement et fintech",
   description:
-    "Articles et guides sur le développement d'applications mobiles et web. React Native, Django, UX/UI Design, et conseils pour entrepreneurs et startups.",
+    "Analyses et guides sur le développement web et mobile, les API, le produit numérique et la fintech en France et au Maroc.",
   keywords:
     "blog développement mobile, tutoriel react native, guide django, conseils création application, agence développement maroc france",
   openGraph: {
-    title: "Blog - Al Firma | Développement Mobile & Web",
+    title: "Blog Al Firma | Produit, développement et fintech",
     description:
-      "Articles et guides sur le développement d'applications mobiles et web. React Native, Django, UX/UI Design.",
+      "Analyses et guides sur le développement, les API, le produit numérique et la fintech en France et au Maroc.",
     images: [
       {
         url: "/assets/logo.png",
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://alfirma.com/blog/",
+    types: {
+      "application/rss+xml": "https://alfirma.com/feed.xml",
+    },
   },
 };
 
@@ -74,8 +77,8 @@ export default function BlogPage() {
               Blog Al Firma
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Guides, tutoriels et conseils sur le développement d'applications
-              mobiles et web
+              Analyses et retours de terrain sur le produit numérique, le
+              développement et la fintech en France et au Maroc
             </p>
           </div>
         </section>
@@ -107,4 +110,3 @@ export default function BlogPage() {
     </>
   );
 }
-

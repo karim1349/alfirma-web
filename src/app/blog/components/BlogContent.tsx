@@ -1,34 +1,10 @@
 "use client";
 
+import { CATEGORY_CONFIG } from "@/lib/blog-config";
+import type { BlogCategory, BlogPostMeta } from "@/types/blog";
 import Link from "next/link";
 import { useState } from "react";
 import BlogCard from "./BlogCard";
-
-// Inline category config to avoid importing from lib/blog (which uses Node.js fs)
-const CATEGORY_CONFIG: Record<string, { name: string; color: string }> = {
-  mobile: { name: "Mobile", color: "bg-blue-500" },
-  web: { name: "Web", color: "bg-green-500" },
-  design: { name: "Design", color: "bg-purple-500" },
-  backend: { name: "Backend", color: "bg-orange-500" },
-  business: { name: "Business", color: "bg-rose-500" },
-};
-
-// Type definition inline to avoid importing from lib/blog
-interface BlogPostMeta {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  updatedAt?: string;
-  author: string;
-  category: "mobile" | "web" | "design" | "backend" | "business";
-  tags: string[];
-  image: string;
-  imageAlt: string;
-  featured?: boolean;
-  readingTime: number;
-  locale: string;
-}
 
 interface BlogContentProps {
   posts: BlogPostMeta[];
@@ -36,7 +12,8 @@ interface BlogContentProps {
 }
 
 export default function BlogContent({ posts, featuredPost }: BlogContentProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] =
+    useState<BlogCategory | null>(null);
 
   const filteredPosts = selectedCategory
     ? posts.filter((post) => post.category === selectedCategory)
@@ -68,7 +45,7 @@ export default function BlogContent({ posts, featuredPost }: BlogContentProps) {
         {Object.entries(CATEGORY_CONFIG).map(([key, config]) => (
           <button
             key={key}
-            onClick={() => setSelectedCategory(key)}
+            onClick={() => setSelectedCategory(key as BlogCategory)}
             className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all ${
               selectedCategory === key
                 ? `${config.color} text-white`
