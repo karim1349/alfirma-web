@@ -13,14 +13,6 @@
         "stack": ["Next.js", "React.js", "Django REST", "PostgreSQL"]
     },
     {
-        "name": "VoltaBack",
-        "description": "Développement de l'application mobile et refactoring du front-end web pour une start-up parisienne spécialisée dans la mobilité électrique. Mission incluant le lead technique mobile et l'amélioration de l'architecture web existante.",
-        "image": "/assets/voltaback.png",
-        "review": null,
-        "links": [],
-        "stack": ["React Native", "Expo", "TypeScript", "React.js"]
-    },
-    {
         "name": "CuirUnique",
         "description": "MVP d'une plateforme de mise en relation entre acheteurs et fabricants de maroquinerie au Maroc. Application web complète livrée en deux semaines : API, front-end et déploiement.",
         "image": "/assets/cuirunique.png",
