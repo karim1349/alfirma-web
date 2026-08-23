@@ -1,0 +1,5 @@
+# Keep this redirect beside the generated legacy route. The VPS publishes the
+# visible `blog/` directory recursively even when root-level dotfiles are skipped.
+<IfModule mod_alias.c>
+    RedirectMatch 301 ^/blog/react-native-vs-flutter-guide-complet/?$ /blog/react-native-vs-flutter-2026/
+</IfModule>
