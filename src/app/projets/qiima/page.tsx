@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Application communautaire de partage de bons plans au Maroc, développée par Al Firma.",
     images: [
       {
-        url: "/assets/projects/qiima/app_mockup.png",
+        url: "/assets/projects/qiima/app_mockup-og.webp",
         width: 1200,
         height: 630,
         alt: "Qiima - Application mobile",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Qiima - Application de Bons Plans au Maroc",
     description:
       "Application communautaire de partage de bons plans au Maroc.",
-    images: ["/assets/projects/qiima/app_mockup.png"],
+    images: ["/assets/projects/qiima/app_mockup-og.webp"],
   },
   alternates: {
     canonical: "https://alfirma.com/projets/qiima/",
@@ -53,11 +53,6 @@ function QiimaSchema() {
             "@type": "Offer",
             price: "0",
             priceCurrency: "MAD",
-          },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "150",
           },
           author: {
             "@type": "Organization",
@@ -131,11 +126,11 @@ export default function QiimaProjectPage() {
         <div className="py-4 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4">
             <nav className="flex items-center space-x-2 text-sm text-gray-500">
-              <Link href="/home" className="hover:text-gray-900">
+              <Link href="/" className="hover:text-gray-900">
                 Accueil
               </Link>
               <span>/</span>
-              <Link href="/home#SECTION_PROJETS" className="hover:text-gray-900">
+              <Link href="/#SECTION_PROJETS" className="hover:text-gray-900">
                 Projets
               </Link>
               <span>/</span>
@@ -152,7 +147,7 @@ export default function QiimaProjectPage() {
           {/* Back button */}
           <div className="absolute top-6 left-6 z-10">
             <Link
-              href="/home#SECTION_PROJETS"
+              href="/#SECTION_PROJETS"
               className="flex items-center text-white/80 hover:text-white transition-colors"
             >
               <svg
@@ -177,7 +172,7 @@ export default function QiimaProjectPage() {
             <div className="flex-1 text-white">
               <div className="flex items-center gap-3 mb-6">
                 <Image
-                  src="/assets/projects/qiima/logo.png"
+                  src="/assets/projects/qiima/logo.webp"
                   alt="Qiima Logo"
                   width={64}
                   height={64}
@@ -238,7 +233,7 @@ export default function QiimaProjectPage() {
             {/* App mockup */}
             <div className="flex-1 flex justify-center">
               <Image
-                src="/assets/projects/qiima/app_mockup.png"
+                src="/assets/projects/qiima/app_mockup.webp"
                 alt="Qiima App Interface"
                 width={400}
                 height={800}

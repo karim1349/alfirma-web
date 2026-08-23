@@ -1,3 +1,5 @@
+import { HOME_FAQS, MOBILE_STARTING_PRICE } from "@/lib/seo-data";
+
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -6,8 +8,8 @@ export function OrganizationSchema() {
     "name": "Al Firma",
     "description": "Agence experte en développement d'applications mobiles et web. Solutions personnalisées, support technique et conseil stratégique.",
     "url": "https://alfirma.com/",
-    "logo": { "@type": "ImageObject", "url": "https://alfirma.com/assets/logo.png" },
-    "image": { "@type": "ImageObject", "url": "https://alfirma.com/assets/logo.png" },
+    "logo": { "@type": "ImageObject", "url": "https://alfirma.com/app-icon-512.png" },
+    "image": { "@type": "ImageObject", "url": "https://alfirma.com/assets/og-logo.webp" },
     "contactPoint": [{
       "@type": "ContactPoint",
       "email": "contact@alfirma.com",
@@ -33,7 +35,7 @@ export function OrganizationSchema() {
         "@type": "Offer",
         "name": "Développement d'applications mobiles",
         "description": "Développement et déploiement d'applications iOS/Android cross-platform",
-        "price": "8900",
+        "price": MOBILE_STARTING_PRICE.amount,
         "priceCurrency": "EUR"
       },
       {
@@ -109,40 +111,14 @@ export function FAQSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Quels sont vos délais de livraison ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nos délais de livraison varient selon le type de projet : Applications mobiles à partir de 20 jours, Applications web à partir de 15 jours, et APIs à partir de 10 jours."
-        }
+    "mainEntity": HOME_FAQS.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
       },
-      {
-        "@type": "Question",
-        "name": "Proposez-vous la maintenance après livraison ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, nous proposons des services de maintenance pour tous les produits que nous développons, avec 30 jours de garantie pour signaler un problème ou une modification."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Travaillez-vous avec des clients internationaux ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolument ! Nous travaillons avec des clients du monde entier. Notre équipe est spécialisée dans le développement d'applications multilingues et nous adaptons nos solutions à vos besoins locaux."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelles technologies utilisez-vous ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nous utilisons React Native pour les applications mobiles, React.js et Django pour les applications web, et Python/Django pour les APIs. Nous maîtrisons également les technologies de design UX/UI avec Figma."
-        }
-      }
-    ]
+    })),
   }
 
   return (
@@ -226,52 +202,39 @@ export function ServiceSchema() {
 }
 
 
-export function LocalBusinessSchema({
-  name, 
-  city, 
-  country, 
-  region, 
-  coordinates 
-}: { 
-  name: string; 
-  city: string; 
-  country: string; 
-  region: string; 
-  coordinates: { lat: number; lng: number }; 
+export function CityServiceSchema({
+  city,
+  country,
+  region,
+}: {
+  city: string;
+  country: string;
+  region: string;
 }) {
   const citySlug = city.toLowerCase();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `https://alfirma.com/${citySlug}/#localbusiness`,
-    "name": name,
-    "description": `Al Firma - Agence de développement d'applications mobiles et web à ${city}, ${country}. Services React Native, Django, UX/UI Design.`,
+    "@type": "Service",
+    "@id": `https://alfirma.com/${citySlug}/#service`,
+    "name": `Développement d'applications mobiles et web à ${city}`,
+    "description": `Services de développement d'applications mobiles et web proposés par Al Firma aux entreprises de ${city} et de la région ${region}.`,
     "url": `https://alfirma.com/${citySlug}/`,
-    "telephone": "+33-7-86-24-39-48",
-    "email": "contact@alfirma.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": city,
-      "addressRegion": region,
-      "addressCountry": country === 'Maroc' ? 'MA' : 'FR'
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": coordinates.lat,
-      "longitude": coordinates.lng
+    "serviceType": [
+      "Développement d'applications mobiles",
+      "Développement d'applications web",
+      "Design UX/UI",
+    ],
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://alfirma.com/#organization",
     },
     "areaServed": {
       "@type": "City",
       "name": city,
-    },
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": coordinates.lat,
-        "longitude": coordinates.lng
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": `${region}, ${country}`,
       },
-      "geoRadius": 50000
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -282,20 +245,6 @@ export function LocalBusinessSchema({
         { "@type":"Offer", "itemOffered": { "@type":"Service", "name":"UX/UI Design", "description": `Design d'interface et expérience utilisateur à ${city}` } }
       ]
     },
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "priceRange": "€€€",
-    "currenciesAccepted": country === "Maroc" ? "MAD, EUR" : "EUR",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-    "foundingDate": "2023",
-    "founder": { "@type": "Person", "name": "Karim Benchekroun" },
-    "knowsAbout": ["Développement d'applications mobiles","Développement d'applications web","React Native","Django","UX/UI Design","Déploiement d'applications"],
-    "sameAs": [
-      "https://alfirma.com/",
-      "https://facebook.com/alfirmaagency",
-      "https://instagram.com/alfirmaagency",
-      "https://linkedin.com/company/al-firma",
-      "https://x.com/alfirmaagency"
-    ]
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }

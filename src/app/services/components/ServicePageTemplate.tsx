@@ -50,10 +50,10 @@ export default function ServicePageTemplate({
       {/* Header Logo */}
       <header className="relative z-40 w-full flex justify-between items-center px-6 pt-32 pb-8 md:px-16 md:pt-12 md:pb-12">
         <Link 
-          href="/home" 
+          href="/"
           className="flex items-center gap-3 text-slate-900 font-bold text-2xl tracking-tighter uppercase leading-none hover:opacity-70 transition-opacity"
         >
-          <Image src="/assets/logoWithoutBackground.png" alt="Al Firma Logo" width={40} height={40} className="object-contain invert opacity-90" priority />
+          <Image src="/assets/logoWithoutBackground.webp" alt="Al Firma Logo" width={40} height={40} className="object-contain invert opacity-90" priority />
           Al Firma
         </Link>
       </header>
@@ -90,14 +90,16 @@ export default function ServicePageTemplate({
 
           <div className="lg:col-span-4 relative mt-12 lg:mt-0">
              <div className="aspect-[3/4] md:aspect-square lg:aspect-[3/4] relative w-full overflow-hidden bg-white/60 backdrop-blur-xl border border-white p-12 flex items-center justify-center shadow-2xl shadow-indigo-900/5 rounded-2xl">
-                <Image
-                  src={imageSrc}
-                  alt={imageAlt}
-                  width={300}
-                  height={300}
-                  className="w-full h-auto object-contain object-center scale-90 hover:scale-100 transition-transform duration-700 drop-shadow-xl"
-                  priority
-                />
+                <div className="relative h-full w-full">
+                  <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 28vw, (min-width: 768px) calc(100vw - 8rem), calc(100vw - 3rem)"
+                    className="object-contain object-center scale-90 hover:scale-100 transition-transform duration-700 drop-shadow-xl"
+                    priority
+                  />
+                </div>
              </div>
              
              {/* Decorative metric */}

@@ -72,7 +72,7 @@ export function getAllPosts(): BlogPostMeta[] {
       tags: Array.isArray(data.tags)
         ? data.tags.filter((tag): tag is string => typeof tag === 'string')
         : [],
-      image: typeof data.image === 'string' ? data.image : '/assets/logo.png',
+      image: typeof data.image === 'string' ? data.image : '/assets/og-logo.webp',
       imageAlt:
         typeof data.imageAlt === 'string'
           ? data.imageAlt
@@ -120,7 +120,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     tags: Array.isArray(data.tags)
       ? data.tags.filter((tag): tag is string => typeof tag === 'string')
       : [],
-    image: typeof data.image === 'string' ? data.image : '/assets/logo.png',
+    image: typeof data.image === 'string' ? data.image : '/assets/og-logo.webp',
     imageAlt:
       typeof data.imageAlt === 'string'
         ? data.imageAlt

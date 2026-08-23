@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Breadcrumbs, { BreadcrumbSchema } from '../../components/Breadcrumbs';
+import Breadcrumbs from '../../components/Breadcrumbs';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,19 +9,22 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://alfirma.com/petit-pas/terms/',
     },
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 const TermsPetitPas = () => {
     const breadcrumbItems = [
-        { label: 'Accueil', href: '/home' },
-        { label: 'Projets', href: '/home#SECTION_PROJETS' },
+        { label: 'Accueil', href: '/' },
+        { label: 'Projets', href: '/#SECTION_PROJETS' },
         { label: 'Petit Pas' },
         { label: "Conditions générales" }
     ];
 
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center p-4 pt-20">
-            <BreadcrumbSchema items={breadcrumbItems} />
+        <main className="min-h-screen bg-white flex items-center justify-center p-4 pt-20">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-6">
                     <Breadcrumbs items={breadcrumbItems} />
@@ -155,7 +158,7 @@ const TermsPetitPas = () => {
                     </Link>
                     <span className="text-gray-400 mx-4">•</span>
                     <Link
-                        href="/home"
+                        href="/"
                         className="text-blue-600 hover:text-blue-700 underline transition-colors duration-300"
                     >
                         Retour à l&apos;accueil
@@ -175,7 +178,7 @@ const TermsPetitPas = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </main>
     );
 };
 

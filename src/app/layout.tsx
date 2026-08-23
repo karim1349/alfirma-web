@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
       "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
-    images: [{ url: "/assets/logo.png", width: 1200, height: 630, alt: "Al Firma - Agence développement d'applications mobiles et web" }],
+    images: [{ url: "/assets/og-logo.webp", width: 1200, height: 630, alt: "Al Firma - Agence développement d'applications mobiles et web" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -49,15 +49,14 @@ export const metadata: Metadata = {
     title: "Al Firma - Agence Développement Applications Mobiles & Web",
     description:
       "Al Firma, agence experte en développement d'applications mobiles et web. React Native, Django, UX/UI Design. Applications iOS, Android sur mesure.",
-    images: [{ url: "/assets/logo.png", width: 1200, height: 630, alt: "Al Firma - Agence développement d'applications mobiles et web" }],
+    images: [{ url: "/assets/og-logo.webp", width: 1200, height: 630, alt: "Al Firma - Agence développement d'applications mobiles et web" }],
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/assets/logo.png",
+    icon: "/favicon-v2.ico",
+    apple: "/app-icon-192.png",
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://alfirma.com/",
     types: {
       "application/rss+xml": "https://alfirma.com/feed.xml",
     },
@@ -104,9 +103,9 @@ export default function RootLayout({
       <body
         className={`${clashDisplay.variable} antialiased`}
       >
-        <main id="main-content">
+        <div id="main-content">
           {children}
-        </main>
+        </div>
         {/* Cursor effect now lives in a client component */}
         <CursorEffect />
         <Footer />

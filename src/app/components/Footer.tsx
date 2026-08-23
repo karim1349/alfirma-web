@@ -9,14 +9,14 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <Image
-              src="/assets/logoWithoutBackground.png"
+              src="/assets/logoWithoutBackground.webp"
               alt="Al Firma - Logo"
               width={64}
               height={64}
               className="w-16 h-16 object-contain mb-4"
             />
             <p className="text-sm text-gray-300 mb-4">
-              Al Firma, votre agence experte en développement d'applications
+              Al Firma, votre agence experte en développement d&apos;applications
               mobiles et web. Nous transformons vos idées en solutions digitales
               innovantes.
             </p>
@@ -130,7 +130,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/home#SECTION_A_PROPOS"
+                  href="/#SECTION_A_PROPOS"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   À Propos
@@ -146,7 +146,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/home#SECTION_PROJETS"
+                  href="/#SECTION_PROJETS"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Nos Projets
@@ -154,7 +154,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/home#SECTION_CONTACT"
+                  href="/#SECTION_CONTACT"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Contact
@@ -286,7 +286,7 @@ const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} Al Firma. Tous droits réservés.
           </p>
-          <p className="mt-2">L'innovation façonne vos applications</p>
+          <p className="mt-2">L&apos;innovation façonne vos applications</p>
         </div>
       </div>
     </footer>

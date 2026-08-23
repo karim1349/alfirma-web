@@ -1,12 +1,13 @@
 "use client";
 
+import { MOBILE_STARTING_PRICE } from "@/lib/seo-data";
 import NavBar from "../home/components/NavBar";
 
 const pricingTiers = [
   {
     name: "Starter",
     subtitle: "Application Simple",
-    price: "9 900",
+    price: MOBILE_STARTING_PRICE.displayWithoutCurrency,
     recommended: false,
     description: "Idéal pour les MVP et applications vitrine",
     features: [

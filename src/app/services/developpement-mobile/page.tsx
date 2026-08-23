@@ -1,18 +1,21 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { MOBILE_STARTING_PRICE } from '@/lib/seo-data';
 import ServicePageTemplate from '../components/ServicePageTemplate';
 
 export const dynamic = 'force-static';
 
+const pageTitle = 'Agence Application Mobile iOS & Android | Al Firma';
+
 export const metadata: Metadata = {
-  title: 'Agence Développement Application Mobile (iOS & Android) | Al Firma',
+  title: pageTitle,
   description: "Développement d'applications mobiles sur mesure avec React Native. Création d'apps iOS et Android performantes. Devis gratuit sous 24h.",
   keywords: 'développement application mobile, agence react native, création app ios, création app android, agence de developpement mobile',
   openGraph: {
-    title: 'Agence Développement Application Mobile | Al Firma',
+    title: pageTitle,
     description: "Développement d'applications mobiles iOS et Android sur mesure avec React Native.",
-    images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Développement application mobile iOS et Android - Al Firma' }],
+    images: [{ url: '/assets/og-logo.webp', width: 1200, height: 630, alt: 'Développement application mobile iOS et Android - Al Firma' }],
     type: 'website',
     url: 'https://alfirma.com/services/developpement-mobile/',
   },
@@ -56,17 +59,13 @@ export default function DeveloppementMobilePage() {
       <Head>
         <link rel="canonical" href="https://alfirma.com/services/developpement-mobile/" />
       </Head>
-      <h1 className="sr-only">
-        Agence Développement Application Mobile (iOS & Android)
-      </h1>
-
       <ServicePageTemplate
         title="Développement d'Applications Mobiles iOS & Android"
         description="La création d'applications mobiles performantes est au cœur de notre expertise. Nous utilisons React Native pour vous garantir une solution iOS et Android, un investissement réduit, et des performances proches du natif. Découvrez nos solutions sur mesure."
         imageSrc="/assets/illustrations/appmobile.png"
         imageAlt="Agence développement d'applications mobiles iOS et Android"
         features={features}
-        price="8900€"
+        price={MOBILE_STARTING_PRICE.display}
         seoContent={seoContent}
       />
     </>

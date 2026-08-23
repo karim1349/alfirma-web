@@ -23,7 +23,7 @@ Chaque article doit contenir au minimum :
 
 - un titre éditorial et, si nécessaire, un titre SEO ;
 - un slug stable ;
-- une description de 120 à 165 caractères ;
+- une description de 120 à 160 caractères ;
 - une date, un auteur, une catégorie et des mots-clés ;
 - une image principale et son texte alternatif ;
 - le contenu MDX avec ses liens vers les sources.
@@ -44,3 +44,14 @@ Chaque article génère :
 Le slug d’un article publié doit rester stable. En cas de consolidation, garder
 l’ancien fichier avec `redirectTo`, `canonicalUrl` et `noIndex` afin de
 préserver l’ancienne URL.
+
+Avant de publier, exécuter les contrôles locaux :
+
+```bash
+npm run lint
+npm run build
+npm run seo:check
+```
+
+Le contrôle SEO inspecte l’export statique : canonicals, H1, landmarks,
+JSON-LD, liens internes et URLs exclues du sitemap.

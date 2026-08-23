@@ -4,21 +4,21 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+const sectionIds = ["SECTION_ACCUEIL", "SECTION_A_PROPOS", "SECTION_PROJETS", "SECTION_AVIS", "SECTION_CONTACT"];
 
 const NavBar = () => {
     const [currentSection, setCurrentSection] = useState<string | null>(null)
     const [isBlurred, setIsBlurred] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const sectionIds = ["SECTION_ACCUEIL", "SECTION_A_PROPOS", "SECTION_PROJETS", "SECTION_AVIS", "SECTION_CONTACT"];
     const router = useRouter();
     const pathname = usePathname();
 
     const scrollTo = (id: string) => {
-        if (pathname === '/home' || pathname === '/') {
+        if (pathname === '/') {
             document.getElementById(id)?.scrollIntoView({behavior: "smooth"})
-            router.push(`?section=${id.toLowerCase()}`, { scroll: false });
+            router.push(`/#${id}`, { scroll: false });
         } else {
-            router.push(`/home?section=${id.toLowerCase()}`);
+            router.push(`/#${id}`);
         }
     }
 
@@ -26,40 +26,17 @@ const NavBar = () => {
         setIsMounted(true);
         
         if (typeof window !== 'undefined') {
-            setTimeout(() => {
-                const hash = window.location.hash
-                const queryString = hash.split('?')[1]
-                
-                if (queryString) {
-                    const urlParams = new URLSearchParams(queryString)
-                    const sectionParam = urlParams.get('section')
-                    const projectParam = urlParams.get('project')
-                    
-                    if (sectionParam) {
-                        const sectionId = sectionParam
-                            .split('_')
-                            .map(word => word.toUpperCase())
-                            .join('_')
-                        
-                        if (sectionIds.includes(sectionId)) {
-                            const element = document.getElementById(sectionId)
-                            if (element) {
-                                element.scrollIntoView({ behavior: "smooth" })
-                                setCurrentSection(sectionId)
-                            }
-                        }
-                    }
-                    
-                    if (projectParam) {
-                        const projectId = projectParam.toUpperCase()
-                        const element = document.getElementById(`PROJECT_${projectId}`)
-                        if (element) {
-                            element.scrollIntoView({ behavior: "smooth" })
-                            setCurrentSection('SECTION_PROJETS')
-                        }
-                    }
+            const timeoutId = window.setTimeout(() => {
+                const targetId = decodeURIComponent(window.location.hash.slice(1)).toUpperCase()
+                const element = document.getElementById(targetId)
+
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" })
+                    setCurrentSection(targetId.startsWith('PROJECT_') ? 'SECTION_PROJETS' : targetId)
                 }
             }, 500)
+
+            return () => window.clearTimeout(timeoutId)
         }
     }, [])
 
@@ -89,17 +66,17 @@ const NavBar = () => {
                 }
             });
         };
-    }, [sectionIds, isMounted])
+    }, [isMounted])
     
     useEffect(() => {
         if (!isMounted || typeof window === 'undefined') return;
         
-        let timeoutId: NodeJS.Timeout | null = null;
+        let timeoutId: number | undefined;
     
         const handleScroll = () => {
-            clearTimeout(timeoutId as any);
+            window.clearTimeout(timeoutId);
             setIsBlurred(false);
-            timeoutId = setTimeout(() => {
+            timeoutId = window.setTimeout(() => {
                 setIsBlurred(true);
             }, 2000);
         };
@@ -108,7 +85,7 @@ const NavBar = () => {
     
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            clearTimeout(timeoutId as any);
+            window.clearTimeout(timeoutId);
         };
     }, [isMounted]);
     
@@ -128,11 +105,46 @@ const NavBar = () => {
     return (
         <>
         <div className={`flex z-50 bg-gray-50 p-2.5 rounded-full w-11/12 max-w-lg fixed top-14 transition-all duration-500 ease-in-out ${isBlurred ? 'bg-opacity-50' : ''}`}>
-            <button className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_ACCUEIL'  ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_ACCUEIL'  ? ' text-black ' : ' text-gray-600  '} group-hover:text-black`} onClick={() => scrollTo("SECTION_ACCUEIL")}>Accueil </p></button>
-            <button className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_A_PROPOS'  ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_A_PROPOS'  ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`} onClick={() => scrollTo("SECTION_A_PROPOS")}>Services</p></button>
-            <button className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_PROJETS' ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md  font-medium ${currentSection === 'SECTION_PROJETS' ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`} onClick={() => scrollTo("SECTION_PROJETS")}>Projets</p></button>
-                <button className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_AVIS' ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md  font-medium ${currentSection === 'SECTION_AVIS' ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`} onClick={() => scrollTo("SECTION_AVIS")}>Avis</p></button>
-                <button className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_CONTACT'  ? ' bg-white ' : ' '}`}><p className={`text-xs md:text-md  font-medium ${currentSection === 'SECTION_CONTACT'  ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`} onClick={() => scrollTo("SECTION_CONTACT")}>Contact </p></button>
+            <button
+              type="button"
+              onClick={() => scrollTo("SECTION_ACCUEIL")}
+              aria-current={currentSection === "SECTION_ACCUEIL" ? "location" : undefined}
+              className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_ACCUEIL'  ? ' bg-white ' : ' '}`}
+            >
+              <span className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_ACCUEIL'  ? ' text-black ' : ' text-gray-600  '} group-hover:text-black`}>Accueil</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("SECTION_A_PROPOS")}
+              aria-current={currentSection === "SECTION_A_PROPOS" ? "location" : undefined}
+              className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_A_PROPOS'  ? ' bg-white ' : ' '}`}
+            >
+              <span className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_A_PROPOS'  ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`}>Services</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("SECTION_PROJETS")}
+              aria-current={currentSection === "SECTION_PROJETS" ? "location" : undefined}
+              className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_PROJETS' ? ' bg-white ' : ' '}`}
+            >
+              <span className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_PROJETS' ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`}>Projets</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("SECTION_AVIS")}
+              aria-current={currentSection === "SECTION_AVIS" ? "location" : undefined}
+              className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_AVIS' ? ' bg-white ' : ' '}`}
+            >
+              <span className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_AVIS' ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`}>Avis</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("SECTION_CONTACT")}
+              aria-current={currentSection === "SECTION_CONTACT" ? "location" : undefined}
+              className={`group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center ${currentSection === 'SECTION_CONTACT'  ? ' bg-white ' : ' '}`}
+            >
+              <span className={`text-xs md:text-md font-medium ${currentSection === 'SECTION_CONTACT'  ? ' text-black ' : 'text-gray-600  '} group-hover:text-black`}>Contact</span>
+            </button>
                 <Link href="/blog/" className="group flex-1 rounded-full py-2 flex justify-center cursor-pointer hover:bg-purple-350 items-center"><span className="text-xs md:text-md font-medium text-gray-600 group-hover:text-black">Blog</span></Link>
         </div>
         </>

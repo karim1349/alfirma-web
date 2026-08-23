@@ -31,7 +31,7 @@ export function ArticleSchema({
       "name": "Al Firma",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://alfirma.com/assets/logo.png",
+        "url": "https://alfirma.com/app-icon-512.png",
       },
     },
     "datePublished": datePublished,

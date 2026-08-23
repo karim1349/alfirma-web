@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       "Votre partenaire de confiance pour le développement d'applications mobiles et web sur mesure. De l'idée à la mise en marché.",
     images: [
       {
-        url: "/assets/logo.png",
+        url: "/assets/og-logo.webp",
         width: 1200,
         height: 630,
         alt: "Al Firma - Agence de développement mobile et web",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Al Firma - Développement d'applications mobiles et web",
     description:
       "Votre partenaire de confiance pour le développement d'applications mobiles et web sur mesure.",
-    images: ["/assets/logo.png"],
+    images: ["/assets/og-logo.webp"],
   },
   alternates: {
     canonical: "https://alfirma.com/",

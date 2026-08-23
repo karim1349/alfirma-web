@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Analyses et guides sur le développement, les API, le produit numérique et la fintech en France et au Maroc.",
     images: [
       {
-        url: "/assets/logo.png",
+        url: "/assets/og-logo.webp",
         width: 1200,
         height: 630,
         alt: "Blog Al Firma - Développement Mobile et Web",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Blog - Al Firma | Développement Mobile & Web",
     description:
       "Articles et guides sur le développement d'applications mobiles et web.",
-    images: ["/assets/logo.png"],
+    images: ["/assets/og-logo.webp"],
   },
   alternates: {
     canonical: "https://alfirma.com/blog/",

@@ -6,6 +6,13 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Politique de confidentialité - Duodoku',
     description: 'Découvrez comment Duodoku protège vos données personnelles et respecte votre vie privée dans notre politique de confidentialité détaillée.',
+    alternates: {
+        canonical: 'https://alfirma.com/duodoku/privacy/',
+    },
+    robots: {
+        index: false,
+        follow: true,
+    },
     other: {
         'apple-itunes-app': 'app-id=6448099658'
     },
@@ -13,14 +20,14 @@ export const metadata: Metadata = {
 
 const PrivacyDuodoku = () => {
     const breadcrumbItems = [
-        { label: 'Accueil', href: '/home' },
-        { label: 'Projets', href: '/home#SECTION_PROJETS' },
-        { label: 'Duodoku', href: '/duodoku' },
+        { label: 'Accueil', href: '/' },
+        { label: 'Projets', href: '/#SECTION_PROJETS' },
+        { label: 'Duodoku', href: '/duodoku/' },
         { label: 'Politique de confidentialité' }
     ];
 
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center p-4 pt-20">
+        <main className="min-h-screen bg-white flex items-center justify-center p-4 pt-20">
             <BreadcrumbSchema items={breadcrumbItems} />
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-6">
@@ -122,7 +129,7 @@ const PrivacyDuodoku = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

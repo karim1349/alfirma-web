@@ -1,13 +1,29 @@
 "use client";
 
 import Lottie from "lottie-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const images = [
-  "/assets/illustrations/mockup_insta.png",
-  "/assets/illustrations/mockup_facebook.png",
-  "/assets/illustrations/mockup_linkedin.png",
+  {
+    src: "/assets/illustrations/mockup_insta.webp",
+    alt: "Aperçu d'une publication Instagram conçue par Al Firma",
+    width: 940,
+    height: 960,
+  },
+  {
+    src: "/assets/illustrations/mockup_facebook.webp",
+    alt: "Aperçu d'une publication Facebook conçue par Al Firma",
+    width: 936,
+    height: 960,
+  },
+  {
+    src: "/assets/illustrations/mockup_linkedin.webp",
+    alt: "Aperçu d'une publication LinkedIn conçue par Al Firma",
+    width: 936,
+    height: 960,
+  },
 ];
 
 interface FormData {
@@ -59,16 +75,22 @@ const ContactForm = () => {
       } else {
         throw new Error(result.message || "Une erreur est survenue lors de l'envoi.");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error sending message:", error);
       setIsSent(false);
       setErrorMessage(
-        error.message || "Une erreur est survenue. Veuillez réessayer."
+        error instanceof Error
+          ? error.message
+          : "Une erreur est survenue. Veuillez réessayer."
       );
     }
   };
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const intervalId = setInterval(() => {
       setCurrentImage((currentImage) => (currentImage + 1) % images.length);
     }, 2000);
@@ -76,19 +98,21 @@ const ContactForm = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const activeImage = images[currentImage];
+
   return (
     <div className="flex md:flex-row flex-col-reverse justify-center items-end flex-1">
       <div className="relative w-full md:w-1/3 h-96">
-        {images.map((image, index) => (
-          <img
-            key={image}
-            src={image}
-            alt="réseau social"
-            className={`absolute w-full object-cover z-10 transition-opacity duration-700 ${
-              currentImage === index ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        <Image
+          key={activeImage.src}
+          src={activeImage.src}
+          alt={activeImage.alt}
+          width={activeImage.width}
+          height={activeImage.height}
+          loading="lazy"
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="absolute inset-0 z-10 h-full w-full object-contain"
+        />
       </div>
       <div className="flex flex-col flex-1 w-full p-4 md:p-16 md:max-w-[50%] backdrop-blur-xl bg-opacity-30 my-8 rounded-3xl overflow-hidden border-2 border-purple-350">
         <h2 className="text-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">

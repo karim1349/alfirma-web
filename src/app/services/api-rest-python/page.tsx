@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agence Développement API RESTful en Python | Al Firma',
     description: "Développement certifié d'APIs tierces et back-ends évolutifs en Python/Django.",
-    images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Développement API RESTful Python Django - Al Firma' }],
+    images: [{ url: '/assets/og-logo.webp', width: 1200, height: 630, alt: 'Développement API RESTful Python Django - Al Firma' }],
     type: 'website',
     url: 'https://alfirma.com/services/api-rest-python/',
   },
@@ -61,14 +61,10 @@ export default function ApiRestPage() {
       <Head>
         <link rel="canonical" href="https://alfirma.com/services/api-rest-python/" />
       </Head>
-      <h1 className="sr-only">
-        Agence Développement API RESTful en Python
-      </h1>
-      
       <ServicePageTemplate
         title="Développement d'APIs RESTful avec Django & Python"
         description="La fondation de tout projet ambitieux repose sur son infrastructure. Al Firma développe des APIs RESTful en Python robustes et sécurisées, prêtes à encaisser le trafic. De l'authentification aux paiements, nous construisons votre moteur numérique."
-        imageSrc="/assets/illustrations/api.png"
+        imageSrc="/assets/illustrations/api.webp"
         imageAlt="Développement d'APIs RESTful et micro-services Python"
         features={features}
         price="4900€"

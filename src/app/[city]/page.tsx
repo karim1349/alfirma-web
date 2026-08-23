@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
-import { LocalBusinessSchema, FAQPageSchema, BreadcrumbSchema } from '../components/StructuredData';
+import Link from 'next/link';
+import { MOBILE_STARTING_PRICE } from '@/lib/seo-data';
+import { CityServiceSchema, FAQPageSchema, BreadcrumbSchema } from '../components/StructuredData';
 import CityPageTemplate from './components/CityPageTemplate';
 // Real projects and client experiences to showcase on local pages
 const projectQiima = {
   title: 'QIIMA',
   description: 'Application communautaire de partage de bons plans au Maroc. Les utilisateurs découvrent et partagent les meilleures offres des grandes enseignes. Développée avec React Native + Expo et une API Django robuste.',
   technologies: ['Mobile App', 'API Django', 'UX/UI Design'],
-  image: '/assets/projects/qiima/logo.png'
+  image: '/assets/projects/qiima/logo.webp'
 };
 
 const projectDuodoku = {
@@ -102,8 +104,7 @@ const locations = {
     country: 'France',
     region: 'Île-de-France',
     flagEmoji: '🇫🇷',
-    coordinates: { lat: 48.8566, lng: 2.3522 },
-    description: 'Depuis notre présence à Paris, Al Firma travaille avec des startups en hypercroissance, des ETI et des grands comptes pour concevoir des applications mobiles et des plateformes web qui font la différence sur le marché. Capital de la French Tech, Paris exige des standards d\'exécution élevés : interfaces soignées, architectures scalables, sécurité des données irréprochable. Nous répondons à ces exigences avec une équipe pluridisciplinaire couvrant le développement React Native, Django, Next.js, l\'UX/UI Design et le déploiement cloud.',
+    description: 'Al Firma accompagne les startups, ETI et grands comptes de la région parisienne à distance ou sur site pour concevoir des applications mobiles et des plateformes web qui font la différence sur le marché. Capital de la French Tech, Paris exige des standards d\'exécution élevés : interfaces soignées, architectures scalables, sécurité des données irréprochable. Nous répondons à ces exigences avec une équipe pluridisciplinaire couvrant le développement React Native, Django, Next.js, l\'UX/UI Design et le déploiement cloud.',
     keywords: 'développement mobile Paris, application web Paris, agence digitale Paris, React Native Paris, Django Paris, développement sur mesure Paris, applications iOS Paris, applications Android Paris, API REST Paris, maintenance applicative Paris',
     marketInsights: 'L\'écosystème tech parisien est l\'un des plus compétitifs d\'Europe, animé par Station F, La French Tech Paris, et des centaines de startups en quête de partenaires techniques fiables. Les besoins dominants portent sur les applications B2B de gestion et de productivité, les marketplaces, les outils SaaS et les applications mobiles grand public à forte scalabilité. Les entreprises parisiennes sont sensibles au time-to-market et choisissent généralement leurs prestataires sur la capacité à livrer vite et bien — ce qui est au cœur de notre ADN.',
     technologies: 'Notre expertise React Native et Django répond aux exigences techniques des entreprises de la capitale. Nous maîtrisons TypeScript, Next.js, GraphQL, PostgreSQL, Redis et les services cloud AWS et Azure. Pour les applications nécessitant des niveaux élevés de sécurité (fintech, legaltech, santé), nous appliquons les meilleures pratiques de chiffrement et de conformité RGPD. Notre process de développement agile garantit une visibilité totale à chaque sprint, avec des livrables concrets toutes les deux semaines.',
@@ -120,7 +121,7 @@ const locations = {
       },
       {
         question: "Combien coûte le développement d'une application mobile à Paris ?",
-        answer: "Nos tarifs sont les mêmes quelle que soit la localisation du client : à partir de 8 900€ pour une application mobile React Native (iOS + Android). Ce positionnement vous permet d'accéder à une expertise de niveau parisien sans payer la prime géographique. Un devis détaillé est fourni sous 24h après un premier échange de 30 minutes."
+        answer: `Nos tarifs sont les mêmes quelle que soit la localisation du client : à partir de ${MOBILE_STARTING_PRICE.display} pour une application mobile React Native (iOS + Android). Ce positionnement vous permet d'accéder à une expertise de niveau parisien sans payer la prime géographique. Un devis détaillé est fourni sous 24h après un premier échange de 30 minutes.`
       },
       {
         question: "Gérez-vous le déploiement et la maintenance après la livraison ?",
@@ -133,7 +134,6 @@ const locations = {
     country: 'France',
     region: 'Pays de la Loire',
     flagEmoji: '🇫🇷',
-    coordinates: { lat: 47.2184, lng: -1.5536 },
     description: 'Al Firma accompagne les startups, PME et scaleups de la métropole nantaise dans la création d\'applications mobiles et web sur mesure. Réputée pour son dynamisme entrepreneurial et son écosystème French Tech, Nantes concentre une demande croissante en solutions digitales à forte valeur ajoutée. Notre équipe conçoit des produits mobiles iOS et Android avec React Native, des plateformes web React/Django robustes, et des API REST performantes — livrés en un temps record, avec un accompagnement humain à chaque étape.',
     keywords: 'développement mobile Nantes, application web Nantes, agence digitale Nantes, React Native Nantes, Django Nantes, développement sur mesure Nantes, applications iOS Nantes, API REST Nantes',
     marketInsights: 'Nantes s\'est imposée comme l\'une des métropoles tech les plus actives de France, portée par le label French Tech Nantes Saint-Nazaire et un tissu de PME innovantes concentré sur l\'Île de Nantes. Les secteurs de la santé numérique, de la logistique et du retail sont particulièrement demandeurs d\'applications mobiles sur mesure. Les entreprises nantaises recherchent des partenaires capables de livrer vite, sans sacrifier la qualité — c\'est exactement notre positionnement. La mobilité, l\'accessibilité et l\'expérience utilisateur y sont des critères décisifs dans le choix d\'une application.',
@@ -143,7 +143,7 @@ const locations = {
     faqs: [
       {
         question: "Quel est le coût de développement d'une application mobile à Nantes ?",
-        answer: "Le développement d'une application mobile sur mesure à Nantes débute généralement à partir de 8 900€ pour une application React Native iOS et Android. Le tarif varie selon la complexité des fonctionnalités, le niveau de design et les intégrations requises. Al Firma propose des devis détaillés et transparents sous 24h — sans engagement."
+        answer: `Le développement d'une application mobile sur mesure à Nantes débute généralement à partir de ${MOBILE_STARTING_PRICE.display} pour une application React Native iOS et Android. Le tarif varie selon la complexité des fonctionnalités, le niveau de design et les intégrations requises. Al Firma propose des devis détaillés et transparents sous 24h — sans engagement.`
       },
       {
         question: "Combien de temps faut-il pour développer une application mobile ?",
@@ -164,7 +164,6 @@ const locations = {
     country: 'France',
     region: 'Pays de la Loire',
     flagEmoji: '🇫🇷',
-    coordinates: { lat: 47.4784, lng: -0.5632 },
     description: 'Al Firma accompagne les startups, PME et institutions angevines dans la création d\'applications mobiles iOS et Android, de plateformes web et d\'outils métier sur mesure. Reconnue comme l\'une des villes les plus dynamiques de l\'ouest grâce à son label French Tech, à son écosystème végétal et numérique (Végépolys Valley), et à ses pôles universitaires de premier plan, Angers concentre des acteurs ambitieux qui cherchent à digitaliser leurs activités sans compromis sur la qualité. Nous y livrons des produits sur mesure conçus avec React Native et Django, déployés rapidement et maintenus dans la durée.',
     keywords: 'développement mobile Angers, application web Angers, agence digitale Angers, React Native Angers, Django Angers, agence application mobile Angers, applications iOS Angers, applications Android Angers, API REST Angers, développement sur mesure Angers',
     marketInsights: 'Angers conjugue un tissu industriel solide (santé, agroalimentaire, viticulture, électronique) et une scène tech en forte croissance, portée par la French Tech Angers et des incubateurs comme WeForge. Les besoins dominants concernent les outils métier B2B, les applications de gestion logistique et de traçabilité, ainsi que les plateformes de services aux particuliers. Les entreprises angevines apprécient les partenaires capables d\'allier proximité, exigence technique et sens du concret — exactement ce que propose notre équipe basée dans la région.',
@@ -174,7 +173,7 @@ const locations = {
     faqs: [
       {
         question: "Combien coûte le développement d'une application mobile à Angers ?",
-        answer: "Une application mobile sur mesure développée par Al Firma à Angers démarre à 8 900€ pour une application React Native (iOS + Android). Le tarif s\'adapte selon les fonctionnalités, le niveau de design et les intégrations métier (paiements, notifications, API tierces). Devis détaillé sous 24h après un premier échange."
+        answer: `Une application mobile sur mesure développée par Al Firma à Angers démarre à ${MOBILE_STARTING_PRICE.display} pour une application React Native (iOS + Android). Le tarif s'adapte selon les fonctionnalités, le niveau de design et les intégrations métier (paiements, notifications, API tierces). Devis détaillé sous 24h après un premier échange.`
       },
       {
         question: "Quel est le délai pour livrer une application mobile à Angers ?",
@@ -195,7 +194,6 @@ const locations = {
     country: 'France',
     region: 'Pays de la Loire',
     flagEmoji: '🇫🇷',
-    coordinates: { lat: 47.0619, lng: -0.8795 },
     description: 'Depuis Cholet, notre siège historique, nous concevons des plateformes web et mobiles avec une approche artisanale et rigoureuse du développement logiciel.',
     keywords: 'développement mobile Cholet, application web Cholet, agence digitale Cholet, React Native Cholet, Django Cholet, développement sur mesure Cholet',
     marketInsights: 'Cholet représente un cœur industriel dynamique où les besoins en digitalisation et en automatisation des processus via des applications métier sont en très forte croissance.',
@@ -205,7 +203,7 @@ const locations = {
     faqs: [
       {
         question: "Combien coûte une application mobile sur mesure depuis Cholet ?",
-        answer: "Le tarif d'entrée pour une application mobile React Native (iOS + Android) débute à 8 900€. Le coût final dépend des fonctionnalités, du niveau d'intégration métier et du design souhaité. Étant basés à Cholet, nous bénéficions d'une structure optimisée qui nous permet de proposer un excellent rapport qualité/prix par rapport aux grandes métropoles."
+        answer: `Le tarif d'entrée pour une application mobile React Native (iOS + Android) débute à ${MOBILE_STARTING_PRICE.display}. Le coût final dépend des fonctionnalités, du niveau d'intégration métier et du design souhaité. Étant basés à Cholet, nous bénéficions d'une structure optimisée qui nous permet de proposer un excellent rapport qualité/prix par rapport aux grandes métropoles.`
       },
       {
         question: "Pourquoi choisir une agence basée à Cholet plutôt qu'à Paris ou Nantes ?",
@@ -227,7 +225,6 @@ const locations = {
     country: 'Maroc',
     region: 'Casablanca-Settat',
     flagEmoji: '🇲🇦',
-    coordinates: { lat: 33.5731, lng: -7.5898 },
     description: 'Hub économique et financier du Maroc, Casablanca concentre les ambitions digitales des plus grandes entreprises du pays. Al Firma accompagne startups, PME et grands groupes casablancais dans la création d\'applications mobiles iOS et Android, de plateformes web et d\'API robustes. Notre double ancrage franco-marocain nous permet de comprendre les enjeux locaux tout en apportant les standards d\'excellence du marché européen. Nous maîtrisons l\'intégration des solutions de paiement locales (CMI, PayZone, CashPlus) pour des expériences transactionnelles sans friction.',
     keywords: 'développement mobile Casablanca, application web Casablanca, agence digitale Maroc, React Native Casablanca, Django Casablanca, développement sur mesure Casablanca, applications iOS Casablanca, applications Android Casablanca, API REST Casablanca, transformation digitale Maroc',
     marketInsights: 'Casablanca est le moteur économique du Maroc, avec un écosystème tech en plein essor porté par des initiatives comme Casablanca Finance City et la croissance de startups dans les secteurs fintech, e-commerce et logistique. La demande en applications mobiles grand public, marketplaces et outils B2B y est en forte croissance. Les entreprises locales cherchent des partenaires capables d\'allier rigueur technique, sens du design et connaissance du marché marocain — un profil qui correspond exactement à notre positionnement.',
@@ -237,7 +234,7 @@ const locations = {
     faqs: [
       {
         question: "Combien coûte le développement d'une application mobile à Casablanca ?",
-        answer: "Une application mobile sur mesure développée par Al Firma démarre à 8 900€ pour une application React Native iOS et Android. Pour les entreprises casablancaises, nous adaptons les modes de facturation (EUR/MAD, paiement échelonné) et tenons compte des spécificités locales : intégration CMI/PayZone, optimisation pour les réseaux marocains, conformité loi 09-08."
+        answer: `Une application mobile sur mesure développée par Al Firma démarre à ${MOBILE_STARTING_PRICE.display} pour une application React Native iOS et Android. Pour les entreprises casablancaises, nous adaptons les modes de facturation (EUR/MAD, paiement échelonné) et tenons compte des spécificités locales : intégration CMI/PayZone, optimisation pour les réseaux marocains, conformité loi 09-08.`
       },
       {
         question: "Intégrez-vous les solutions de paiement marocaines (CMI, PayZone, CashPlus) ?",
@@ -258,7 +255,6 @@ const locations = {
     country: 'Maroc',
     region: 'Rabat-Salé-Kénitra',
     flagEmoji: '🇲🇦',
-    coordinates: { lat: 34.0209, lng: -6.8416 },
     description: 'Capitale administrative et politique du Maroc, Rabat concentre les ministères, agences publiques, sièges institutionnels et organismes internationaux. Al Firma accompagne les administrations, ETI et startups rabatîs dans la conception d\'applications mobiles, plateformes web et systèmes back-end conformes aux exigences les plus strictes en matière de sécurité, de souveraineté des données et de conformité réglementaire. Notre double ancrage franco-marocain nous permet de comprendre les enjeux locaux tout en apportant les meilleures pratiques internationales.',
     keywords: 'développement mobile Rabat, application web Rabat, agence digitale Rabat, React Native Rabat, Django Rabat, développement sur mesure Rabat, applications iOS Rabat, applications Android Rabat, API REST Rabat, e-gov Maroc, transformation digitale Rabat',
     marketInsights: 'Rabat est le centre névralgique de la transformation digitale institutionnelle au Maroc, avec des projets ambitieux portés par l\'Agence de Développement du Digital (ADD), la Stratégie Maroc Digital 2025, et la digitalisation des services publics. Au-delà de l\'institutionnel, la ville accueille un écosystème tech en forte croissance autour du Technopark Rabat et des startups portées par UM6P/UIR. Les besoins dominants : plateformes sécurisées, systèmes d\'information métier, applications de gestion documentaire, et outils B2B à haute valeur ajoutée.',
@@ -268,7 +264,7 @@ const locations = {
     faqs: [
       {
         question: "Quel est le coût de développement d'une application mobile à Rabat ?",
-        answer: "Le développement d\'une application mobile sur mesure à Rabat démarre à partir de 8 900€ pour une application React Native iOS et Android. Le tarif évolue selon la complexité fonctionnelle, le niveau de sécurité requis (chiffrement, authentification renforcée) et les intégrations avec vos systèmes existants. Nous fournissons un devis détaillé et transparent sous 24h."
+        answer: `Le développement d'une application mobile sur mesure à Rabat démarre à partir de ${MOBILE_STARTING_PRICE.display} pour une application React Native iOS et Android. Le tarif évolue selon la complexité fonctionnelle, le niveau de sécurité requis (chiffrement, authentification renforcée) et les intégrations avec vos systèmes existants. Nous fournissons un devis détaillé et transparent sous 24h.`
       },
       {
         question: "Pouvez-vous développer pour des administrations ou organismes publics à Rabat ?",
@@ -289,7 +285,6 @@ const locations = {
     country: 'Maroc',
     region: 'Tanger-Tétouan-Al Hoceïma',
     flagEmoji: '🇲🇦',
-    coordinates: { lat: 35.7595, lng: -5.8340 },
     description: 'Porte de l\'Afrique sur l\'Europe, Tanger s\'est imposée comme l\'un des hubs économiques et logistiques les plus dynamiques du continent grâce à Tanger Med — premier port d\'Afrique — et à des zones franches industrielles attirant les leaders mondiaux de l\'automobile, de l\'aéronautique et du textile. Al Firma accompagne les industriels, exportateurs, opérateurs logistiques et startups tangéroises dans la création d\'applications mobiles, plateformes web et systèmes de gestion sur mesure. Nos solutions en React Native et Django sont conçues pour encaisser les volumes de transactions, suivre les flux logistiques en temps réel et garantir une traçabilité irréprochable.',
     keywords: 'développement mobile Tanger, application web Tanger, agence digitale Tanger, React Native Tanger, Django Tanger, développement sur mesure Tanger, applications iOS Tanger, applications Android Tanger, API REST Tanger, logistique digitale Tanger, supply chain Maroc',
     marketInsights: 'Le bassin économique de Tanger est dominé par la logistique portuaire (Tanger Med), l\'industrie automobile (Renault, Stellantis), l\'aéronautique, et un secteur textile en pleine modernisation. Les besoins digitaux sont concrets et exigeants : applications de suivi de flotte, plateformes de gestion documentaire export/import, outils B2B pour la coordination logistique, marketplaces sectorielles, et systèmes ERP/WMS sur mesure. La Tanger Tech City et les startups locales ajoutent une dimension B2C en forte croissance, notamment autour du tourisme, des services et du e-commerce.',
@@ -299,7 +294,7 @@ const locations = {
     faqs: [
       {
         question: "Combien coûte une application mobile pour une entreprise de Tanger ?",
-        answer: "Une application mobile sur mesure développée par Al Firma démarre à 8 900€ pour une application React Native (iOS + Android). Le tarif évolue selon la complexité fonctionnelle (suivi GPS, scan de codes-barres, authentification renforcée, multi-rôles, intégrations EDI/ERP). Devis détaillé sous 24h après un premier échange de cadrage."
+        answer: `Une application mobile sur mesure développée par Al Firma démarre à ${MOBILE_STARTING_PRICE.display} pour une application React Native (iOS + Android). Le tarif évolue selon la complexité fonctionnelle (suivi GPS, scan de codes-barres, authentification renforcée, multi-rôles, intégrations EDI/ERP). Devis détaillé sous 24h après un premier échange de cadrage.`
       },
       {
         question: "Développez-vous des applications de gestion logistique et supply chain pour Tanger ?",
@@ -320,7 +315,6 @@ const locations = {
     country: 'Maroc',
     region: 'Marrakech-Safi',
     flagEmoji: '🇲🇦',
-    coordinates: { lat: 31.6295, lng: -7.9811 },
     description: 'Marrakech conjugue rayonnement international et dynamisme économique local, portée par un secteur touristique de premier plan et une scène entrepreneuriale en pleine mutation. Al Firma accompagne les professionnels du tourisme, les startups marrakchies et les PME locales dans la création d\'applications mobiles, plateformes web et solutions digitales sur mesure. De la réservation en ligne aux applications de gestion hôtelière, en passant par les outils e-commerce, nous transformons vos idées en produits qui conquièrent leurs utilisateurs.',
     keywords: 'développement mobile Marrakech, application web Marrakech, agence digitale Marrakech, React Native Marrakech, Django Marrakech, développement sur mesure Marrakech, applications iOS Marrakech, applications Android Marrakech, API REST Marrakech, e-tourisme',
     marketInsights: 'L\'économie digitale de Marrakech est tirée par le tourisme, l\'hôtellerie et les services B2C, avec une demande croissante pour des applications de réservation, de fidélisation client, et de gestion des opérations. Les entrepreneurs marrakchis cherchent à digitaliser leurs processus pour gagner en compétitivité, réduire leurs coûts et offrir une expérience client différenciante. Les applications mobiles B2C et les plateformes SaaS d\'entreprise constituent les segments les plus demandeurs.',
@@ -330,7 +324,7 @@ const locations = {
     faqs: [
       {
         question: "Quel est le coût de développement d'une application mobile à Marrakech ?",
-        answer: "Une application mobile sur mesure démarre à partir de 8 900€ pour une application React Native iOS et Android, identique à nos tarifs Casablanca ou Paris. Le coût varie selon les fonctionnalités spécifiques au secteur visé (réservation, paiement multilingue, gestion d\'inventaire hôtelier, fidélisation client, etc.). Devis détaillé sous 24h."
+        answer: `Une application mobile sur mesure démarre à partir de ${MOBILE_STARTING_PRICE.display} pour une application React Native iOS et Android, identique à nos tarifs Casablanca ou Paris. Le coût varie selon les fonctionnalités spécifiques au secteur visé (réservation, paiement multilingue, gestion d'inventaire hôtelier, fidélisation client, etc.). Devis détaillé sous 24h.`
       },
       {
         question: "Développez-vous des applications pour le secteur touristique et hôtelier ?",
@@ -369,22 +363,31 @@ export async function generateMetadata({ params }: { params: { city: string } })
     };
   }
 
-  // SEO-optimized title with exact keyword match
-  const title = `Agence Développement Application Mobile ${location.name} | Al Firma`;
-  
-  // SEO-optimized description with target keyword and CTA
-  const description = `Al Firma, votre agence de développement d'applications mobiles à ${location.name}. React Native, Django, iOS, Android. Devis gratuit ✓ Équipe experte - ${location.country}.`;
+  const searchOpportunityMetadata: Partial<Record<keyof typeof locations, { title: string; description: string }>> = {
+    nantes: {
+      title: 'Agence application mobile Nantes | Al Firma',
+      description: "Al Firma conçoit votre application mobile à Nantes avec React Native, de l'UX/UI au déploiement iOS et Android. Échange gratuit, devis sous 24 h.",
+    },
+    paris: {
+      title: 'Agence développement mobile Paris | Al Firma',
+      description: "Al Firma conçoit votre application mobile à Paris avec React Native, de l'UX/UI au déploiement iOS et Android. Échange gratuit, devis sous 24 h.",
+    },
+  };
+  const opportunityMetadata = searchOpportunityMetadata[city as keyof typeof locations];
+  const title = opportunityMetadata?.title ?? `Agence Développement Application Mobile ${location.name} | Al Firma`;
+  const description = opportunityMetadata?.description
+    ?? `Al Firma conçoit des applications mobiles pour les entreprises de ${location.name}. React Native, Django, iOS et Android. Devis gratuit sous 24 h.`;
 
   return {
     title,
     description,
     keywords: location.keywords,
     openGraph: {
-      title: `Développement Application Mobile ${location.name} | Al Firma`,
-      description: `Agence de développement d'applications mobiles et web à ${location.name}. React Native, Django, UX/UI Design. Devis gratuit.`,
+      title,
+      description,
       images: [
         {
-          url: '/assets/logo.png',
+          url: '/assets/og-logo.webp',
           width: 1200,
           height: 630,
           alt: `Al Firma - Agence développement application mobile ${location.name}`,
@@ -395,9 +398,9 @@ export async function generateMetadata({ params }: { params: { city: string } })
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Développement Application Mobile ${location.name} | Al Firma`,
-      description: `Agence de développement d'applications mobiles à ${location.name}. React Native, Django. Devis gratuit.`,
-      images: ['/assets/logo.png'],
+      title,
+      description,
+      images: ['/assets/og-logo.webp'],
     },
     alternates: {
       canonical: `https://alfirma.com/${city}/`
@@ -414,10 +417,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Page non trouvée</h1>
-          <p className="text-gray-600 mb-8">La page demandée n'existe pas.</p>
-          <a href="/home" className="text-blue-600 hover:text-blue-800 underline">
-            Retour à l'accueil
-          </a>
+          <p className="text-gray-600 mb-8">La page demandée n&apos;existe pas.</p>
+          <Link href="/" className="text-blue-600 hover:text-blue-800 underline">
+            Retour à l&apos;accueil
+          </Link>
         </div>
       </div>
     );
@@ -429,12 +432,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <Head>
         <link rel="canonical" href={`https://alfirma.com/${city}/`} />
       </Head>
-      <LocalBusinessSchema
-        name={`Al Firma - ${location.name}`}
+      <CityServiceSchema
         city={location.name}
         country={location.country}
         region={location.region}
-        coordinates={location.coordinates}
       />
       <BreadcrumbSchema items={[
         { name: "Accueil", url: "https://alfirma.com/" },
@@ -443,10 +444,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
       {location.faqs && location.faqs.length > 0 && (
         <FAQPageSchema faqs={location.faqs} />
       )}
-      {/* City-specific H1 for SEO - visually hidden but accessible */}
-      <h1 className="sr-only">
-        Agence Développement Application Mobile {location.name}
-      </h1>
       <CityPageTemplate
         location={location}
         currentSlug={city}

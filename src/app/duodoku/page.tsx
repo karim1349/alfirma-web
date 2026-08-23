@@ -6,18 +6,18 @@ import { SoftwareApplicationSchema } from '../components/StructuredData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Duodoku - Le premier Sudoku multi-joueurs',
-    description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+    title: 'Duodoku : Sudoku multijoueur en temps réel',
+    description: 'Duodoku est un jeu de Sudoku multijoueur sur mobile. Affrontez d’autres joueurs en temps réel sur iOS et Android.',
     keywords: 'Duodoku, Sudoku multi-joueurs, jeu mobile, React Native, jeu en ligne, puzzle, classement, iOS, Android, jeu de société digital',
     openGraph: {
-        title: 'Duodoku - Le premier Sudoku multi-joueurs',
-        description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+        title: 'Duodoku : Sudoku multijoueur en temps réel',
+        description: 'Duodoku est un jeu de Sudoku multijoueur sur mobile. Affrontez d’autres joueurs en temps réel sur iOS et Android.',
         images: [
             {
                 url: '/assets/duodoku.png',
                 width: 1200,
                 height: 630,
-                alt: 'Duodoku - Le premier Sudoku multi-joueurs',
+                alt: 'Duodoku - Sudoku multijoueur en temps réel',
             }
         ],
         type: 'website',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Duodoku - Le premier Sudoku multi-joueurs',
-        description: 'Duodoku révolutionne l\'expérience du Sudoku en proposant le premier jeu multi-joueurs disponible sur mobile. Affrontez-vous en temps réel sur des grilles de Sudoku.',
+        title: 'Duodoku : Sudoku multijoueur en temps réel',
+        description: 'Duodoku est un jeu de Sudoku multijoueur sur mobile. Affrontez d’autres joueurs en temps réel sur iOS et Android.',
         images: [{ url: '/assets/duodoku.png', width: 1200, height: 630, alt: 'Duodoku - Le premier Sudoku multi-joueurs' }],
     },
     alternates: {
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
 function DuodokuPage() {
 
     const breadcrumbItems = [
-        { label: 'Accueil', href: '/home' },
-        { label: 'Projets', href: '/home#SECTION_PROJETS' },
+        { label: 'Accueil', href: '/' },
+        { label: 'Projets', href: '/#SECTION_PROJETS' },
         { label: 'Duodoku' }
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 pt-20">
+        <main className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 pt-20">
             <SoftwareApplicationSchema />
             <BreadcrumbSchema items={breadcrumbItems} />
             <div className="max-w-4xl mx-auto text-center">
@@ -56,14 +56,14 @@ function DuodokuPage() {
                 <div className="mb-8">
                     <Image 
                         src="/assets/duodoku.png" 
-                        alt="Duodoku - Premier jeu de Sudoku multi-joueurs" 
+                        alt="Duodoku - Jeu de Sudoku multijoueur"
                         width={128}
                         height={128}
                         className="w-32 h-32 mx-auto mb-6 rounded-2xl shadow-2xl"
                         priority
                     />
                     <h1 className="text-6xl font-bold text-white mb-4">DUODOKU</h1>
-                    <p className="text-xl text-blue-200 mb-2">Le premier Sudoku multi-joueurs</p>
+                    <p className="text-xl text-blue-200 mb-2">Sudoku multijoueur en temps réel</p>
                     <p className="text-lg text-gray-300">Affrontez-vous en temps réel sur des grilles de Sudoku</p>
                 </div>
 
@@ -171,7 +171,7 @@ function DuodokuPage() {
 
                 <div className="text-center">
                     <Link 
-                        href="/home"
+                        href="/"
                         className="text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
                     >
                         Retour à l'accueil
@@ -198,7 +198,7 @@ function DuodokuPage() {
                     </p>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 

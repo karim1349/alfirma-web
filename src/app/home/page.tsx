@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import earth from "../../content/earth.json";
 import partners from "../../content/partners.json";
+import { HOME_FAQS, MOBILE_STARTING_PRICE } from "@/lib/seo-data";
 import { FAQSchema, ServiceSchema } from "../components/StructuredData";
 import ContactForm from "./components/ContactForm";
 import NavBar from "./components/NavBar";
@@ -29,7 +30,7 @@ function Home({ location }: HomeProps = {}) {
     <>
       <FAQSchema />
       <ServiceSchema />
-      <div className={`transition ease-linear duration-700 z-50`}>
+      <main className="transition ease-linear duration-700 z-50">
         <div className="flex items-center bg-white justify-center">
           <div className="flex-1 flex flex-col items-center justify-center self-center overflow-hidden">
             <NavBar />
@@ -69,13 +70,10 @@ function Home({ location }: HomeProps = {}) {
                     </span>
                   </div>
 
-                  <h1 className="sr-only">
-                    Al Firma - Agence Développement Applications Mobiles & Web
-                  </h1>
-                  
-                  <div className="text-6xl sm:text-7xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-[1.05] mb-6">
+                  <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-[1.05] mb-6">
                     AL FIRMA
-                  </div>
+                    <span className="sr-only"> - Agence Développement Applications Mobiles & Web</span>
+                  </h1>
                   
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-slate-800 tracking-tight leading-tight mb-6 max-w-2xl">
                     Votre application mobile,<br className="hidden sm:block" /> livrée en <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-indigo-600">20 jours</span>.
@@ -84,7 +82,7 @@ function Home({ location }: HomeProps = {}) {
                   <p className="text-lg sm:text-xl text-slate-600 font-light leading-relaxed max-w-xl mb-10">
                     De l'idée à l'App Store : développement React Native, API Django, design Figma.
                     <br className="hidden sm:block" />
-                    <span className="font-semibold text-slate-800">À partir de 8 900€</span> • iOS & Android • Retours illimités
+                    <span className="font-semibold text-slate-800">À partir de {MOBILE_STARTING_PRICE.display}</span> • iOS & Android • Retours illimités
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -126,7 +124,7 @@ function Home({ location }: HomeProps = {}) {
                         {/* Mock App Header */}
                         <div className="absolute top-0 w-full h-16 bg-white border-b border-slate-100 flex items-center px-6 justify-between z-10">
                            <div className="w-10 h-10 rounded-full bg-slate-100 overflow-hidden p-2">
-                             <Image src="/assets/logoWithoutBackground.png" alt="Logo" width={40} height={40} className="object-contain" />
+                             <Image src="/assets/logoWithoutBackground.webp" alt="Logo" width={40} height={40} className="object-contain" />
                            </div>
                            <div className="flex gap-2">
                               <div className="w-2 h-2 rounded-full bg-slate-200" />
@@ -138,7 +136,7 @@ function Home({ location }: HomeProps = {}) {
                         <div className="absolute inset-0 pt-20 px-6 pb-6 flex flex-col gap-4">
                            <div className="w-3/4 h-8 rounded-lg bg-indigo-100/50 animate-pulse" />
                            <div className="w-full h-32 rounded-xl bg-gradient-to-br from-rose-100/50 to-indigo-100/50 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center">
-                              <Image src="/assets/logoWithoutBackground.png" alt="Logo" width={80} height={80} className="object-contain opacity-20 invert" />
+                              <Image src="/assets/logoWithoutBackground.webp" alt="Logo" width={80} height={80} className="object-contain opacity-20 invert" />
                            </div>
                            <div className="w-full h-2 rounded-full bg-slate-200" />
                            <div className="w-5/6 h-2 rounded-full bg-slate-200" />
@@ -454,7 +452,7 @@ function Home({ location }: HomeProps = {}) {
 
                     <div className="flex flex-col items-end space-y-2">
                       <h4 className="text-xl font-bold text-white rounded-lg p-2 bg-gradient-to-r from-rose-400 to-blue-400 hover:scale-110 transform transition">
-                        À partir de 8900€
+                        À partir de {MOBILE_STARTING_PRICE.display}
                       </h4>
                       <Link
                         href="/duodoku"
@@ -769,7 +767,7 @@ function Home({ location }: HomeProps = {}) {
                   </div>
                   <div className="group shadow-[0px_2.421px_30.264px_0px_rgba(189,227,251,0.26)] flex flex-col items-center flex-1 bg-white mx-4 rounded-3xl p-9 my-8">
                     <Image
-                      src="/assets/illustrations/api.png"
+                      src="/assets/illustrations/api.webp"
                       alt="Développement d'APIs RESTful et micro-services"
                       width={144}
                       height={144}
@@ -1028,7 +1026,7 @@ function Home({ location }: HomeProps = {}) {
               <div className="px-4 md:px-8 max-w-7xl flex flex-col md:flex-row items-center justify-center self-center overflow-hidden">
                 <div className="relative w-96 h-96 flex items-center justify-center">
                   <Image
-                    src="/assets/logoWithoutBackground.png"
+                    src="/assets/logoWithoutBackground.webp"
                     alt="Al Firma - Logo"
                     width={384}
                     height={384}
@@ -1149,7 +1147,7 @@ function Home({ location }: HomeProps = {}) {
                     </div>
                     <div className="flex flex-col justify-between self-center md:self-end">
                       <Image
-                        src="/assets/projects/qiima/logo.png"
+                        src="/assets/projects/qiima/logo.webp"
                         alt="Qiima - Application de bons plans au Maroc"
                         width={192}
                         height={192}
@@ -1561,58 +1559,19 @@ function Home({ location }: HomeProps = {}) {
                 QUESTIONS FRÉQUENTES
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 px-4 md:px-0">
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">?</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Quels sont vos délais de livraison ?</h4>
-                      <p className="text-gray-600 text-sm">
-                        Applications mobiles à partir de <strong>20 jours</strong>, applications web à partir de <strong>15 jours</strong>, et APIs à partir de <strong>10 jours</strong>. Chaque projet inclut des démos hebdomadaires.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">?</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Que se passe-t-il si je ne suis pas satisfait ?</h4>
-                      <p className="text-gray-600 text-sm">
-                        Vous bénéficiez de <strong>30 jours de garantie</strong> après livraison pour signaler tout problème. Les retours sont <strong>illimités</strong> pendant le développement.
-                      </p>
+                {HOME_FAQS.map((faq) => (
+                  <div key={faq.question} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold text-sm">?</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">{faq.question}</h4>
+                        <p className="text-gray-600 text-sm">{faq.answer}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">?</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Proposez-vous la maintenance après livraison ?</h4>
-                      <p className="text-gray-600 text-sm">
-                        Oui, nous proposons des <strong>contrats de maintenance</strong> adaptés à vos besoins. Support technique, mises à jour, et évolutions fonctionnelles inclus.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-rose-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-sm">?</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Comment se passe le suivi du projet ?</h4>
-                      <p className="text-gray-600 text-sm">
-                        Vous avez accès à une <strong>version de test dédiée</strong>, des démos hebdomadaires, et un suivi transparent de l'avancement. Vous êtes impliqué à chaque étape.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
               <h3 className="text-center mb-6 text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-400">
                 PARLONS DE VOTRE PROJET
@@ -1637,7 +1596,7 @@ function Home({ location }: HomeProps = {}) {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }

@@ -5,14 +5,17 @@ import ServicePageTemplate from '../components/ServicePageTemplate';
 
 export const dynamic = 'force-static';
 
+const pageTitle = 'Agence Django & React : développement web | Al Firma';
+const pageDescription = 'Agence Django et React pour vos SaaS, plateformes métier et applications web sur mesure. Architecture robuste, sécurisée et évolutive. Devis sous 24 h.';
+
 export const metadata: Metadata = {
-  title: 'Développement Web Django & React : Applications SaaS et Plateformes Métier | Al Firma',
-  description: "Al Firma, agence spécialisée en développement web Django et React. Créez votre plateforme SaaS, outil métier ou e-commerce avec une architecture robuste, sécurisée et évolutive. Devis sous 24h.",
+  title: pageTitle,
+  description: pageDescription,
   keywords: 'développement web django, agence django python, création saas, développement react, plateforme web sur mesure, développement application web, agence développement web, django rest framework',
   openGraph: {
-    title: 'Développement Web Django & React : Applications SaaS et Plateformes Métier | Al Firma',
-    description: "Al Firma, agence spécialisée en développement web Django et React. Créez votre plateforme SaaS, outil métier ou e-commerce avec une architecture robuste, sécurisée et évolutive. Devis sous 24h.",
-    images: [{ url: '/assets/logo.png', width: 1200, height: 630, alt: 'Développement web Django et React - Al Firma' }],
+    title: pageTitle,
+    description: pageDescription,
+    images: [{ url: '/assets/og-logo.webp', width: 1200, height: 630, alt: 'Développement web Django et React - Al Firma' }],
     type: 'website',
     url: 'https://alfirma.com/services/developpement-web-django/',
   },
@@ -123,10 +126,6 @@ export default function DeveloppementWebPage() {
       <Head>
         <link rel="canonical" href="https://alfirma.com/services/developpement-web-django/" />
       </Head>
-      <h1 className="sr-only">
-        Développement Web Django & React : Applications SaaS et Plateformes Métier
-      </h1>
-
       <ServicePageTemplate
         title="Développement d'Applications Web avec React.js et Django"
         description="La création d'applications web complexes est notre force. Grâce à l'association de React.js et de Django, nous développons des expériences utilisateurs fluides, des back-ends hautement sécurisés, et des architectures évolutives qui répondent aux exigences des PME, startups, et grands groupes."

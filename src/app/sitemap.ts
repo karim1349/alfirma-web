@@ -5,7 +5,6 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://alfirma.com';
-  const currentDate = new Date()
   
   // Location pages
   const locations = [
@@ -17,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationPages = locations.map(location => ({
     url: `${baseUrl}/${location}/`,
-    lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -32,7 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages = services.map(service => ({
     url: `${baseUrl}/services/${service}/`,
-    lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
@@ -47,62 +44,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   return [
     {
-      url: baseUrl,
-      lastModified: currentDate,
+      url: `${baseUrl}/`,
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/home/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/blog/`,
-      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/auteurs/karim-benchekroun/`,
-      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/duodoku/`,
-      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/duodoku/privacy/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/petit-pas/privacy/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/petit-pas/terms/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
       url: `${baseUrl}/tarifs/`,
-      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/projets/qiima/`,
-      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },

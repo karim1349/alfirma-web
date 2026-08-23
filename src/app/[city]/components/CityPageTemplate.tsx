@@ -10,7 +10,6 @@ export interface LocationData {
   country: string;
   region: string;
   flagEmoji: string;
-  coordinates: { lat: number; lng: number };
   description: string;
   keywords: string;
   marketInsights: string;
@@ -38,9 +37,9 @@ const services = [
   { href: "/services/design-ux-ui/", label: "UX/UI Design" },
 ];
 
-export default function CityPageTemplate({ location, otherCities }: CityPageTemplateProps) {
+export default function CityPageTemplate({ location, currentSlug, otherCities }: CityPageTemplateProps) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-rose-500/30 selection:text-rose-900 overflow-hidden font-sans">
+    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-rose-500/30 selection:text-rose-900 overflow-hidden font-sans">
       
       {/* Centered Main NavBar */}
       <div className="w-full flex justify-center z-[100] relative">
@@ -71,9 +70,9 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
               </span>
             </div>
 
-            <div className="text-6xl sm:text-7xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-[1.05] mb-6 uppercase">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-[1.05] mb-6 uppercase">
               AL FIRMA <br className="hidden lg:block"/> {location.name}
-            </div>
+            </h1>
             
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-800 tracking-tight leading-tight mb-6 max-w-2xl">
               Votre application sur mesure, livrée au cœur de la région <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-indigo-600">{location.region}</span>.
@@ -94,6 +93,23 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
                 </svg>
               </button>
             </div>
+
+            {currentSlug === "nantes" && (
+              <nav aria-label="Ressources développement mobile Nantes" className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/services/developpement-mobile/"
+                  className="inline-flex items-center rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-sm font-semibold text-indigo-700 transition-colors hover:border-indigo-600 hover:bg-indigo-600 hover:text-white"
+                >
+                  Notre service de développement mobile
+                </Link>
+                <Link
+                  href="/blog/agence-developpement-application-mobile-nantes/"
+                  className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-900 hover:bg-slate-900 hover:text-white"
+                >
+                  Guide pour choisir une agence à Nantes
+                </Link>
+              </nav>
+            )}
           </div>
 
           {/* Right Column (40%) - Visual Mockup */}
@@ -114,7 +130,7 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
                   {/* Mock Content Map/Placeholder */}
                   <div className="flex-1 w-full bg-slate-100 relative p-6 flex flex-col gap-4">
                      <div className="w-full h-40 rounded-xl bg-gradient-to-br from-indigo-100 to-rose-50 border border-white flex items-center justify-center shadow-sm">
-                       <Image src="/assets/logoWithoutBackground.png" alt="Logo" width={60} height={60} className="object-contain opacity-50 grayscale" />
+                       <Image src="/assets/logoWithoutBackground.webp" alt="Logo" width={60} height={60} className="object-contain opacity-50 grayscale" />
                      </div>
                      <div className="w-3/4 h-6 rounded bg-white shadow-sm" />
                      <div className="w-1/2 h-6 rounded bg-white shadow-sm" />
@@ -127,7 +143,7 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
                    <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">📍</div>
                       <div>
-                         <p className="text-xs text-slate-500 font-medium">Présence locale</p>
+                         <p className="text-xs text-slate-500 font-medium">Zone desservie</p>
                          <p className="text-sm font-bold text-slate-900">{location.region}</p>
                       </div>
                    </div>
@@ -145,7 +161,7 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
           <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-xl shadow-indigo-900/5 border border-slate-100 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-rose-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-1000" />
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-rose-500 mb-6 relative z-10">Insights Marché local</h3>
-            <h4 className="text-3xl font-bold text-slate-900 leading-tight border-b border-slate-100 pb-8 mb-8 relative z-10">L'écosystème digital à {location.name}</h4>
+            <h4 className="text-3xl font-bold text-slate-900 leading-tight border-b border-slate-100 pb-8 mb-8 relative z-10">L&apos;écosystème digital à {location.name}</h4>
             <p className="text-lg text-slate-600 leading-relaxed relative z-10">
               {location.marketInsights}
             </p>
@@ -250,8 +266,8 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-500 mb-4">Nos autres implantations</h3>
-            <h4 className="text-2xl font-bold text-slate-900 mb-6">Al Firma proche de vous</h4>
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-500 mb-4">Autres zones desservies</h3>
+            <h4 className="text-2xl font-bold text-slate-900 mb-6">Des services adaptés à votre région</h4>
             <ul className="flex flex-wrap gap-3">
               {otherCities.map((c) => (
                 <li key={c.slug}>
@@ -286,6 +302,6 @@ export default function CityPageTemplate({ location, otherCities }: CityPageTemp
         </div>
       </section>
 
-    </div>
+    </main>
   );
 }

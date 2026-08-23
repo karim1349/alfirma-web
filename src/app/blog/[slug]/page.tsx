@@ -229,7 +229,7 @@ export default async function BlogPostPage({
         <div className="bg-gray-50 py-4">
           <div className="max-w-4xl mx-auto px-4">
             <nav className="flex items-center space-x-2 text-sm text-gray-500">
-              <Link href="/home" className="hover:text-gray-900">
+              <Link href="/" className="hover:text-gray-900">
                 Accueil
               </Link>
               <span>/</span>

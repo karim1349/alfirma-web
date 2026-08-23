@@ -11,7 +11,7 @@ const BlogNavBar = () => {
   return (
     <div className="flex z-50 bg-gray-50/90 backdrop-blur-sm p-2.5 rounded-full w-auto max-w-md fixed top-14 left-1/2 transform -translate-x-1/2 shadow-lg">
       <Link
-        href="/home"
+        href="/"
         className="group flex-1 rounded-full py-2 px-4 flex justify-center cursor-pointer hover:bg-white items-center"
       >
         <p className="text-xs md:text-sm font-medium text-gray-500 group-hover:text-black whitespace-nowrap">
@@ -40,7 +40,7 @@ const BlogNavBar = () => {
         </div>
       )}
       <Link
-        href="/home#SECTION_CONTACT"
+        href="/#SECTION_CONTACT"
         className="group flex-1 rounded-full py-2 px-4 flex justify-center cursor-pointer hover:bg-white items-center"
       >
         <p className="text-xs md:text-sm font-medium text-gray-500 group-hover:text-black whitespace-nowrap">

@@ -23,7 +23,7 @@ const ProjectNav = () => {
                     href="/"
                     className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
                 >
-                    <img src="/assets/logoWithoutBackground.png" alt="Al Firma" className="w-6 h-6 object-contain" />
+                    <img src="/assets/logoWithoutBackground.webp" alt="Al Firma" className="w-6 h-6 object-contain" />
                     <span>Al Firma</span>
                 </Link>
             </div>

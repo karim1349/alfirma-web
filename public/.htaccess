@@ -1,3 +1,10 @@
+# Permanent canonical redirects
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^home/?$ / [R=301,L,NE]
+    RewriteRule ^blog/react-native-vs-flutter-guide-complet/?$ /blog/react-native-vs-flutter-2026/ [R=301,L,NE]
+</IfModule>
+
 # Enable mod_expires for cache control
 <IfModule mod_expires.c>
     ExpiresActive On
