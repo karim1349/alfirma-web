@@ -107,6 +107,33 @@ export function SoftwareApplicationSchema() {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 }
 
+// No offers or aggregateRating: store prices differ and there are too few ratings.
+// LifestyleApplication, not HealthApplication: Petit Pas is not a medical tool.
+export function PetitPasAppSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "@id": "https://alfirma.com/petit-pas/#app",
+    "name": "Petit Pas",
+    "alternateName": "Petit Pas : coach TDAH parents",
+    "description": "Application d'accompagnement pour les parents d'enfants avec un TDAH, inspirée du programme de Russell Barkley : check-in du soir, 3 objectifs, modules et outils pour les moments difficiles.",
+    "url": "https://alfirma.com/petit-pas/",
+    "image": "https://alfirma.com/assets/petitpas.png",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": ["iOS", "Android"],
+    "inLanguage": "fr",
+    "installUrl": [
+      "https://apps.apple.com/fr/app/petit-pas-coach-tdah-parents/id6761680319",
+      "https://play.google.com/store/apps/details?id=ma.petitpas.app"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://alfirma.com/#organization"
+    }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export function FAQSchema() {
   const schema = {
     "@context": "https://schema.org",
