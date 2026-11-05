@@ -1313,11 +1313,13 @@ function Home({ location }: HomeProps = {}) {
                         Native, Expo et une API Django REST.
                       </p>
                       <div className="flex items-start">
-                        <div className="p-2 rounded-md" style={{ backgroundColor: "#C46848" }}>
-                          <p className="text-white text-sm">
-                            Bientôt disponible !
-                          </p>
-                        </div>
+                        <Link
+                          href="/petit-pas/"
+                          className="p-2 rounded-md text-white text-sm hover:opacity-90 transition-opacity duration-300"
+                          style={{ backgroundColor: "#C46848" }}
+                        >
+                          Découvrir Petit Pas
+                        </Link>
                       </div>
                     </div>
                     <div className="flex flex-col justify-between self-center md:self-end">
