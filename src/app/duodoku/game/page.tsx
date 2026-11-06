@@ -79,7 +79,7 @@ function GameInvitationContent() {
                 <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658"
+                            href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658?ct=invite_link"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-4 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
@@ -87,7 +87,7 @@ function GameInvitationContent() {
                             App Store
                         </a>
                         <a
-                            href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH"
+                            href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH&referrer=utm_source%3Dinvite_link%26utm_medium%3Dfriend_invite%26utm_campaign%3Dgame_invite"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-4 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
