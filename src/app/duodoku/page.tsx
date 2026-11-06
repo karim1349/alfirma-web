@@ -71,7 +71,7 @@ function DuodokuPage() {
                     <h2 className="text-2xl font-bold text-white mb-6">Téléchargez l'application</h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <a
-                            href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658"
+                            href="https://apps.apple.com/ie/app/duodoku-sudoku-multi-joueurs/id6448099658?ct=website"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:scale-105 transition-transform duration-300"
@@ -85,7 +85,7 @@ function DuodokuPage() {
                             />
                         </a>
                         <a
-                            href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH"
+                            href="https://play.google.com/store/apps/details?id=com.duodoku.app&hl=fr_CH&referrer=utm_source%3Dwebsite%26utm_medium%3Dduodoku_page"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:scale-105 transition-transform duration-300"
